@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29C12A5F1B4824C000EF731D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C12A5E1B4824C000EF731D /* AboutViewController.m */; };
+		650C6B121B3A0B9F00C354D2 /* SectionHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C6B111B3A0B9F00C354D2 /* SectionHeaderCell.m */; };
+		652CABF51B41558C00640BEF /* GlottoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652CABF41B41558C00640BEF /* GlottoViewController.m */; };
+		65A205191B358C0E00266BC4 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A205181B358C0E00266BC4 /* DetailCell.m */; };
+		98206C531B136191003D7777 /* DictionaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C511B136191003D7777 /* DictionaryDetailViewController.m */; };
+		98206C601B1361A5003D7777 /* DictionaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C591B1361A5003D7777 /* DictionaryTableViewCell.m */; };
+		98206C621B1361A5003D7777 /* DictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C5C1B1361A5003D7777 /* DictionaryViewController.m */; };
+		98206C6D1B13698D003D7777 /* QuizBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C6C1B13698D003D7777 /* QuizBaseViewController.m */; };
+		982AC8E51B45EF6900116B4F /* languoids3.json in Resources */ = {isa = PBXBuildFile; fileRef = 982AC8E41B45EF6900116B4F /* languoids3.json */; };
+		982AC8E71B46123900116B4F /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982AC8E61B46123900116B4F /* ShadowView.swift */; };
+		9835D9721B47EC84002B0158 /* HighScoreEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9835D9711B47EC84002B0158 /* HighScoreEntry.m */; };
+		9835D9771B47ED9F002B0158 /* HighScoreHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9835D9761B47ED9F002B0158 /* HighScoreHelper.m */; };
+		9835D9801B481069002B0158 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 9835D97F1B481069002B0158 /* Preferences.m */; };
+		985F4A611B28369B00D7285F /* SentencesAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 985F4A601B28369B00D7285F /* SentencesAggregator.m */; };
+		985F4A641B283E0900D7285F /* Sentence.m in Sources */ = {isa = PBXBuildFile; fileRef = 985F4A631B283E0900D7285F /* Sentence.m */; };
+		985F4A661B284A5A00D7285F /* sentences.json in Resources */ = {isa = PBXBuildFile; fileRef = 985F4A651B284A5A00D7285F /* sentences.json */; };
+		985F4A691B28893300D7285F /* Languoid.m in Sources */ = {isa = PBXBuildFile; fileRef = 985F4A681B28893300D7285F /* Languoid.m */; };
+		987451F01AFFC7F9002BF401 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987451EE1AFFC7F9002BF401 /* ResultViewController.m */; };
+		989F6BBE1AF17F64007A9AD6 /* LanguoidsAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 989F6BBD1AF17F64007A9AD6 /* LanguoidsAggregator.m */; };
+		98A1C0D31B43273900E1AFE6 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */; };
+		98E78EE51AEBECCA00C0909D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E78EE41AEBECCA00C0909D /* main.m */; };
+		98E78EE81AEBECCA00C0909D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E78EE71AEBECCA00C0909D /* AppDelegate.m */; };
+		98E78EEB1AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98E78EE91AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld */; };
+		98E78EF31AEBECCA00C0909D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E78EF21AEBECCA00C0909D /* Images.xcassets */; };
+		98E78EF61AEBECCA00C0909D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98E78EF41AEBECCA00C0909D /* LaunchScreen.xib */; };
+		98E78F0E1AEBF4CA00C0909D /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E78F0C1AEBF4CA00C0909D /* StartViewController.m */; };
+		98E78F131AEBF4FF00C0909D /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E78F111AEBF4FF00C0909D /* QuizViewController.m */; };
+		98E78F231AEC128C00C0909D /* DataAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E78F221AEC128C00C0909D /* DataAggregator.m */; };
+		98EAA7EC1B38A28B004DDBA4 /* LanguageMapOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EAA7EB1B38A28B004DDBA4 /* LanguageMapOverlayViewController.m */; };
+		98ED7E111B1101A3000A5625 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98ED7E101B1101A3000A5625 /* Storyboard.storyboard */; };
+		98ED7E141B110766000A5625 /* QuizControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ED7E131B110766000A5625 /* QuizControlViewController.m */; };
+		98F494861B31E03A00A21E56 /* SentecesPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F494851B31E03A00A21E56 /* SentecesPageViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		29C12A5D1B4824C000EF731D /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		29C12A5E1B4824C000EF731D /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		650C6B101B3A0B9F00C354D2 /* SectionHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderCell.h; sourceTree = "<group>"; };
+		650C6B111B3A0B9F00C354D2 /* SectionHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderCell.m; sourceTree = "<group>"; };
+		652CABF31B41558C00640BEF /* GlottoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlottoViewController.h; sourceTree = "<group>"; };
+		652CABF41B41558C00640BEF /* GlottoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlottoViewController.m; sourceTree = "<group>"; };
+		65A205171B358C0E00266BC4 /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
+		65A205181B358C0E00266BC4 /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
+		98206C501B136191003D7777 /* DictionaryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryDetailViewController.h; sourceTree = "<group>"; };
+		98206C511B136191003D7777 /* DictionaryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryDetailViewController.m; sourceTree = "<group>"; };
+		98206C581B1361A5003D7777 /* DictionaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryTableViewCell.h; sourceTree = "<group>"; };
+		98206C591B1361A5003D7777 /* DictionaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryTableViewCell.m; sourceTree = "<group>"; };
+		98206C5B1B1361A5003D7777 /* DictionaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryViewController.h; sourceTree = "<group>"; };
+		98206C5C1B1361A5003D7777 /* DictionaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryViewController.m; sourceTree = "<group>"; };
+		98206C6B1B13698D003D7777 /* QuizBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizBaseViewController.h; sourceTree = "<group>"; };
+		98206C6C1B13698D003D7777 /* QuizBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizBaseViewController.m; sourceTree = "<group>"; };
+		982AC8E41B45EF6900116B4F /* languoids3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = languoids3.json; sourceTree = "<group>"; };
+		982AC8E61B46123900116B4F /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		9835D9701B47EC84002B0158 /* HighScoreEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoreEntry.h; path = ../HighScoreEntry.h; sourceTree = "<group>"; };
+		9835D9711B47EC84002B0158 /* HighScoreEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoreEntry.m; path = ../HighScoreEntry.m; sourceTree = "<group>"; };
+		9835D9751B47ED9F002B0158 /* HighScoreHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreHelper.h; sourceTree = "<group>"; };
+		9835D9761B47ED9F002B0158 /* HighScoreHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreHelper.m; sourceTree = "<group>"; };
+		9835D97E1B481069002B0158 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		9835D97F1B481069002B0158 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
+		985F4A5F1B28369B00D7285F /* SentencesAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentencesAggregator.h; sourceTree = "<group>"; };
+		985F4A601B28369B00D7285F /* SentencesAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentencesAggregator.m; sourceTree = "<group>"; };
+		985F4A621B283E0900D7285F /* Sentence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sentence.h; sourceTree = "<group>"; };
+		985F4A631B283E0900D7285F /* Sentence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sentence.m; sourceTree = "<group>"; };
+		985F4A651B284A5A00D7285F /* sentences.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sentences.json; sourceTree = "<group>"; };
+		985F4A671B28893300D7285F /* Languoid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Languoid.h; sourceTree = "<group>"; };
+		985F4A681B28893300D7285F /* Languoid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Languoid.m; sourceTree = "<group>"; };
+		987451ED1AFFC7F9002BF401 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		987451EE1AFFC7F9002BF401 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		989F6BBC1AF17F64007A9AD6 /* LanguoidsAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguoidsAggregator.h; sourceTree = "<group>"; };
+		989F6BBD1AF17F64007A9AD6 /* LanguoidsAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguoidsAggregator.m; sourceTree = "<group>"; };
+		98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
+		98E78EDF1AEBECCA00C0909D /* Languini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Languini.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98E78EE31AEBECCA00C0909D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98E78EE41AEBECCA00C0909D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		98E78EE61AEBECCA00C0909D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		98E78EE71AEBECCA00C0909D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		98E78EEA1AEBECCA00C0909D /* LanguageQuiz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LanguageQuiz.xcdatamodel; sourceTree = "<group>"; };
+		98E78EF21AEBECCA00C0909D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		98E78EF51AEBECCA00C0909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		98E78F0B1AEBF4CA00C0909D /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		98E78F0C1AEBF4CA00C0909D /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		98E78F101AEBF4FF00C0909D /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
+		98E78F111AEBF4FF00C0909D /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
+		98E78F211AEC128C00C0909D /* DataAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAggregator.h; sourceTree = "<group>"; };
+		98E78F221AEC128C00C0909D /* DataAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAggregator.m; sourceTree = "<group>"; };
+		98EAA7EA1B38A28B004DDBA4 /* LanguageMapOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageMapOverlayViewController.h; sourceTree = "<group>"; };
+		98EAA7EB1B38A28B004DDBA4 /* LanguageMapOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageMapOverlayViewController.m; sourceTree = "<group>"; };
+		98ED7E101B1101A3000A5625 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		98ED7E121B110766000A5625 /* QuizControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizControlViewController.h; sourceTree = "<group>"; };
+		98ED7E131B110766000A5625 /* QuizControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizControlViewController.m; sourceTree = "<group>"; };
+		98F494841B31E03A00A21E56 /* SentecesPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentecesPageViewController.h; sourceTree = "<group>"; };
+		98F494851B31E03A00A21E56 /* SentecesPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentecesPageViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98E78EDC1AEBECCA00C0909D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65406A151B136295004EEE6B /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				98206C581B1361A5003D7777 /* DictionaryTableViewCell.h */,
+				98206C591B1361A5003D7777 /* DictionaryTableViewCell.m */,
+				98206C5B1B1361A5003D7777 /* DictionaryViewController.h */,
+				98206C5C1B1361A5003D7777 /* DictionaryViewController.m */,
+				98206C501B136191003D7777 /* DictionaryDetailViewController.h */,
+				98206C511B136191003D7777 /* DictionaryDetailViewController.m */,
+				65A205171B358C0E00266BC4 /* DetailCell.h */,
+				65A205181B358C0E00266BC4 /* DetailCell.m */,
+				98F494841B31E03A00A21E56 /* SentecesPageViewController.h */,
+				98F494851B31E03A00A21E56 /* SentecesPageViewController.m */,
+				650C6B101B3A0B9F00C354D2 /* SectionHeaderCell.h */,
+				650C6B111B3A0B9F00C354D2 /* SectionHeaderCell.m */,
+				652CABF31B41558C00640BEF /* GlottoViewController.h */,
+				652CABF41B41558C00640BEF /* GlottoViewController.m */,
+			);
+			name = Dictionary;
+			sourceTree = "<group>";
+		};
+		65406A171B1362E0004EEE6B /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				98ED7E121B110766000A5625 /* QuizControlViewController.h */,
+				98ED7E131B110766000A5625 /* QuizControlViewController.m */,
+				98E78F0B1AEBF4CA00C0909D /* StartViewController.h */,
+				98E78F0C1AEBF4CA00C0909D /* StartViewController.m */,
+				98E78F101AEBF4FF00C0909D /* QuizViewController.h */,
+				98E78F111AEBF4FF00C0909D /* QuizViewController.m */,
+				98206C6B1B13698D003D7777 /* QuizBaseViewController.h */,
+				98206C6C1B13698D003D7777 /* QuizBaseViewController.m */,
+				98EAA7EA1B38A28B004DDBA4 /* LanguageMapOverlayViewController.h */,
+				98EAA7EB1B38A28B004DDBA4 /* LanguageMapOverlayViewController.m */,
+			);
+			name = Quiz;
+			sourceTree = "<group>";
+		};
+		9835D9741B47ED6E002B0158 /* Game Over */ = {
+			isa = PBXGroup;
+			children = (
+				9835D9751B47ED9F002B0158 /* HighScoreHelper.h */,
+				9835D9761B47ED9F002B0158 /* HighScoreHelper.m */,
+				987451ED1AFFC7F9002BF401 /* ResultViewController.h */,
+				987451EE1AFFC7F9002BF401 /* ResultViewController.m */,
+			);
+			name = "Game Over";
+			sourceTree = "<group>";
+		};
+		989762741AFFBE9500ACE909 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				98E78EF21AEBECCA00C0909D /* Images.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		989F6BBB1AF17F36007A9AD6 /* DataAggregator */ = {
+			isa = PBXGroup;
+			children = (
+				98E78F211AEC128C00C0909D /* DataAggregator.h */,
+				98E78F221AEC128C00C0909D /* DataAggregator.m */,
+				989F6BBC1AF17F64007A9AD6 /* LanguoidsAggregator.h */,
+				989F6BBD1AF17F64007A9AD6 /* LanguoidsAggregator.m */,
+				985F4A5F1B28369B00D7285F /* SentencesAggregator.h */,
+				985F4A601B28369B00D7285F /* SentencesAggregator.m */,
+			);
+			name = DataAggregator;
+			sourceTree = "<group>";
+		};
+		989F6BBF1AF17F6F007A9AD6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				98E78EE91AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld */,
+				9835D9701B47EC84002B0158 /* HighScoreEntry.h */,
+				9835D9711B47EC84002B0158 /* HighScoreEntry.m */,
+				985F4A671B28893300D7285F /* Languoid.h */,
+				985F4A681B28893300D7285F /* Languoid.m */,
+				985F4A621B283E0900D7285F /* Sentence.h */,
+				985F4A631B283E0900D7285F /* Sentence.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		98A1C0D11B4326AC00E1AFE6 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */,
+				982AC8E61B46123900116B4F /* ShadowView.swift */,
+				9835D97E1B481069002B0158 /* Preferences.h */,
+				9835D97F1B481069002B0158 /* Preferences.m */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		98E78ED61AEBECCA00C0909D = {
+			isa = PBXGroup;
+			children = (
+				98E78EE11AEBECCA00C0909D /* Languini */,
+				98E78EE01AEBECCA00C0909D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		98E78EE01AEBECCA00C0909D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98E78EDF1AEBECCA00C0909D /* Languini.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98E78EE11AEBECCA00C0909D /* Languini */ = {
+			isa = PBXGroup;
+			children = (
+				98A1C0D11B4326AC00E1AFE6 /* Shared */,
+				98ED7E101B1101A3000A5625 /* Storyboard.storyboard */,
+				98E78EF41AEBECCA00C0909D /* LaunchScreen.xib */,
+				98E78EE61AEBECCA00C0909D /* AppDelegate.h */,
+				98E78EE71AEBECCA00C0909D /* AppDelegate.m */,
+				989762741AFFBE9500ACE909 /* Assets */,
+				989F6BBF1AF17F6F007A9AD6 /* Models */,
+				989F6BBB1AF17F36007A9AD6 /* DataAggregator */,
+				98E78F1A1AEC0F1A00C0909D /* Data */,
+				9835D9741B47ED6E002B0158 /* Game Over */,
+				65406A171B1362E0004EEE6B /* Quiz */,
+				65406A151B136295004EEE6B /* Dictionary */,
+				98E78EE21AEBECCA00C0909D /* Supporting Files */,
+				29C12A5D1B4824C000EF731D /* AboutViewController.h */,
+				29C12A5E1B4824C000EF731D /* AboutViewController.m */,
+			);
+			name = Languini;
+			path = LanguageQuiz;
+			sourceTree = "<group>";
+		};
+		98E78EE21AEBECCA00C0909D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				98E78EE31AEBECCA00C0909D /* Info.plist */,
+				98E78EE41AEBECCA00C0909D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		98E78F1A1AEC0F1A00C0909D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				982AC8E41B45EF6900116B4F /* languoids3.json */,
+				985F4A651B284A5A00D7285F /* sentences.json */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		98E78EDE1AEBECCA00C0909D /* Languini */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98E78F051AEBECCA00C0909D /* Build configuration list for PBXNativeTarget "Languini" */;
+			buildPhases = (
+				98E78EDB1AEBECCA00C0909D /* Sources */,
+				98E78EDC1AEBECCA00C0909D /* Frameworks */,
+				98E78EDD1AEBECCA00C0909D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Languini;
+			productName = LanguageQuiz;
+			productReference = 98E78EDF1AEBECCA00C0909D /* Languini.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98E78ED71AEBECCA00C0909D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Coding Da Vinci";
+				TargetAttributes = {
+					98E78EDE1AEBECCA00C0909D = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 98E78EDA1AEBECCA00C0909D /* Build configuration list for PBXProject "Languini" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 98E78ED61AEBECCA00C0909D;
+			productRefGroup = 98E78EE01AEBECCA00C0909D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				98E78EDE1AEBECCA00C0909D /* Languini */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		98E78EDD1AEBECCA00C0909D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98E78EF61AEBECCA00C0909D /* LaunchScreen.xib in Resources */,
+				98E78EF31AEBECCA00C0909D /* Images.xcassets in Resources */,
+				98ED7E111B1101A3000A5625 /* Storyboard.storyboard in Resources */,
+				982AC8E51B45EF6900116B4F /* languoids3.json in Resources */,
+				985F4A661B284A5A00D7285F /* sentences.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98E78EDB1AEBECCA00C0909D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98E78EE81AEBECCA00C0909D /* AppDelegate.m in Sources */,
+				652CABF51B41558C00640BEF /* GlottoViewController.m in Sources */,
+				98EAA7EC1B38A28B004DDBA4 /* LanguageMapOverlayViewController.m in Sources */,
+				98E78F131AEBF4FF00C0909D /* QuizViewController.m in Sources */,
+				65A205191B358C0E00266BC4 /* DetailCell.m in Sources */,
+				9835D9771B47ED9F002B0158 /* HighScoreHelper.m in Sources */,
+				98206C601B1361A5003D7777 /* DictionaryTableViewCell.m in Sources */,
+				9835D9721B47EC84002B0158 /* HighScoreEntry.m in Sources */,
+				98F494861B31E03A00A21E56 /* SentecesPageViewController.m in Sources */,
+				29C12A5F1B4824C000EF731D /* AboutViewController.m in Sources */,
+				98E78F0E1AEBF4CA00C0909D /* StartViewController.m in Sources */,
+				989F6BBE1AF17F64007A9AD6 /* LanguoidsAggregator.m in Sources */,
+				982AC8E71B46123900116B4F /* ShadowView.swift in Sources */,
+				985F4A641B283E0900D7285F /* Sentence.m in Sources */,
+				985F4A611B28369B00D7285F /* SentencesAggregator.m in Sources */,
+				98E78EE51AEBECCA00C0909D /* main.m in Sources */,
+				650C6B121B3A0B9F00C354D2 /* SectionHeaderCell.m in Sources */,
+				98E78F231AEC128C00C0909D /* DataAggregator.m in Sources */,
+				98A1C0D31B43273900E1AFE6 /* ShadowButton.swift in Sources */,
+				98206C531B136191003D7777 /* DictionaryDetailViewController.m in Sources */,
+				9835D9801B481069002B0158 /* Preferences.m in Sources */,
+				985F4A691B28893300D7285F /* Languoid.m in Sources */,
+				98ED7E141B110766000A5625 /* QuizControlViewController.m in Sources */,
+				98E78EEB1AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld in Sources */,
+				98206C6D1B13698D003D7777 /* QuizBaseViewController.m in Sources */,
+				98206C621B1361A5003D7777 /* DictionaryViewController.m in Sources */,
+				987451F01AFFC7F9002BF401 /* ResultViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		98E78EF41AEBECCA00C0909D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98E78EF51AEBECCA00C0909D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		98E78F031AEBECCA00C0909D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		98E78F041AEBECCA00C0909D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		98E78F061AEBECCA00C0909D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = LanguageQuiz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = Languini;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		98E78F071AEBECCA00C0909D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = LanguageQuiz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = Languini;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98E78EDA1AEBECCA00C0909D /* Build configuration list for PBXProject "Languini" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98E78F031AEBECCA00C0909D /* Debug */,
+				98E78F041AEBECCA00C0909D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98E78F051AEBECCA00C0909D /* Build configuration list for PBXNativeTarget "Languini" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98E78F061AEBECCA00C0909D /* Debug */,
+				98E78F071AEBECCA00C0909D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		98E78EE91AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				98E78EEA1AEBECCA00C0909D /* LanguageQuiz.xcdatamodel */,
+			);
+			currentVersion = 98E78EEA1AEBECCA00C0909D /* LanguageQuiz.xcdatamodel */;
+			path = LanguageQuiz.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 98E78ED71AEBECCA00C0909D /* Project object */;
+}

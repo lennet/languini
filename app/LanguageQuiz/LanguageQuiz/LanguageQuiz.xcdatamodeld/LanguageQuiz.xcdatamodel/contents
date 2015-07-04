@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0"
+       lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic"
+       iOSVersion="Automatic">
+    <entity name="HighScoreEntry" representedClassName="HighScoreEntry" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quizType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Languiod" representedClassName="Languoid" syncable="YES">
+        <attribute name="alternateNames" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="classification" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="countries" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="dialects" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="iso6393" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lanugageStatus" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="locationDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="macroareaGl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="population" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="populationNumeric" optional="YES" attributeType="Integer 16" defaultValueString="0"
+                   syncable="YES"/>
+        <relationship name="sentence" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sentence"
+                      inverseName="languoid" inverseEntity="Sentence" syncable="YES"/>
+    </entity>
+    <entity name="Sentence" representedClassName="Sentence" syncable="YES">
+        <attribute name="sentence" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="translation" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="languoid" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Languiod"
+                      inverseName="sentence" inverseEntity="Languiod" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Languiod" positionX="-7407" positionY="-1197" width="128" height="270"/>
+        <element name="Sentence" positionX="-7866" positionY="-1026" width="128" height="88"/>
+        <element name="HighScoreEntry" positionX="-7659" positionY="-1080" width="128" height="90"/>
+    </elements>
+</model>

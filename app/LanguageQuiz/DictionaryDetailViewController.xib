@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DictionaryDetailViewController">
+            <connections>
+                <outlet property="titleLabel" destination="pys-jL-zQw" id="vKU-nS-HKy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="websiteView" destination="Hqm-m1-YmI" id="C86-Po-Oix"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pys-jL-zQw">
+                    <rect key="frame" x="166" y="96" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="vqa-Qz-wFJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hqm-m1-YmI">
+                    <rect key="frame" x="-6" y="141" width="381" height="526"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </webView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="pys-jL-zQw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="96" id="PKY-s3-6EK"/>
+                <constraint firstItem="Hqm-m1-YmI" firstAttribute="top" secondItem="pys-jL-zQw" secondAttribute="bottom" constant="24" id="Sa2-Fb-jFc"/>
+                <constraint firstAttribute="bottom" secondItem="Hqm-m1-YmI" secondAttribute="bottom" id="Zyh-kd-2m7"/>
+                <constraint firstItem="pys-jL-zQw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bQ1-sd-ONX"/>
+                <constraint firstItem="Hqm-m1-YmI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-6" id="ihj-sG-RYp"/>
+                <constraint firstAttribute="trailing" secondItem="Hqm-m1-YmI" secondAttribute="trailing" id="xnW-BI-KH4"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="472.5" y="90.5"/>
+        </view>
+    </objects>
+</document>
