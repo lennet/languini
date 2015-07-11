@@ -11,9 +11,9 @@
 		650C6B121B3A0B9F00C354D2 /* SectionHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C6B111B3A0B9F00C354D2 /* SectionHeaderCell.m */; };
 		652CABF51B41558C00640BEF /* GlottoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652CABF41B41558C00640BEF /* GlottoViewController.m */; };
 		652FA8031B5172BC0060DAAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652FA8021B5172BC0060DAAC /* Images.xcassets */; };
+		652FA8041B51A7150060DAAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655E09A91B51686800A61A34 /* SystemConfiguration.framework */; };
 		655E09A51B514CBB00A61A34 /* ResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E09A41B514CBB00A61A34 /* ResultTableViewCell.m */; };
 		655E09A81B51683400A61A34 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E09A71B51683400A61A34 /* Reachability.m */; };
-		655E09AA1B51686800A61A34 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655E09A91B51686800A61A34 /* SystemConfiguration.framework */; };
 		65A205191B358C0E00266BC4 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A205181B358C0E00266BC4 /* DetailCell.m */; };
 		98206C531B136191003D7777 /* DictionaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C511B136191003D7777 /* DictionaryDetailViewController.m */; };
 		98206C601B1361A5003D7777 /* DictionaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C591B1361A5003D7777 /* DictionaryTableViewCell.m */; };
@@ -124,7 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				655E09AA1B51686800A61A34 /* SystemConfiguration.framework in Frameworks */,
+				652FA8041B51A7150060DAAC /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
