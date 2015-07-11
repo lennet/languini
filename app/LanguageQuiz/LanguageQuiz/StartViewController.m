@@ -12,6 +12,7 @@
 #import "ResultViewController.h"
 #import "Reachability.h"
 
+
 #define questionDelay 4
 BOOL annotationSet;
 BOOL loadSpecialDict;
@@ -54,6 +55,7 @@ NSArray *countriesOnLocation;
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
         [self.offlineView setHidden:false];
+        UIImage *test = [UIImage imageNamed:@"world"];
         internetConnection = false;
     } else {
         [self.offlineView setHidden:true];

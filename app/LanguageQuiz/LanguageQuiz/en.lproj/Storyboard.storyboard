@@ -1244,7 +1244,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
         <image name="home" width="35" height="35"/>
         <image name="left" width="50" height="50"/>
         <image name="right" width="50" height="50"/>
-        <image name="world" width="568" height="288"/>
+        <image name="world" width="960" height="488"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
