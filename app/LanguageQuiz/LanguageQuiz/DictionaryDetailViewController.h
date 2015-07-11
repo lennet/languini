@@ -27,6 +27,7 @@
 @property(strong, nonatomic) IBOutlet UIButton *glottologButton;
 @property(strong, nonatomic) IBOutlet UIButton *rightCountryButton;
 @property(strong, nonatomic) IBOutlet UIButton *leftCountryButton;
+@property(strong, nonatomic) IBOutlet UIView *offlineView;
 
 
 @property(nonatomic) NSUInteger currentCountryIndex;

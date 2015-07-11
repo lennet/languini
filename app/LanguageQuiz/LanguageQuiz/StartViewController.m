@@ -10,6 +10,7 @@
 #import "DictionaryViewController.h"
 #import "QuizControlViewController.h"
 #import "ResultViewController.h"
+#import "Reachability.h"
 
 #define questionDelay 4
 BOOL annotationSet;
@@ -35,16 +36,34 @@ NSArray *countriesOnLocation;
 
 @end
 
-@implementation StartViewController
+@implementation StartViewController{
+    BOOL internetConnection;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.langAggregator = [LanguiodsAggregator new];
+    internetConnection = true;
 
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        [self.offlineView setHidden:false];
+        internetConnection = false;
+    } else {
+        [self.offlineView setHidden:true];
+        internetConnection = true;
+    }
+    
+    
+    
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -58,6 +77,7 @@ NSArray *countriesOnLocation;
 }
 
 - (IBAction)handleGeoQuizButtonPressed:(id)sender {
+    if(internetConnection){
     [self.mapView removeAnnotation:[self.mapView.annotations lastObject]];
     annotationSet = false;
     [self.quizController resetScores];
@@ -78,6 +98,12 @@ NSArray *countriesOnLocation;
 //        self.dictionaryButton.enabled = NO;
 
     }];
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Keine Internetverbindung" message:@"GeoQuiz steht nur mit Netzverbindung zur Verfügung" delegate:self cancelButtonTitle:@"Verstanden" otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
 
 }
 
@@ -123,8 +149,10 @@ NSArray *countriesOnLocation;
 
 - (void)addAnnotationOnLocation:(CLLocationCoordinate2D)touchCoordinate {
     if (annotationSet == true) {
+        NSLog(@"Removed %@", [[self.mapView.annotations lastObject] title]);
         [self.mapView removeAnnotation:[self.mapView.annotations lastObject]];
         annotationSet = false;
+        
     }
     MKPointAnnotation *languageAnnotation = [[MKPointAnnotation alloc] init];
     languageAnnotation.coordinate = touchCoordinate;
@@ -142,17 +170,21 @@ NSArray *countriesOnLocation;
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
 
     MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"annotationView"];
+    
     if (!annotationView) {
         NSLog(@"no annotationView");
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotationView"];
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     }
     
-
     annotationView.enabled = YES;
-    annotationView.canShowCallout = YES;
+    annotationView.opaque = false;
+    annotationView.canShowCallout = true;
+    
 
+    NSLog(@"Show annotationView");
     return annotationView;
+    
 }
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
