@@ -10,6 +10,7 @@
 		29C12A5F1B4824C000EF731D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C12A5E1B4824C000EF731D /* AboutViewController.m */; };
 		650C6B121B3A0B9F00C354D2 /* SectionHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C6B111B3A0B9F00C354D2 /* SectionHeaderCell.m */; };
 		652CABF51B41558C00640BEF /* GlottoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652CABF41B41558C00640BEF /* GlottoViewController.m */; };
+		655E09A51B514CBB00A61A34 /* ResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E09A41B514CBB00A61A34 /* ResultTableViewCell.m */; };
 		65A205191B358C0E00266BC4 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A205181B358C0E00266BC4 /* DetailCell.m */; };
 		98206C531B136191003D7777 /* DictionaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C511B136191003D7777 /* DictionaryDetailViewController.m */; };
 		98206C601B1361A5003D7777 /* DictionaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C591B1361A5003D7777 /* DictionaryTableViewCell.m */; };
@@ -51,6 +52,8 @@
 		650C6B111B3A0B9F00C354D2 /* SectionHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderCell.m; sourceTree = "<group>"; };
 		652CABF31B41558C00640BEF /* GlottoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlottoViewController.h; sourceTree = "<group>"; };
 		652CABF41B41558C00640BEF /* GlottoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlottoViewController.m; sourceTree = "<group>"; };
+		655E09A31B514CBB00A61A34 /* ResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTableViewCell.h; sourceTree = "<group>"; };
+		655E09A41B514CBB00A61A34 /* ResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultTableViewCell.m; sourceTree = "<group>"; };
 		65A205171B358C0E00266BC4 /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
 		65A205181B358C0E00266BC4 /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
 		98206C501B136191003D7777 /* DictionaryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryDetailViewController.h; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 			children = (
 				98A1C0D11B4326AC00E1AFE6 /* Shared */,
 				98ED7E101B1101A3000A5625 /* Storyboard.storyboard */,
+				655E09A31B514CBB00A61A34 /* ResultTableViewCell.h */,
+				655E09A41B514CBB00A61A34 /* ResultTableViewCell.m */,
 				98E78EF41AEBECCA00C0909D /* LaunchScreen.xib */,
 				98E78EE61AEBECCA00C0909D /* AppDelegate.h */,
 				98E78EE71AEBECCA00C0909D /* AppDelegate.m */,
@@ -378,6 +383,7 @@
 				98E78EEB1AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld in Sources */,
 				98206C6D1B13698D003D7777 /* QuizBaseViewController.m in Sources */,
 				98206C621B1361A5003D7777 /* DictionaryViewController.m in Sources */,
+				655E09A51B514CBB00A61A34 /* ResultTableViewCell.m in Sources */,
 				987451F01AFFC7F9002BF401 /* ResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

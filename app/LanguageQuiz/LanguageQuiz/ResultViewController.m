@@ -10,6 +10,7 @@
 #import "HighScoreHelper.h"
 #import "HighScoreEntry.h"
 #import "Preferences.h"
+#import "ResultTableViewCell.h"
 
 @interface ResultViewController ()
 
@@ -18,6 +19,7 @@
 @property(strong, nonatomic) NSArray *scoreEntries;
 @property(strong, nonatomic) HighScoreHelper *scoreHelper;
 @property(strong, nonatomic) Preferences *prefs;
+@property NSUInteger *latestScoreItemIndex;
 @property(nonatomic) NSInteger newScoreIndex;
 
 @end
@@ -70,12 +72,16 @@
             } else if (scores.count < 10) {
                 [scores addObject:currentScore];
             }
+            if([currentScore.score integerValue] == self.newScore){
+                self.latestScoreItemIndex = (NSUInteger *)i;
+            }
         }
     } else {
         [scores addObject:@(self.newScore)];
         self.newScoreIndex = 0;
     }
     self.scoreEntries = [NSArray arrayWithArray:scores];
+    
 }
 
 - (NSString *)getCurrentName {
@@ -93,23 +99,40 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.scoreEntries.count;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"scoreEntryCell"];
+    ResultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"scoreEntryCell"];
+    if(cell == nil){
+        cell = [[ResultTableViewCell alloc]init];
+    }
     NSString *scoreString;
     NSString *nameString;
-    if (indexPath.row == self.newScoreIndex || [self.scoreEntries[indexPath.row] isKindOfClass:[NSNumber class]]) {
-        scoreString = [NSString stringWithFormat:@"%li", (long) self.newScore];
-        nameString = [self getCurrentName];
-    } else {
-        HighScoreEntry *currentEntry = self.scoreEntries[indexPath.row];
-        scoreString = [currentEntry.score stringValue];
-        nameString = currentEntry.name;
+    if(indexPath.row < [self.scoreEntries count]){
+        if (indexPath.row == self.newScoreIndex || [self.scoreEntries[indexPath.row] isKindOfClass:[NSNumber class]]) {
+            scoreString = [NSString stringWithFormat:@"%li", (long) self.newScore];
+            nameString = [self getCurrentName];
+        } else {
+            HighScoreEntry *currentEntry = self.scoreEntries[indexPath.row];
+            scoreString = [currentEntry.score stringValue];
+            nameString = currentEntry.name;
+        }
+
+        cell.rankingLabel.text = [NSString stringWithFormat:@"%li", (long) indexPath.row + 1];
+        cell.scoreLabel.text = scoreString;
+        cell.nameLabel.text = nameString;
+        if(indexPath.row == (NSInteger)self.latestScoreItemIndex){
+            
+            cell.backgroundColor = [UIColor colorWithRed:0.295 green:0.695 blue:0.900 alpha:0.970];
+            
+        }
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%li. %@ %@", (long) indexPath.row + 1, nameString, scoreString];
+    else{
+        cell.rankingLabel.text = [NSString stringWithFormat:@"%li", (long) (indexPath.row +1)];
+        cell.nameLabel.text = @" / ";
+        cell.scoreLabel.text = @" ";
+    }
     return cell;
 }
 
