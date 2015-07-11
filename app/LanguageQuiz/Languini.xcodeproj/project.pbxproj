@@ -90,12 +90,11 @@
 		98712FD91B516A0C00B441B2 /* Languini.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Languini.sqlite; sourceTree = "<group>"; };
 		98712FDA1B516A0C00B441B2 /* Languini.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Languini.sqlite-shm"; sourceTree = "<group>"; };
 		98712FDB1B516A0C00B441B2 /* Languini.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Languini.sqlite-wal"; sourceTree = "<group>"; };
-		98712FE01B51970C00B441B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
-		98712FE21B51971700B441B2 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
 		98712FE31B51971700B441B2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		98712FE71B519B1700B441B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		98712FE91B519B2100B441B2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		98712FEA1B519B2A00B441B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		98712FED1B51A44500B441B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
 		987451ED1AFFC7F9002BF401 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
 		987451EE1AFFC7F9002BF401 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
 		989F6BBC1AF17F64007A9AD6 /* LanguoidsAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguoidsAggregator.h; sourceTree = "<group>"; };
@@ -416,8 +415,7 @@
 		98712FE11B51970C00B441B2 /* Storyboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				98712FE01B51970C00B441B2 /* en */,
-				98712FE21B51971700B441B2 /* de */,
+				98712FED1B51A44500B441B2 /* Base */,
 			);
 			name = Storyboard.storyboard;
 			sourceTree = "<group>";
