@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="U4k-22-gd2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="U4k-22-gd2">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -562,7 +562,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqc-kn-wSO">
                                 <rect key="frame" x="16" y="0.0" width="288" height="568"/>
-                                <mutableString key="text">*WORK IN PROGESS*
+                                <string key="text">*WORK IN PROGESS*
 
 The MIT License (MIT)
 
@@ -582,7 +582,7 @@ Coding da Vinci is the first German open cultural data hackathon that started in
 Whereas a classic hackathon offers its participants only a short time frame - typically a weekend - to develop software applications, Coding da Vinci runs for a total of 10 weeks. Since it was the first event of its kind, combining the formerly separate worlds of technology and cultural heritage, the organizers chose this more extensive timeframe in order to provide the much-needed space to interact with and learn about each other.
 At the beginning of the 10 weeks, a two-day inaugural event takes place. The purpose is to offer sufficient time for the institutions to present their data sets, and for the participants to make contact with the GLAMs in order to develop project ideas and to form teams for their realization. The teams then can use the coming 10 weeks to develop prototypes, that are presented and evaluated at a public award ceremony in July (sprint phase).
 
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

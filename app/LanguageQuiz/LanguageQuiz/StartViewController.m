@@ -58,6 +58,8 @@ NSArray *countriesOnLocation;
 }
 
 - (IBAction)handleGeoQuizButtonPressed:(id)sender {
+    [self.mapView removeAnnotation:[self.mapView.annotations lastObject]];
+    annotationSet = false;
     [self.quizController resetScores];
     self.quizMode = YES;
     self.shouldHandleTouches = YES;
@@ -112,8 +114,10 @@ NSArray *countriesOnLocation;
                 [self performSelector:@selector(nextQuestion) withObject:nil afterDelay:questionDelay];
             }
             else {
+                
                 countriesOnLocation = [self.langAggregator getLanguiodsForCountryCode:placemark.ISOcountryCode];
                 [self addAnnotationOnLocation:touchCoordinate];
+                
             }
 
         }];
@@ -131,17 +135,22 @@ NSArray *countriesOnLocation;
     languageAnnotation.subtitle = @"";
     annotationSet = true;
     [self.mapView addAnnotation:languageAnnotation];
+    NSLog(@"Added %@", languageAnnotation.title);
+  //  [self.mapView showAnnotations:[self.mapView.annotations objectAtIndex:0] animated:YES];
+    
 
 }
 
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
 
-    MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"String"];
+    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"annotationView"];
     if (!annotationView) {
-        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"String"];
+        NSLog(@"no annotationView");
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotationView"];
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     }
+    
 
     annotationView.enabled = YES;
     annotationView.canShowCallout = YES;
