@@ -12,36 +12,16 @@ import UIKit
 class ShadowButton: UIButton {
 
 
-    @IBInspectable var color: UIColor = UIColor(red: 0.295, green: 0.695, blue: 0.900, alpha: 0.970) {
-        didSet {
-            setShadow()
-        }
-    }
-
-    @IBInspectable var radius: CGFloat = 1 {
-        didSet {
-            setShadow()
-        }
-    }
-
-    @IBInspectable var opacity: CGFloat = 0.8 {
-        didSet {
-            setShadow()
-        }
-    }
-
-    @IBInspectable var shadowOffset: CGSize = CGSize(width: 2, height: 2) {
-        didSet {
-            setShadow()
-        }
-    }
-
-    @IBInspectable var shadowBrightness: CGFloat = 0.5 {
-        didSet {
-            setShadow()
-        }
-    }
-
+    var color: UIColor = UIColor(red: 0.295, green: 0.695, blue: 0.900, alpha: 0.970)
+    
+    var radius: CGFloat = 1
+    
+    var opacity: CGFloat = 0.8
+    
+    var shadowOffset: CGSize = CGSize(width: 2, height: 2)
+    
+    var shadowBrightness: CGFloat = 0.5
+    
     func setShadow() {
         self.backgroundColor = color
         self.layer.shadowColor = shadowColor()

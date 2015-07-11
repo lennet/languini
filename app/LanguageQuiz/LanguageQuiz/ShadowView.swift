@@ -12,35 +12,18 @@ import UIKit
 class ShadowView: UIView {
 
 
-    @IBInspectable var color: UIColor = UIColor(red: 0.295, green: 0.695, blue: 0.900, alpha: 0.970) {
-        didSet {
-            setShadow()
-        }
-    }
+    var color: UIColor = UIColor(red: 0.295, green: 0.695, blue: 0.900, alpha: 0.970)
 
-    @IBInspectable var radius: CGFloat = 1 {
-        didSet {
-            setShadow()
-        }
-    }
+    var radius: CGFloat = 1
+  
 
-    @IBInspectable var opacity: CGFloat = 0.8 {
-        didSet {
-            setShadow()
-        }
-    }
+    var opacity: CGFloat = 0.8 
+   
 
-    @IBInspectable var shadowOffset: CGSize = CGSize(width: 2, height: 2) {
-        didSet {
-            setShadow()
-        }
-    }
+    var shadowOffset: CGSize = CGSize(width: 2, height: 2)
 
-    @IBInspectable var shadowBrightness: CGFloat = 0.5 {
-        didSet {
-            setShadow()
-        }
-    }
+
+    var shadowBrightness: CGFloat = 0.5
 
     func setShadow() {
         self.backgroundColor = color

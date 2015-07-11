@@ -171,6 +171,8 @@
 		9835D9741B47ED6E002B0158 /* Game Over */ = {
 			isa = PBXGroup;
 			children = (
+				655E09A31B514CBB00A61A34 /* ResultTableViewCell.h */,
+				655E09A41B514CBB00A61A34 /* ResultTableViewCell.m */,
 				9835D9751B47ED9F002B0158 /* HighScoreHelper.h */,
 				9835D9761B47ED9F002B0158 /* HighScoreHelper.m */,
 				987451ED1AFFC7F9002BF401 /* ResultViewController.h */,
@@ -257,8 +259,6 @@
 		98E78EE11AEBECCA00C0909D /* Languini */ = {
 			isa = PBXGroup;
 			children = (
-				655E09A31B514CBB00A61A34 /* ResultTableViewCell.h */,
-				655E09A41B514CBB00A61A34 /* ResultTableViewCell.m */,
 				98712FE11B51970C00B441B2 /* Storyboard.storyboard */,
 				98E78EF41AEBECCA00C0909D /* LaunchScreen.xib */,
 				98E78EE61AEBECCA00C0909D /* AppDelegate.h */,
