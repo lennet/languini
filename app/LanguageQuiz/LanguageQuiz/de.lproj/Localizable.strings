@@ -8,3 +8,4 @@
 "user.unknown" = "Unbekannt";
 "resultView.nameInput.placeholder" = "Hier könnte dein Name stehen";
 "mapview.languagesannoation.title" = "%lu Sprachen";
+"startview.buttontitle.dictionary" = "Sprachen";

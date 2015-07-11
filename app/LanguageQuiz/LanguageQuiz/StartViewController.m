@@ -51,6 +51,8 @@ NSArray *countriesOnLocation;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    [self.dictionaryButton setTitle:NSLocalizedString(@"startview.buttontitle.dictionary", nil) forState:UIControlStateNormal];
+    
     Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
@@ -61,11 +63,6 @@ NSArray *countriesOnLocation;
         [self.offlineView setHidden:true];
         internetConnection = true;
     }
-    
-    
-    
-    
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
