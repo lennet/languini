@@ -8,6 +8,7 @@
 
 #import "DictionaryDetailViewController.h"
 #import "Sentence.h"
+#import "Country.h"
 #import "SentecesPageViewController.h"
 #import "SectionHeaderCell.h"
 #import "GlottoViewController.h"
@@ -112,23 +113,14 @@
 
 - (void)updateCountrySelection {
     [self checkButtonAvailability];
-//    NSString *currentCountryName = self.languoid.country[self.currentCountryIndex];
-    NSString *currentCountryName = @"asda";
+    Country *currentCountry = [self.languoid.country allObjects][self.currentCountryIndex];
+
+    self.countryLabel.text = currentCountry.name;
+
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([currentCountry.latitude floatValue], [currentCountry.longitude floatValue]);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 2000000, 2000000);
     
-    // todo
-    self.countryLabel.text = currentCountryName;
-    CLGeocoder *geocoder = [CLGeocoder new];
-    [geocoder geocodeAddressString:currentCountryName completionHandler:^(NSArray *placemarks, NSError *error) {
-        if (error) {
-            NSLog(@"Geocode failed with error: %@", error);
-            return;
-        }
-
-        CLPlacemark *placemark = [placemarks firstObject];
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([(CLCircularRegion *) placemark.region center], [(CLCircularRegion *) placemark.region radius], [(CLCircularRegion *) placemark.region radius]);
-        [mapView setRegion:region animated:YES];
-    }];
-
+    [mapView setRegion:region animated:YES];
 
 }
 
@@ -210,11 +202,21 @@
 }
 
 - (NSString *)getDetailStringForIndex:(NSIndexPath *)indexPath {
-    // todo fix
-    return @"";
     if ([valueArray[indexPath.section] isKindOfClass:[NSArray class]]) {
-        NSArray *valueObject = valueArray[indexPath.section];
+        NSArray *valueObject = [valueArray[indexPath.section] allObjects];
         NSString *valueString = valueObject[indexPath.row];
+        return valueString;
+    }
+    
+    if ([valueArray[indexPath.section] isKindOfClass:[NSSet class]]) {
+        NSArray *valueObject = [valueArray[indexPath.section] allObjects];
+        id object = valueObject[indexPath.row];
+        if ([object isKindOfClass:[Country class]]){
+            Country *country = object;
+            return country.name;
+            // todo localize;
+        }
+        NSString *valueString = object;
         return valueString;
     }
     if ([valueArray[indexPath.section] isKindOfClass:[NSNumber class]]) {
