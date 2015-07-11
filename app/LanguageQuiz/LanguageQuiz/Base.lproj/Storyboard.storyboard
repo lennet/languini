@@ -83,7 +83,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="TOe-6k-lvH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Geo Quiz">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,7 +98,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="wB1-n9-SC4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Lexikon">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,7 +113,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="J0A-rn-JD2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Quiz">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -303,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HF6-9g-XMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1253" y="-158"/>
+            <point key="canvasLocation" x="1461" y="-262"/>
         </scene>
         <!--Quiz Control View Controller-->
         <scene sceneID="9Ue-4c-U5p">
@@ -530,7 +530,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z51-wQ-cVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478" y="-923"/>
+            <point key="canvasLocation" x="1870" y="-923"/>
         </scene>
         <!--Dictionary View Controller-->
         <scene sceneID="DrU-uU-Cgg">
@@ -852,7 +852,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6uP-Wk-OXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1870" y="57"/>
+            <point key="canvasLocation" x="2038" y="41"/>
         </scene>
         <!--Glotto View Controller-->
         <scene sceneID="Yj4-Yd-U2V">
@@ -1112,7 +1112,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="2gw-Kf-hpr"/>
-        <segue reference="Rx6-Q3-4TC"/>
-        <segue reference="TCc-eR-Yti"/>
+        <segue reference="Jtr-sw-z6f"/>
+        <segue reference="TQK-dP-jBR"/>
     </inferredMetricsTieBreakers>
 </document>
