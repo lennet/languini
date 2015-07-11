@@ -20,7 +20,6 @@
 @property(strong, nonatomic) IBOutlet UIScrollView *sentencesScrollView;
 @property(strong, nonatomic) IBOutlet NSLayoutConstraint *infoContainerSpace;
 @property(strong, nonatomic) IBOutlet UITableView *tableView;
-@property(strong, nonatomic) NSMutableDictionary *objectData;
 @property(strong, nonatomic) IBOutlet NSLayoutConstraint *infoContainerHeight;
 @property(strong, nonatomic) NSArray *titleArray;
 @property(strong, nonatomic) NSArray *valueArray;
