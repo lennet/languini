@@ -39,15 +39,17 @@
     [self setUpSentenceScrollView];
     [self setUpCountrySelection];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
-    if (networkStatus == NotReachable) {
-        [self.offlineView setHidden:false];
+    
+    Reachability *connection = [Reachability new];
+    NetworkStatus netStatus = [connection currentReachabilityStatus];
+    if (netStatus == NotReachable) {
+        //  [self.offlineView setHidden:false];
+        [self.offlineView setAlpha:CGFLOAT_MAX];
         [self.rightCountryButton setHidden:true];
         [self.leftCountryButton setHidden:true];
         [self.glottologButton setHidden:true];
     } else {
-        [self.offlineView setHidden:true];
+        [self.offlineView setAlpha:CGFLOAT_MIN];
         [self.rightCountryButton setHidden:false];
         [self.leftCountryButton setHidden:false];
         [self.glottologButton setHidden:false];

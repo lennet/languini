@@ -11,9 +11,8 @@
 		650C6B121B3A0B9F00C354D2 /* SectionHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C6B111B3A0B9F00C354D2 /* SectionHeaderCell.m */; };
 		652CABF51B41558C00640BEF /* GlottoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652CABF41B41558C00640BEF /* GlottoViewController.m */; };
 		652FA8031B5172BC0060DAAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652FA8021B5172BC0060DAAC /* Images.xcassets */; };
-		652FA8041B51A7150060DAAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655E09A91B51686800A61A34 /* SystemConfiguration.framework */; };
+		652FA80A1B51B3420060DAAC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FA8091B51B3420060DAAC /* Reachability.m */; };
 		655E09A51B514CBB00A61A34 /* ResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E09A41B514CBB00A61A34 /* ResultTableViewCell.m */; };
-		655E09A81B51683400A61A34 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E09A71B51683400A61A34 /* Reachability.m */; };
 		65A205191B358C0E00266BC4 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A205181B358C0E00266BC4 /* DetailCell.m */; };
 		98206C531B136191003D7777 /* DictionaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C511B136191003D7777 /* DictionaryDetailViewController.m */; };
 		98206C601B1361A5003D7777 /* DictionaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C591B1361A5003D7777 /* DictionaryTableViewCell.m */; };
@@ -55,11 +54,10 @@
 		652CABF31B41558C00640BEF /* GlottoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlottoViewController.h; sourceTree = "<group>"; };
 		652CABF41B41558C00640BEF /* GlottoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlottoViewController.m; sourceTree = "<group>"; };
 		652FA8021B5172BC0060DAAC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		652FA8081B51B3420060DAAC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		652FA8091B51B3420060DAAC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		655E09A31B514CBB00A61A34 /* ResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTableViewCell.h; sourceTree = "<group>"; };
 		655E09A41B514CBB00A61A34 /* ResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultTableViewCell.m; sourceTree = "<group>"; };
-		655E09A61B51683400A61A34 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		655E09A71B51683400A61A34 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		655E09A91B51686800A61A34 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		65A205171B358C0E00266BC4 /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
 		65A205181B358C0E00266BC4 /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
 		98206C501B136191003D7777 /* DictionaryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryDetailViewController.h; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				652FA8041B51A7150060DAAC /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +240,8 @@
 		98E78ED61AEBECCA00C0909D = {
 			isa = PBXGroup;
 			children = (
+				652FA8081B51B3420060DAAC /* Reachability.h */,
+				652FA8091B51B3420060DAAC /* Reachability.m */,
 				98E78EE11AEBECCA00C0909D /* Languini */,
 				98E78EE01AEBECCA00C0909D /* Products */,
 			);
@@ -280,12 +279,9 @@
 		98E78EE21AEBECCA00C0909D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				655E09A91B51686800A61A34 /* SystemConfiguration.framework */,
 				98712FE61B519B1700B441B2 /* Localizable.strings */,
 				98E78EE31AEBECCA00C0909D /* Info.plist */,
 				98E78EE41AEBECCA00C0909D /* main.m */,
-				655E09A61B51683400A61A34 /* Reachability.h */,
-				655E09A71B51683400A61A34 /* Reachability.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -380,6 +376,7 @@
 				98E78EE81AEBECCA00C0909D /* AppDelegate.m in Sources */,
 				98712FCE1B51512A00B441B2 /* Languoid.m in Sources */,
 				652CABF51B41558C00640BEF /* GlottoViewController.m in Sources */,
+				652FA80A1B51B3420060DAAC /* Reachability.m in Sources */,
 				98E78F131AEBF4FF00C0909D /* QuizViewController.m in Sources */,
 				65A205191B358C0E00266BC4 /* DetailCell.m in Sources */,
 				9835D9771B47ED9F002B0158 /* HighScoreHelper.m in Sources */,
@@ -401,7 +398,6 @@
 				9835D9801B481069002B0158 /* Preferences.m in Sources */,
 				98ED7E141B110766000A5625 /* QuizControlViewController.m in Sources */,
 				98E78EEB1AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld in Sources */,
-				655E09A81B51683400A61A34 /* Reachability.m in Sources */,
 				98206C6D1B13698D003D7777 /* QuizBaseViewController.m in Sources */,
 				98206C621B1361A5003D7777 /* DictionaryViewController.m in Sources */,
 				655E09A51B514CBB00A61A34 /* ResultTableViewCell.m in Sources */,
