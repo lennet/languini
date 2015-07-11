@@ -54,6 +54,7 @@
         [self.leftCountryButton setHidden:false];
         [self.glottologButton setHidden:false];
     }
+    [self checkButtonAvailability];
 }
 
 - (void)initObjectData {
@@ -126,7 +127,7 @@
 
 - (void)checkButtonAvailability {
     self.leftCountryButton.hidden = self.currentCountryIndex == 0;
-    self.rightCountryButton.hidden = self.currentCountryIndex == self.languoid.country.count - 1;
+    self.rightCountryButton.hidden = self.currentCountryIndex == [self.languoid.country allObjects].count - 1;
 }
 
 - (void)updateCountrySelection {
@@ -138,7 +139,6 @@
     } else {
         self.countryLabel.text = currentCountry.name;
     }
-    
 
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([currentCountry.latitude floatValue], [currentCountry.longitude floatValue]);
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 2000000, 2000000);
@@ -164,7 +164,7 @@
             SentecesPageViewController *pageViewController = [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"SentecesPageViewController"];
 
             UIView *pageView = pageViewController.view;
-            pageView.frame = CGRectMake(self.sentencesScrollView.contentSize.width, 0, self.sentencesScrollView.frame.size.width, self.sentencesScrollView.frame.size.height);
+            pageView.frame = self.sentencesScrollView.bounds;
             [self.sentencesScrollView addSubview:pageView];
             pageViewController.sentenceLabel.text = sentence.sentence;
             pageViewController.translationLabel.text = [NSString stringWithFormat:@"(%@)", sentence.translation];
@@ -214,7 +214,7 @@
     SectionHeaderCell *headerCell = [tableView dequeueReusableCellWithIdentifier:@"headerCell"];
     NSString *labelString = titleArray[section];
     
-    headerCell.sectionLabel.text = labelString;
+    headerCell.sectionLabel.text = NSLocalizedString(labelString, nil);
     return headerCell.contentView;
 
 }

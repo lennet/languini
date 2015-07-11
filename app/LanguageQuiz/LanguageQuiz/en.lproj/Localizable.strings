@@ -8,3 +8,14 @@
 "user.unknown" = "Unkown";
 "resultView.nameInput.placeholder" = "Your name could be here";
 "mapview.languagesannoation.title" = "%lu Languages";
+"startview.buttontitle.dictionary" = "Languages";
+"resultView.finishButton.title" = "Exit";
+"Classification" = "Classification";
+"ISO 6393 Code" = "ISO 6393 Code";
+"Location Description" = "Location Description";
+"Population" = "Population";
+"Language Status" = "Language Status";
+"Dialects" = "Dialects";
+"Countries" = "Also spoken in";
+"Alternate Names" = "Alternate Names";
+"Name" = "Name";

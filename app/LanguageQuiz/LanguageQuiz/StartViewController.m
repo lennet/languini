@@ -50,21 +50,27 @@ NSArray *countriesOnLocation;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+<<<<<<< HEAD
     Reachability *connection = [Reachability new];
     NetworkStatus netStatus = [connection currentReachabilityStatus];
     if (netStatus == NotReachable) {
       //  [self.offlineView setHidden:false];
         [self.offlineView setAlpha:CGFLOAT_MAX];
+=======
+    
+    [self.dictionaryButton setTitle:NSLocalizedString(@"startview.buttontitle.dictionary", nil) forState:UIControlStateNormal];
+    
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        [self.offlineView setHidden:false];
+        UIImage *test = [UIImage imageNamed:@"world"];
+>>>>>>> 19109703dec1cad9b9e34f0c6aa2ff1d63eb4cf8
         internetConnection = false;
     } else {
         [self.offlineView setAlpha:CGFLOAT_MIN];
         internetConnection = true;
     }
-    
-    
-    
-    
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
