@@ -93,15 +93,12 @@ NSArray *countriesOnLocation;
 
         [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
             CLPlacemark *placemark = placemarks.firstObject;
-
-            CLLocation *correctLocation = [self.quizController getCorrectLocation];
-            CLLocationDistance distance = [location distanceFromLocation:correctLocation];
-
-            if (placemark.ISOcountryCode != nil && [self.quizController isValidAnswer:placemark.ISOcountryCode distance:distance]) {
+            if (placemark.ISOcountryCode != nil && [self.quizController isValidAnswer:placemark.ISOcountryCode andLocation:location]) {
                 NSLog(@"richtig");
                 [self performSelector:@selector(nextQuestion) withObject:nil afterDelay:questionDelay];
             } else if (self.quizMode) {
                 CLLocationCoordinate2D locations[2];
+                CLLocation *correctLocation = [self.quizController getCorrectLocationWithLocation:location];
                 locations[0] = touchCoordinate;
                 locations[1] = correctLocation.coordinate;
 

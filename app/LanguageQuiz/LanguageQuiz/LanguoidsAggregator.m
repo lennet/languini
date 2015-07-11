@@ -72,7 +72,6 @@
 - (NSArray *)getLanguiodsForCountryCode:(NSString *)countryCode {
     Country *selectedCountry = [CountriesAggregator getCountryForCode:countryCode];
     if (selectedCountry){
-        NSSet *languoids = [selectedCountry languiod];
         return [selectedCountry.languiod allObjects];
     }
     return @[];

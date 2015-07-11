@@ -77,7 +77,7 @@
 
 - (void)validateAnswerForIndex:(NSUInteger)index {
     UIButton *selectedButton = self.buttonArray[index];
-    // can be improved
+
     if ([self.quizControlViewController isValidAnswerWithLanguoid:self.answers[index]]) {
         [self setColor:[UIColor colorWithRed:56 / 255.0 green:237 / 255.0 blue:56 / 255.0 alpha:1] forButton:selectedButton withLangouid:self.answers[index]];
     } else {

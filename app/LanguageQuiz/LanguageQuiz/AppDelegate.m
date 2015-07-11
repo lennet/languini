@@ -137,7 +137,7 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         } else if (error){
-            NSLog(error.description);
+            NSLog(@"%@",error.description);
         }
     }
 }
