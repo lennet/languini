@@ -27,7 +27,6 @@
 }
 
 -(NSUInteger)getLatestScoreIndexForType:(QuizType)type{
-    NSManagedObjectContext *context = [self context];
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"score" ascending:NO];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"quizType == %i", type];
     NSArray *tmpScoreArray = [self getObjectsForEntity:[HighScoreEntry entityName] withSortDescriptor:sortDescriptor andPredicate:predicate andFetchLimit:10];

@@ -8,11 +8,11 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable // not supported for iOS 7
 class ShadowView: UIView {
 
 
-    @IBInspectable var color: UIColor = UIColor.blueColor() {
+    @IBInspectable var color: UIColor = UIColor(red: 0.295, green: 0.695, blue: 0.900, alpha: 0.970) {
         didSet {
             setShadow()
         }
