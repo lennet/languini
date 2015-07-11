@@ -128,7 +128,7 @@ NSArray *countriesOnLocation;
     }
     MKPointAnnotation *languageAnnotation = [[MKPointAnnotation alloc] init];
     languageAnnotation.coordinate = touchCoordinate;
-    languageAnnotation.title = [NSString stringWithFormat:@"%lu Sprachen", (unsigned long) countriesOnLocation.count];
+    languageAnnotation.title = [NSString stringWithFormat:NSLocalizedString(@"mapview.languagesannoation.title", nil), (unsigned long) countriesOnLocation.count];
     languageAnnotation.subtitle = @"";
     annotationSet = true;
     [self.mapView addAnnotation:languageAnnotation];

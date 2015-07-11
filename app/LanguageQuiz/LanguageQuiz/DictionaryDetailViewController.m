@@ -115,7 +115,12 @@
     [self checkButtonAvailability];
     Country *currentCountry = [self.languoid.country allObjects][self.currentCountryIndex];
 
-    self.countryLabel.text = currentCountry.name;
+    if ([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"de"] && currentCountry.nameDe) {
+        self.countryLabel.text = currentCountry.nameDe;
+    } else {
+        self.countryLabel.text = currentCountry.name;
+    }
+    
 
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([currentCountry.latitude floatValue], [currentCountry.longitude floatValue]);
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 2000000, 2000000);
@@ -161,7 +166,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    if ([valueArray[section] isKindOfClass:[NSArray class]]) {
+    if ([valueArray[section] isKindOfClass:[NSArray class]]|| [valueArray[section] isKindOfClass:[NSSet class]]) {
         return [valueArray[section] count];
     } else {
         return 1;
@@ -189,13 +194,8 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     SectionHeaderCell *headerCell = [tableView dequeueReusableCellWithIdentifier:@"headerCell"];
-    NSString *labelString;
-    if (section == [titleArray count]) {
-        labelString = @"Glottologeintrag ";
-    }
-    else {
-        labelString = titleArray[section];
-    }
+    NSString *labelString = titleArray[section];
+    
     headerCell.sectionLabel.text = labelString;
     return headerCell.contentView;
 
@@ -213,8 +213,11 @@
         id object = valueObject[indexPath.row];
         if ([object isKindOfClass:[Country class]]){
             Country *country = object;
-            return country.name;
-            // todo localize;
+            if ([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"de"] && country.nameDe) {
+                return country.nameDe;
+            } else {
+                return country.name;
+            }
         }
         NSString *valueString = object;
         return valueString;

@@ -1,0 +1,10 @@
+/* 
+  localizable.strings
+  Languini
+
+  Created by Leo Thomas on 11/07/15.
+  Copyright (c) 2015 Coding Da Vinci. All rights reserved.
+*/
+"user.unknown" = "Unbekannt";
+"resultView.nameInput.placeholder" = "Hier könnte dein Name stehen";
+"mapview.languagesannoation.title" = "%lu Sprachen";

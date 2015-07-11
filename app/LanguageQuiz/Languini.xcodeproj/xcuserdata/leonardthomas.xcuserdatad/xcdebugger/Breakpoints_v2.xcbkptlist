@@ -35,29 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LanguageQuiz/LanguoidsAggregator.m"
-            timestampString = "458319784.106143"
+            filePath = "LanguageQuiz/QuizControlViewController.m"
+            timestampString = "458331340.324776"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "-getLanguiodsForCountryCode:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LanguageQuiz/LanguoidsAggregator.m"
-            timestampString = "458319784.106143"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "+getLanguoidForCode:"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "-isValidAnswer:andLocation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
