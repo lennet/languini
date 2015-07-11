@@ -18,6 +18,7 @@
 @property(strong, nonatomic) IBOutlet UITextField *nameInput;
 @property(strong, nonatomic) NSArray *scoreEntries;
 @property(strong, nonatomic) HighScoreHelper *scoreHelper;
+@property (strong, nonatomic) IBOutlet UIButton *finishButton;
 @property(strong, nonatomic) Preferences *prefs;
 @property NSUInteger *latestScoreItemIndex;
 @property(nonatomic) NSInteger newScoreIndex;
@@ -37,6 +38,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
+    [self.finishButton setTitle:NSLocalizedString(@"resultView.finishButton.title", nil) forState:UIControlStateNormal];
+    
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
     UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 15, 0)];
