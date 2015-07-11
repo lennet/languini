@@ -13,14 +13,6 @@
 
 @implementation SentencesAggregator
 
-- (id)init {
-    self = [super init];
-    if (self && ![self dataBaseAlreadyFilled]) {
-        [self aggregateSentences];
-    }
-    return self;
-}
-
 - (BOOL)dataBaseAlreadyFilled {
     return [self countObjectsForEntity:[Sentence entityName] withPredicate:nil] > 0;
 }
@@ -51,8 +43,8 @@
     NSManagedObjectContext *context = appdelegate.managedObjectContext;
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sentence.@count != 0"];
 
-
-    NSInteger randomNumber = arc4random() % [self countObjectsForEntity:[Languoid entityName] withPredicate:predicate];
+    NSUInteger count = [self countObjectsForEntity:[Languoid entityName] withPredicate:predicate];
+    NSInteger randomNumber = arc4random() % count;
     NSUInteger offset = magicalOffset + randomNumber;
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[Languoid entityName]];
 

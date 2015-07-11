@@ -35,13 +35,12 @@ typedef enum {
 @property(strong, nonatomic) id delegate;
 @property(nonatomic) QuizType type;
 
-- (BOOL)isValidAnswer:(NSString *)selectedCountry distance:(CLLocationDistance)distance;
-
+- (BOOL)isValidAnswer:(NSString *)selectedCountry andLocation:(CLLocation*)selectedLocation;
 - (BOOL)isValidAnswerWithLanguoid:(Languoid *)languoid;
 
 - (void)nextQuestion;
 
-- (CLLocation *)getCorrectLocation;
+- (CLLocation *)getCorrectLocationWithLocation:(CLLocation*)location;
 
 - (Languoid *)getCorrectLanguoid;
 

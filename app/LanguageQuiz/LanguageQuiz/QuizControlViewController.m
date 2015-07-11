@@ -9,6 +9,7 @@
 
 #import "QuizControlViewController.h"
 #import "Sentence.h"
+#import "Country.h"
 #import "SentencesAggregator.h"
 #import "LanguoidsAggregator.h"
 
@@ -110,28 +111,44 @@
     return answerArray;
 }
 
-- (BOOL)isValidAnswer:(NSString *)selectedCountry distance:(CLLocationDistance)distance {
-    NSCharacterSet *delimiters = [NSCharacterSet characterSetWithCharactersInString:@"[]"];
-    // todo use nspredicate
-    for (NSString *country in self.curentSentence.languoid.countries) {
-        NSArray *seperatedString = [country componentsSeparatedByCharactersInSet:delimiters];
-        for (NSString *substring in seperatedString) {
-            if ([substring isEqualToString:selectedCountry]) {
-                [self updateScoreLabel:maxDistance];
-                self.lifesLeft++;
-                [self updateLifeLabel:YES];
-                return YES;
-            }
-        }
-    }
+- (BOOL)isValidAnswer:(NSString *)selectedCountry andLocation:(CLLocation *)selectedLocation{
 
+    for (Country *country in self.curentSentence.languoid.country) {
+
+        if ([country.code isEqualToString:selectedCountry]) {
+            [self updateScoreLabel:maxDistance];
+            self.lifesLeft++;
+            [self updateLifeLabel:YES];
+            return YES;
+        }
+        
+    }
+    
+    CLLocation *closestLocation = [self getClosestLocationForLocation:selectedLocation andLanguoid:self.curentSentence.languoid];
+    
+    CLLocationDistance distance = [selectedLocation distanceFromLocation:closestLocation];
     NSInteger newPoints = [self pointsForAnswerWithDistance:distance];
+    
     if (newPoints > 0) {
         [self updateScoreLabel:newPoints];
     } else {
         [self updateLifeLabel:YES];
     }
     return NO;
+}
+
+- (CLLocation *)getClosestLocationForLocation:(CLLocation *)selectedLocation andLanguoid:(Languoid *)languoid {
+    CLLocation *location;
+    double minValue = MAXFLOAT;
+    for (Country *country in languoid.country) {
+        CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:[country.latitude floatValue] longitude:[country.longitude floatValue]];
+        CLLocationDistance distance = [selectedLocation distanceFromLocation:currentLocation];
+        if (distance < minValue) {
+            location = currentLocation;
+            minValue = distance;
+        }
+    }
+    return location;
 }
 
 - (BOOL)isValidAnswerWithLanguoid:(Languoid *)languoid {
@@ -147,8 +164,8 @@
     return self.curentSentence.languoid;
 }
 
-- (CLLocation *)getCorrectLocation {
-    return [[CLLocation alloc] initWithLatitude:self.curentSentence.languoid.latitude longitude:self.curentSentence.languoid.longitude];
+- (CLLocation *)getCorrectLocationWithLocation:(CLLocation*)location{
+    return [self getClosestLocationForLocation:location andLanguoid:self.curentSentence.languoid];
 }
 
 - (NSInteger)getScore {

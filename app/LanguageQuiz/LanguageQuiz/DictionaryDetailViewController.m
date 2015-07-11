@@ -8,6 +8,7 @@
 
 #import "DictionaryDetailViewController.h"
 #import "Sentence.h"
+#import "Country.h"
 #import "SentecesPageViewController.h"
 #import "SectionHeaderCell.h"
 #import "GlottoViewController.h"
@@ -58,7 +59,7 @@
     self.languoid.name != nil ? _objectData[@"Name"] = self.languoid.name : nil;
     self.languoid.alternateNames != nil ? _objectData[@"Alternate Names"] = self.languoid.alternateNames : nil;
     self.languoid.classification != nil ? _objectData[@"Classification"] = self.languoid.classification : nil;
-    self.languoid.countries != nil ? _objectData[@"Countries"] = self.languoid.countries : nil;
+    self.languoid.country != nil ? _objectData[@"Countries"] = self.languoid.country : nil;
     self.languoid.dialects != nil ? _objectData[@"Dialects"] = self.languoid.dialects : nil;
     self.languoid.iso6393 != nil ? _objectData[@"ISO 6393 Code"] = self.languoid.iso6393 : nil;
     self.languoid.lanugageStatus != nil ? _objectData[@"Language Status"] = self.languoid.lanugageStatus : nil;
@@ -115,7 +116,7 @@
 }
 
 - (void)setUpCountrySelection {
-    if (self.languoid.countries.count != 0) {
+    if (self.languoid.country.count != 0) {
         self.currentCountryIndex = 0;
         [self updateCountrySelection];
     }
@@ -123,26 +124,24 @@
 
 - (void)checkButtonAvailability {
     self.leftCountryButton.hidden = self.currentCountryIndex == 0;
-    self.rightCountryButton.hidden = self.currentCountryIndex == self.languoid.countries.count - 1;
+    self.rightCountryButton.hidden = self.currentCountryIndex == self.languoid.country.count - 1;
 }
 
 - (void)updateCountrySelection {
     [self checkButtonAvailability];
-    NSString *currentCountryName = self.languoid.countries[self.currentCountryIndex];
+    Country *currentCountry = [self.languoid.country allObjects][self.currentCountryIndex];
 
-    self.countryLabel.text = currentCountryName;
-    CLGeocoder *geocoder = [CLGeocoder new];
-    [geocoder geocodeAddressString:currentCountryName completionHandler:^(NSArray *placemarks, NSError *error) {
-        if (error) {
-            NSLog(@"Geocode failed with error: %@", error);
-            return;
-        }
+    if ([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"de"] && currentCountry.nameDe) {
+        self.countryLabel.text = currentCountry.nameDe;
+    } else {
+        self.countryLabel.text = currentCountry.name;
+    }
+    
 
-        CLPlacemark *placemark = [placemarks firstObject];
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([(CLCircularRegion *) placemark.region center], [(CLCircularRegion *) placemark.region radius], [(CLCircularRegion *) placemark.region radius]);
-        [mapView setRegion:region animated:YES];
-    }];
-
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([currentCountry.latitude floatValue], [currentCountry.longitude floatValue]);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 2000000, 2000000);
+    
+    [mapView setRegion:region animated:YES];
 
 }
 
@@ -171,7 +170,7 @@
             self.sentencesScrollView.contentSize = CGSizeMake(self.sentencesScrollView.contentSize.width + pageView.frame.size.width, self.sentencesScrollView.contentSize.height);
         }
 
-    } else if (self.languoid.countries.count > 0) {
+    } else if (self.languoid.country.count > 0) {
         self.infoContainerSpace.constant = 2 * standardDistance + CGRectGetHeight(self.countryLabel.frame);
     } else {
         self.infoContainerSpace.constant = standardDistance;
@@ -183,7 +182,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    if ([valueArray[section] isKindOfClass:[NSArray class]]) {
+    if ([valueArray[section] isKindOfClass:[NSArray class]]|| [valueArray[section] isKindOfClass:[NSSet class]]) {
         return [valueArray[section] count];
     } else {
         return 1;
@@ -211,13 +210,8 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     SectionHeaderCell *headerCell = [tableView dequeueReusableCellWithIdentifier:@"headerCell"];
-    NSString *labelString;
-    if (section == [titleArray count]) {
-        labelString = @"Glottologeintrag ";
-    }
-    else {
-        labelString = titleArray[section];
-    }
+    NSString *labelString = titleArray[section];
+    
     headerCell.sectionLabel.text = labelString;
     return headerCell.contentView;
 
@@ -225,8 +219,23 @@
 
 - (NSString *)getDetailStringForIndex:(NSIndexPath *)indexPath {
     if ([valueArray[indexPath.section] isKindOfClass:[NSArray class]]) {
-        NSArray *valueObject = valueArray[indexPath.section];
+        NSArray *valueObject = [valueArray[indexPath.section] allObjects];
         NSString *valueString = valueObject[indexPath.row];
+        return valueString;
+    }
+    
+    if ([valueArray[indexPath.section] isKindOfClass:[NSSet class]]) {
+        NSArray *valueObject = [valueArray[indexPath.section] allObjects];
+        id object = valueObject[indexPath.row];
+        if ([object isKindOfClass:[Country class]]){
+            Country *country = object;
+            if ([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"de"] && country.nameDe) {
+                return country.nameDe;
+            } else {
+                return country.name;
+            }
+        }
+        NSString *valueString = object;
         return valueString;
     }
     if ([valueArray[indexPath.section] isKindOfClass:[NSNumber class]]) {

@@ -35,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LanguageQuiz/StartViewController.m"
-            timestampString = "457709059.128028"
+            filePath = "LanguageQuiz/QuizControlViewController.m"
+            timestampString = "458331340.324776"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
-            landmarkName = "-prepareForSegue:sender:"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "-isValidAnswer:andLocation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

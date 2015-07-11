@@ -10,6 +10,7 @@
 #import "DataAggregator.h"
 #import "Languoid.h"
 
+@class Languoid;
 @interface LanguiodsAggregator : DataAggregator
 
 - (NSArray *)getLanguiodsForCountryCode:(NSString *)countryCode;

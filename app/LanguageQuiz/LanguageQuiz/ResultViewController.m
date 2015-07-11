@@ -40,6 +40,7 @@
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
     UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 15, 0)];
+    self.nameInput.placeholder = NSLocalizedString(@"resultView.nameInput.placeholder", nil);
     self.nameInput.leftView = paddingView;
     self.nameInput.leftViewMode = UITextFieldViewModeAlways;
 
@@ -88,7 +89,7 @@
     if (self.nameInput.text.length > 0) {
         return self.nameInput.text;
     } else {
-        return @"Unbekannt";
+        return NSLocalizedString(@"user.unknown", nil);
     }
 }
 
