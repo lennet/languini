@@ -11,6 +11,7 @@
 #import "SentecesPageViewController.h"
 #import "SectionHeaderCell.h"
 #import "GlottoViewController.h"
+#import "Reachability.h"
 
 #define standardDistance 20
 #define sectionHeaderHeight 44
@@ -27,6 +28,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+   
+    
     self.title = self.languoid.name;
 
     [self.glottologButton setTitle:[NSString stringWithFormat:@"Glottlog - %@", [self.languoid valueForKey:@"key"]] forState:UIControlStateNormal];
@@ -35,6 +38,19 @@
     [self setUpSentenceScrollView];
     [self setUpCountrySelection];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
+    if (networkStatus == NotReachable) {
+        [self.offlineView setHidden:false];
+        [self.rightCountryButton setHidden:true];
+        [self.leftCountryButton setHidden:true];
+        [self.glottologButton setHidden:true];
+    } else {
+        [self.offlineView setHidden:true];
+        [self.rightCountryButton setHidden:false];
+        [self.leftCountryButton setHidden:false];
+        [self.glottologButton setHidden:false];
+    }
 }
 
 - (void)initObjectData {

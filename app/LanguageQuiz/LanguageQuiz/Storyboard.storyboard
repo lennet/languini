@@ -27,6 +27,35 @@
                                     <outletCollection property="gestureRecognizers" destination="ABN-hj-RJE" appends="YES" id="4H8-QX-hua"/>
                                 </connections>
                             </mapView>
+                            <view contentMode="scaleToFill" misplaced="YES" restorationIdentifier="offlineView" translatesAutoresizingMaskIntoConstraints="NO" id="1Ap-ff-kKD" userLabel="offlineView">
+                                <rect key="frame" x="0.0" y="15" width="320" height="548"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.34999999999999964" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world" translatesAutoresizingMaskIntoConstraints="NO" id="cZT-ag-3nA">
+                                        <rect key="frame" x="0.0" y="-20" width="328" height="570"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keine Internetverbindung" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCI-Mm-GJ5">
+                                        <rect key="frame" x="40" y="192" width="241" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="70N-Wj-9Ho"/>
+                                            <constraint firstAttribute="width" constant="241" id="sOe-Qc-qvb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.7352132546274287" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cZT-ag-3nA" secondAttribute="bottom" constant="-2" id="CoH-wr-bfw"/>
+                                    <constraint firstItem="cZT-ag-3nA" firstAttribute="leading" secondItem="1Ap-ff-kKD" secondAttribute="leading" id="DGK-Bg-mUE"/>
+                                    <constraint firstAttribute="centerX" secondItem="LCI-Mm-GJ5" secondAttribute="centerX" id="PXH-Vl-7Ot"/>
+                                    <constraint firstAttribute="trailing" secondItem="cZT-ag-3nA" secondAttribute="trailing" constant="-8" id="Q9J-b5-tG4"/>
+                                    <constraint firstItem="cZT-ag-3nA" firstAttribute="leading" secondItem="1Ap-ff-kKD" secondAttribute="leading" id="Qwf-wD-P8V"/>
+                                    <constraint firstItem="cZT-ag-3nA" firstAttribute="top" secondItem="1Ap-ff-kKD" secondAttribute="top" constant="-20" id="h40-sv-C4Z"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cZT-ag-3nA" secondAttribute="bottom" constant="-2" id="pPy-P8-ame"/>
+                                    <constraint firstAttribute="centerY" secondItem="LCI-Mm-GJ5" secondAttribute="centerY" constant="71" id="xMO-vf-oky"/>
+                                </constraints>
+                            </view>
                             <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tr3-Tz-zdR">
                                 <rect key="frame" x="0.0" y="514" width="320" height="54"/>
                                 <constraints>
@@ -140,15 +169,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="sZj-IF-K1T" secondAttribute="trailing" constant="20" id="3Ze-5H-D3D"/>
+                            <constraint firstItem="1Ap-ff-kKD" firstAttribute="top" secondItem="u9c-mU-8TC" secondAttribute="top" constant="20" id="4FP-WW-iBl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pBP-bo-fcc" secondAttribute="trailing" constant="10" id="52B-y8-AB1"/>
+                            <constraint firstItem="1Ap-ff-kKD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="u9c-mU-8TC" secondAttribute="top" constant="20" id="7Bb-Ss-6AE"/>
                             <constraint firstItem="pBP-bo-fcc" firstAttribute="top" secondItem="sCD-JF-pOK" secondAttribute="bottom" constant="10" id="8cF-jB-UJ7"/>
                             <constraint firstItem="sCD-JF-pOK" firstAttribute="leading" secondItem="u9c-mU-8TC" secondAttribute="leadingMargin" constant="10" id="H1S-Sc-sbv"/>
+                            <constraint firstItem="1Ap-ff-kKD" firstAttribute="leading" secondItem="u9c-mU-8TC" secondAttribute="leading" id="IMf-Gc-qjV"/>
                             <constraint firstItem="f6Y-aj-Lch" firstAttribute="top" secondItem="MVf-aw-ib1" secondAttribute="bottom" id="LaQ-Jt-aCG"/>
                             <constraint firstItem="f0d-l1-lTG" firstAttribute="top" secondItem="K4I-MM-2cH" secondAttribute="bottom" constant="8" id="M3h-BE-8wW"/>
                             <constraint firstItem="f6Y-aj-Lch" firstAttribute="top" secondItem="f0d-l1-lTG" secondAttribute="bottom" constant="8" id="NaW-sX-mFm"/>
                             <constraint firstItem="f6Y-aj-Lch" firstAttribute="top" secondItem="tr3-Tz-zdR" secondAttribute="bottom" id="RXz-fc-Tb6"/>
                             <constraint firstItem="K4I-MM-2cH" firstAttribute="leading" secondItem="u9c-mU-8TC" secondAttribute="leadingMargin" constant="10" id="Yq3-b7-LIw"/>
+                            <constraint firstAttribute="bottom" secondItem="1Ap-ff-kKD" secondAttribute="bottom" id="ah6-AX-WHg"/>
                             <constraint firstItem="MVf-aw-ib1" firstAttribute="leading" secondItem="u9c-mU-8TC" secondAttribute="leading" id="bQc-xH-wZd"/>
+                            <constraint firstAttribute="trailing" secondItem="1Ap-ff-kKD" secondAttribute="trailing" id="bhZ-aa-t19"/>
                             <constraint firstItem="K4I-MM-2cH" firstAttribute="top" secondItem="pBP-bo-fcc" secondAttribute="bottom" constant="10" id="cDH-S8-HO5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sCD-JF-pOK" secondAttribute="trailing" constant="10" id="cY2-6o-PyA"/>
                             <constraint firstAttribute="trailing" secondItem="MVf-aw-ib1" secondAttribute="trailing" id="dI6-3D-vFg"/>
@@ -157,6 +191,7 @@
                             <constraint firstItem="MVf-aw-ib1" firstAttribute="top" secondItem="pPb-79-xUk" secondAttribute="bottom" id="q6A-JX-Jga"/>
                             <constraint firstItem="pBP-bo-fcc" firstAttribute="leading" secondItem="u9c-mU-8TC" secondAttribute="leadingMargin" constant="10" id="qkE-kc-PWE"/>
                             <constraint firstItem="f0d-l1-lTG" firstAttribute="trailing" secondItem="u9c-mU-8TC" secondAttribute="trailingMargin" constant="8" id="ql1-GT-nVF"/>
+                            <constraint firstAttribute="trailing" secondItem="1Ap-ff-kKD" secondAttribute="trailing" id="v8d-fp-HIT"/>
                             <constraint firstAttribute="trailing" secondItem="tr3-Tz-zdR" secondAttribute="trailing" id="vMX-xd-uXh"/>
                             <constraint firstItem="tr3-Tz-zdR" firstAttribute="leading" secondItem="u9c-mU-8TC" secondAttribute="leading" id="vdU-KY-FxE"/>
                             <constraint firstItem="sZj-IF-K1T" firstAttribute="top" secondItem="pPb-79-xUk" secondAttribute="bottom" constant="20" id="w2f-N4-wCU"/>
@@ -171,6 +206,7 @@
                         <outlet property="gameControllerContainer" destination="tr3-Tz-zdR" id="oF3-MX-Jjy"/>
                         <outlet property="geoQuizButton" destination="sCD-JF-pOK" id="XrO-fU-6oW"/>
                         <outlet property="mapView" destination="MVf-aw-ib1" id="vZ3-je-OSI"/>
+                        <outlet property="offlineView" destination="1Ap-ff-kKD" id="InD-yl-ZkY"/>
                         <outlet property="questionLabel" destination="agu-9X-sN5" id="EHt-5a-xP3"/>
                         <outlet property="questionView" destination="sZj-IF-K1T" id="rcA-A5-PbP"/>
                         <outlet property="quizButton" destination="pBP-bo-fcc" id="J3M-6m-b9C"/>
@@ -820,6 +856,36 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                                                     <outlet property="delegate" destination="ZFv-P4-7wP" id="GOv-aJ-I34"/>
                                                 </connections>
                                             </mapView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lc9-Vm-jxE" userLabel="offlineView">
+                                                <rect key="frame" x="0.0" y="20" width="320" height="150"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world" translatesAutoresizingMaskIntoConstraints="NO" id="IH4-Aj-q7Q">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="150" id="VpL-o5-Lh0"/>
+                                                            <constraint firstAttribute="width" constant="320" id="tWd-os-OrG"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keine Internetverbindung" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-bG-W62">
+                                                        <rect key="frame" x="60.5" y="65.5" width="199" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="IH4-Aj-q7Q" firstAttribute="top" secondItem="Lc9-Vm-jxE" secondAttribute="top" id="5NR-ZC-DMy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="IH4-Aj-q7Q" secondAttribute="bottom" id="A8k-nx-NGg"/>
+                                                    <constraint firstAttribute="width" constant="320" id="HUc-BD-aKQ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="IH4-Aj-q7Q" secondAttribute="bottom" id="Kof-VX-0TQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IH4-Aj-q7Q" secondAttribute="trailing" id="SGR-6u-eh3"/>
+                                                    <constraint firstAttribute="height" constant="150" id="ULR-Dz-3cD"/>
+                                                    <constraint firstAttribute="centerX" secondItem="l6c-bG-W62" secondAttribute="centerX" id="euk-aw-hce"/>
+                                                    <constraint firstItem="IH4-Aj-q7Q" firstAttribute="leading" secondItem="Lc9-Vm-jxE" secondAttribute="leading" id="wts-GX-NAw"/>
+                                                    <constraint firstAttribute="centerY" secondItem="l6c-bG-W62" secondAttribute="centerY" id="xg9-Nh-j6j"/>
+                                                </constraints>
+                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JL-2S-cEQ">
                                                 <rect key="frame" x="10" y="73" width="44" height="44"/>
                                                 <constraints>
@@ -870,8 +936,10 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="MHZ-mq-8iT" secondAttribute="trailing" constant="20" id="3QT-gf-g4o"/>
                                             <constraint firstItem="U5Z-Ol-tUp" firstAttribute="top" secondItem="EkL-Po-0tD" secondAttribute="bottom" constant="20" id="8hd-Lb-4gx"/>
+                                            <constraint firstAttribute="trailing" secondItem="Lc9-Vm-jxE" secondAttribute="trailing" id="Arj-7z-s6j"/>
                                             <constraint firstAttribute="trailing" secondItem="XFD-MP-6Sf" secondAttribute="trailing" constant="10" id="CiY-NS-r3L"/>
                                             <constraint firstItem="U5Z-Ol-tUp" firstAttribute="centerX" secondItem="bZU-q0-auq" secondAttribute="centerX" id="LTX-mG-BW3"/>
+                                            <constraint firstItem="Lc9-Vm-jxE" firstAttribute="centerX" secondItem="EkL-Po-0tD" secondAttribute="centerX" id="MCf-0v-FG7"/>
                                             <constraint firstItem="XFD-MP-6Sf" firstAttribute="centerY" secondItem="EkL-Po-0tD" secondAttribute="centerY" id="NvZ-OS-SC8"/>
                                             <constraint firstItem="2JL-2S-cEQ" firstAttribute="centerY" secondItem="EkL-Po-0tD" secondAttribute="centerY" id="QMs-6Y-ybQ"/>
                                             <constraint firstItem="MHZ-mq-8iT" firstAttribute="leading" secondItem="nav-k7-DFi" secondAttribute="leading" constant="20" id="U3e-op-PQo"/>
@@ -883,6 +951,8 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                                             <constraint firstItem="EkL-Po-0tD" firstAttribute="top" secondItem="nav-k7-DFi" secondAttribute="top" constant="20" id="cjl-DM-nwN"/>
                                             <constraint firstAttribute="trailing" secondItem="Ycc-ny-vQg" secondAttribute="trailing" constant="20" id="dYs-hw-D2U"/>
                                             <constraint firstItem="EkL-Po-0tD" firstAttribute="leading" secondItem="nav-k7-DFi" secondAttribute="leading" id="rbd-r9-xwS"/>
+                                            <constraint firstItem="Lc9-Vm-jxE" firstAttribute="leading" secondItem="nav-k7-DFi" secondAttribute="leading" id="tEu-VI-Xig"/>
+                                            <constraint firstItem="Lc9-Vm-jxE" firstAttribute="centerY" secondItem="EkL-Po-0tD" secondAttribute="centerY" id="wh1-3k-44u"/>
                                             <constraint firstAttribute="bottom" secondItem="Ycc-ny-vQg" secondAttribute="bottom" constant="20" id="z3B-qZ-U58"/>
                                             <constraint firstItem="MHZ-mq-8iT" firstAttribute="top" secondItem="U5Z-Ol-tUp" secondAttribute="bottom" constant="20" id="zcq-Lm-6zu"/>
                                         </constraints>
@@ -914,6 +984,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                         <outlet property="infoContainerSpace" destination="YYx-QF-5hH" id="TA8-fG-gFo"/>
                         <outlet property="leftCountryButton" destination="2JL-2S-cEQ" id="0R7-FR-RHh"/>
                         <outlet property="mapView" destination="EkL-Po-0tD" id="jSD-BG-1eb"/>
+                        <outlet property="offlineView" destination="Lc9-Vm-jxE" id="Eyi-Cd-OT0"/>
                         <outlet property="rightCountryButton" destination="XFD-MP-6Sf" id="Kg1-cv-i7B"/>
                         <outlet property="sentencesScrollView" destination="bZU-q0-auq" id="YJB-zj-jvR"/>
                         <outlet property="tableView" destination="Xf1-Ia-S6F" id="zIR-L4-QdU"/>
@@ -1023,13 +1094,13 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                                                         <constraint firstAttribute="height" constant="21" id="qBW-Li-bfy"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k20-sp-QbX">
                                                     <rect key="frame" x="201.5" y="11.5" width="70.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id8-OR-DjB">
@@ -1038,7 +1109,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                                                         <constraint firstAttribute="width" constant="73" id="0iP-Pp-I1F"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1173,6 +1244,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
         <image name="home" width="35" height="35"/>
         <image name="left" width="50" height="50"/>
         <image name="right" width="50" height="50"/>
+        <image name="world" width="568" height="288"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1181,7 +1253,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="2gw-Kf-hpr"/>
-        <segue reference="Rx6-Q3-4TC"/>
-        <segue reference="TCc-eR-Yti"/>
+        <segue reference="Jtr-sw-z6f"/>
+        <segue reference="TQK-dP-jBR"/>
     </inferredMetricsTieBreakers>
 </document>

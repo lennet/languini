@@ -11,6 +11,7 @@
 // only for debugging
 #import "SentencesAggregator.h"
 #import "LanguoidsAggregator.h"
+#import "Reachability.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [LanguiodsAggregator new];
+    
 
 //    Sentence *test = [[SentencesAggregator new] getRandomSentence];
 
