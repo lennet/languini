@@ -51,8 +51,8 @@
     NSManagedObjectContext *context = appdelegate.managedObjectContext;
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sentence.@count != 0"];
 
-
-    NSInteger randomNumber = arc4random() % [self countObjectsForEntity:[Languoid entityName] withPredicate:predicate];
+    NSUInteger count = [self countObjectsForEntity:[Languoid entityName] withPredicate:predicate];
+    NSInteger randomNumber = arc4random() % count;
     NSUInteger offset = magicalOffset + randomNumber;
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[Languoid entityName]];
 

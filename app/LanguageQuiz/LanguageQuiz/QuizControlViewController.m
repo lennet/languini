@@ -9,6 +9,7 @@
 
 #import "QuizControlViewController.h"
 #import "Sentence.h"
+#import "Country.h"
 #import "SentencesAggregator.h"
 #import "LanguoidsAggregator.h"
 
@@ -111,18 +112,17 @@
 }
 
 - (BOOL)isValidAnswer:(NSString *)selectedCountry distance:(CLLocationDistance)distance {
-    NSCharacterSet *delimiters = [NSCharacterSet characterSetWithCharactersInString:@"[]"];
-    // todo use nspredicate
-    for (NSString *country in self.curentSentence.languoid.countries) {
-        NSArray *seperatedString = [country componentsSeparatedByCharactersInSet:delimiters];
-        for (NSString *substring in seperatedString) {
-            if ([substring isEqualToString:selectedCountry]) {
-                [self updateScoreLabel:maxDistance];
-                self.lifesLeft++;
-                [self updateLifeLabel:YES];
-                return YES;
-            }
+
+
+    for (Country *country in self.curentSentence.languoid.country) {
+
+        if ([country.code isEqualToString:selectedCountry]) {
+            [self updateScoreLabel:maxDistance];
+            self.lifesLeft++;
+            [self updateLifeLabel:YES];
+            return YES;
         }
+        
     }
 
     NSInteger newPoints = [self pointsForAnswerWithDistance:distance];
@@ -148,7 +148,9 @@
 }
 
 - (CLLocation *)getCorrectLocation {
-    return [[CLLocation alloc] initWithLatitude:self.curentSentence.languoid.latitude longitude:self.curentSentence.languoid.longitude];
+//    return [[CLLocation alloc] initWithLatitude:self.curentSentence.languoid.latitude longitude:self.curentSentence.languoid.longitude];
+    return nil;
+    // todo
 }
 
 - (NSInteger)getScore {

@@ -7,6 +7,7 @@
 //
 
 #import "QuizViewController.h"
+#import "Country.h"
 
 #define delay 1
 
@@ -96,13 +97,17 @@
 
 - (NSAttributedString *)getButtonTitleFromLanguoid:(Languoid *)languoid {
     NSString *languageName = languoid.name;
-    NSString *countries = [languoid.countries componentsJoinedByString:@", "];
+    NSMutableString *countries = [NSMutableString new];
+    for (Country *country in languoid.country){
+        [countries appendFormat:@"%@ ,",country.name];
+    }
 
-    NSString *fullString = [NSString stringWithFormat:@"%@\n%@", languageName, countries];
+
+    NSString *fullString = [NSString stringWithFormat:@"%@\n%@", languageName, [countries substringToIndex:countries.length-2]];
 
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:fullString];
 
-    NSRange countriesRange = [fullString rangeOfString:countries];
+    NSRange countriesRange = [fullString rangeOfString:[countries substringToIndex:countries.length-2]];
 
     [attributedString addAttribute:NSFontAttributeName value:[UIFont fontWithName:self.answerButton0.titleLabel.font.fontName size:self.answerButton0.titleLabel.font.pointSize - 10] range:countriesRange];
 

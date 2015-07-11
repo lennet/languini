@@ -42,7 +42,7 @@
     self.languoid.name != nil ? _objectData[@"Name"] = self.languoid.name : nil;
     self.languoid.alternateNames != nil ? _objectData[@"Alternate Names"] = self.languoid.alternateNames : nil;
     self.languoid.classification != nil ? _objectData[@"Classification"] = self.languoid.classification : nil;
-    self.languoid.countries != nil ? _objectData[@"Countries"] = self.languoid.countries : nil;
+    self.languoid.country != nil ? _objectData[@"Countries"] = self.languoid.country : nil;
     self.languoid.dialects != nil ? _objectData[@"Dialects"] = self.languoid.dialects : nil;
     self.languoid.iso6393 != nil ? _objectData[@"ISO 6393 Code"] = self.languoid.iso6393 : nil;
     self.languoid.lanugageStatus != nil ? _objectData[@"Language Status"] = self.languoid.lanugageStatus : nil;
@@ -99,7 +99,7 @@
 }
 
 - (void)setUpCountrySelection {
-    if (self.languoid.countries.count != 0) {
+    if (self.languoid.country.count != 0) {
         self.currentCountryIndex = 0;
         [self updateCountrySelection];
     }
@@ -107,13 +107,15 @@
 
 - (void)checkButtonAvailability {
     self.leftCountryButton.hidden = self.currentCountryIndex == 0;
-    self.rightCountryButton.hidden = self.currentCountryIndex == self.languoid.countries.count - 1;
+    self.rightCountryButton.hidden = self.currentCountryIndex == self.languoid.country.count - 1;
 }
 
 - (void)updateCountrySelection {
     [self checkButtonAvailability];
-    NSString *currentCountryName = self.languoid.countries[self.currentCountryIndex];
-
+//    NSString *currentCountryName = self.languoid.country[self.currentCountryIndex];
+    NSString *currentCountryName = @"asda";
+    
+    // todo
     self.countryLabel.text = currentCountryName;
     CLGeocoder *geocoder = [CLGeocoder new];
     [geocoder geocodeAddressString:currentCountryName completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -155,7 +157,7 @@
             self.sentencesScrollView.contentSize = CGSizeMake(self.sentencesScrollView.contentSize.width + pageView.frame.size.width, self.sentencesScrollView.contentSize.height);
         }
 
-    } else if (self.languoid.countries.count > 0) {
+    } else if (self.languoid.country.count > 0) {
         self.infoContainerSpace.constant = 2 * standardDistance + CGRectGetHeight(self.countryLabel.frame);
     } else {
         self.infoContainerSpace.constant = standardDistance;
@@ -208,6 +210,8 @@
 }
 
 - (NSString *)getDetailStringForIndex:(NSIndexPath *)indexPath {
+    // todo fix
+    return @"";
     if ([valueArray[indexPath.section] isKindOfClass:[NSArray class]]) {
         NSArray *valueObject = valueArray[indexPath.section];
         NSString *valueString = valueObject[indexPath.row];

@@ -7,6 +7,7 @@
 //
 
 #import "LanguoidsAggregator.h"
+#import "CountriesAggregator.h"
 
 #define magicalOffset 0
 
@@ -23,7 +24,7 @@
 }
 
 - (void)aggregateLanguiods {
-    NSDictionary *languoidsDict = [self readFile:@"languoids3" format:@"json"];
+    NSDictionary *languoidsDict = [self readFile:@"languoids4" format:@"json"];
     AppDelegate *appdelegate = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = appdelegate.managedObjectContext;
     for (id key in [languoidsDict allKeys]) {
@@ -37,14 +38,18 @@
         newLanguiod.macroareaGl = languoidDict[@"macroarea-gl"];
         newLanguiod.alternateNames = languoidDict[@"alternate_names"];
         newLanguiod.iso6393 = languoidDict[@"iso_639-3"];
-        newLanguiod.countries = languoidDict[@"country"];
-        NSDictionary *coordinates = languoidDict[@"coordinates"];
-        newLanguiod.longitude = [coordinates[@"longitude"] floatValue];
-        newLanguiod.latitude = [coordinates[@"latitude"] floatValue];
+        NSArray *countries = languoidDict[@"country"];
+        for(NSString *countryCode in countries){
+            Country *currentCountry = [CountriesAggregator getCountryForCode:countryCode];
+            [newLanguiod addCountryObject:currentCountry];
+            [appdelegate saveContext];
+        }
+
         newLanguiod.locationDescription = languoidDict[@"location"];
         newLanguiod.dialects = languoidDict[@"dialects"];
         newLanguiod.populationNumeric = languoidDict[@"population_numeric"];
         newLanguiod.lanugageStatus = languoidDict[@"language_status"];
+        [appdelegate saveContext];
     }
 
     [appdelegate saveContext];
@@ -75,16 +80,12 @@
 }
 
 - (NSArray *)getLanguiodsForCountryCode:(NSString *)countryCode {
-    AppDelegate *appdelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = appdelegate.managedObjectContext;
-
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[Languoid entityName]];
-
-    NSError *error;
-
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    NSArray *result = [fetchedObjects filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"ANY countries contains[c] %@", [NSString stringWithFormat:@"[%@]", countryCode]]];
-    return result;
+    Country *selectedCountry = [CountriesAggregator getCountryForCode:countryCode];
+    if (selectedCountry){
+        NSSet *languoids = [selectedCountry languiod];
+        return [selectedCountry.languiod allObjects];
+    }
+    return @[];
 }
 
 - (NSArray *)getRandomLangouidsWithOut:(Languoid *)languoid andCount:(NSUInteger)count {
