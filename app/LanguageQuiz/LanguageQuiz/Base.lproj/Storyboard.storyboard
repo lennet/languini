@@ -27,6 +27,21 @@
                                     <outletCollection property="gestureRecognizers" destination="ABN-hj-RJE" appends="YES" id="4H8-QX-hua"/>
                                 </connections>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fS9-tA-aaS" userLabel="offlineView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.24999999999999967" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world" translatesAutoresizingMaskIntoConstraints="NO" id="yGt-t2-H1G">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="yGt-t2-H1G" secondAttribute="bottom" id="AMJ-su-EsU"/>
+                                    <constraint firstAttribute="trailing" secondItem="yGt-t2-H1G" secondAttribute="trailing" id="FOG-aB-n4P"/>
+                                    <constraint firstItem="yGt-t2-H1G" firstAttribute="leading" secondItem="fS9-tA-aaS" secondAttribute="leading" id="LAW-eq-BCA"/>
+                                    <constraint firstItem="yGt-t2-H1G" firstAttribute="top" secondItem="fS9-tA-aaS" secondAttribute="top" id="Ldb-W6-h6S"/>
+                                </constraints>
+                            </view>
                             <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tr3-Tz-zdR">
                                 <rect key="frame" x="0.0" y="514" width="320" height="54"/>
                                 <constraints>
@@ -106,8 +121,8 @@
                                     <segue destination="XUW-Qg-Ath" kind="push" identifier="loadDictionaryViewController" id="TmP-8W-S2z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBP-bo-fcc" customClass="ShadowButton" customModule="Languini" customModuleProvider="target">
-                                <rect key="frame" x="26" y="412" width="268" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBP-bo-fcc" customClass="ShadowButton" customModule="Languini" customModuleProvider="target">
+                                <rect key="frame" x="26" y="410" width="268" height="55"/>
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.69019607839999997" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="J0A-rn-JD2"/>
@@ -125,15 +140,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="sZj-IF-K1T" secondAttribute="trailing" constant="20" id="3Ze-5H-D3D"/>
+                            <constraint firstItem="fS9-tA-aaS" firstAttribute="leading" secondItem="u9c-mU-8TC" secondAttribute="leading" id="4tp-xX-P29"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pBP-bo-fcc" secondAttribute="trailing" constant="10" id="52B-y8-AB1"/>
                             <constraint firstItem="pBP-bo-fcc" firstAttribute="top" secondItem="sCD-JF-pOK" secondAttribute="bottom" constant="10" id="8cF-jB-UJ7"/>
                             <constraint firstItem="sCD-JF-pOK" firstAttribute="leading" secondItem="u9c-mU-8TC" secondAttribute="leadingMargin" constant="10" id="H1S-Sc-sbv"/>
+                            <constraint firstAttribute="trailing" secondItem="fS9-tA-aaS" secondAttribute="trailing" id="HaN-Gn-ZE6"/>
+                            <constraint firstItem="fS9-tA-aaS" firstAttribute="top" secondItem="u9c-mU-8TC" secondAttribute="top" id="JAa-Xl-tZc"/>
                             <constraint firstItem="f6Y-aj-Lch" firstAttribute="top" secondItem="MVf-aw-ib1" secondAttribute="bottom" id="LaQ-Jt-aCG"/>
                             <constraint firstItem="f0d-l1-lTG" firstAttribute="top" secondItem="K4I-MM-2cH" secondAttribute="bottom" constant="8" id="M3h-BE-8wW"/>
                             <constraint firstItem="f6Y-aj-Lch" firstAttribute="top" secondItem="f0d-l1-lTG" secondAttribute="bottom" constant="8" id="NaW-sX-mFm"/>
                             <constraint firstItem="f6Y-aj-Lch" firstAttribute="top" secondItem="tr3-Tz-zdR" secondAttribute="bottom" id="RXz-fc-Tb6"/>
                             <constraint firstItem="K4I-MM-2cH" firstAttribute="leading" secondItem="u9c-mU-8TC" secondAttribute="leadingMargin" constant="10" id="Yq3-b7-LIw"/>
                             <constraint firstItem="MVf-aw-ib1" firstAttribute="leading" secondItem="u9c-mU-8TC" secondAttribute="leading" id="bQc-xH-wZd"/>
+                            <constraint firstAttribute="bottom" secondItem="fS9-tA-aaS" secondAttribute="bottom" id="bwL-6c-hSS"/>
                             <constraint firstItem="K4I-MM-2cH" firstAttribute="top" secondItem="pBP-bo-fcc" secondAttribute="bottom" constant="10" id="cDH-S8-HO5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sCD-JF-pOK" secondAttribute="trailing" constant="10" id="cY2-6o-PyA"/>
                             <constraint firstAttribute="trailing" secondItem="MVf-aw-ib1" secondAttribute="trailing" id="dI6-3D-vFg"/>
@@ -156,6 +175,7 @@
                         <outlet property="gameControllerContainer" destination="tr3-Tz-zdR" id="oF3-MX-Jjy"/>
                         <outlet property="geoQuizButton" destination="sCD-JF-pOK" id="XrO-fU-6oW"/>
                         <outlet property="mapView" destination="MVf-aw-ib1" id="vZ3-je-OSI"/>
+                        <outlet property="offlineView" destination="fS9-tA-aaS" id="IlD-AY-jAg"/>
                         <outlet property="questionLabel" destination="agu-9X-sN5" id="EHt-5a-xP3"/>
                         <outlet property="questionView" destination="sZj-IF-K1T" id="rcA-A5-PbP"/>
                         <outlet property="quizButton" destination="pBP-bo-fcc" id="J3M-6m-b9C"/>
@@ -613,6 +633,38 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nav-k7-DFi">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="590"/>
                                         <subviews>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EkL-Po-0tD">
+                                                <rect key="frame" x="0.0" y="20" width="320" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="maL-eK-Fry"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="delegate" destination="ZFv-P4-7wP" id="GOv-aJ-I34"/>
+                                                </connections>
+                                            </mapView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOm-I3-z3p" userLabel="offlineView">
+                                                <rect key="frame" x="0.0" y="20" width="320" height="150"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" alpha="0.34999999999999964" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world" translatesAutoresizingMaskIntoConstraints="NO" id="awa-qX-xSz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keine Internetverbindung" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tku-Dr-sqE">
+                                                        <rect key="frame" x="63.5" y="65.5" width="193" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="awa-qX-xSz" firstAttribute="leading" secondItem="fOm-I3-z3p" secondAttribute="leading" id="1Kk-gb-V9P"/>
+                                                    <constraint firstAttribute="centerY" secondItem="Tku-Dr-sqE" secondAttribute="centerY" id="HUD-Ps-FqQ"/>
+                                                    <constraint firstAttribute="centerX" secondItem="Tku-Dr-sqE" secondAttribute="centerX" id="JCZ-tf-2SB"/>
+                                                    <constraint firstAttribute="bottom" secondItem="awa-qX-xSz" secondAttribute="bottom" id="OOp-rY-YRr"/>
+                                                    <constraint firstItem="awa-qX-xSz" firstAttribute="top" secondItem="fOm-I3-z3p" secondAttribute="top" id="XQt-Sg-92R"/>
+                                                    <constraint firstItem="awa-qX-xSz" firstAttribute="leading" secondItem="fOm-I3-z3p" secondAttribute="leading" id="YkY-Bm-NMD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="awa-qX-xSz" secondAttribute="trailing" id="pCR-xe-2sQ"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHZ-mq-8iT" userLabel="sentencesView" customClass="ShadowView" customModule="Languini" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="245" width="280" height="100"/>
                                                 <subviews>
@@ -741,15 +793,6 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EkL-Po-0tD">
-                                                <rect key="frame" x="0.0" y="20" width="320" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="maL-eK-Fry"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="delegate" destination="ZFv-P4-7wP" id="GOv-aJ-I34"/>
-                                                </connections>
-                                            </mapView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2JL-2S-cEQ">
                                                 <rect key="frame" x="10" y="73" width="44" height="44"/>
                                                 <constraints>
@@ -798,12 +841,16 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="fOm-I3-z3p" firstAttribute="width" secondItem="EkL-Po-0tD" secondAttribute="width" id="1Ij-d1-XJj"/>
                                             <constraint firstAttribute="trailing" secondItem="MHZ-mq-8iT" secondAttribute="trailing" constant="20" id="3QT-gf-g4o"/>
                                             <constraint firstItem="U5Z-Ol-tUp" firstAttribute="top" secondItem="EkL-Po-0tD" secondAttribute="bottom" constant="20" id="8hd-Lb-4gx"/>
+                                            <constraint firstItem="fOm-I3-z3p" firstAttribute="height" secondItem="EkL-Po-0tD" secondAttribute="height" id="ArJ-NQ-IwH"/>
+                                            <constraint firstItem="fOm-I3-z3p" firstAttribute="centerY" secondItem="EkL-Po-0tD" secondAttribute="centerY" id="CBs-AQ-UOF"/>
                                             <constraint firstAttribute="trailing" secondItem="XFD-MP-6Sf" secondAttribute="trailing" constant="10" id="CiY-NS-r3L"/>
                                             <constraint firstItem="U5Z-Ol-tUp" firstAttribute="centerX" secondItem="bZU-q0-auq" secondAttribute="centerX" id="LTX-mG-BW3"/>
                                             <constraint firstItem="XFD-MP-6Sf" firstAttribute="centerY" secondItem="EkL-Po-0tD" secondAttribute="centerY" id="NvZ-OS-SC8"/>
                                             <constraint firstItem="2JL-2S-cEQ" firstAttribute="centerY" secondItem="EkL-Po-0tD" secondAttribute="centerY" id="QMs-6Y-ybQ"/>
+                                            <constraint firstItem="fOm-I3-z3p" firstAttribute="centerX" secondItem="EkL-Po-0tD" secondAttribute="centerX" id="TA9-A6-2hJ"/>
                                             <constraint firstItem="MHZ-mq-8iT" firstAttribute="leading" secondItem="nav-k7-DFi" secondAttribute="leading" constant="20" id="U3e-op-PQo"/>
                                             <constraint firstItem="Ycc-ny-vQg" firstAttribute="leading" secondItem="nav-k7-DFi" secondAttribute="leading" constant="20" id="Xbw-Xf-JkR"/>
                                             <constraint firstItem="Ycc-ny-vQg" firstAttribute="top" secondItem="EkL-Po-0tD" secondAttribute="bottom" constant="200" id="YYx-QF-5hH"/>
@@ -844,6 +891,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                         <outlet property="infoContainerSpace" destination="YYx-QF-5hH" id="TA8-fG-gFo"/>
                         <outlet property="leftCountryButton" destination="2JL-2S-cEQ" id="0R7-FR-RHh"/>
                         <outlet property="mapView" destination="EkL-Po-0tD" id="jSD-BG-1eb"/>
+                        <outlet property="offlineView" destination="fOm-I3-z3p" id="TQ2-nc-uuJ"/>
                         <outlet property="rightCountryButton" destination="XFD-MP-6Sf" id="Kg1-cv-i7B"/>
                         <outlet property="sentencesScrollView" destination="bZU-q0-auq" id="YJB-zj-jvR"/>
                         <outlet property="tableView" destination="Xf1-Ia-S6F" id="zIR-L4-QdU"/>
@@ -1103,6 +1151,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
         <image name="home" width="35" height="35"/>
         <image name="left" width="50" height="50"/>
         <image name="right" width="50" height="50"/>
+        <image name="world" width="960" height="488"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1111,7 +1160,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="2gw-Kf-hpr"/>
-        <segue reference="Rx6-Q3-4TC"/>
-        <segue reference="TCc-eR-Yti"/>
+        <segue reference="Jtr-sw-z6f"/>
+        <segue reference="TQK-dP-jBR"/>
     </inferredMetricsTieBreakers>
 </document>

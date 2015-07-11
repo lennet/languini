@@ -50,15 +50,14 @@ NSArray *countriesOnLocation;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
-    if (networkStatus == NotReachable) {
-        [self.offlineView setHidden:false];
-        UIImage *test = [UIImage imageNamed:@"world"];
+    Reachability *connection = [Reachability new];
+    NetworkStatus netStatus = [connection currentReachabilityStatus];
+    if (netStatus == NotReachable) {
+      //  [self.offlineView setHidden:false];
+        [self.offlineView setAlpha:CGFLOAT_MAX];
         internetConnection = false;
     } else {
-        [self.offlineView setHidden:true];
+        [self.offlineView setAlpha:CGFLOAT_MIN];
         internetConnection = true;
     }
     
