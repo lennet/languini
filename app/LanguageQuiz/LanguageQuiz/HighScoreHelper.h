@@ -12,8 +12,11 @@
 
 @interface HighScoreHelper : DataAggregator
 
+
 - (void)addScore:(NSInteger)score WithName:(NSString *)name forType:(QuizType)type;
 
 - (NSArray *)getTopScoreEntriesForType:(QuizType)type;
+
+-(NSUInteger)getLatestScoreIndexForType:(QuizType)type;
 
 @end
