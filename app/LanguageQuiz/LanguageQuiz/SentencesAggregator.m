@@ -13,14 +13,6 @@
 
 @implementation SentencesAggregator
 
-- (id)init {
-    self = [super init];
-    if (self && ![self dataBaseAlreadyFilled]) {
-        [self aggregateSentences];
-    }
-    return self;
-}
-
 - (BOOL)dataBaseAlreadyFilled {
     return [self countObjectsForEntity:[Sentence entityName] withPredicate:nil] > 0;
 }

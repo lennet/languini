@@ -10,16 +10,6 @@
 
 @implementation CountriesAggregator
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        if (![self dataBaseAlreadyFilled]) {
-            [self aggregateCountries];
-        }
-    }
-    return self;
-}
-
 - (void)aggregateCountries {
     NSDictionary *countriesDict = [self readFile:@"countries" format:@"json"];
     AppDelegate *appdelegate = [[UIApplication sharedApplication] delegate];

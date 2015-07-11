@@ -13,16 +13,6 @@
 
 @implementation LanguiodsAggregator
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        if (![self dataBaseAlreadyFilled]) {
-            [self aggregateLanguiods];
-        }
-    }
-    return self;
-}
-
 - (void)aggregateLanguiods {
     NSDictionary *languoidsDict = [self readFile:@"languoids4" format:@"json"];
     AppDelegate *appdelegate = [[UIApplication sharedApplication] delegate];
