@@ -12,6 +12,7 @@
 		652CABF51B41558C00640BEF /* GlottoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652CABF41B41558C00640BEF /* GlottoViewController.m */; };
 		652FA8031B5172BC0060DAAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652FA8021B5172BC0060DAAC /* Images.xcassets */; };
 		652FA80A1B51B3420060DAAC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FA8091B51B3420060DAAC /* Reachability.m */; };
+		654DDF941B526A6300CA32EB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 654DDF931B526A6300CA32EB /* SystemConfiguration.framework */; };
 		655E09A51B514CBB00A61A34 /* ResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E09A41B514CBB00A61A34 /* ResultTableViewCell.m */; };
 		65A205191B358C0E00266BC4 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A205181B358C0E00266BC4 /* DetailCell.m */; };
 		98206C531B136191003D7777 /* DictionaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C511B136191003D7777 /* DictionaryDetailViewController.m */; };
@@ -56,6 +57,7 @@
 		652FA8021B5172BC0060DAAC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		652FA8081B51B3420060DAAC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		652FA8091B51B3420060DAAC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		654DDF931B526A6300CA32EB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		655E09A31B514CBB00A61A34 /* ResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTableViewCell.h; sourceTree = "<group>"; };
 		655E09A41B514CBB00A61A34 /* ResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultTableViewCell.m; sourceTree = "<group>"; };
 		65A205171B358C0E00266BC4 /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				654DDF941B526A6300CA32EB /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +282,7 @@
 		98E78EE21AEBECCA00C0909D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				654DDF931B526A6300CA32EB /* SystemConfiguration.framework */,
 				98712FE61B519B1700B441B2 /* Localizable.strings */,
 				98E78EE31AEBECCA00C0909D /* Info.plist */,
 				98E78EE41AEBECCA00C0909D /* main.m */,

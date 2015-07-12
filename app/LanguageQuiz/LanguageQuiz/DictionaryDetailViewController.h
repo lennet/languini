@@ -10,6 +10,7 @@
 #import "Languoid.h"
 #import <MapKit/MapKit.h>
 #import "DetailCell.h"
+#import "Reachability.h"
 
 
 @interface DictionaryDetailViewController : UIViewController <MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource>

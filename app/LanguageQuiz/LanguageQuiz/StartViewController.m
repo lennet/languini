@@ -47,25 +47,28 @@ NSArray *countriesOnLocation;
     internetConnection = true;
 
 }
-
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    
+    if ((toInterfaceOrientation == UIInterfaceOrientationPortrait) || (toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)) {
+        self.offlineView.contentMode = UIViewContentModeScaleAspectFill;
+        self.offlineView.transform = CGAffineTransformMakeScale(1, 1);
+        NSLog(@"Portrait");
+    } else {
+        self.offlineView.transform = CGAffineTransformMakeScale(2, 2);
+        NSLog(@"Landscape");
+    }
+}
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-<<<<<<< HEAD
-    Reachability *connection = [Reachability new];
-    NetworkStatus netStatus = [connection currentReachabilityStatus];
-    if (netStatus == NotReachable) {
-      //  [self.offlineView setHidden:false];
-        [self.offlineView setAlpha:CGFLOAT_MAX];
-=======
+
     
     [self.dictionaryButton setTitle:NSLocalizedString(@"startview.buttontitle.dictionary", nil) forState:UIControlStateNormal];
     
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
+    Reachability *networkReachability = [Reachability reachabilityWithHostName:@"www.wikipedia.com"];
     NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
     if (networkStatus == NotReachable) {
-        [self.offlineView setHidden:false];
-        UIImage *test = [UIImage imageNamed:@"world"];
->>>>>>> 19109703dec1cad9b9e34f0c6aa2ff1d63eb4cf8
+        [self.offlineView setAlpha:CGFLOAT_MAX];
         internetConnection = false;
     } else {
         [self.offlineView setAlpha:CGFLOAT_MIN];

@@ -30,7 +30,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
    
-    
     self.title = self.languoid.name;
 
     [self.glottologButton setTitle:[NSString stringWithFormat:@"Glottlog - %@", [self.languoid valueForKey:@"key"]] forState:UIControlStateNormal];
@@ -40,8 +39,9 @@
     [self setUpCountrySelection];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    Reachability *connection = [Reachability new];
-    NetworkStatus netStatus = [connection currentReachabilityStatus];
+    
+    Reachability *reachability = [Reachability reachabilityWithHostName:@"www.wikipedia.com"];
+    NetworkStatus netStatus = [reachability currentReachabilityStatus];
     if (netStatus == NotReachable) {
         //  [self.offlineView setHidden:false];
         [self.offlineView setAlpha:CGFLOAT_MAX];
