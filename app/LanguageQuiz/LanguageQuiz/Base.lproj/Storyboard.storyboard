@@ -119,7 +119,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XUW-Qg-Ath" kind="push" identifier="loadDictionaryViewController" id="TmP-8W-S2z"/>
+                                    <segue destination="XUW-Qg-Ath" kind="push" id="gnK-db-sSX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBP-bo-fcc" customClass="ShadowButton" customModule="Languini" customModuleProvider="target">
@@ -247,7 +247,7 @@
                                 <rect key="frame" x="0.0" y="39.5" width="259" height="116"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Die Sonne scheint über dem Haus" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="EwY-7i-f0l">
-                                        <rect key="frame" x="18" y="15" width="170" height="86"/>
+                                        <rect key="frame" x="16" y="10" width="233" height="96"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -255,10 +255,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.69019607839999997" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="EwY-7i-f0l" firstAttribute="top" secondItem="7K6-Vq-x0t" secondAttribute="top" constant="15" id="3UJ-Sg-mBO"/>
-                                    <constraint firstAttribute="trailing" secondItem="EwY-7i-f0l" secondAttribute="trailing" constant="71" id="MmF-BO-G2L"/>
+                                    <constraint firstItem="EwY-7i-f0l" firstAttribute="top" secondItem="7K6-Vq-x0t" secondAttribute="top" constant="10" id="3UJ-Sg-mBO"/>
+                                    <constraint firstAttribute="trailing" secondItem="EwY-7i-f0l" secondAttribute="trailing" constant="10" id="MmF-BO-G2L"/>
                                     <constraint firstAttribute="height" constant="116" id="Q5A-iG-mDU"/>
-                                    <constraint firstItem="EwY-7i-f0l" firstAttribute="leading" secondItem="7K6-Vq-x0t" secondAttribute="leading" constant="18" id="WEv-WN-LxH"/>
+                                    <constraint firstItem="EwY-7i-f0l" firstAttribute="leading" secondItem="7K6-Vq-x0t" secondAttribute="leading" constant="16" id="WEv-WN-LxH"/>
+                                    <constraint firstAttribute="bottom" secondItem="EwY-7i-f0l" secondAttribute="bottom" constant="10" id="fOu-1l-VL2"/>
                                     <constraint firstItem="EwY-7i-f0l" firstAttribute="centerY" secondItem="7K6-Vq-x0t" secondAttribute="centerY" id="qbM-fb-Nbq"/>
                                 </constraints>
                             </view>
@@ -614,7 +615,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="774" y="91"/>
+            <point key="canvasLocation" x="720" y="59"/>
         </scene>
         <!--Dictionary Detail View Controller-->
         <scene sceneID="fNG-yt-iSe">
@@ -1113,42 +1114,6 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
             </objects>
             <point key="canvasLocation" x="1258" y="-1581"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="N3y-6s-tVZ">
-            <objects>
-                <viewController id="YI8-Lr-0j5" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TRK-zr-lDA"/>
-                        <viewControllerLayoutGuide type="bottom" id="kke-w3-Flt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xar-4A-2CE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IFv-po-U8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="40d-Wi-0zv">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="f4e-wo-bfg" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fDh-9D-SFC"/>
-                        <viewControllerLayoutGuide type="bottom" id="tsc-VN-lnm"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Afj-6G-gfY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9cu-gO-eHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="463" y="559"/>
-        </scene>
     </scenes>
     <resources>
         <image name="heart" width="35" height="35"/>
@@ -1164,7 +1129,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="2gw-Kf-hpr"/>
-        <segue reference="Jtr-sw-z6f"/>
-        <segue reference="TQK-dP-jBR"/>
+        <segue reference="Rx6-Q3-4TC"/>
+        <segue reference="TCc-eR-Yti"/>
     </inferredMetricsTieBreakers>
 </document>

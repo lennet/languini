@@ -61,7 +61,6 @@ NSArray *countriesOnLocation;
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
     
     [self.dictionaryButton setTitle:NSLocalizedString(@"startview.buttontitle.dictionary", nil) forState:UIControlStateNormal];
     
@@ -74,16 +73,15 @@ NSArray *countriesOnLocation;
         [self.offlineView setAlpha:CGFLOAT_MIN];
         internetConnection = true;
     }
+
+    [self.dictionaryButton setTitle:NSLocalizedString(@"startview.buttontitle.dictionary", nil) forState:UIControlStateNormal];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
     loadSpecialDict = false;
-}
-
-- (void)setUpMapView {
-//    [self.mapView setzo]
 }
 
 - (IBAction)handleGeoQuizButtonPressed:(id)sender {
@@ -102,11 +100,6 @@ NSArray *countriesOnLocation;
         self.gameControllerContainer.alpha = 1;
         self.questionView.alpha = 1;
     }                completion:^(BOOL finished) {
-//        self.geoQuizButton.enabled = NO;
-//        self.quizButton.enabled = NO;
-//        self.aboutButton.enabled = NO;
-//        self.dictionaryButton.enabled = NO;
-
     }];
     }
     else{
@@ -147,7 +140,6 @@ NSArray *countriesOnLocation;
                 [self performSelector:@selector(nextQuestion) withObject:nil afterDelay:questionDelay];
             }
             else {
-                
                 countriesOnLocation = [self.langAggregator getLanguiodsForCountryCode:placemark.ISOcountryCode];
                 [self addAnnotationOnLocation:touchCoordinate];
                 

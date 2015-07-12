@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initObjectData];
+    [self setUpDataSource];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -57,62 +57,57 @@
     [self checkButtonAvailability];
 }
 
-- (void)initObjectData {
-    _objectData = [NSMutableDictionary new];
-    self.languoid.name != nil ? _objectData[@"Name"] = self.languoid.name : nil;
-    self.languoid.alternateNames != nil ? _objectData[@"Alternate Names"] = self.languoid.alternateNames : nil;
-    self.languoid.classification != nil ? _objectData[@"Classification"] = self.languoid.classification : nil;
-    self.languoid.country != nil ? _objectData[@"Countries"] = self.languoid.country : nil;
-    self.languoid.dialects != nil ? _objectData[@"Dialects"] = self.languoid.dialects : nil;
-    self.languoid.iso6393 != nil ? _objectData[@"ISO 6393 Code"] = self.languoid.iso6393 : nil;
-    self.languoid.lanugageStatus != nil ? _objectData[@"Language Status"] = self.languoid.lanugageStatus : nil;
-    self.languoid.locationDescription != nil ? _objectData[@"Location Description"] = self.languoid.locationDescription : nil;
-    self.languoid.population != nil ? _objectData[@"Population"] = self.languoid.population : nil;
-
-    [self setUpDataSource:_objectData];
-
-}
-
-- (void)setUpDataSource:(NSDictionary *)data {
+- (void)setUpDataSource {
     NSMutableArray *tmpTitle = [NSMutableArray new];
     NSMutableArray *tmpValues = [NSMutableArray new];
-    if (data[@"Name"] != nil) {
+    if (self.languoid.name) {
         [tmpTitle addObject:@"Name"];
-        [tmpValues addObject:data[@"Name"]];
+        [tmpValues addObject:@[self.languoid.name]];
 
     }
-    if (data[@"Alternate Names"] != nil) {
+    if (((NSArray *)self.languoid.alternateNames).count > 0) {
         [tmpTitle addObject:@"Alternate Names"];
-        [tmpValues addObject:data[@"Alternate Names"]];
+        [tmpValues addObject:self.languoid.alternateNames];
     }
 
-    if (data[@"Countries"] != nil) { // countries
+    if (self.languoid.country.count > 0) {
         [tmpTitle addObject:@"Countries"];
-        [tmpValues addObject:data[@"Countries"]];
+        NSMutableArray *countriesArray = [NSMutableArray new];
+        for (Country *country in self.languoid.country) {
+            NSString *countryName;
+            if ([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"de"] && country.nameDe) {
+                countryName = country.nameDe;
+            } else {
+                countryName = country.name;
+            }
+            [countriesArray addObject:countryName];
+        }
+        [tmpValues addObject:countriesArray];
     }
-    if (data[@"Dialects"] != nil) { // dialects
+    
+    if (((NSArray *)self.languoid.dialects).count > 0) {
         [tmpTitle addObject:@"Dialects"];
-        [tmpValues addObject:data[@"Dialects"]];
+        [tmpValues addObject:self.languoid.dialects];
     }
-    if (data[@"Language Status"] != nil) { // Language status
+    if (self.languoid.lanugageStatus) {
         [tmpTitle addObject:@"Language Status"];
-        [tmpValues addObject:data[@"Language Status"]];
+        [tmpValues addObject:@[self.languoid.lanugageStatus]];
     }
-    if (data[@"Population"] != nil) { // population
+    if (self.languoid.population) { // population
         [tmpTitle addObject:@"Population"];
-        [tmpValues addObject:data[@"Population"]];
+        [tmpValues addObject:@[self.languoid.population]];
     }
-    if (data[@"Location Description"] != nil) { //location
+    if (self.languoid.locationDescription) { //location
         [tmpTitle addObject:@"Location Description"];
-        [tmpValues addObject:data[@"Location Description"]];
+        [tmpValues addObject:@[self.languoid.locationDescription]];
     }
-    if (data[@"ISO 6393 Code"] != nil) { // iso
+    if (self.languoid.iso6393) { // iso
         [tmpTitle addObject:@"ISO 6393 Code"];
-        [tmpValues addObject:data[@"ISO 6393 Code"]];
+        [tmpValues addObject:@[self.languoid.iso6393]];
     }
-    if (data[@"Classification"] != nil) {
+    if (((NSArray *)self.languoid.classification).count > 0) {
         [tmpTitle addObject:@"Classification"];
-        [tmpValues addObject:data[@"Classification"]];
+        [tmpValues addObject:self.languoid.classification];
     }
     titleArray = [[NSArray alloc] initWithArray:tmpTitle];
     valueArray = [[NSArray alloc] initWithArray:tmpValues];
@@ -184,12 +179,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    if ([valueArray[section] isKindOfClass:[NSArray class]]|| [valueArray[section] isKindOfClass:[NSSet class]]) {
-        return [valueArray[section] count];
-    } else {
-        return 1;
-    }
-
+    return [valueArray[section] count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -202,7 +192,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *detailText = [self getDetailStringForIndex:indexPath];
+    NSString *detailText = valueArray[indexPath.section][indexPath.row];
 
     CGSize boundingBox = [detailText boundingRectWithSize:CGSizeMake(tableView.frame.size.width - (standardDistance / 2), FLT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:17]} context:nil].size;
 
@@ -219,42 +209,11 @@
 
 }
 
-- (NSString *)getDetailStringForIndex:(NSIndexPath *)indexPath {
-    if ([valueArray[indexPath.section] isKindOfClass:[NSArray class]]) {
-        NSArray *valueObject = [valueArray[indexPath.section] allObjects];
-        NSString *valueString = valueObject[indexPath.row];
-        return valueString;
-    }
-    
-    if ([valueArray[indexPath.section] isKindOfClass:[NSSet class]]) {
-        NSArray *valueObject = [valueArray[indexPath.section] allObjects];
-        id object = valueObject[indexPath.row];
-        if ([object isKindOfClass:[Country class]]){
-            Country *country = object;
-            if ([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"de"] && country.nameDe) {
-                return country.nameDe;
-            } else {
-                return country.name;
-            }
-        }
-        NSString *valueString = object;
-        return valueString;
-    }
-    if ([valueArray[indexPath.section] isKindOfClass:[NSNumber class]]) {
-        return [NSString stringWithFormat:@"%@",
-                                          valueArray[indexPath.section]];
-    }
-    if ([valueArray[indexPath.section] isKindOfClass:[NSDictionary class]]) {
-        NSLog(@"NSDict");
-    }
-    return (NSString *) valueArray[indexPath.section];
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     static NSString *cellIdentifier = @"detailCell";
     DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    cell.detailLabel.text = [self getDetailStringForIndex:indexPath];
+    cell.detailLabel.text = valueArray[indexPath.section][indexPath.row];
 
     return cell;
 }
