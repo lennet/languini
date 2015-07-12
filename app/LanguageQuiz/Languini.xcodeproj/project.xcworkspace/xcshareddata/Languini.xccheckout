@@ -7,22 +7,18 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>6CF41598-CB41-4FA6-9591-B115BC004137</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Languini</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>B7228BA1CB9EEE359048E4ED307AB0924E33CDB0</key>
 		<string>https://github.com/lennet/languini</string>
-		<key>F9F32882707BEE83F00335D83B0FCE9B0C7A409E</key>
-		<string>https://github.com/lennet/languageQuiz.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>app/LanguageQuiz/Languini.xcodeproj</string>
+	<string>app/LanguageQuiz/Languini.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>B7228BA1CB9EEE359048E4ED307AB0924E33CDB0</key>
 		<string>../../../..</string>
-		<key>F9F32882707BEE83F00335D83B0FCE9B0C7A409E</key>
-		<string>../../../../../languageQuiz</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/lennet/languini</string>
@@ -32,14 +28,6 @@
 	<string>B7228BA1CB9EEE359048E4ED307AB0924E33CDB0</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F9F32882707BEE83F00335D83B0FCE9B0C7A409E</string>
-			<key>IDESourceControlWCCName</key>
-			<string>languageQuiz</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
