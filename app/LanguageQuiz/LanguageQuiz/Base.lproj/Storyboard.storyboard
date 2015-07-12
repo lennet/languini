@@ -124,7 +124,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XUW-Qg-Ath" kind="push" id="gnK-db-sSX"/>
+                                    <segue destination="XUW-Qg-Ath" kind="push" identifier="loadDictionaryViewController" id="gnK-db-sSX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBP-bo-fcc" customClass="ShadowButton" customModule="Languini" customModuleProvider="target">
@@ -687,7 +687,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="720" y="59"/>
+            <point key="canvasLocation" x="685" y="149"/>
         </scene>
         <!--Dictionary Detail View Controller-->
         <scene sceneID="fNG-yt-iSe">
