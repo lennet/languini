@@ -679,17 +679,17 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOm-I3-z3p" userLabel="offlineView">
                                                 <rect key="frame" x="0.0" y="20" width="320" height="150"/>
                                                 <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keine Internetverbindung" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tku-Dr-sqE">
+                                                        <rect key="frame" x="63.5" y="65.5" width="193" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <imageView userInteractionEnabled="NO" alpha="0.34999999999999964" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world" translatesAutoresizingMaskIntoConstraints="NO" id="awa-qX-xSz">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="150" id="G5X-d9-Iww"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keine Internetverbindung" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tku-Dr-sqE">
-                                                        <rect key="frame" x="63.5" y="65.5" width="193" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -873,8 +873,10 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                                             <constraint firstAttribute="trailing" secondItem="EkL-Po-0tD" secondAttribute="trailing" id="bXC-Yq-zEU"/>
                                             <constraint firstItem="EkL-Po-0tD" firstAttribute="top" secondItem="nav-k7-DFi" secondAttribute="top" constant="20" id="cjl-DM-nwN"/>
                                             <constraint firstAttribute="trailing" secondItem="Ycc-ny-vQg" secondAttribute="trailing" constant="20" id="dYs-hw-D2U"/>
+                                            <constraint firstItem="fOm-I3-z3p" firstAttribute="height" secondItem="EkL-Po-0tD" secondAttribute="height" id="q5K-Ws-PYe"/>
                                             <constraint firstItem="EkL-Po-0tD" firstAttribute="leading" secondItem="nav-k7-DFi" secondAttribute="leading" id="rbd-r9-xwS"/>
                                             <constraint firstAttribute="bottom" secondItem="Ycc-ny-vQg" secondAttribute="bottom" constant="20" id="z3B-qZ-U58"/>
+                                            <constraint firstItem="U5Z-Ol-tUp" firstAttribute="top" secondItem="fOm-I3-z3p" secondAttribute="bottom" constant="20" id="zES-hk-RXb"/>
                                             <constraint firstItem="MHZ-mq-8iT" firstAttribute="top" secondItem="U5Z-Ol-tUp" secondAttribute="bottom" constant="20" id="zcq-Lm-6zu"/>
                                         </constraints>
                                     </view>

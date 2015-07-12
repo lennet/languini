@@ -25,6 +25,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpDataSource];
+    
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    
+    if ((toInterfaceOrientation == UIInterfaceOrientationPortrait) || (toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)) {
+        self.offlineView.contentMode = UIViewContentModeScaleAspectFill;
+        self.offlineView.transform = CGAffineTransformMakeScale(1, 1);
+        NSLog(@"Portrait");
+    } else {
+        self.offlineView.transform = CGAffineTransformMakeScale(2, 2);
+        NSLog(@"Landscape");
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -45,6 +59,7 @@
     if (netStatus == NotReachable) {
         //  [self.offlineView setHidden:false];
         [self.offlineView setAlpha:CGFLOAT_MAX];
+        self.offlineView.transform = CGAffineTransformMakeScale(1.3, 1.3);
         [self.rightCountryButton setHidden:true];
         [self.leftCountryButton setHidden:true];
         [self.glottologButton setHidden:true];
