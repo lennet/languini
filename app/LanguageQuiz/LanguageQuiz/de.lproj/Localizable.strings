@@ -20,4 +20,4 @@
 "Alternate Names" = "Alternative Namen";
 "Name" = "Name";
 "quiz.answer.right" = "Richtige Antwort!";
-"geoquiz.answer.wrong" = "Die Distanz zum nächsten richtigen Land %@ beträgt %.02fkm";
+"geoquiz.answer.wrong" = "Die Distanz zum nächsten richtigen Land %@ beträgt %.02f km";

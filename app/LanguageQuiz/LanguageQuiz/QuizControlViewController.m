@@ -184,7 +184,7 @@
 
 - (NSString *)getCorrectCountryWithLocation:(CLLocation*)location{
     Country *closestCountry = [self getClosestCountryForLocation:location andLanguoid:self.curentSentence.languoid];
-    if ([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"de"] && closestCountry.nameDe) {
+    if (([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"de"] && closestCountry.nameDe) || !closestCountry.name) {
         return closestCountry.nameDe;
     } else {
         return closestCountry.name;

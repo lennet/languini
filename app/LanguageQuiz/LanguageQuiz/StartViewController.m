@@ -149,7 +149,9 @@ NSArray *countriesOnLocation;
                 [self.mapView setVisibleMapRect:[self.distanceLine boundingMapRect] edgePadding:UIEdgeInsetsMake(CGRectGetMaxX(self.questionView.frame) + CGRectGetMinY(self.questionView.frame) + 10, 15.0, CGRectGetHeight(self.gameControllerContainer.frame) + 10, 15.0) animated:YES];
 
                 CLLocationDistance distance = [location distanceFromLocation: correctLocation];
-                self.questionLabel.text = [NSString stringWithFormat:NSLocalizedString(@"geoquiz.answer.wrong", nil),distance/1000,[self.quizController getCorrectCountryWithLocation:location]];
+                NSString *countryName = [self.quizController getCorrectCountryWithLocation:location];
+                CGFloat distanceInKM = distance/1000;
+                self.questionLabel.text = [NSString stringWithFormat:NSLocalizedString(@"geoquiz.answer.wrong", nil),countryName,distanceInKM];
                 [self.mapView addOverlay:self.distanceLine];
                 self.waitingForNextQuestion = YES;
             }
