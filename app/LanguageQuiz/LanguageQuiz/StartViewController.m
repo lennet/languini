@@ -50,37 +50,22 @@ NSArray *countriesOnLocation;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-<<<<<<< HEAD
+    [self.dictionaryLoadingIndicator stopAnimating];
+    shadow
     Reachability *connection = [Reachability new];
     NetworkStatus netStatus = [connection currentReachabilityStatus];
     if (netStatus == NotReachable) {
       //  [self.offlineView setHidden:false];
-        [self.offlineView setAlpha:CGFLOAT_MAX];
-=======
+        [self.offlineView setAlpha:1];
+    }
     
     [self.dictionaryButton setTitle:NSLocalizedString(@"startview.buttontitle.dictionary", nil) forState:UIControlStateNormal];
-    
-    Reachability *networkReachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
-    if (networkStatus == NotReachable) {
-        [self.offlineView setHidden:false];
-        UIImage *test = [UIImage imageNamed:@"world"];
->>>>>>> 19109703dec1cad9b9e34f0c6aa2ff1d63eb4cf8
-        internetConnection = false;
-    } else {
-        [self.offlineView setAlpha:CGFLOAT_MIN];
-        internetConnection = true;
-    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
     loadSpecialDict = false;
-}
-
-- (void)setUpMapView {
-//    [self.mapView setzo]
 }
 
 - (IBAction)handleGeoQuizButtonPressed:(id)sender {
@@ -99,11 +84,6 @@ NSArray *countriesOnLocation;
         self.gameControllerContainer.alpha = 1;
         self.questionView.alpha = 1;
     }                completion:^(BOOL finished) {
-//        self.geoQuizButton.enabled = NO;
-//        self.quizButton.enabled = NO;
-//        self.aboutButton.enabled = NO;
-//        self.dictionaryButton.enabled = NO;
-
     }];
     }
     else{
@@ -144,7 +124,6 @@ NSArray *countriesOnLocation;
                 [self performSelector:@selector(nextQuestion) withObject:nil afterDelay:questionDelay];
             }
             else {
-                
                 countriesOnLocation = [self.langAggregator getLanguiodsForCountryCode:placemark.ISOcountryCode];
                 [self addAnnotationOnLocation:touchCoordinate];
                 

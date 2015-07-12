@@ -18,14 +18,6 @@
 @implementation DictionaryViewController
 @synthesize sectionBar;
 
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self setUpLanguiodsData];
-    [self setUpTableView];
-    self.searchResults = [[NSMutableArray alloc] init];
-}
-
 - (void)setUpTableView {
     [self.tableView registerNib:[UINib nibWithNibName:@"DictionaryTableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     self.clearsSelectionOnViewWillAppear = NO;
@@ -33,6 +25,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.searchResults = [NSMutableArray new];
+    
+    [self setUpTableView];
     [self setUpLanguiodsData];
 }
 
