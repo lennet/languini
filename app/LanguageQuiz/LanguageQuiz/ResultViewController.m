@@ -64,26 +64,21 @@
 }
 
 - (void)loadScoreEntries {
-    NSMutableArray *scores = [NSMutableArray new];
-    NSArray *currentTopScores = [self.scoreHelper getTopScoreEntriesForType:self.type];
+    NSMutableArray *currentTopScores = [NSMutableArray arrayWithArray:[self.scoreHelper getTopScoreEntriesForType:self.type]];
+    
     if (currentTopScores.count > 0) {
         for (NSInteger i = 0; i < currentTopScores.count; i++) {
             HighScoreEntry *currentScore = currentTopScores[i];
             if ([currentScore.score integerValue] < self.newScore && self.newScoreIndex < 0) {
-                [scores addObject:@(self.newScore)];
-                self.newScoreIndex = i;
-            } else if (scores.count < 5) {
-                [scores addObject:currentScore];
-            }
-            if([currentScore.score integerValue] == self.newScore){
+                [currentTopScores insertObject:@(self.newScore) atIndex:i];
                 self.newScoreIndex = i;
             }
         }
     } else {
-        [scores addObject:@(self.newScore)];
+        [currentTopScores addObject:@(self.newScore)];
         self.newScoreIndex = 0;
     }
-    self.scoreEntries = [NSArray arrayWithArray:scores];
+    self.scoreEntries = [NSArray arrayWithArray:currentTopScores];
     
 }
 
