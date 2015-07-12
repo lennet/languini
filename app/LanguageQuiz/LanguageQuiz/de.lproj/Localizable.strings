@@ -19,3 +19,5 @@
 "Countries" = "Wird gesprochen in";
 "Alternate Names" = "Alternative Namen";
 "Name" = "Name";
+"quiz.answer.right" = "Richtige Antwort!";
+"geoquiz.answer.wrong" = "Die Distanz zum nächsten richtigen Land %@ beträgt %.02fkm";
