@@ -13,7 +13,7 @@
 #import "SentencesAggregator.h"
 #import "LanguoidsAggregator.h"
 
-#define maxDistance 5000
+#define maxDistance 6000
 #define standardPoints 50
 
 @interface QuizControlViewController ()
@@ -113,7 +113,7 @@
 
 - (BOOL)isValidAnswer:(NSString *)selectedCountry andLocation:(CLLocation *)selectedLocation{
 
-    for (Country *country in self.curentSentence.languoid.country) {
+    for (Country *country in [self.curentSentence.languoid.country allObjects]) {
 
         if ([country.code isEqualToString:selectedCountry]) {
             [self updateScoreLabel:maxDistance];
@@ -140,7 +140,7 @@
 - (CLLocation *)getClosestLocationForLocation:(CLLocation *)selectedLocation andLanguoid:(Languoid *)languoid {
     CLLocation *location;
     double minValue = MAXFLOAT;
-    for (Country *country in languoid.country) {
+    for (Country *country in [languoid.country allObjects]) {
         CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:[country.latitude floatValue] longitude:[country.longitude floatValue]];
         CLLocationDistance distance = [selectedLocation distanceFromLocation:currentLocation];
         if (distance < minValue) {
@@ -149,6 +149,20 @@
         }
     }
     return location;
+}
+
+- (Country *)getClosestCountryForLocation:(CLLocation *)selectedLocation andLanguoid:(Languoid *)languoid{
+    Country *closestCountry;
+    double minValue = MAXFLOAT;
+    for (Country *country in [languoid.country allObjects]) {
+        CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:[country.latitude floatValue] longitude:[country.longitude floatValue]];
+        CLLocationDistance distance = [selectedLocation distanceFromLocation:currentLocation];
+        if (distance < minValue) {
+            closestCountry = country;
+            minValue = distance;
+        }
+    }
+    return closestCountry;
 }
 
 - (BOOL)isValidAnswerWithLanguoid:(Languoid *)languoid {
@@ -166,6 +180,15 @@
 
 - (CLLocation *)getCorrectLocationWithLocation:(CLLocation*)location{
     return [self getClosestLocationForLocation:location andLanguoid:self.curentSentence.languoid];
+}
+
+- (NSString *)getCorrectCountryWithLocation:(CLLocation*)location{
+    Country *closestCountry = [self getClosestCountryForLocation:location andLanguoid:self.curentSentence.languoid];
+    if ([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"de"] && closestCountry.nameDe) {
+        return closestCountry.nameDe;
+    } else {
+        return closestCountry.name;
+    }
 }
 
 - (NSInteger)getScore {

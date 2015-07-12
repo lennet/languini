@@ -13,7 +13,6 @@
 #import "Reachability.h"
 
 
-#define questionDelay 4
 BOOL annotationSet;
 BOOL loadSpecialDict;
 NSArray *countriesOnLocation;
@@ -30,6 +29,7 @@ NSArray *countriesOnLocation;
 @property(strong, nonatomic) QuizControlViewController *quizController;
 @property(nonatomic) BOOL quizMode;
 @property(nonatomic) BOOL shouldHandleTouches;
+@property(nonatomic) BOOL waitingForNextQuestion;
 @property(strong, nonatomic) IBOutlet UILabel *questionLabel;
 
 @property(nonatomic) MKGeodesicPolyline *distanceLine;
@@ -110,22 +110,35 @@ NSArray *countriesOnLocation;
 
 }
 
+- (IBAction)didTappedOnQuestionView:(id)sender {
+    if (self.waitingForNextQuestion) {
+        [self nextQuestion];
+    }
+}
+
 #pragma mark MKMapViewDelegate
 
 - (IBAction)didTappedOnMap:(UIGestureRecognizer *)sender {
+    if (self.quizMode && self.waitingForNextQuestion) {
+        [self nextQuestion];
+        return;
+    }
+    
     if (self.shouldHandleTouches || !self.quizMode) {
         self.shouldHandleTouches = NO;
         CGPoint touchPoint = [sender locationInView:self.mapView];
-        CLGeocoder *geoCoder = [CLGeocoder new];
+        CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
         CLLocationCoordinate2D touchCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
         CLLocation *location = [[CLLocation alloc] initWithLatitude:touchCoordinate.latitude longitude:touchCoordinate.longitude];
 
         [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
             CLPlacemark *placemark = placemarks.firstObject;
-            if (placemark.ISOcountryCode != nil && [self.quizController isValidAnswer:placemark.ISOcountryCode andLocation:location]) {
-                NSLog(@"richtig");
-                [self performSelector:@selector(nextQuestion) withObject:nil afterDelay:questionDelay];
+            NSString *countryCode = placemark.ISOcountryCode ? placemark.ISOcountryCode : @"";
+            if ([self.quizController isValidAnswer:countryCode andLocation:location]) {
+                self.questionLabel.text = NSLocalizedString(@"quiz.answer.right", nil);
+                self.waitingForNextQuestion = YES;
             } else if (self.quizMode) {
+
                 CLLocationCoordinate2D locations[2];
                 CLLocation *correctLocation = [self.quizController getCorrectLocationWithLocation:location];
                 locations[0] = touchCoordinate;
@@ -135,13 +148,16 @@ NSArray *countriesOnLocation;
 
                 [self.mapView setVisibleMapRect:[self.distanceLine boundingMapRect] edgePadding:UIEdgeInsetsMake(CGRectGetMaxX(self.questionView.frame) + CGRectGetMinY(self.questionView.frame) + 10, 15.0, CGRectGetHeight(self.gameControllerContainer.frame) + 10, 15.0) animated:YES];
 
+                CLLocationDistance distance = [location distanceFromLocation: correctLocation];
+                self.questionLabel.text = [NSString stringWithFormat:NSLocalizedString(@"geoquiz.answer.wrong", nil),distance/1000,[self.quizController getCorrectCountryWithLocation:location]];
                 [self.mapView addOverlay:self.distanceLine];
-
-                [self performSelector:@selector(nextQuestion) withObject:nil afterDelay:questionDelay];
+                self.waitingForNextQuestion = YES;
             }
             else {
                 countriesOnLocation = [self.langAggregator getLanguiodsForCountryCode:placemark.ISOcountryCode];
                 [self addAnnotationOnLocation:touchCoordinate];
+                
+                
                 
             }
 
@@ -219,6 +235,7 @@ NSArray *countriesOnLocation;
 }
 
 - (void)shouldFinishGame {
+    self.waitingForNextQuestion = NO;
     [self performSegueWithIdentifier:@"gameResultSegue" sender:nil];
 }
 
@@ -229,6 +246,7 @@ NSArray *countriesOnLocation;
     }
     self.shouldHandleTouches = NO;
     self.quizMode = false;
+    self.waitingForNextQuestion = NO;
     [UIView animateWithDuration:1.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:10 options:kNilOptions animations:^{
         self.geoQuizButton.alpha = 1;
         self.quizButton.alpha = 1;
@@ -241,6 +259,7 @@ NSArray *countriesOnLocation;
 }
 
 - (void)nextQuestion {
+    self.waitingForNextQuestion = NO;
     if (self.distanceLine) {
         [self.mapView removeOverlay:self.distanceLine];
         self.distanceLine = nil;

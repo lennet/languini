@@ -42,6 +42,8 @@ typedef enum {
 
 - (CLLocation *)getCorrectLocationWithLocation:(CLLocation*)location;
 
+- (NSString *)getCorrectCountryWithLocation:(CLLocation*)location;
+
 - (Languoid *)getCorrectLanguoid;
 
 - (NSInteger)getScore;

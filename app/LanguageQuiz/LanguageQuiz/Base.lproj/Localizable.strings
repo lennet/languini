@@ -10,8 +10,6 @@
 "mapview.languagesannoation.title" = "%lu Languages";
 "startview.buttontitle.dictionary" = "Languages";
 "resultView.finishButton.title" = "Exit";
-"startview.buttontitle.dictionary" = "Languages";
-"resultView.finishButton.title" = "Exit";
 "Classification" = "Classification";
 "ISO 6393 Code" = "ISO 6393 Code";
 "Location Description" = "Location Description";
@@ -21,3 +19,5 @@
 "Countries" = "Spoken in";
 "Alternate Names" = "Alternate Names";
 "Name" = "Name";
+"quiz.answer.right" = "Right Answer!";
+"geoquiz.answer.wrong" = "The distance to the next correct Country %@ is %.02fkm";
