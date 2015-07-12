@@ -50,8 +50,6 @@ NSArray *countriesOnLocation;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.dictionaryLoadingIndicator stopAnimating];
-    shadow
     Reachability *connection = [Reachability new];
     NetworkStatus netStatus = [connection currentReachabilityStatus];
     if (netStatus == NotReachable) {
