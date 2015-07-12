@@ -41,7 +41,7 @@
     NSLog(@"%@", typeNumber);
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"quizType == %i", type];
 
-    return [self getObjectsForEntity:[HighScoreEntry entityName] withSortDescriptor:sortDescriptor andPredicate:predicate andFetchLimit:10];
+    return [self getObjectsForEntity:[HighScoreEntry entityName] withSortDescriptor:sortDescriptor andPredicate:predicate andFetchLimit:5];
 }
 
 @end
