@@ -99,7 +99,13 @@
     NSString *languageName = languoid.name;
     NSMutableString *countries = [NSMutableString new];
     for (Country *country in languoid.country){
-        [countries appendFormat:@"%@ ,",country.name];
+        NSString* countryName;
+        if ([[[NSLocale preferredLanguages] objectAtIndex:0] isEqualToString:@"de"] && country.nameDe) {
+            countryName = country.nameDe;
+        } else {
+            countryName = country.name;
+        }
+        [countries appendFormat:@"%@ ,",countryName];
     }
 
 
