@@ -134,7 +134,7 @@ NSArray *countriesOnLocation;
         [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
             CLPlacemark *placemark = placemarks.firstObject;
             NSString *countryCode = placemark.ISOcountryCode ? placemark.ISOcountryCode : @"";
-            if ([self.quizController isValidAnswer:countryCode andLocation:location]) {
+            if (self.quizMode && [self.quizController isValidAnswer:countryCode andLocation:location]) {
                 self.questionLabel.text = NSLocalizedString(@"quiz.answer.right", nil);
                 self.waitingForNextQuestion = YES;
             } else if (self.quizMode) {
@@ -198,10 +198,12 @@ NSArray *countriesOnLocation;
     annotationView.enabled = YES;
     annotationView.opaque = false;
     annotationView.canShowCallout = true;
-    
+    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotaionPin"];
+    pin.canShowCallout =true;
+    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 
     NSLog(@"Show annotationView");
-    return annotationView;
+    return pin;
     
 }
 
@@ -226,6 +228,16 @@ NSArray *countriesOnLocation;
     }
     loadSpecialDict = true;
     [self performSegueWithIdentifier:@"loadDictionaryViewController" sender:self];
+}
+
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views{
+    //🔮 No Idea why wee need this workaroud but it doesn't work without 
+    [self performSelector:@selector(selectAnnotationView)
+               withObject:nil afterDelay:0.2];
+}
+
+- (void)selectAnnotationView {
+    [self.mapView selectAnnotation:[[self.mapView annotations] lastObject] animated:YES];
 }
 
 #pragma mark QuizControlViewControllerDelegate

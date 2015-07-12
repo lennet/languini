@@ -170,16 +170,19 @@
     [self.sentencesScrollView layoutIfNeeded];
     self.sentencesScrollView.pagingEnabled = YES;
     if (self.languoid.sentence.count > 0) {
+        NSInteger count = 0;
         for (Sentence *sentence in self.languoid.sentence) {
             SentecesPageViewController *pageViewController = [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"SentecesPageViewController"];
 
             UIView *pageView = pageViewController.view;
-            pageView.frame = self.sentencesScrollView.bounds;
+            pageView.frame = CGRectMake(count*self.sentencesScrollView.bounds.size.width, 0, self.sentencesScrollView.bounds.size.width, self.sentencesScrollView.bounds.size.height);
             [self.sentencesScrollView addSubview:pageView];
             pageViewController.sentenceLabel.text = sentence.sentence;
             pageViewController.translationLabel.text = [NSString stringWithFormat:@"(%@)", sentence.translation];
-
+            [pageView layoutIfNeeded];
+            
             self.sentencesScrollView.contentSize = CGSizeMake(self.sentencesScrollView.contentSize.width + pageView.frame.size.width, self.sentencesScrollView.contentSize.height);
+            count++;
         }
 
     } else if (self.languoid.country.count > 0) {

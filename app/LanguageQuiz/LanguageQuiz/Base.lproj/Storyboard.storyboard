@@ -63,7 +63,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7VR-qH-RWc" kind="push" id="uBO-dN-hzq"/>
+                                    <segue destination="7VR-qH-RWc" kind="modal" modalTransitionStyle="flipHorizontal" id="uBO-dN-hzq"/>
                                 </connections>
                             </button>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZj-IF-K1T" customClass="ShadowView" customModule="Languini" customModuleProvider="target">
@@ -124,7 +124,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XUW-Qg-Ath" kind="push" id="gnK-db-sSX"/>
+                                    <segue destination="XUW-Qg-Ath" kind="push" identifier="loadDictionaryViewController" id="gnK-db-sSX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBP-bo-fcc" customClass="ShadowButton" customModule="Languini" customModuleProvider="target">
@@ -173,7 +173,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MMR-bJ-7Ub"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="aboutButton" destination="f0d-l1-lTG" id="JO5-49-XAe"/>
@@ -522,42 +521,109 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqc-kn-wSO">
-                                <rect key="frame" x="16" y="0.0" width="288" height="568"/>
-                                <string key="text">*WORK IN PROGESS*
-
-The MIT License (MIT)
-
-Copyright (c) 2015 Coding da Vinci
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL HE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-Language Science Press is an open access publisher committed to the accessibility and reusability of scientific work. There are currently 15 books series with 165 editors from 31 countries and 5 continents.
-
-The Cross-Linguistic Linked Data project is developing and curating interoperable data publication structures using Linked Data principles as integration mechanism for distributed resources. There are currently 10 data repositories available at clld.org, and a large project for lexical data has just been funded.
-
-Coding da Vinci is the first German open cultural data hackathon that started in Berlin 2014 and will run once a year. We want to bring together both cultural heritage institutions and the hacker &amp; designer community to develop ideas and prototypes for the cultural sector and the public.
-Whereas a classic hackathon offers its participants only a short time frame - typically a weekend - to develop software applications, Coding da Vinci runs for a total of 10 weeks. Since it was the first event of its kind, combining the formerly separate worlds of technology and cultural heritage, the organizers chose this more extensive timeframe in order to provide the much-needed space to interact with and learn about each other.
-At the beginning of the 10 weeks, a two-day inaugural event takes place. The purpose is to offer sufficient time for the institutions to present their data sets, and for the participants to make contact with the GLAMs in order to develop project ideas and to form teams for their realization. The teams then can use the coming 10 weeks to develop prototypes, that are presented and evaluated at a public award ceremony in July (sprint phase).
-
-</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSS-Kw-ArG">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSI-l6-1b0">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="381"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odB-Hz-PvO">
+                                                <rect key="frame" x="268" y="8" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="fNY-Gr-lZT"/>
+                                                    <constraint firstAttribute="width" constant="44" id="jjo-7f-WR0"/>
+                                                </constraints>
+                                                <state key="normal" image="close">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="handleCancelButtonPressed:" destination="7VR-qH-RWc" eventType="touchUpInside" id="7J5-nQ-B1Q"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3P6-qb-hGb">
+                                                <rect key="frame" x="15" y="40" width="290" height="128"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="Mgl-cF-452"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIJ-3I-krW">
+                                                <rect key="frame" x="15" y="238" width="290" height="128"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="d0g-GQ-PJH"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygV-KJ-BPS">
+                                                <rect key="frame" x="15" y="183" width="117" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="117" id="d93-nG-Fh6"/>
+                                                    <constraint firstAttribute="height" constant="40" id="pza-vE-7fb"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="coding_da_vinci">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQD-Xg-0uJ">
+                                                <rect key="frame" x="180" y="183" width="125" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Bmf-jJ-KDP"/>
+                                                    <constraint firstAttribute="width" constant="125" id="VDT-X6-kve"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="langsci">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ZQD-Xg-0uJ" secondAttribute="trailing" constant="15" id="0WF-2Y-gkZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="odB-Hz-PvO" secondAttribute="trailing" constant="8" id="6cC-bG-LUy"/>
+                                            <constraint firstItem="ZQD-Xg-0uJ" firstAttribute="top" secondItem="3P6-qb-hGb" secondAttribute="bottom" constant="15" id="71d-gN-Apq"/>
+                                            <constraint firstItem="WIJ-3I-krW" firstAttribute="leading" secondItem="OSI-l6-1b0" secondAttribute="leading" constant="15" id="Eu5-9j-zTU"/>
+                                            <constraint firstItem="ygV-KJ-BPS" firstAttribute="top" secondItem="3P6-qb-hGb" secondAttribute="bottom" constant="15" id="Jdq-yQ-aUW"/>
+                                            <constraint firstAttribute="trailing" secondItem="3P6-qb-hGb" secondAttribute="trailing" constant="15" id="PPW-Tg-EUU"/>
+                                            <constraint firstAttribute="trailing" secondItem="WIJ-3I-krW" secondAttribute="trailing" constant="15" id="TBr-CU-4P4"/>
+                                            <constraint firstItem="odB-Hz-PvO" firstAttribute="top" secondItem="OSI-l6-1b0" secondAttribute="top" constant="8" id="WJS-eQ-zMQ"/>
+                                            <constraint firstItem="ygV-KJ-BPS" firstAttribute="leading" secondItem="OSI-l6-1b0" secondAttribute="leading" constant="15" id="YiO-uV-tBA"/>
+                                            <constraint firstItem="WIJ-3I-krW" firstAttribute="top" secondItem="ygV-KJ-BPS" secondAttribute="bottom" constant="15" id="a2l-mn-PeS"/>
+                                            <constraint firstItem="3P6-qb-hGb" firstAttribute="leading" secondItem="OSI-l6-1b0" secondAttribute="leading" constant="15" id="hT8-72-FRW"/>
+                                            <constraint firstAttribute="bottom" secondItem="WIJ-3I-krW" secondAttribute="bottom" constant="15" id="nTc-3p-vLd"/>
+                                            <constraint firstItem="3P6-qb-hGb" firstAttribute="top" secondItem="OSI-l6-1b0" secondAttribute="top" constant="40" id="o1E-AH-EHM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OSI-l6-1b0" secondAttribute="trailing" id="kf5-nt-WNb"/>
+                                    <constraint firstAttribute="bottom" secondItem="OSI-l6-1b0" secondAttribute="bottom" id="oW6-54-LEF"/>
+                                    <constraint firstItem="OSI-l6-1b0" firstAttribute="top" secondItem="TSS-Kw-ArG" secondAttribute="top" id="xu5-fS-vRU"/>
+                                    <constraint firstItem="OSI-l6-1b0" firstAttribute="leading" secondItem="TSS-Kw-ArG" secondAttribute="leading" id="zbP-7n-rgr"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.32549019610000002" green="0.69019607839999997" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.79119342216259247" green="0.79271863591222258" blue="0.83682700710981439" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Kqc-kn-wSO" firstAttribute="leading" secondItem="7RJ-iC-vLb" secondAttribute="leadingMargin" id="1hN-ea-lJ3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Kqc-kn-wSO" secondAttribute="trailing" id="dUl-Ox-D3g"/>
-                            <constraint firstItem="Kqc-kn-wSO" firstAttribute="top" secondItem="7RJ-iC-vLb" secondAttribute="topMargin" id="f9s-hd-1kW"/>
-                            <constraint firstItem="auZ-AY-wQp" firstAttribute="top" secondItem="Kqc-kn-wSO" secondAttribute="bottom" id="s0N-XA-5Or"/>
+                            <constraint firstItem="TSS-Kw-ArG" firstAttribute="top" secondItem="JTw-dB-Y7R" secondAttribute="bottom" id="441-pX-dsd"/>
+                            <constraint firstAttribute="width" secondItem="OSI-l6-1b0" secondAttribute="width" id="Vfg-1h-1Z6"/>
+                            <constraint firstAttribute="trailing" secondItem="TSS-Kw-ArG" secondAttribute="trailing" id="ZB8-18-hCh"/>
+                            <constraint firstAttribute="height" secondItem="OSI-l6-1b0" secondAttribute="height" priority="750" id="dGm-Em-jYd"/>
+                            <constraint firstItem="TSS-Kw-ArG" firstAttribute="leading" secondItem="7RJ-iC-vLb" secondAttribute="leading" id="qUH-nP-Lv0"/>
+                            <constraint firstItem="auZ-AY-wQp" firstAttribute="top" secondItem="TSS-Kw-ArG" secondAttribute="bottom" id="rF3-E3-We4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Lbk-0I-gNb"/>
+                    <connections>
+                        <outlet property="infoTextView" destination="3P6-qb-hGb" id="mIt-Ha-Owb"/>
+                        <outlet property="infoTextViewHeight" destination="Mgl-cF-452" id="BiR-an-8wn"/>
+                        <outlet property="licenceTextView" destination="WIJ-3I-krW" id="iMn-ba-tfj"/>
+                        <outlet property="licenceTextViewHeight" destination="d0g-GQ-PJH" id="JHS-Xh-Uhp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z51-wQ-cVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -625,7 +691,7 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="720" y="59"/>
+            <point key="canvasLocation" x="685" y="149"/>
         </scene>
         <!--Dictionary Detail View Controller-->
         <scene sceneID="fNG-yt-iSe">
@@ -1128,8 +1194,11 @@ At the beginning of the 10 weeks, a two-day inaugural event takes place. The pur
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="44" height="44"/>
+        <image name="coding_da_vinci" width="177" height="60"/>
         <image name="heart" width="35" height="35"/>
         <image name="home" width="35" height="35"/>
+        <image name="langsci" width="250" height="121"/>
         <image name="left" width="50" height="50"/>
         <image name="right" width="50" height="50"/>
         <image name="world" width="960" height="488"/>
