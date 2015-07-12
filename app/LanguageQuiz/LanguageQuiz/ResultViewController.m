@@ -111,6 +111,7 @@
         if (indexPath.row == self.newScoreIndex || [self.scoreEntries[indexPath.row] isKindOfClass:[NSNumber class]]) {
             scoreString = [NSString stringWithFormat:@"%li", (long) self.newScore];
             nameString = [self getCurrentName];
+            cell.backgroundColor = [UIColor colorWithRed:0.295 green:0.695 blue:0.900 alpha:0.970];
         } else {
             HighScoreEntry *currentEntry = self.scoreEntries[indexPath.row];
             scoreString = [currentEntry.score stringValue];
@@ -126,9 +127,6 @@
         cell.rankingLabel.text = [NSString stringWithFormat:@"%li", (long) (indexPath.row +1)];
         cell.nameLabel.text = @" 0 ";
         cell.scoreLabel.text = @" ";
-    }
-    if(indexPath.row == self.newScoreIndex){
-        cell.backgroundColor = [UIColor colorWithRed:0.295 green:0.695 blue:0.900 alpha:0.970];
     }
     
     return cell;
