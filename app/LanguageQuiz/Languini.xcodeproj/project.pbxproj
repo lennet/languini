@@ -155,10 +155,10 @@
 		65406A171B1362E0004EEE6B /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				98ED7E121B110766000A5625 /* QuizControlViewController.h */,
 				98ED7E131B110766000A5625 /* QuizControlViewController.m */,
 				98E78F0B1AEBF4CA00C0909D /* StartViewController.h */,
 				98E78F0C1AEBF4CA00C0909D /* StartViewController.m */,
+				98ED7E121B110766000A5625 /* QuizControlViewController.h */,
 				98E78F101AEBF4FF00C0909D /* QuizViewController.h */,
 				652FA8021B5172BC0060DAAC /* Images.xcassets */,
 				98E78F111AEBF4FF00C0909D /* QuizViewController.m */,
