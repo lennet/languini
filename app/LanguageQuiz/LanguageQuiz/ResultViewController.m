@@ -20,7 +20,6 @@
 @property(strong, nonatomic) HighScoreHelper *scoreHelper;
 @property (strong, nonatomic) IBOutlet UIButton *finishButton;
 @property(strong, nonatomic) Preferences *prefs;
-@property NSUInteger *latestScoreItemIndex;
 @property(nonatomic) NSInteger newScoreIndex;
 
 @end
@@ -73,11 +72,11 @@
             if ([currentScore.score integerValue] < self.newScore && self.newScoreIndex < 0) {
                 [scores addObject:@(self.newScore)];
                 self.newScoreIndex = i;
-            } else if (scores.count < 10) {
+            } else if (scores.count < 5) {
                 [scores addObject:currentScore];
             }
             if([currentScore.score integerValue] == self.newScore){
-                self.latestScoreItemIndex = (NSUInteger *)i;
+                self.newScoreIndex = i;
             }
         }
     } else {
@@ -126,17 +125,17 @@
         cell.rankingLabel.text = [NSString stringWithFormat:@"%li", (long) indexPath.row + 1];
         cell.scoreLabel.text = scoreString;
         cell.nameLabel.text = nameString;
-        if(indexPath.row == (NSInteger)self.latestScoreItemIndex){
-            
-            cell.backgroundColor = [UIColor colorWithRed:0.295 green:0.695 blue:0.900 alpha:0.970];
-            
-        }
+
     }
     else{
         cell.rankingLabel.text = [NSString stringWithFormat:@"%li", (long) (indexPath.row +1)];
-        cell.nameLabel.text = @" / ";
+        cell.nameLabel.text = @" 0 ";
         cell.scoreLabel.text = @" ";
     }
+    if(indexPath.row == self.newScoreIndex){
+        cell.backgroundColor = [UIColor colorWithRed:0.295 green:0.695 blue:0.900 alpha:0.970];
+    }
+    
     return cell;
 }
 
