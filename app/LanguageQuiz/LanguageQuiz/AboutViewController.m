@@ -34,14 +34,14 @@
         self.infoTextView.attributedText = [self englishInfo];
     }
     
-
-    
+    [self.infoTextView layoutIfNeeded];
     [self.infoTextView.layoutManager ensureLayoutForTextContainer:self.infoTextView.textContainer];
     [self.infoTextView layoutIfNeeded];
     
     self.infoTextViewHeight.constant = self.infoTextView.contentSize.height+15;
     [self.view layoutIfNeeded];
-    
+
+    [self.licenceTextView layoutIfNeeded];
     [self.licenceTextView.layoutManager ensureLayoutForTextContainer:self.licenceTextView.textContainer];
     [self.licenceTextView layoutIfNeeded];
     

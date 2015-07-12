@@ -527,9 +527,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSI-l6-1b0">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="381"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odB-Hz-PvO">
-                                                <rect key="frame" x="266" y="8" width="46" height="30"/>
-                                                <state key="normal" title="Button">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odB-Hz-PvO">
+                                                <rect key="frame" x="268" y="8" width="44" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="fNY-Gr-lZT"/>
+                                                    <constraint firstAttribute="width" constant="44" id="jjo-7f-WR0"/>
+                                                </constraints>
+                                                <state key="normal" image="close">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -1190,6 +1194,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="44" height="44"/>
         <image name="coding_da_vinci" width="177" height="60"/>
         <image name="heart" width="35" height="35"/>
         <image name="home" width="35" height="35"/>
