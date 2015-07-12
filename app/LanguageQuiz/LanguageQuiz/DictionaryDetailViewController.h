@@ -29,6 +29,7 @@
 @property(strong, nonatomic) IBOutlet UIButton *leftCountryButton;
 @property(strong, nonatomic) IBOutlet UIView *offlineView;
 
+@property (strong, nonatomic) IBOutlet UILabel *noConnectionLabel;
 
 @property(nonatomic) NSUInteger currentCountryIndex;
 

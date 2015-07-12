@@ -46,6 +46,7 @@
 
     [self.glottologButton setTitle:[NSString stringWithFormat:@"Glottlog - %@", [self.languoid valueForKey:@"key"]] forState:UIControlStateNormal];
 
+    self.noConnectionLabel.text = NSLocalizedString(@"alert.nointernet.title", nil);
     [self setUpTableView];
     [self setUpSentenceScrollView];
     [self setUpCountrySelection];

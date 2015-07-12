@@ -21,5 +21,5 @@
 "Name" = "Name";
 "quiz.answer.right" = "Right Answer!";
 "geoquiz.answer.wrong" = "The distance to the next correct Country %@ is %.02f km";
-"alert.nointernet.title" = "No Internet";
+"alert.nointernet.title" = "No Internet Connection";
 "alert.nointernet.message" = "Geo Quiz can only be played with an internet connection";
