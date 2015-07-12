@@ -21,3 +21,5 @@
 "Name" = "Name";
 "quiz.answer.right" = "Richtige Antwort!";
 "geoquiz.answer.wrong" = "Die Distanz zum nächsten richtigen Land %@ beträgt %.02f km";
+"alert.nointernet.title" = "Kein Internet";
+"alert.nointernet.message" = "Geo Quiz steht nur mit Netzverbindung zur verfügung";

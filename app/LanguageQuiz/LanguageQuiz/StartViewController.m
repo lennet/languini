@@ -53,10 +53,8 @@ NSArray *countriesOnLocation;
     if ((toInterfaceOrientation == UIInterfaceOrientationPortrait) || (toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)) {
         self.offlineView.contentMode = UIViewContentModeScaleAspectFill;
         self.offlineView.transform = CGAffineTransformMakeScale(1, 1);
-        NSLog(@"Portrait");
     } else {
         self.offlineView.transform = CGAffineTransformMakeScale(2, 2);
-        NSLog(@"Landscape");
     }
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -103,7 +101,7 @@ NSArray *countriesOnLocation;
     }];
     }
     else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Keine Internetverbindung" message:@"GeoQuiz steht nur mit Netzverbindung zur Verfügung" delegate:self cancelButtonTitle:@"Verstanden" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alert.nointernet.title", nil) message:NSLocalizedString(@"alert.nointernet.message", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
         [alert show];
         return;
     }
@@ -169,7 +167,6 @@ NSArray *countriesOnLocation;
 
 - (void)addAnnotationOnLocation:(CLLocationCoordinate2D)touchCoordinate {
     if (annotationSet == true) {
-        NSLog(@"Removed %@", [[self.mapView.annotations lastObject] title]);
         [self.mapView removeAnnotation:[self.mapView.annotations lastObject]];
         annotationSet = false;
         
@@ -180,7 +177,6 @@ NSArray *countriesOnLocation;
     languageAnnotation.subtitle = @"";
     annotationSet = true;
     [self.mapView addAnnotation:languageAnnotation];
-    NSLog(@"Added %@", languageAnnotation.title);
   //  [self.mapView showAnnotations:[self.mapView.annotations objectAtIndex:0] animated:YES];
     
 

@@ -34,10 +34,8 @@
     if ((toInterfaceOrientation == UIInterfaceOrientationPortrait) || (toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)) {
         self.offlineView.contentMode = UIViewContentModeScaleAspectFill;
         self.offlineView.transform = CGAffineTransformMakeScale(1, 1);
-        NSLog(@"Portrait");
     } else {
         self.offlineView.transform = CGAffineTransformMakeScale(2, 2);
-        NSLog(@"Landscape");
     }
 }
 

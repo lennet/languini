@@ -38,7 +38,6 @@
 
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"score" ascending:NO];
     NSNumber *typeNumber = @(type);
-    NSLog(@"%@", typeNumber);
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"quizType == %i", type];
 
     return [self getObjectsForEntity:[HighScoreEntry entityName] withSortDescriptor:sortDescriptor andPredicate:predicate andFetchLimit:5];
