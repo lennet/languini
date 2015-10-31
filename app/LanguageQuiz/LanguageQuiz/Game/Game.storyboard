@@ -19,60 +19,179 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3b-Qy-LwN" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
-                                <rect key="frame" x="20" y="335" width="560" height="65"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="3cd-mQ-opg"/>
-                                </constraints>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8E-8Z-Zi2" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
-                                <rect key="frame" x="20" y="420" width="560" height="65"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="qun-75-8Yi"/>
-                                </constraints>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjm-iL-lZG" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
-                                <rect key="frame" x="20" y="505" width="560" height="65"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="Oi7-TT-sz3"/>
-                                </constraints>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtd-Pt-2Fb" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
-                                <rect key="frame" x="20" y="250" width="560" height="65"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="BWW-ES-Ljl"/>
-                                </constraints>
-                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYG-CG-7k1">
-                                <rect key="frame" x="20" y="20" width="560" height="210"/>
+                                <rect key="frame" x="20" y="20" width="560" height="180"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="NwG-pZ-vad"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="SHs-i3-8iV" kind="embed" id="oR2-V7-e51"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="boc-iH-tl5" userLabel="Button Container">
+                                <rect key="frame" x="20" y="210" width="560" height="370"/>
+                                <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNM-zN-koh" userLabel="Spacer View">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="750" constant="20" id="mZG-Hv-IpP"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROT-KP-ic9" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="30" width="560" height="55"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="FtL-r3-z8w"/>
+                                        </constraints>
+                                    </button>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Cr-aN-0h4" userLabel="Spacer View">
+                                        <rect key="frame" x="0.0" y="85" width="560" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="750" constant="20" id="97I-t5-cNa"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="97I-t5-cNa"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-nc-dP4" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="115" width="560" height="55"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="7FM-cl-hvr"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="7FM-cl-hvr"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEH-g3-zgl" userLabel="Spacer View">
+                                        <rect key="frame" x="0.0" y="170" width="560" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="750" constant="20" id="fZ1-cK-5xE"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="fZ1-cK-5xE"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtL-UX-pQv" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="200" width="560" height="55"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="GdF-7j-5MJ"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="GdF-7j-5MJ"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeT-Gq-feC" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="285" width="560" height="55"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="GBk-kT-dKx"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="GBk-kT-dKx"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2il-o5-Se3" userLabel="Spacer View">
+                                        <rect key="frame" x="0.0" y="340" width="560" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="750" constant="20" id="fzx-2k-K8g"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="fzx-2k-K8g"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8td-ta-obo" userLabel="Spacer View">
+                                        <rect key="frame" x="0.0" y="255" width="560" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="750" constant="20" id="mp2-Le-Pez"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="mp2-Le-Pez"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="mEH-g3-zgl" firstAttribute="top" secondItem="bTg-nc-dP4" secondAttribute="bottom" id="0Sr-9k-7NY"/>
+                                    <constraint firstAttribute="trailing" secondItem="8td-ta-obo" secondAttribute="trailing" id="114-hU-Oyd"/>
+                                    <constraint firstItem="wNM-zN-koh" firstAttribute="leading" secondItem="boc-iH-tl5" secondAttribute="leading" id="2wc-v4-BtK"/>
+                                    <constraint firstItem="8td-ta-obo" firstAttribute="top" secondItem="FtL-UX-pQv" secondAttribute="bottom" id="4mp-at-6YF"/>
+                                    <constraint firstAttribute="trailing" secondItem="bTg-nc-dP4" secondAttribute="trailing" id="6Ya-sY-QVC"/>
+                                    <constraint firstItem="LeT-Gq-feC" firstAttribute="height" secondItem="ROT-KP-ic9" secondAttribute="height" id="8s9-V3-3oS"/>
+                                    <constraint firstAttribute="bottom" secondItem="2il-o5-Se3" secondAttribute="bottom" id="AeO-YO-bmt"/>
+                                    <constraint firstItem="2Cr-aN-0h4" firstAttribute="top" secondItem="wNM-zN-koh" secondAttribute="bottom" id="H00-R6-iyb"/>
+                                    <constraint firstItem="FtL-UX-pQv" firstAttribute="height" secondItem="ROT-KP-ic9" secondAttribute="height" id="ILv-Gn-vba"/>
+                                    <constraint firstItem="2Cr-aN-0h4" firstAttribute="top" secondItem="ROT-KP-ic9" secondAttribute="bottom" id="Ist-PA-ZPk"/>
+                                    <constraint firstItem="LeT-Gq-feC" firstAttribute="leading" secondItem="boc-iH-tl5" secondAttribute="leading" id="LPt-DW-3RN"/>
+                                    <constraint firstItem="mEH-g3-zgl" firstAttribute="height" secondItem="wNM-zN-koh" secondAttribute="height" id="TZG-a3-eIU"/>
+                                    <constraint firstItem="FtL-UX-pQv" firstAttribute="top" secondItem="mEH-g3-zgl" secondAttribute="bottom" id="UqG-JU-efX"/>
+                                    <constraint firstItem="mEH-g3-zgl" firstAttribute="leading" secondItem="boc-iH-tl5" secondAttribute="leading" id="Wub-UP-00P"/>
+                                    <constraint firstAttribute="trailing" secondItem="mEH-g3-zgl" secondAttribute="trailing" id="YWX-Xv-DeH"/>
+                                    <constraint firstItem="bTg-nc-dP4" firstAttribute="leading" secondItem="boc-iH-tl5" secondAttribute="leading" id="Zbt-1W-GDV"/>
+                                    <constraint firstAttribute="trailing" secondItem="FtL-UX-pQv" secondAttribute="trailing" id="ZzG-yK-pZt"/>
+                                    <constraint firstItem="2Cr-aN-0h4" firstAttribute="leading" secondItem="boc-iH-tl5" secondAttribute="leading" id="asR-8y-b5j"/>
+                                    <constraint firstItem="bTg-nc-dP4" firstAttribute="height" secondItem="ROT-KP-ic9" secondAttribute="height" id="dGT-NJ-7n6"/>
+                                    <constraint firstAttribute="trailing" secondItem="LeT-Gq-feC" secondAttribute="trailing" id="ePG-0z-BTa"/>
+                                    <constraint firstItem="2Cr-aN-0h4" firstAttribute="height" secondItem="wNM-zN-koh" secondAttribute="height" id="fBl-hO-Vkh"/>
+                                    <constraint firstItem="2il-o5-Se3" firstAttribute="height" secondItem="wNM-zN-koh" secondAttribute="height" id="iBE-eJ-Z18"/>
+                                    <constraint firstAttribute="trailing" secondItem="wNM-zN-koh" secondAttribute="trailing" id="ihq-hG-CJr"/>
+                                    <constraint firstItem="2il-o5-Se3" firstAttribute="leading" secondItem="boc-iH-tl5" secondAttribute="leading" id="k9v-YK-6RD"/>
+                                    <constraint firstAttribute="trailing" secondItem="2il-o5-Se3" secondAttribute="trailing" id="krV-N0-47A"/>
+                                    <constraint firstItem="2il-o5-Se3" firstAttribute="top" secondItem="LeT-Gq-feC" secondAttribute="bottom" id="mEb-Ax-G9j"/>
+                                    <constraint firstItem="bTg-nc-dP4" firstAttribute="top" secondItem="2Cr-aN-0h4" secondAttribute="bottom" id="mI7-wB-VDK"/>
+                                    <constraint firstItem="wNM-zN-koh" firstAttribute="top" secondItem="boc-iH-tl5" secondAttribute="top" id="on2-v5-QKv"/>
+                                    <constraint firstAttribute="trailing" secondItem="ROT-KP-ic9" secondAttribute="trailing" id="pIW-TC-LDA"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Cr-aN-0h4" secondAttribute="trailing" id="rIi-D9-max"/>
+                                    <constraint firstItem="ROT-KP-ic9" firstAttribute="top" secondItem="wNM-zN-koh" secondAttribute="bottom" id="rP0-Js-tDb"/>
+                                    <constraint firstItem="FtL-UX-pQv" firstAttribute="leading" secondItem="boc-iH-tl5" secondAttribute="leading" id="t3l-uL-ikk"/>
+                                    <constraint firstItem="8td-ta-obo" firstAttribute="height" secondItem="wNM-zN-koh" secondAttribute="height" id="tl8-rI-eXq"/>
+                                    <constraint firstItem="LeT-Gq-feC" firstAttribute="top" secondItem="8td-ta-obo" secondAttribute="bottom" id="uNb-Pp-0PX"/>
+                                    <constraint firstItem="8td-ta-obo" firstAttribute="leading" secondItem="boc-iH-tl5" secondAttribute="leading" id="wbH-sY-FJf"/>
+                                    <constraint firstItem="ROT-KP-ic9" firstAttribute="leading" secondItem="boc-iH-tl5" secondAttribute="leading" id="yZE-x5-rze"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="H00-R6-iyb"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="W3b-Qy-LwN" secondAttribute="trailing" id="2eF-Ox-Qed"/>
-                            <constraint firstItem="mtd-Pt-2Fb" firstAttribute="leading" secondItem="BoV-Va-cVO" secondAttribute="leadingMargin" id="45s-JH-FDn"/>
-                            <constraint firstItem="W3b-Qy-LwN" firstAttribute="top" secondItem="mtd-Pt-2Fb" secondAttribute="bottom" constant="20" id="5cs-cX-hCT"/>
-                            <constraint firstItem="W3b-Qy-LwN" firstAttribute="leading" secondItem="BoV-Va-cVO" secondAttribute="leadingMargin" id="B86-cW-Bde"/>
-                            <constraint firstItem="mtd-Pt-2Fb" firstAttribute="top" secondItem="PYG-CG-7k1" secondAttribute="bottom" constant="20" id="CJv-bR-JVh"/>
-                            <constraint firstItem="h8E-8Z-Zi2" firstAttribute="leading" secondItem="BoV-Va-cVO" secondAttribute="leadingMargin" id="Mco-re-ale"/>
+                            <constraint firstItem="boc-iH-tl5" firstAttribute="top" secondItem="PYG-CG-7k1" secondAttribute="bottom" constant="10" id="1kG-yV-Flz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="boc-iH-tl5" secondAttribute="trailing" id="7S2-1K-fYn"/>
+                            <constraint firstItem="boc-iH-tl5" firstAttribute="leading" secondItem="BoV-Va-cVO" secondAttribute="leadingMargin" id="7yZ-ko-pBN"/>
+                            <constraint firstItem="Hmy-PA-57S" firstAttribute="top" secondItem="boc-iH-tl5" secondAttribute="bottom" constant="20" id="CDU-RV-UNv"/>
                             <constraint firstItem="PYG-CG-7k1" firstAttribute="leading" secondItem="BoV-Va-cVO" secondAttribute="leadingMargin" id="OGE-jx-0LC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mtd-Pt-2Fb" secondAttribute="trailing" id="PQW-kz-pFP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Fjm-iL-lZG" secondAttribute="trailing" id="WI2-je-hdo"/>
                             <constraint firstItem="PYG-CG-7k1" firstAttribute="top" secondItem="qu5-v0-1lN" secondAttribute="bottom" id="aAn-ea-VfR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="h8E-8Z-Zi2" secondAttribute="trailing" id="aCd-AG-fb7"/>
-                            <constraint firstItem="Hmy-PA-57S" firstAttribute="top" secondItem="Fjm-iL-lZG" secondAttribute="bottom" constant="30" id="bZ0-zh-oJA"/>
-                            <constraint firstItem="Fjm-iL-lZG" firstAttribute="top" secondItem="h8E-8Z-Zi2" secondAttribute="bottom" constant="20" id="cNk-hJ-aUr"/>
-                            <constraint firstItem="Fjm-iL-lZG" firstAttribute="leading" secondItem="BoV-Va-cVO" secondAttribute="leadingMargin" id="kB2-z1-3Ys"/>
-                            <constraint firstItem="h8E-8Z-Zi2" firstAttribute="top" secondItem="W3b-Qy-LwN" secondAttribute="bottom" constant="20" id="mno-en-Xzq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PYG-CG-7k1" secondAttribute="trailing" id="vOV-9X-IoW"/>
                         </constraints>
                     </view>
@@ -90,7 +209,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lyS-oC-N2o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gRS-6a-wWK">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="210"/>
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500 pkt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ft7-2o-Ret">
@@ -117,7 +236,7 @@
                                 <state key="normal" image="closeWhite"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrh-T4-MS5">
-                                <rect key="frame" x="30" y="42.5" width="500" height="157.5"/>
+                                <rect key="frame" x="30" y="42" width="500" height="127.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -28,7 +28,6 @@ class QuizButton: UIButton {
         setUpTitleLabel()
     }
     
-    
     func setUpTitleLabel() {        
         let titleLabel = UILabel()
         titleLabel.text = "Sprache"
@@ -58,9 +57,6 @@ class QuizButton: UIButton {
         let subBottomConstraint = NSLayoutConstraint(item: self, attribute:.Bottom, relatedBy: .GreaterThanOrEqual, toItem: subTitleLabel, attribute: .Bottom, multiplier: 1, constant: 5)
         addConstraint(subBottomConstraint)
     }
-    
-
-
     
     func addWidthConstraintForLabel(label : UILabel){
         let leftConstraint = NSLayoutConstraint(item: label, attribute:.Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: secondRectangleSize)
