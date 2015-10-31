@@ -7,86 +7,111 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29C12A5F1B4824C000EF731D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C12A5E1B4824C000EF731D /* AboutViewController.m */; };
-		650C6B121B3A0B9F00C354D2 /* SectionHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C6B111B3A0B9F00C354D2 /* SectionHeaderCell.m */; };
-		652CABF51B41558C00640BEF /* GlottoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652CABF41B41558C00640BEF /* GlottoViewController.m */; };
 		652FA8031B5172BC0060DAAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652FA8021B5172BC0060DAAC /* Images.xcassets */; };
-		652FA80A1B51B3420060DAAC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FA8091B51B3420060DAAC /* Reachability.m */; };
 		654DDF941B526A6300CA32EB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 654DDF931B526A6300CA32EB /* SystemConfiguration.framework */; };
-		655E09A51B514CBB00A61A34 /* ResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E09A41B514CBB00A61A34 /* ResultTableViewCell.m */; };
-		65A205191B358C0E00266BC4 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A205181B358C0E00266BC4 /* DetailCell.m */; };
-		98206C531B136191003D7777 /* DictionaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C511B136191003D7777 /* DictionaryDetailViewController.m */; };
-		98206C601B1361A5003D7777 /* DictionaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C591B1361A5003D7777 /* DictionaryTableViewCell.m */; };
-		98206C621B1361A5003D7777 /* DictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C5C1B1361A5003D7777 /* DictionaryViewController.m */; };
-		98206C6D1B13698D003D7777 /* QuizBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98206C6C1B13698D003D7777 /* QuizBaseViewController.m */; };
+		6571F97D1BE50E99007AFBD5 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6571F97C1BE50E99007AFBD5 /* Game.storyboard */; };
+		6571F97F1BE50EA9007AFBD5 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6571F97E1BE50EA9007AFBD5 /* Intro.storyboard */; };
+		6571F9811BE50EB8007AFBD5 /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6571F9801BE50EB8007AFBD5 /* Overview.storyboard */; };
+		6571F98A1BE50FBA007AFBD5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571F9851BE50FBA007AFBD5 /* AppDelegate.m */; };
+		6571F98C1BE50FBA007AFBD5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571F9871BE50FBA007AFBD5 /* main.m */; };
+		6571F98D1BE50FBA007AFBD5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571F9891BE50FBA007AFBD5 /* Reachability.m */; };
+		65739A4C1BE511BC00DBD87B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65739A4B1BE511BC00DBD87B /* Info.plist */; };
+		65739A7C1BE5134600DBD87B /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A4F1BE5134600DBD87B /* AboutViewController.m */; };
+		65739A7D1BE5134600DBD87B /* CountriesAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A511BE5134600DBD87B /* CountriesAggregator.m */; };
+		65739A7F1BE5134600DBD87B /* DataAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A551BE5134600DBD87B /* DataAggregator.m */; };
+		65739A801BE5134600DBD87B /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A571BE5134600DBD87B /* DetailCell.m */; };
+		65739A811BE5134600DBD87B /* DictionaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A591BE5134600DBD87B /* DictionaryDetailViewController.m */; };
+		65739A821BE5134600DBD87B /* DictionaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A5B1BE5134600DBD87B /* DictionaryTableViewCell.m */; };
+		65739A831BE5134600DBD87B /* DictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A5D1BE5134600DBD87B /* DictionaryViewController.m */; };
+		65739A841BE5134600DBD87B /* GlottoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A5F1BE5134600DBD87B /* GlottoViewController.m */; };
+		65739A851BE5134600DBD87B /* HighScoreHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A611BE5134600DBD87B /* HighScoreHelper.m */; };
+		65739A861BE5134600DBD87B /* Languoid.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A631BE5134600DBD87B /* Languoid.m */; };
+		65739A871BE5134600DBD87B /* LanguoidsAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A651BE5134600DBD87B /* LanguoidsAggregator.m */; };
+		65739A881BE5134600DBD87B /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A671BE5134600DBD87B /* Preferences.m */; };
+		65739A891BE5134600DBD87B /* QuizBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A691BE5134600DBD87B /* QuizBaseViewController.m */; };
+		65739A8A1BE5134600DBD87B /* QuizControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A6B1BE5134600DBD87B /* QuizControlViewController.m */; };
+		65739A8B1BE5134600DBD87B /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A6D1BE5134600DBD87B /* QuizViewController.m */; };
+		65739A8C1BE5134600DBD87B /* ResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A6F1BE5134600DBD87B /* ResultTableViewCell.m */; };
+		65739A8D1BE5134600DBD87B /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A711BE5134600DBD87B /* ResultViewController.m */; };
+		65739A8E1BE5134600DBD87B /* SectionHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A731BE5134600DBD87B /* SectionHeaderCell.m */; };
+		65739A8F1BE5134600DBD87B /* SentecesPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A751BE5134600DBD87B /* SentecesPageViewController.m */; };
+		65739A901BE5134600DBD87B /* Sentence.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A771BE5134600DBD87B /* Sentence.m */; };
+		65739A911BE5134600DBD87B /* SentencesAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A791BE5134600DBD87B /* SentencesAggregator.m */; };
+		65739A921BE5134600DBD87B /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A7B1BE5134600DBD87B /* StartViewController.m */; };
+		657A08D61BE515B600196F8A /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 657A08D51BE515B600196F8A /* Country.m */; };
 		982AC8E71B46123900116B4F /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982AC8E61B46123900116B4F /* ShadowView.swift */; };
 		9835D9721B47EC84002B0158 /* HighScoreEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9835D9711B47EC84002B0158 /* HighScoreEntry.m */; };
-		9835D9771B47ED9F002B0158 /* HighScoreHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9835D9761B47ED9F002B0158 /* HighScoreHelper.m */; };
-		9835D9801B481069002B0158 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 9835D97F1B481069002B0158 /* Preferences.m */; };
-		985F4A611B28369B00D7285F /* SentencesAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 985F4A601B28369B00D7285F /* SentencesAggregator.m */; };
-		985F4A641B283E0900D7285F /* Sentence.m in Sources */ = {isa = PBXBuildFile; fileRef = 985F4A631B283E0900D7285F /* Sentence.m */; };
-		98712FC01B51495600B441B2 /* CountriesAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 98712FBF1B51495600B441B2 /* CountriesAggregator.m */; };
-		98712FCB1B51512A00B441B2 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 98712FCA1B51512A00B441B2 /* Country.m */; };
-		98712FCE1B51512A00B441B2 /* Languoid.m in Sources */ = {isa = PBXBuildFile; fileRef = 98712FCD1B51512A00B441B2 /* Languoid.m */; };
 		98712FDC1B516A0C00B441B2 /* Languini.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 98712FD91B516A0C00B441B2 /* Languini.sqlite */; };
 		98712FDD1B516A0C00B441B2 /* Languini.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 98712FDA1B516A0C00B441B2 /* Languini.sqlite-shm */; };
 		98712FDE1B516A0C00B441B2 /* Languini.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 98712FDB1B516A0C00B441B2 /* Languini.sqlite-wal */; };
 		98712FDF1B51970C00B441B2 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98712FE11B51970C00B441B2 /* Storyboard.storyboard */; };
 		98712FE81B519B1700B441B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98712FE61B519B1700B441B2 /* Localizable.strings */; };
-		987451F01AFFC7F9002BF401 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 987451EE1AFFC7F9002BF401 /* ResultViewController.m */; };
-		989F6BBE1AF17F64007A9AD6 /* LanguoidsAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 989F6BBD1AF17F64007A9AD6 /* LanguoidsAggregator.m */; };
 		98A1C0D31B43273900E1AFE6 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */; };
-		98E78EE51AEBECCA00C0909D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E78EE41AEBECCA00C0909D /* main.m */; };
-		98E78EE81AEBECCA00C0909D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E78EE71AEBECCA00C0909D /* AppDelegate.m */; };
 		98E78EEB1AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98E78EE91AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld */; };
 		98E78EF61AEBECCA00C0909D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98E78EF41AEBECCA00C0909D /* LaunchScreen.xib */; };
-		98E78F0E1AEBF4CA00C0909D /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E78F0C1AEBF4CA00C0909D /* StartViewController.m */; };
-		98E78F131AEBF4FF00C0909D /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E78F111AEBF4FF00C0909D /* QuizViewController.m */; };
-		98E78F231AEC128C00C0909D /* DataAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E78F221AEC128C00C0909D /* DataAggregator.m */; };
-		98ED7E141B110766000A5625 /* QuizControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98ED7E131B110766000A5625 /* QuizControlViewController.m */; };
-		98F494861B31E03A00A21E56 /* SentecesPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F494851B31E03A00A21E56 /* SentecesPageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		29C12A5D1B4824C000EF731D /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		29C12A5E1B4824C000EF731D /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		650C6B101B3A0B9F00C354D2 /* SectionHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderCell.h; sourceTree = "<group>"; };
-		650C6B111B3A0B9F00C354D2 /* SectionHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderCell.m; sourceTree = "<group>"; };
-		652CABF31B41558C00640BEF /* GlottoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlottoViewController.h; sourceTree = "<group>"; };
-		652CABF41B41558C00640BEF /* GlottoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlottoViewController.m; sourceTree = "<group>"; };
 		652FA8021B5172BC0060DAAC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		652FA8081B51B3420060DAAC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../Reachability.h; sourceTree = "<group>"; };
-		652FA8091B51B3420060DAAC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../Reachability.m; sourceTree = "<group>"; };
 		654DDF931B526A6300CA32EB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		655E09A31B514CBB00A61A34 /* ResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTableViewCell.h; sourceTree = "<group>"; };
-		655E09A41B514CBB00A61A34 /* ResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultTableViewCell.m; sourceTree = "<group>"; };
-		65A205171B358C0E00266BC4 /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
-		65A205181B358C0E00266BC4 /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
-		98206C501B136191003D7777 /* DictionaryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryDetailViewController.h; sourceTree = "<group>"; };
-		98206C511B136191003D7777 /* DictionaryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryDetailViewController.m; sourceTree = "<group>"; };
-		98206C581B1361A5003D7777 /* DictionaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryTableViewCell.h; sourceTree = "<group>"; };
-		98206C591B1361A5003D7777 /* DictionaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryTableViewCell.m; sourceTree = "<group>"; };
-		98206C5B1B1361A5003D7777 /* DictionaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryViewController.h; sourceTree = "<group>"; };
-		98206C5C1B1361A5003D7777 /* DictionaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryViewController.m; sourceTree = "<group>"; };
-		98206C6B1B13698D003D7777 /* QuizBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizBaseViewController.h; sourceTree = "<group>"; };
-		98206C6C1B13698D003D7777 /* QuizBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizBaseViewController.m; sourceTree = "<group>"; };
-		982AC8E61B46123900116B4F /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		6571F97C1BE50E99007AFBD5 /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Game.storyboard; path = LanguageQuiz/Game/Game.storyboard; sourceTree = "<group>"; };
+		6571F97E1BE50EA9007AFBD5 /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Intro.storyboard; path = LanguageQuiz/Intro/Intro.storyboard; sourceTree = "<group>"; };
+		6571F9801BE50EB8007AFBD5 /* Overview.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Overview.storyboard; path = LanguageQuiz/LanguageOverview/Overview.storyboard; sourceTree = "<group>"; };
+		6571F9841BE50FBA007AFBD5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = General/AppDelegate.h; sourceTree = "<group>"; };
+		6571F9851BE50FBA007AFBD5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = General/AppDelegate.m; sourceTree = "<group>"; };
+		6571F9871BE50FBA007AFBD5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = General/main.m; sourceTree = "<group>"; };
+		6571F9881BE50FBA007AFBD5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = General/Reachability.h; sourceTree = "<group>"; };
+		6571F9891BE50FBA007AFBD5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = General/Reachability.m; sourceTree = "<group>"; };
+		65739A4B1BE511BC00DBD87B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65739A4E1BE5134600DBD87B /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = "LanguageQuiz/Languini old Code/AboutViewController.h"; sourceTree = "<group>"; };
+		65739A4F1BE5134600DBD87B /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutViewController.m; path = "LanguageQuiz/Languini old Code/AboutViewController.m"; sourceTree = "<group>"; };
+		65739A501BE5134600DBD87B /* CountriesAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountriesAggregator.h; path = "LanguageQuiz/Languini old Code/CountriesAggregator.h"; sourceTree = "<group>"; };
+		65739A511BE5134600DBD87B /* CountriesAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountriesAggregator.m; path = "LanguageQuiz/Languini old Code/CountriesAggregator.m"; sourceTree = "<group>"; };
+		65739A521BE5134600DBD87B /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Country.h; path = "Languini old Code/Country.h"; sourceTree = "<group>"; };
+		65739A541BE5134600DBD87B /* DataAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataAggregator.h; path = "LanguageQuiz/Languini old Code/DataAggregator.h"; sourceTree = "<group>"; };
+		65739A551BE5134600DBD87B /* DataAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataAggregator.m; path = "LanguageQuiz/Languini old Code/DataAggregator.m"; sourceTree = "<group>"; };
+		65739A561BE5134600DBD87B /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailCell.h; path = "LanguageQuiz/Languini old Code/DetailCell.h"; sourceTree = "<group>"; };
+		65739A571BE5134600DBD87B /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailCell.m; path = "LanguageQuiz/Languini old Code/DetailCell.m"; sourceTree = "<group>"; };
+		65739A581BE5134600DBD87B /* DictionaryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DictionaryDetailViewController.h; path = "LanguageQuiz/Languini old Code/DictionaryDetailViewController.h"; sourceTree = "<group>"; };
+		65739A591BE5134600DBD87B /* DictionaryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DictionaryDetailViewController.m; path = "LanguageQuiz/Languini old Code/DictionaryDetailViewController.m"; sourceTree = "<group>"; };
+		65739A5A1BE5134600DBD87B /* DictionaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DictionaryTableViewCell.h; path = "LanguageQuiz/Languini old Code/DictionaryTableViewCell.h"; sourceTree = "<group>"; };
+		65739A5B1BE5134600DBD87B /* DictionaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DictionaryTableViewCell.m; path = "LanguageQuiz/Languini old Code/DictionaryTableViewCell.m"; sourceTree = "<group>"; };
+		65739A5C1BE5134600DBD87B /* DictionaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DictionaryViewController.h; path = "LanguageQuiz/Languini old Code/DictionaryViewController.h"; sourceTree = "<group>"; };
+		65739A5D1BE5134600DBD87B /* DictionaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DictionaryViewController.m; path = "LanguageQuiz/Languini old Code/DictionaryViewController.m"; sourceTree = "<group>"; };
+		65739A5E1BE5134600DBD87B /* GlottoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlottoViewController.h; path = "LanguageQuiz/Languini old Code/GlottoViewController.h"; sourceTree = "<group>"; };
+		65739A5F1BE5134600DBD87B /* GlottoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GlottoViewController.m; path = "LanguageQuiz/Languini old Code/GlottoViewController.m"; sourceTree = "<group>"; };
+		65739A601BE5134600DBD87B /* HighScoreHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoreHelper.h; path = "LanguageQuiz/Languini old Code/HighScoreHelper.h"; sourceTree = "<group>"; };
+		65739A611BE5134600DBD87B /* HighScoreHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoreHelper.m; path = "LanguageQuiz/Languini old Code/HighScoreHelper.m"; sourceTree = "<group>"; };
+		65739A621BE5134600DBD87B /* Languoid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Languoid.h; path = "Languini old Code/Languoid.h"; sourceTree = "<group>"; };
+		65739A631BE5134600DBD87B /* Languoid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Languoid.m; path = "Languini old Code/Languoid.m"; sourceTree = "<group>"; };
+		65739A641BE5134600DBD87B /* LanguoidsAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LanguoidsAggregator.h; path = "LanguageQuiz/Languini old Code/LanguoidsAggregator.h"; sourceTree = "<group>"; };
+		65739A651BE5134600DBD87B /* LanguoidsAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LanguoidsAggregator.m; path = "LanguageQuiz/Languini old Code/LanguoidsAggregator.m"; sourceTree = "<group>"; };
+		65739A661BE5134600DBD87B /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preferences.h; path = "LanguageQuiz/Languini old Code/Preferences.h"; sourceTree = "<group>"; };
+		65739A671BE5134600DBD87B /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preferences.m; path = "LanguageQuiz/Languini old Code/Preferences.m"; sourceTree = "<group>"; };
+		65739A681BE5134600DBD87B /* QuizBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizBaseViewController.h; path = "LanguageQuiz/Languini old Code/QuizBaseViewController.h"; sourceTree = "<group>"; };
+		65739A691BE5134600DBD87B /* QuizBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuizBaseViewController.m; path = "LanguageQuiz/Languini old Code/QuizBaseViewController.m"; sourceTree = "<group>"; };
+		65739A6A1BE5134600DBD87B /* QuizControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizControlViewController.h; path = "LanguageQuiz/Languini old Code/QuizControlViewController.h"; sourceTree = "<group>"; };
+		65739A6B1BE5134600DBD87B /* QuizControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuizControlViewController.m; path = "LanguageQuiz/Languini old Code/QuizControlViewController.m"; sourceTree = "<group>"; };
+		65739A6C1BE5134600DBD87B /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizViewController.h; path = "LanguageQuiz/Languini old Code/QuizViewController.h"; sourceTree = "<group>"; };
+		65739A6D1BE5134600DBD87B /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuizViewController.m; path = "LanguageQuiz/Languini old Code/QuizViewController.m"; sourceTree = "<group>"; };
+		65739A6E1BE5134600DBD87B /* ResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultTableViewCell.h; path = "LanguageQuiz/Languini old Code/ResultTableViewCell.h"; sourceTree = "<group>"; };
+		65739A6F1BE5134600DBD87B /* ResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultTableViewCell.m; path = "LanguageQuiz/Languini old Code/ResultTableViewCell.m"; sourceTree = "<group>"; };
+		65739A701BE5134600DBD87B /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultViewController.h; path = "LanguageQuiz/Languini old Code/ResultViewController.h"; sourceTree = "<group>"; };
+		65739A711BE5134600DBD87B /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultViewController.m; path = "LanguageQuiz/Languini old Code/ResultViewController.m"; sourceTree = "<group>"; };
+		65739A721BE5134600DBD87B /* SectionHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SectionHeaderCell.h; path = "LanguageQuiz/Languini old Code/SectionHeaderCell.h"; sourceTree = "<group>"; };
+		65739A731BE5134600DBD87B /* SectionHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SectionHeaderCell.m; path = "LanguageQuiz/Languini old Code/SectionHeaderCell.m"; sourceTree = "<group>"; };
+		65739A741BE5134600DBD87B /* SentecesPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SentecesPageViewController.h; path = "LanguageQuiz/Languini old Code/SentecesPageViewController.h"; sourceTree = "<group>"; };
+		65739A751BE5134600DBD87B /* SentecesPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SentecesPageViewController.m; path = "LanguageQuiz/Languini old Code/SentecesPageViewController.m"; sourceTree = "<group>"; };
+		65739A761BE5134600DBD87B /* Sentence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sentence.h; path = "Languini old Code/Sentence.h"; sourceTree = "<group>"; };
+		65739A771BE5134600DBD87B /* Sentence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sentence.m; path = "Languini old Code/Sentence.m"; sourceTree = "<group>"; };
+		65739A781BE5134600DBD87B /* SentencesAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SentencesAggregator.h; path = "LanguageQuiz/Languini old Code/SentencesAggregator.h"; sourceTree = "<group>"; };
+		65739A791BE5134600DBD87B /* SentencesAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SentencesAggregator.m; path = "LanguageQuiz/Languini old Code/SentencesAggregator.m"; sourceTree = "<group>"; };
+		65739A7A1BE5134600DBD87B /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartViewController.h; path = "LanguageQuiz/Languini old Code/StartViewController.h"; sourceTree = "<group>"; };
+		65739A7B1BE5134600DBD87B /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartViewController.m; path = "LanguageQuiz/Languini old Code/StartViewController.m"; sourceTree = "<group>"; };
+		657A08D51BE515B600196F8A /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Country.m; path = "Languini old Code/Country.m"; sourceTree = "<group>"; };
+		982AC8E61B46123900116B4F /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShadowView.swift; path = LanguageQuiz/ShadowView.swift; sourceTree = "<group>"; };
 		9835D9701B47EC84002B0158 /* HighScoreEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoreEntry.h; path = ../HighScoreEntry.h; sourceTree = "<group>"; };
 		9835D9711B47EC84002B0158 /* HighScoreEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoreEntry.m; path = ../HighScoreEntry.m; sourceTree = "<group>"; };
-		9835D9751B47ED9F002B0158 /* HighScoreHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreHelper.h; sourceTree = "<group>"; };
-		9835D9761B47ED9F002B0158 /* HighScoreHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreHelper.m; sourceTree = "<group>"; };
-		9835D97E1B481069002B0158 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
-		9835D97F1B481069002B0158 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
-		985F4A5F1B28369B00D7285F /* SentencesAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentencesAggregator.h; sourceTree = "<group>"; };
-		985F4A601B28369B00D7285F /* SentencesAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentencesAggregator.m; sourceTree = "<group>"; };
-		985F4A621B283E0900D7285F /* Sentence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sentence.h; sourceTree = "<group>"; };
-		985F4A631B283E0900D7285F /* Sentence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sentence.m; sourceTree = "<group>"; };
-		98712FBE1B51495600B441B2 /* CountriesAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesAggregator.h; sourceTree = "<group>"; };
-		98712FBF1B51495600B441B2 /* CountriesAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesAggregator.m; sourceTree = "<group>"; };
-		98712FC91B51512A00B441B2 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
-		98712FCA1B51512A00B441B2 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
-		98712FCC1B51512A00B441B2 /* Languoid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Languoid.h; sourceTree = "<group>"; };
-		98712FCD1B51512A00B441B2 /* Languoid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Languoid.m; sourceTree = "<group>"; };
 		98712FD91B516A0C00B441B2 /* Languini.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Languini.sqlite; sourceTree = "<group>"; };
 		98712FDA1B516A0C00B441B2 /* Languini.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Languini.sqlite-shm"; sourceTree = "<group>"; };
 		98712FDB1B516A0C00B441B2 /* Languini.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Languini.sqlite-wal"; sourceTree = "<group>"; };
@@ -95,28 +120,10 @@
 		98712FE91B519B2100B441B2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		98712FEA1B519B2A00B441B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		98712FED1B51A44500B441B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
-		987451ED1AFFC7F9002BF401 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
-		987451EE1AFFC7F9002BF401 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
-		989F6BBC1AF17F64007A9AD6 /* LanguoidsAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguoidsAggregator.h; sourceTree = "<group>"; };
-		989F6BBD1AF17F64007A9AD6 /* LanguoidsAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguoidsAggregator.m; sourceTree = "<group>"; };
-		98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
+		98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShadowButton.swift; path = LanguageQuiz/ShadowButton.swift; sourceTree = "<group>"; };
 		98E78EDF1AEBECCA00C0909D /* Languini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Languini.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		98E78EE31AEBECCA00C0909D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98E78EE41AEBECCA00C0909D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		98E78EE61AEBECCA00C0909D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		98E78EE71AEBECCA00C0909D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		98E78EEA1AEBECCA00C0909D /* LanguageQuiz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LanguageQuiz.xcdatamodel; sourceTree = "<group>"; };
 		98E78EF51AEBECCA00C0909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		98E78F0B1AEBF4CA00C0909D /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
-		98E78F0C1AEBF4CA00C0909D /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
-		98E78F101AEBF4FF00C0909D /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
-		98E78F111AEBF4FF00C0909D /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
-		98E78F211AEC128C00C0909D /* DataAggregator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAggregator.h; sourceTree = "<group>"; };
-		98E78F221AEC128C00C0909D /* DataAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAggregator.m; sourceTree = "<group>"; };
-		98ED7E121B110766000A5625 /* QuizControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizControlViewController.h; sourceTree = "<group>"; };
-		98ED7E131B110766000A5625 /* QuizControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizControlViewController.m; sourceTree = "<group>"; };
-		98F494841B31E03A00A21E56 /* SentecesPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentecesPageViewController.h; sourceTree = "<group>"; };
-		98F494851B31E03A00A21E56 /* SentecesPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentecesPageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,118 +138,181 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		65406A151B136295004EEE6B /* Dictionary */ = {
+		6571F96C1BE50708007AFBD5 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				98206C581B1361A5003D7777 /* DictionaryTableViewCell.h */,
-				98206C591B1361A5003D7777 /* DictionaryTableViewCell.m */,
-				98206C5B1B1361A5003D7777 /* DictionaryViewController.h */,
-				98206C5C1B1361A5003D7777 /* DictionaryViewController.m */,
-				98206C501B136191003D7777 /* DictionaryDetailViewController.h */,
-				98206C511B136191003D7777 /* DictionaryDetailViewController.m */,
-				65A205171B358C0E00266BC4 /* DetailCell.h */,
-				65A205181B358C0E00266BC4 /* DetailCell.m */,
-				98F494841B31E03A00A21E56 /* SentecesPageViewController.h */,
-				98F494851B31E03A00A21E56 /* SentecesPageViewController.m */,
-				650C6B101B3A0B9F00C354D2 /* SectionHeaderCell.h */,
-				650C6B111B3A0B9F00C354D2 /* SectionHeaderCell.m */,
-				652CABF31B41558C00640BEF /* GlottoViewController.h */,
-				652CABF41B41558C00640BEF /* GlottoViewController.m */,
+				6571F97E1BE50EA9007AFBD5 /* Intro.storyboard */,
 			);
-			name = Dictionary;
+			name = Intro;
 			sourceTree = "<group>";
 		};
-		65406A171B1362E0004EEE6B /* Quiz */ = {
+		6571F96D1BE50714007AFBD5 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				98ED7E131B110766000A5625 /* QuizControlViewController.m */,
-				98E78F0B1AEBF4CA00C0909D /* StartViewController.h */,
-				98E78F0C1AEBF4CA00C0909D /* StartViewController.m */,
-				98ED7E121B110766000A5625 /* QuizControlViewController.h */,
-				98E78F101AEBF4FF00C0909D /* QuizViewController.h */,
-				98E78F111AEBF4FF00C0909D /* QuizViewController.m */,
-				98206C6B1B13698D003D7777 /* QuizBaseViewController.h */,
-				98206C6C1B13698D003D7777 /* QuizBaseViewController.m */,
+				6571F97C1BE50E99007AFBD5 /* Game.storyboard */,
 			);
-			name = Quiz;
+			name = Game;
 			sourceTree = "<group>";
 		};
-		9835D9741B47ED6E002B0158 /* Game Over */ = {
+		6571F96E1BE5071D007AFBD5 /* LanguagesOverview */ = {
 			isa = PBXGroup;
 			children = (
-				655E09A31B514CBB00A61A34 /* ResultTableViewCell.h */,
-				655E09A41B514CBB00A61A34 /* ResultTableViewCell.m */,
-				9835D9751B47ED9F002B0158 /* HighScoreHelper.h */,
-				9835D9761B47ED9F002B0158 /* HighScoreHelper.m */,
-				987451ED1AFFC7F9002BF401 /* ResultViewController.h */,
-				987451EE1AFFC7F9002BF401 /* ResultViewController.m */,
+				6571F9801BE50EB8007AFBD5 /* Overview.storyboard */,
 			);
-			name = "Game Over";
+			name = LanguagesOverview;
 			sourceTree = "<group>";
 		};
-		98712FEB1B519DED00B441B2 /* About */ = {
+		6571F9751BE5082F007AFBD5 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				29C12A5D1B4824C000EF731D /* AboutViewController.h */,
-				29C12A5E1B4824C000EF731D /* AboutViewController.m */,
+				6571F9841BE50FBA007AFBD5 /* AppDelegate.h */,
+				6571F9851BE50FBA007AFBD5 /* AppDelegate.m */,
+				65739A4B1BE511BC00DBD87B /* Info.plist */,
+				6571F9871BE50FBA007AFBD5 /* main.m */,
+				6571F9881BE50FBA007AFBD5 /* Reachability.h */,
+				6571F9891BE50FBA007AFBD5 /* Reachability.m */,
+				98E78EE21AEBECCA00C0909D /* Supporting Files */,
 			);
-			name = About;
+			name = General;
+			path = LanguageQuiz;
 			sourceTree = "<group>";
 		};
-		989762741AFFBE9500ACE909 /* Assets */ = {
+		65739A4D1BE5133100DBD87B /* Languini old code */ = {
 			isa = PBXGroup;
 			children = (
-				652FA8021B5172BC0060DAAC /* Images.xcassets */,
+				98712FE11B51970C00B441B2 /* Storyboard.storyboard */,
+				98E78EF41AEBECCA00C0909D /* LaunchScreen.xib */,
+				657A08DC1BE516DD00196F8A /* Shared */,
+				657A08DB1BE516B400196F8A /* About */,
+				98E78F1A1AEC0F1A00C0909D /* Data */,
+				657A08D71BE5161400196F8A /* DataAggregator */,
+				657A08DA1BE516A300196F8A /* Dictionary */,
+				657A08D81BE5165200196F8A /* Game Over */,
+				657A08D91BE5166C00196F8A /* Quiz */,
 			);
-			name = Assets;
+			name = "Languini old code";
 			sourceTree = "<group>";
 		};
-		989F6BBB1AF17F36007A9AD6 /* DataAggregator */ = {
+		657A08D71BE5161400196F8A /* DataAggregator */ = {
 			isa = PBXGroup;
 			children = (
-				98E78F211AEC128C00C0909D /* DataAggregator.h */,
-				98E78F221AEC128C00C0909D /* DataAggregator.m */,
-				989F6BBC1AF17F64007A9AD6 /* LanguoidsAggregator.h */,
-				989F6BBD1AF17F64007A9AD6 /* LanguoidsAggregator.m */,
-				985F4A5F1B28369B00D7285F /* SentencesAggregator.h */,
-				985F4A601B28369B00D7285F /* SentencesAggregator.m */,
-				98712FBE1B51495600B441B2 /* CountriesAggregator.h */,
-				98712FBF1B51495600B441B2 /* CountriesAggregator.m */,
+				65739A501BE5134600DBD87B /* CountriesAggregator.h */,
+				65739A511BE5134600DBD87B /* CountriesAggregator.m */,
+				65739A541BE5134600DBD87B /* DataAggregator.h */,
+				65739A551BE5134600DBD87B /* DataAggregator.m */,
+				65739A641BE5134600DBD87B /* LanguoidsAggregator.h */,
+				65739A651BE5134600DBD87B /* LanguoidsAggregator.m */,
+				65739A781BE5134600DBD87B /* SentencesAggregator.h */,
+				65739A791BE5134600DBD87B /* SentencesAggregator.m */,
 			);
 			name = DataAggregator;
 			sourceTree = "<group>";
 		};
-		989F6BBF1AF17F6F007A9AD6 /* Models */ = {
+		657A08D81BE5165200196F8A /* Game Over */ = {
 			isa = PBXGroup;
 			children = (
-				98712FCC1B51512A00B441B2 /* Languoid.h */,
-				98712FCD1B51512A00B441B2 /* Languoid.m */,
-				98712FC91B51512A00B441B2 /* Country.h */,
-				98712FCA1B51512A00B441B2 /* Country.m */,
-				98E78EE91AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld */,
-				9835D9701B47EC84002B0158 /* HighScoreEntry.h */,
-				9835D9711B47EC84002B0158 /* HighScoreEntry.m */,
-				985F4A621B283E0900D7285F /* Sentence.h */,
-				985F4A631B283E0900D7285F /* Sentence.m */,
+				65739A601BE5134600DBD87B /* HighScoreHelper.h */,
+				65739A611BE5134600DBD87B /* HighScoreHelper.m */,
+				65739A6E1BE5134600DBD87B /* ResultTableViewCell.h */,
+				65739A6F1BE5134600DBD87B /* ResultTableViewCell.m */,
+				65739A701BE5134600DBD87B /* ResultViewController.h */,
+				65739A711BE5134600DBD87B /* ResultViewController.m */,
 			);
-			name = Models;
+			name = "Game Over";
 			sourceTree = "<group>";
 		};
-		98A1C0D11B4326AC00E1AFE6 /* Shared */ = {
+		657A08D91BE5166C00196F8A /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				65739A681BE5134600DBD87B /* QuizBaseViewController.h */,
+				65739A691BE5134600DBD87B /* QuizBaseViewController.m */,
+				65739A6A1BE5134600DBD87B /* QuizControlViewController.h */,
+				65739A6B1BE5134600DBD87B /* QuizControlViewController.m */,
+				65739A6C1BE5134600DBD87B /* QuizViewController.h */,
+				65739A6D1BE5134600DBD87B /* QuizViewController.m */,
+				65739A7A1BE5134600DBD87B /* StartViewController.h */,
+				65739A7B1BE5134600DBD87B /* StartViewController.m */,
+			);
+			name = Quiz;
+			sourceTree = "<group>";
+		};
+		657A08DA1BE516A300196F8A /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				65739A561BE5134600DBD87B /* DetailCell.h */,
+				65739A571BE5134600DBD87B /* DetailCell.m */,
+				65739A581BE5134600DBD87B /* DictionaryDetailViewController.h */,
+				65739A591BE5134600DBD87B /* DictionaryDetailViewController.m */,
+				65739A5A1BE5134600DBD87B /* DictionaryTableViewCell.h */,
+				65739A5B1BE5134600DBD87B /* DictionaryTableViewCell.m */,
+				65739A5C1BE5134600DBD87B /* DictionaryViewController.h */,
+				65739A5D1BE5134600DBD87B /* DictionaryViewController.m */,
+				65739A5E1BE5134600DBD87B /* GlottoViewController.h */,
+				65739A5F1BE5134600DBD87B /* GlottoViewController.m */,
+				65739A721BE5134600DBD87B /* SectionHeaderCell.h */,
+				65739A731BE5134600DBD87B /* SectionHeaderCell.m */,
+				65739A741BE5134600DBD87B /* SentecesPageViewController.h */,
+				65739A751BE5134600DBD87B /* SentecesPageViewController.m */,
+			);
+			name = Dictionary;
+			sourceTree = "<group>";
+		};
+		657A08DB1BE516B400196F8A /* About */ = {
+			isa = PBXGroup;
+			children = (
+				65739A4E1BE5134600DBD87B /* AboutViewController.h */,
+				65739A4F1BE5134600DBD87B /* AboutViewController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		657A08DC1BE516DD00196F8A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */,
 				982AC8E61B46123900116B4F /* ShadowView.swift */,
-				9835D97E1B481069002B0158 /* Preferences.h */,
-				9835D97F1B481069002B0158 /* Preferences.m */,
+				65739A661BE5134600DBD87B /* Preferences.h */,
+				65739A671BE5134600DBD87B /* Preferences.m */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		989762741AFFBE9500ACE909 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				652FA8021B5172BC0060DAAC /* Images.xcassets */,
+			);
+			name = Resources;
+			path = LanguageQuiz;
+			sourceTree = "<group>";
+		};
+		989F6BBF1AF17F6F007A9AD6 /* Models (ObjcC) */ = {
+			isa = PBXGroup;
+			children = (
+				65739A621BE5134600DBD87B /* Languoid.h */,
+				65739A631BE5134600DBD87B /* Languoid.m */,
+				65739A521BE5134600DBD87B /* Country.h */,
+				657A08D51BE515B600196F8A /* Country.m */,
+				98E78EE91AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld */,
+				9835D9701B47EC84002B0158 /* HighScoreEntry.h */,
+				9835D9711B47EC84002B0158 /* HighScoreEntry.m */,
+				65739A761BE5134600DBD87B /* Sentence.h */,
+				65739A771BE5134600DBD87B /* Sentence.m */,
+			);
+			name = "Models (ObjcC)";
+			path = LanguageQuiz;
 			sourceTree = "<group>";
 		};
 		98E78ED61AEBECCA00C0909D = {
 			isa = PBXGroup;
 			children = (
-				98E78EE11AEBECCA00C0909D /* Languini */,
+				65739A4D1BE5133100DBD87B /* Languini old code */,
+				6571F96E1BE5071D007AFBD5 /* LanguagesOverview */,
+				6571F96D1BE50714007AFBD5 /* Game */,
+				6571F96C1BE50708007AFBD5 /* Intro */,
+				989F6BBF1AF17F6F007A9AD6 /* Models (ObjcC) */,
+				6571F9751BE5082F007AFBD5 /* General */,
+				989762741AFFBE9500ACE909 /* Resources */,
 				98E78EE01AEBECCA00C0909D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -255,37 +325,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		98E78EE11AEBECCA00C0909D /* Languini */ = {
-			isa = PBXGroup;
-			children = (
-				98712FE11B51970C00B441B2 /* Storyboard.storyboard */,
-				98E78EF41AEBECCA00C0909D /* LaunchScreen.xib */,
-				98E78EE61AEBECCA00C0909D /* AppDelegate.h */,
-				98E78EE71AEBECCA00C0909D /* AppDelegate.m */,
-				989F6BBF1AF17F6F007A9AD6 /* Models */,
-				989762741AFFBE9500ACE909 /* Assets */,
-				989F6BBB1AF17F36007A9AD6 /* DataAggregator */,
-				98E78F1A1AEC0F1A00C0909D /* Data */,
-				9835D9741B47ED6E002B0158 /* Game Over */,
-				65406A171B1362E0004EEE6B /* Quiz */,
-				65406A151B136295004EEE6B /* Dictionary */,
-				98712FEB1B519DED00B441B2 /* About */,
-				98A1C0D11B4326AC00E1AFE6 /* Shared */,
-				98E78EE21AEBECCA00C0909D /* Supporting Files */,
-			);
-			name = Languini;
-			path = LanguageQuiz;
-			sourceTree = "<group>";
-		};
 		98E78EE21AEBECCA00C0909D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				652FA8081B51B3420060DAAC /* Reachability.h */,
-				652FA8091B51B3420060DAAC /* Reachability.m */,
 				654DDF931B526A6300CA32EB /* SystemConfiguration.framework */,
 				98712FE61B519B1700B441B2 /* Localizable.strings */,
-				98E78EE31AEBECCA00C0909D /* Info.plist */,
-				98E78EE41AEBECCA00C0909D /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -298,6 +342,7 @@
 				98712FDB1B516A0C00B441B2 /* Languini.sqlite-wal */,
 			);
 			name = Data;
+			path = LanguageQuiz;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +412,10 @@
 				98712FE81B519B1700B441B2 /* Localizable.strings in Resources */,
 				98712FDC1B516A0C00B441B2 /* Languini.sqlite in Resources */,
 				98712FDF1B51970C00B441B2 /* Storyboard.storyboard in Resources */,
+				6571F97D1BE50E99007AFBD5 /* Game.storyboard in Resources */,
+				65739A4C1BE511BC00DBD87B /* Info.plist in Resources */,
+				6571F9811BE50EB8007AFBD5 /* Overview.storyboard in Resources */,
+				6571F97F1BE50EA9007AFBD5 /* Intro.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,36 +426,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98712FCB1B51512A00B441B2 /* Country.m in Sources */,
-				98E78EE81AEBECCA00C0909D /* AppDelegate.m in Sources */,
-				98712FCE1B51512A00B441B2 /* Languoid.m in Sources */,
-				652CABF51B41558C00640BEF /* GlottoViewController.m in Sources */,
-				652FA80A1B51B3420060DAAC /* Reachability.m in Sources */,
-				98E78F131AEBF4FF00C0909D /* QuizViewController.m in Sources */,
-				65A205191B358C0E00266BC4 /* DetailCell.m in Sources */,
-				9835D9771B47ED9F002B0158 /* HighScoreHelper.m in Sources */,
-				98206C601B1361A5003D7777 /* DictionaryTableViewCell.m in Sources */,
+				65739A841BE5134600DBD87B /* GlottoViewController.m in Sources */,
+				65739A8E1BE5134600DBD87B /* SectionHeaderCell.m in Sources */,
+				65739A901BE5134600DBD87B /* Sentence.m in Sources */,
+				65739A8A1BE5134600DBD87B /* QuizControlViewController.m in Sources */,
+				657A08D61BE515B600196F8A /* Country.m in Sources */,
+				65739A8F1BE5134600DBD87B /* SentecesPageViewController.m in Sources */,
+				65739A861BE5134600DBD87B /* Languoid.m in Sources */,
+				6571F98C1BE50FBA007AFBD5 /* main.m in Sources */,
+				65739A8B1BE5134600DBD87B /* QuizViewController.m in Sources */,
+				65739A831BE5134600DBD87B /* DictionaryViewController.m in Sources */,
+				65739A851BE5134600DBD87B /* HighScoreHelper.m in Sources */,
+				65739A811BE5134600DBD87B /* DictionaryDetailViewController.m in Sources */,
 				9835D9721B47EC84002B0158 /* HighScoreEntry.m in Sources */,
-				98F494861B31E03A00A21E56 /* SentecesPageViewController.m in Sources */,
-				29C12A5F1B4824C000EF731D /* AboutViewController.m in Sources */,
-				98E78F0E1AEBF4CA00C0909D /* StartViewController.m in Sources */,
-				989F6BBE1AF17F64007A9AD6 /* LanguoidsAggregator.m in Sources */,
+				65739A911BE5134600DBD87B /* SentencesAggregator.m in Sources */,
+				65739A891BE5134600DBD87B /* QuizBaseViewController.m in Sources */,
+				65739A881BE5134600DBD87B /* Preferences.m in Sources */,
+				65739A821BE5134600DBD87B /* DictionaryTableViewCell.m in Sources */,
 				982AC8E71B46123900116B4F /* ShadowView.swift in Sources */,
-				985F4A641B283E0900D7285F /* Sentence.m in Sources */,
-				985F4A611B28369B00D7285F /* SentencesAggregator.m in Sources */,
-				98712FC01B51495600B441B2 /* CountriesAggregator.m in Sources */,
-				98E78EE51AEBECCA00C0909D /* main.m in Sources */,
-				650C6B121B3A0B9F00C354D2 /* SectionHeaderCell.m in Sources */,
-				98E78F231AEC128C00C0909D /* DataAggregator.m in Sources */,
+				65739A7D1BE5134600DBD87B /* CountriesAggregator.m in Sources */,
 				98A1C0D31B43273900E1AFE6 /* ShadowButton.swift in Sources */,
-				98206C531B136191003D7777 /* DictionaryDetailViewController.m in Sources */,
-				9835D9801B481069002B0158 /* Preferences.m in Sources */,
-				98ED7E141B110766000A5625 /* QuizControlViewController.m in Sources */,
+				65739A921BE5134600DBD87B /* StartViewController.m in Sources */,
+				6571F98A1BE50FBA007AFBD5 /* AppDelegate.m in Sources */,
+				6571F98D1BE50FBA007AFBD5 /* Reachability.m in Sources */,
+				65739A871BE5134600DBD87B /* LanguoidsAggregator.m in Sources */,
+				65739A8C1BE5134600DBD87B /* ResultTableViewCell.m in Sources */,
+				65739A801BE5134600DBD87B /* DetailCell.m in Sources */,
 				98E78EEB1AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld in Sources */,
-				98206C6D1B13698D003D7777 /* QuizBaseViewController.m in Sources */,
-				98206C621B1361A5003D7777 /* DictionaryViewController.m in Sources */,
-				655E09A51B514CBB00A61A34 /* ResultTableViewCell.m in Sources */,
-				987451F01AFFC7F9002BF401 /* ResultViewController.m in Sources */,
+				65739A7C1BE5134600DBD87B /* AboutViewController.m in Sources */,
+				65739A7F1BE5134600DBD87B /* DataAggregator.m in Sources */,
+				65739A8D1BE5134600DBD87B /* ResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +468,7 @@
 				98712FED1B51A44500B441B2 /* Base */,
 			);
 			name = Storyboard.storyboard;
+			path = LanguageQuiz;
 			sourceTree = "<group>";
 		};
 		98712FE61B519B1700B441B2 /* Localizable.strings */ = {
@@ -438,6 +488,7 @@
 				98712FE31B51971700B441B2 /* de */,
 			);
 			name = LaunchScreen.xib;
+			path = LanguageQuiz;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
