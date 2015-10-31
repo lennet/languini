@@ -51,89 +51,33 @@
                                         <rect key="frame" x="0.0" y="85" width="560" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="750" constant="20" id="97I-t5-cNa"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="97I-t5-cNa"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-nc-dP4" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="115" width="560" height="55"/>
                                         <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="7FM-cl-hvr"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="7FM-cl-hvr"/>
-                                            </mask>
-                                        </variation>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEH-g3-zgl" userLabel="Spacer View">
                                         <rect key="frame" x="0.0" y="170" width="560" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="750" constant="20" id="fZ1-cK-5xE"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="fZ1-cK-5xE"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtL-UX-pQv" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="200" width="560" height="55"/>
                                         <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="GdF-7j-5MJ"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="GdF-7j-5MJ"/>
-                                            </mask>
-                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeT-Gq-feC" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="285" width="560" height="55"/>
                                         <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="GBk-kT-dKx"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="GBk-kT-dKx"/>
-                                            </mask>
-                                        </variation>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2il-o5-Se3" userLabel="Spacer View">
                                         <rect key="frame" x="0.0" y="340" width="560" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="750" constant="20" id="fzx-2k-K8g"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="fzx-2k-K8g"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8td-ta-obo" userLabel="Spacer View">
                                         <rect key="frame" x="0.0" y="255" width="560" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="750" constant="20" id="mp2-Le-Pez"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="mp2-Le-Pez"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <animations/>
@@ -146,7 +90,6 @@
                                     <constraint firstAttribute="trailing" secondItem="bTg-nc-dP4" secondAttribute="trailing" id="6Ya-sY-QVC"/>
                                     <constraint firstItem="LeT-Gq-feC" firstAttribute="height" secondItem="ROT-KP-ic9" secondAttribute="height" id="8s9-V3-3oS"/>
                                     <constraint firstAttribute="bottom" secondItem="2il-o5-Se3" secondAttribute="bottom" id="AeO-YO-bmt"/>
-                                    <constraint firstItem="2Cr-aN-0h4" firstAttribute="top" secondItem="wNM-zN-koh" secondAttribute="bottom" id="H00-R6-iyb"/>
                                     <constraint firstItem="FtL-UX-pQv" firstAttribute="height" secondItem="ROT-KP-ic9" secondAttribute="height" id="ILv-Gn-vba"/>
                                     <constraint firstItem="2Cr-aN-0h4" firstAttribute="top" secondItem="ROT-KP-ic9" secondAttribute="bottom" id="Ist-PA-ZPk"/>
                                     <constraint firstItem="LeT-Gq-feC" firstAttribute="leading" secondItem="boc-iH-tl5" secondAttribute="leading" id="LPt-DW-3RN"/>
@@ -176,11 +119,6 @@
                                     <constraint firstItem="8td-ta-obo" firstAttribute="leading" secondItem="boc-iH-tl5" secondAttribute="leading" id="wbH-sY-FJf"/>
                                     <constraint firstItem="ROT-KP-ic9" firstAttribute="leading" secondItem="boc-iH-tl5" secondAttribute="leading" id="yZE-x5-rze"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="H00-R6-iyb"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <animations/>
