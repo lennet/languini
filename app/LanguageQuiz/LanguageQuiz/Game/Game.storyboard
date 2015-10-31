@@ -25,7 +25,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="3cd-mQ-opg"/>
                                 </constraints>
-                                <state key="normal" title="test"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8E-8Z-Zi2" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
                                 <rect key="frame" x="20" y="420" width="560" height="65"/>
@@ -33,7 +32,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="qun-75-8Yi"/>
                                 </constraints>
-                                <state key="normal" title="test"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjm-iL-lZG" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
                                 <rect key="frame" x="20" y="505" width="560" height="65"/>
@@ -41,7 +39,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="Oi7-TT-sz3"/>
                                 </constraints>
-                                <state key="normal" title="test"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtd-Pt-2Fb" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
                                 <rect key="frame" x="20" y="250" width="560" height="65"/>
@@ -49,7 +46,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="BWW-ES-Ljl"/>
                                 </constraints>
-                                <state key="normal" title="test"/>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYG-CG-7k1">
                                 <rect key="frame" x="20" y="20" width="560" height="210"/>

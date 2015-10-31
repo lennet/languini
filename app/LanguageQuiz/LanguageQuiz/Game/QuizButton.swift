@@ -17,6 +17,9 @@ class QuizButton: UIButton {
     let fillColor = UIColor.whiteColor()
     let titleColor = UIColor.blackColor()
     
+    let titleFont = UIFont.systemFontOfSize(20)
+    let subTitleFont = UIFont.systemFontOfSize(16)
+    
     override func awakeFromNib() {
         setUpTitleLabel()
     }
@@ -25,10 +28,47 @@ class QuizButton: UIButton {
         setUpTitleLabel()
     }
     
-    func setUpTitleLabel() {
-        contentHorizontalAlignment = .Left
-        contentEdgeInsets = UIEdgeInsets(top: 0, left: secondRectangleSize, bottom: 0, right: 0)
-        setTitleColor(titleColor, forState: .Normal)
+    
+    func setUpTitleLabel() {        
+        let titleLabel = UILabel()
+        titleLabel.text = "Sprache"
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = titleFont
+        addSubview(titleLabel)
+        
+        addWidthConstraintForLabel(titleLabel)
+        
+        let topConstraint = NSLayoutConstraint(item: titleLabel, attribute:.Top, relatedBy: .GreaterThanOrEqual, toItem: self, attribute: .Top, multiplier: 1, constant: 5)
+        addConstraint(topConstraint)
+        
+        let bottomConstraint = NSLayoutConstraint(item: titleLabel, attribute:.Bottom, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0)
+        addConstraint(bottomConstraint)
+        
+        let subTitleLabel = UILabel()
+        subTitleLabel.text = "Land"
+        subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subTitleLabel.font = subTitleFont
+        addSubview(subTitleLabel)
+        
+        addWidthConstraintForLabel(subTitleLabel)
+        
+        let subTopConstraint = NSLayoutConstraint(item: subTitleLabel, attribute:.Top, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0)
+        addConstraint(subTopConstraint)
+
+        let subBottomConstraint = NSLayoutConstraint(item: self, attribute:.Bottom, relatedBy: .GreaterThanOrEqual, toItem: subTitleLabel, attribute: .Bottom, multiplier: 1, constant: 5)
+        addConstraint(subBottomConstraint)
+    }
+    
+
+
+    
+    func addWidthConstraintForLabel(label : UILabel){
+        let leftConstraint = NSLayoutConstraint(item: label, attribute:.Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: secondRectangleSize)
+        addConstraint(leftConstraint)
+        
+        let rightConstraint = NSLayoutConstraint(item: self, attribute:.Right, relatedBy: .Equal, toItem: label, attribute: .Right, multiplier: 1, constant: 20)
+        addConstraint(rightConstraint)
+
     }
     
     override func drawRect(rect: CGRect) {
