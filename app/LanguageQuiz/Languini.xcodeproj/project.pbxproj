@@ -40,6 +40,7 @@
 		65739A921BE5134600DBD87B /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A7B1BE5134600DBD87B /* StartViewController.m */; };
 		657A08D61BE515B600196F8A /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 657A08D51BE515B600196F8A /* Country.m */; };
 		982AC8E71B46123900116B4F /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982AC8E61B46123900116B4F /* ShadowView.swift */; };
+		983421921BE545810037EF43 /* QuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983421911BE545810037EF43 /* QuizButton.swift */; };
 		9835D9721B47EC84002B0158 /* HighScoreEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9835D9711B47EC84002B0158 /* HighScoreEntry.m */; };
 		98712FDC1B516A0C00B441B2 /* Languini.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 98712FD91B516A0C00B441B2 /* Languini.sqlite */; };
 		98712FDD1B516A0C00B441B2 /* Languini.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 98712FDA1B516A0C00B441B2 /* Languini.sqlite-shm */; };
@@ -110,6 +111,7 @@
 		65739A7B1BE5134600DBD87B /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartViewController.m; path = "LanguageQuiz/Languini old Code/StartViewController.m"; sourceTree = "<group>"; };
 		657A08D51BE515B600196F8A /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Country.m; path = "Languini old Code/Country.m"; sourceTree = "<group>"; };
 		982AC8E61B46123900116B4F /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShadowView.swift; path = LanguageQuiz/ShadowView.swift; sourceTree = "<group>"; };
+		983421911BE545810037EF43 /* QuizButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuizButton.swift; path = LanguageQuiz/Game/QuizButton.swift; sourceTree = "<group>"; };
 		9835D9701B47EC84002B0158 /* HighScoreEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoreEntry.h; path = ../HighScoreEntry.h; sourceTree = "<group>"; };
 		9835D9711B47EC84002B0158 /* HighScoreEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoreEntry.m; path = ../HighScoreEntry.m; sourceTree = "<group>"; };
 		98712FD91B516A0C00B441B2 /* Languini.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Languini.sqlite; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				6571F97C1BE50E99007AFBD5 /* Game.storyboard */,
+				983421911BE545810037EF43 /* QuizButton.swift */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				65739A881BE5134600DBD87B /* Preferences.m in Sources */,
 				65739A821BE5134600DBD87B /* DictionaryTableViewCell.m in Sources */,
 				982AC8E71B46123900116B4F /* ShadowView.swift in Sources */,
+				983421921BE545810037EF43 /* QuizButton.swift in Sources */,
 				65739A7D1BE5134600DBD87B /* CountriesAggregator.m in Sources */,
 				98A1C0D31B43273900E1AFE6 /* ShadowButton.swift in Sources */,
 				65739A921BE5134600DBD87B /* StartViewController.m in Sources */,
