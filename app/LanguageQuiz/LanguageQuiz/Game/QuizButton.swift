@@ -18,18 +18,24 @@ class QuizButton: UIButton {
     let titleColor = UIColor.blackColor()
     
     override func awakeFromNib() {
+        setUpTitleLabel()
+    }
+
+    override func prepareForInterfaceBuilder() {
+        setUpTitleLabel()
+    }
+    
+    func setUpTitleLabel() {
         contentHorizontalAlignment = .Left
         contentEdgeInsets = UIEdgeInsets(top: 0, left: secondRectangleSize, bottom: 0, right: 0)
         setTitleColor(titleColor, forState: .Normal)
     }
-
+    
     override func drawRect(rect: CGRect) {
     
         let context = UIGraphicsGetCurrentContext()
         let distance  = CGPoint(x: 2, y: rect.height/2)
     
-
-
         fillColor.setFill()
         
         let rectanglePath = UIBezierPath(roundedRect: CGRectMake(distance.y, 0, rect.width-distance.y, rect.height), cornerRadius: cornerRadius)
