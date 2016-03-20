@@ -26,4 +26,31 @@ class CoreDataHelper {
         return context.countForFetchRequest(fetchRequest, error: error)
     }
     
+
+    
+    static func getObjects(entityName: String, sortDescripor: NSSortDescriptor?, predicate: NSPredicate?, fetchLimit: Int?) -> [AnyObject]? {
+        let fetchRequest = NSFetchRequest(entityName: entityName)
+        fetchRequest.predicate = predicate
+        if fetchLimit != nil {
+            fetchRequest.fetchLimit = fetchLimit!
+        }
+        
+        if sortDescripor != nil {
+            fetchRequest.sortDescriptors = [sortDescripor!]
+        }
+        
+        do {
+            let results = try context.executeFetchRequest(fetchRequest)
+            return results
+        } catch {
+            print("🚫 Fetching \(entityName) failed: \(error)")
+            return nil
+        }
+        
+    }
+    
+    static func saveContext() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.saveContext()
+    }
 }

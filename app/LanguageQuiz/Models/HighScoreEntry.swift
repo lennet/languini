@@ -12,6 +12,6 @@ import CoreData
 @objc(HighScoreEntry)
 class HighScoreEntry: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    static let entityName = "HighScoreEntry"
 
 }

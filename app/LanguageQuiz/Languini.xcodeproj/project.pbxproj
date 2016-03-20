@@ -32,6 +32,10 @@
 		98712FE81B519B1700B441B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98712FE61B519B1700B441B2 /* Localizable.strings */; };
 		98A1C0D31B43273900E1AFE6 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */; };
 		98A2B1271C9F103800DBF6AA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B1261C9F103800DBF6AA /* UIColorExtension.swift */; };
+		98A2B12B1C9F296200DBF6AA /* HighscoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B12A1C9F296200DBF6AA /* HighscoreViewController.swift */; };
+		98A2B12D1C9F2AE000DBF6AA /* HighscoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B12C1C9F2AE000DBF6AA /* HighscoreHelper.swift */; };
+		98A2B12F1C9F2F8600DBF6AA /* StaticHighscoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B12E1C9F2F8600DBF6AA /* StaticHighscoreTableViewCell.swift */; };
+		98A2B1311C9F30E800DBF6AA /* EditableHighscoreTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B1301C9F30E800DBF6AA /* EditableHighscoreTableviewCell.swift */; };
 		98A3588E1C9ECBA90065C513 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A3588D1C9ECBA90065C513 /* Menu.storyboard */; };
 		98A358901C9ED03D0065C513 /* GeoQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3588F1C9ED03D0065C513 /* GeoQuizViewController.swift */; };
 		98A358991C9ED4F30065C513 /* HighScoreEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A358911C9ED4F30065C513 /* HighScoreEntry+CoreDataProperties.swift */; };
@@ -131,6 +135,10 @@
 		98712FED1B51A44500B441B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
 		98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		98A2B1261C9F103800DBF6AA /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		98A2B12A1C9F296200DBF6AA /* HighscoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreViewController.swift; sourceTree = "<group>"; };
+		98A2B12C1C9F2AE000DBF6AA /* HighscoreHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreHelper.swift; sourceTree = "<group>"; };
+		98A2B12E1C9F2F8600DBF6AA /* StaticHighscoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticHighscoreTableViewCell.swift; sourceTree = "<group>"; };
+		98A2B1301C9F30E800DBF6AA /* EditableHighscoreTableviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableHighscoreTableviewCell.swift; sourceTree = "<group>"; };
 		98A3588D1C9ECBA90065C513 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		98A3588F1C9ED03D0065C513 /* GeoQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoQuizViewController.swift; sourceTree = "<group>"; };
 		98A358911C9ED4F30065C513 /* HighScoreEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HighScoreEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -183,6 +191,9 @@
 				983421911BE545810037EF43 /* QuizButton.swift */,
 				983421951BE55CD00037EF43 /* QuizLogicViewController.swift */,
 				983421931BE559470037EF43 /* QuizViewController.swift */,
+				98A2B12A1C9F296200DBF6AA /* HighscoreViewController.swift */,
+				98A2B12E1C9F2F8600DBF6AA /* StaticHighscoreTableViewCell.swift */,
+				98A2B1301C9F30E800DBF6AA /* EditableHighscoreTableviewCell.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -351,6 +362,7 @@
 				983CA3A61C9EE31D0061ED16 /* SentenceHelper.swift */,
 				983CA3AA1C9EEBDF0061ED16 /* CoreDataHelper.swift */,
 				983CA3CE1C9F04DC0061ED16 /* LanguoidHelper.swift */,
+				98A2B12C1C9F2AE000DBF6AA /* HighscoreHelper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -526,11 +538,15 @@
 				65739A881BE5134600DBD87B /* Preferences.m in Sources */,
 				982AC8E71B46123900116B4F /* ShadowView.swift in Sources */,
 				983421921BE545810037EF43 /* QuizButton.swift in Sources */,
+				98A2B12D1C9F2AE000DBF6AA /* HighscoreHelper.swift in Sources */,
 				98A358991C9ED4F30065C513 /* HighScoreEntry+CoreDataProperties.swift in Sources */,
+				98A2B1311C9F30E800DBF6AA /* EditableHighscoreTableviewCell.swift in Sources */,
 				98A1C0D31B43273900E1AFE6 /* ShadowButton.swift in Sources */,
+				98A2B12B1C9F296200DBF6AA /* HighscoreViewController.swift in Sources */,
 				983CA3AB1C9EEBDF0061ED16 /* CoreDataHelper.swift in Sources */,
 				98A358901C9ED03D0065C513 /* GeoQuizViewController.swift in Sources */,
 				983CA3A71C9EE31D0061ED16 /* SentenceHelper.swift in Sources */,
+				98A2B12F1C9F2F8600DBF6AA /* StaticHighscoreTableViewCell.swift in Sources */,
 				98A2B1271C9F103800DBF6AA /* UIColorExtension.swift in Sources */,
 				983421961BE55CD00037EF43 /* QuizLogicViewController.swift in Sources */,
 				98A3589C1C9ED4F30065C513 /* Country.swift in Sources */,

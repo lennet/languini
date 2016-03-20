@@ -13,18 +13,19 @@ class GeoQuizViewController: QuizBaseViewController, MKMapViewDelegate {
 
     @IBOutlet weak var nextSentenceButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
-    
     override internal var quizType: QuizType {
         get {
             return .Geo
         }
     }
+    var waitingForResponse = true
     
     // MARK: - MKMapViewDelegate
     
     @IBAction func handleNextSentenceButtonTapped() {
         quizLogicViewController?.nextQuestion()
         nextSentenceButton.hidden = true
+        waitingForResponse = true
     }
     
     func showNextSentenceButton(gameOver: Bool) {
@@ -37,6 +38,10 @@ class GeoQuizViewController: QuizBaseViewController, MKMapViewDelegate {
     // MARK: - Actions
     
     @IBAction func handleTapOnMap(tapRecognizer: UITapGestureRecognizer) {
+        guard waitingForResponse else {
+            return
+        }
+        waitingForResponse = false
         let touchLocation = tapRecognizer.locationInView(mapView)
         let coordinate = mapView.convertPoint(touchLocation,toCoordinateFromView: mapView)
         let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)

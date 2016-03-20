@@ -12,23 +12,22 @@ import MapKit
 @objc
 protocol QuizLogicDelegate: class {
     func didPressCancelButton()
+    func gameOver(score: Int)
     
     optional func updateAnswers(answerLanguoids: [Languoid])
     optional func showNextSentenceButton(gameOver: Bool)
 }
 
-enum QuizType {
+enum QuizType: Int {
     case Standard
     case Geo
 }
-
 
 class QuizLogicViewController: UIViewController {
     
     final let defaultPoints = 50
     final let maxDistance = 6000
     
-    var quizType: QuizType
     weak var delegate: QuizLogicDelegate?
     var currentSentence: Sentence? {
         didSet {
@@ -53,16 +52,6 @@ class QuizLogicViewController: UIViewController {
     @IBOutlet weak var livesLabel: UILabel!
     @IBOutlet weak var sentenceLabel: UILabel!
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        self.quizType = .Standard
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        self.quizType = .Standard
-        super.init(coder: aDecoder)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         nextQuestion()
@@ -71,12 +60,11 @@ class QuizLogicViewController: UIViewController {
     // MARK - Public Methods
     
     func nextQuestion() {
-        currentSentence = SentenceHelper.getRandomSentence()
-        
-        if quizType == .Standard {
+        if livesLeft > 0 {
+            currentSentence = SentenceHelper.getRandomSentence()
             updateAnswers()
         } else {
-        
+            self.delegate?.gameOver(score)
         }
     }
     
@@ -126,7 +114,12 @@ class QuizLogicViewController: UIViewController {
         } else {
             updateView(true, nearby:true, distance: nil, closestCountry: nil)
         }
-        
+    }
+    
+    func reset() {
+        livesLeft = 4
+        score = 0
+        nextQuestion()
     }
     
     // MARK: - Private Methods
