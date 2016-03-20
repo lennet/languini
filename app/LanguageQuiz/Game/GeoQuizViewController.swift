@@ -32,9 +32,20 @@ class GeoQuizViewController: QuizBaseViewController, MKMapViewDelegate {
     // MARK: - MKMapViewDelegate
     
     @IBAction func handleTapOnMap(tapRecognizer: UITapGestureRecognizer) {
-        let location = tapRecognizer.locationInView(mapView)
-        let coordinate = mapView.convertPoint(location,toCoordinateFromView: mapView)
-        print(coordinate)
+        let touchLocation = tapRecognizer.locationInView(mapView)
+        let coordinate = mapView.convertPoint(touchLocation,toCoordinateFromView: mapView)
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(location) { (placemarkArray, error) -> Void in
+            guard let placemark = placemarkArray?.first else {
+                return
+            }
+            guard let countryCode = placemark.ISOcountryCode else {
+                return
+            }
+            self.quizLogicViewController?.validateAnswer(countryCode, location: location)
+        }
     }
 
 }
