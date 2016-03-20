@@ -12,6 +12,6 @@ import CoreData
 @objc(Languoid)
 class Languoid: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    static let entityName = "Languiod"
 
 }

@@ -12,6 +12,6 @@ import CoreData
 @objc(Country)
 class Country: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    static let entityName = "Country"
 
 }

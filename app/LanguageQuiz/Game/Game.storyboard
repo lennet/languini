@@ -194,19 +194,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500 pkt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ft7-2o-Ret">
-                                <rect key="frame" x="240" y="5" width="60" height="20.5"/>
+                                <rect key="frame" x="240" y="10" width="60" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxQ-E2-MBs">
-                                <rect key="frame" x="5" y="5" width="22" height="20.5"/>
+                                <rect key="frame" x="10" y="10" width="22" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eT-s3-NTG">
-                                <rect key="frame" x="491" y="-7" width="44" height="44.5"/>
+                                <rect key="frame" x="486" y="-2" width="44" height="44.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Dbm-xX-pCN"/>
                                     <constraint firstAttribute="width" secondItem="2eT-s3-NTG" secondAttribute="height" multiplier="1:1" id="tUb-jd-IQJ"/>
@@ -217,7 +217,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrh-T4-MS5">
-                                <rect key="frame" x="30" y="42" width="480" height="128"/>
+                                <rect key="frame" x="30" y="47.5" width="480" height="122.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -228,13 +228,13 @@
                             <constraint firstItem="lyS-oC-N2o" firstAttribute="top" secondItem="qrh-T4-MS5" secondAttribute="bottom" constant="10" id="Aby-EY-Clf"/>
                             <constraint firstItem="Ft7-2o-Ret" firstAttribute="centerX" secondItem="gRS-6a-wWK" secondAttribute="centerX" id="Bgg-57-GOa"/>
                             <constraint firstAttribute="trailing" secondItem="qrh-T4-MS5" secondAttribute="trailing" constant="10" id="C4L-bm-oyd"/>
-                            <constraint firstItem="mxQ-E2-MBs" firstAttribute="leading" secondItem="gRS-6a-wWK" secondAttribute="leading" constant="5" id="CZ2-ot-Tir"/>
+                            <constraint firstItem="mxQ-E2-MBs" firstAttribute="leading" secondItem="gRS-6a-wWK" secondAttribute="leading" constant="10" id="CZ2-ot-Tir"/>
                             <constraint firstItem="lyS-oC-N2o" firstAttribute="top" secondItem="qrh-T4-MS5" secondAttribute="bottom" constant="10" id="DMC-WS-P7W"/>
                             <constraint firstItem="qrh-T4-MS5" firstAttribute="top" secondItem="Ft7-2o-Ret" secondAttribute="bottom" constant="10" id="Fpd-tB-5Ly"/>
                             <constraint firstItem="qrh-T4-MS5" firstAttribute="top" secondItem="2eT-s3-NTG" secondAttribute="bottom" constant="5" id="PlA-Df-XYg"/>
-                            <constraint firstItem="Ft7-2o-Ret" firstAttribute="top" secondItem="bas-Pt-buy" secondAttribute="bottom" constant="5" id="QLN-J8-bSx"/>
+                            <constraint firstItem="Ft7-2o-Ret" firstAttribute="top" secondItem="bas-Pt-buy" secondAttribute="bottom" constant="10" id="QLN-J8-bSx"/>
                             <constraint firstItem="qrh-T4-MS5" firstAttribute="leading" secondItem="gRS-6a-wWK" secondAttribute="leading" constant="10" id="X6y-Nq-Q0Q"/>
-                            <constraint firstAttribute="trailing" secondItem="2eT-s3-NTG" secondAttribute="trailing" constant="5" id="ark-IJ-Tw3"/>
+                            <constraint firstAttribute="trailing" secondItem="2eT-s3-NTG" secondAttribute="trailing" constant="10" id="ark-IJ-Tw3"/>
                             <constraint firstItem="qrh-T4-MS5" firstAttribute="top" secondItem="2eT-s3-NTG" secondAttribute="bottom" constant="5" id="cFh-Qw-eYe"/>
                             <constraint firstItem="lyS-oC-N2o" firstAttribute="top" secondItem="qrh-T4-MS5" secondAttribute="bottom" constant="10" id="e8k-b1-qM8"/>
                             <constraint firstItem="mxQ-E2-MBs" firstAttribute="top" secondItem="Ft7-2o-Ret" secondAttribute="top" id="g51-bG-m2f"/>

@@ -77,7 +77,7 @@
         <!--GeoQuizStoryboardIdentifier-->
         <scene sceneID="9H3-7g-1Eg">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="GeoQuizStoryboardIdentifier" storyboardName="Game" referencedIdentifier="GeoQuizStoryboardIdentifier" id="Eiq-Z3-ydR" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Game" referencedIdentifier="GeoQuizStoryboardIdentifier" id="Eiq-Z3-ydR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iv3-IK-nvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="655.5" y="484"/>
