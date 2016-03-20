@@ -8,14 +8,33 @@
 
 import UIKit
 
-class SelectionMarker: UIView {
+@IBDesignable class SelectionMarker: UIView {
+    
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
+    var triangleColor: UIColor = UIColor.whiteColor()
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = UIColor.blueColor()
+
     }
-    */
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func drawRect(rect: CGRect) {
+        let contextRef : CGContextRef = UIGraphicsGetCurrentContext()!
+        
+        CGContextBeginPath(contextRef)
+        CGContextMoveToPoint(contextRef, CGRectGetMinX(rect), CGRectGetMaxY(rect))
+        CGContextAddLineToPoint(contextRef, CGRectGetMaxX(rect), CGRectGetMaxY(rect))
+        CGContextAddLineToPoint(contextRef, (CGRectGetMaxX(rect)/2.0), CGRectGetMinY(rect))
+        CGContextClosePath(contextRef)
+        
+        CGContextSetFillColorWithColor(contextRef, triangleColor.CGColor)
+        CGContextFillPath(contextRef)
+    }
+    
 }

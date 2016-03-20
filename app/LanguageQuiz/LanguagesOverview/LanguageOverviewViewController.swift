@@ -10,15 +10,70 @@ import UIKit
 
 class LanguageOverviewViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet var selectionView: UIView!
+    @IBOutlet var listButton: UIButton!
+    @IBOutlet var mapButton: UIButton!
+    
+    var listViewController: UIViewController?
+    var mapViewController: UIViewController?
+    
+    var selectionIndicator: UIView?
+    
+    @IBOutlet var contentView: UIView!
+    
+    @IBAction func switchViews(sender: AnyObject) {
+        switch sender.tag{
+        case 1:
+            activeViewController = listViewController
+        case 2:
+            activeViewController = mapViewController
+        default:
+            return
+        }
+    }
+    
+    private var activeViewController: UIViewController? {
+        didSet{
+            removeOldVC(oldValue)
+            updateActiveVC()
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let storyboard = UIStoryboard(name: "Overview", bundle: nil)
+        mapViewController = storyboard.instantiateViewControllerWithIdentifier("mapsVC")
+        listViewController = storyboard.instantiateViewControllerWithIdentifier("listVC")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        activeViewController = listViewController
+        updateActiveVC()
+        print(activeViewController)
+    }
+
+    // MARK: - Container Management
+    
+    private func removeOldVC(viewController: UIViewController?){
+        guard let viewController = viewController else {
+            return
+        }
+        
+        viewController.willMoveToParentViewController(nil)
+        viewController.view.removeFromSuperview()
+        viewController.removeFromParentViewController()
+    }
+    
+    private func updateActiveVC(){
+        guard let currentVC = activeViewController else {
+            return
+        }
+        
+        addChildViewController(currentVC)
+        activeViewController!.view.frame = self.contentView.bounds
+        contentView.addSubview(activeViewController!.view)
+        currentVC.didMoveToParentViewController(self)
     }
     
 

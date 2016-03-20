@@ -39,6 +39,10 @@
 		65739A911BE5134600DBD87B /* SentencesAggregator.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A791BE5134600DBD87B /* SentencesAggregator.m */; };
 		65739A921BE5134600DBD87B /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A7B1BE5134600DBD87B /* StartViewController.m */; };
 		657A08D61BE515B600196F8A /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 657A08D51BE515B600196F8A /* Country.m */; };
+		65D6F54B1C9EDA4D002C1CDB /* LanguageOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6F54A1C9EDA4D002C1CDB /* LanguageOverviewViewController.swift */; };
+		65D6F54D1C9EE064002C1CDB /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6F54C1C9EE064002C1CDB /* LanguageTableViewController.swift */; };
+		65D6F54F1C9EE090002C1CDB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6F54E1C9EE090002C1CDB /* MapViewController.swift */; };
+		65D6F5511C9EFB13002C1CDB /* SelectionMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6F5501C9EFB13002C1CDB /* SelectionMarker.swift */; };
 		982AC8E71B46123900116B4F /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982AC8E61B46123900116B4F /* ShadowView.swift */; };
 		983421921BE545810037EF43 /* QuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983421911BE545810037EF43 /* QuizButton.swift */; };
 		983421941BE559470037EF43 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983421931BE559470037EF43 /* QuizViewController.swift */; };
@@ -113,6 +117,10 @@
 		65739A7A1BE5134600DBD87B /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		65739A7B1BE5134600DBD87B /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		657A08D51BE515B600196F8A /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		65D6F54A1C9EDA4D002C1CDB /* LanguageOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageOverviewViewController.swift; sourceTree = "<group>"; };
+		65D6F54C1C9EE064002C1CDB /* LanguageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
+		65D6F54E1C9EE090002C1CDB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		65D6F5501C9EFB13002C1CDB /* SelectionMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionMarker.swift; sourceTree = "<group>"; };
 		982AC8E61B46123900116B4F /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		983421911BE545810037EF43 /* QuizButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizButton.swift; sourceTree = "<group>"; };
 		983421931BE559470037EF43 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				6571F9801BE50EB8007AFBD5 /* Overview.storyboard */,
+				65D6F54A1C9EDA4D002C1CDB /* LanguageOverviewViewController.swift */,
+				65D6F54C1C9EE064002C1CDB /* LanguageTableViewController.swift */,
+				65D6F54E1C9EE090002C1CDB /* MapViewController.swift */,
+				65D6F5501C9EFB13002C1CDB /* SelectionMarker.swift */,
 			);
 			path = LanguagesOverview;
 			sourceTree = "<group>";
@@ -452,11 +464,13 @@
 				65739A861BE5134600DBD87B /* Languoid.m in Sources */,
 				6571F98C1BE50FBA007AFBD5 /* main.m in Sources */,
 				65739A8B1BE5134600DBD87B /* QuizViewController.m in Sources */,
+				65D6F5511C9EFB13002C1CDB /* SelectionMarker.swift in Sources */,
 				65739A831BE5134600DBD87B /* DictionaryViewController.m in Sources */,
 				65739A851BE5134600DBD87B /* HighScoreHelper.m in Sources */,
 				65739A811BE5134600DBD87B /* DictionaryDetailViewController.m in Sources */,
 				9835D9721B47EC84002B0158 /* HighScoreEntry.m in Sources */,
 				65739A911BE5134600DBD87B /* SentencesAggregator.m in Sources */,
+				65D6F54D1C9EE064002C1CDB /* LanguageTableViewController.swift in Sources */,
 				65739A891BE5134600DBD87B /* QuizBaseViewController.m in Sources */,
 				65739A881BE5134600DBD87B /* Preferences.m in Sources */,
 				65739A821BE5134600DBD87B /* DictionaryTableViewCell.m in Sources */,
@@ -464,6 +478,7 @@
 				983421921BE545810037EF43 /* QuizButton.swift in Sources */,
 				65739A7D1BE5134600DBD87B /* CountriesAggregator.m in Sources */,
 				98A1C0D31B43273900E1AFE6 /* ShadowButton.swift in Sources */,
+				65D6F54B1C9EDA4D002C1CDB /* LanguageOverviewViewController.swift in Sources */,
 				65739A921BE5134600DBD87B /* StartViewController.m in Sources */,
 				983421961BE55CD00037EF43 /* QuizLogicViewController.swift in Sources */,
 				6571F98A1BE50FBA007AFBD5 /* AppDelegate.m in Sources */,
@@ -472,6 +487,7 @@
 				65739A8C1BE5134600DBD87B /* ResultTableViewCell.m in Sources */,
 				65739A801BE5134600DBD87B /* DetailCell.m in Sources */,
 				983421941BE559470037EF43 /* QuizViewController.swift in Sources */,
+				65D6F54F1C9EE090002C1CDB /* MapViewController.swift in Sources */,
 				98E78EEB1AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld in Sources */,
 				65739A7C1BE5134600DBD87B /* AboutViewController.m in Sources */,
 				65739A7F1BE5134600DBD87B /* DataAggregator.m in Sources */,
