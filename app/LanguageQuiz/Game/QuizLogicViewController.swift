@@ -23,10 +23,28 @@ enum QuizType {
 
 class QuizLogicViewController: UIViewController {
     
+    final let defaultPoints = 50
+    
     var quizType: QuizType
     weak var delegate: QuizLogicDelegate?
-    var currentSentence: Sentence?
-    var score = 0
+    var currentSentence: Sentence? {
+        didSet {
+            sentenceLabel.text = currentSentence?.sentence
+        }
+        
+    }
+    
+    var score = 0 {
+        didSet {
+            scoreLabel.text = "\(score) pkt"
+        }
+    }
+    
+    var livesLeft = 4 {
+        didSet {
+            livesLabel.text = "\(livesLeft)X"
+        }
+    }
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var livesLabel: UILabel!
@@ -55,7 +73,6 @@ class QuizLogicViewController: UIViewController {
     
     func nextQuestion() {
         currentSentence = SentenceHelper.getRandomSentence()
-        sentenceLabel.text = currentSentence?.sentence
         
         if quizType == .Standard {
             updateAnswers()
@@ -64,10 +81,20 @@ class QuizLogicViewController: UIViewController {
         }
     }
     
-    func validateAnswer(languoid: Languoid) -> Bool {
+    func validateAnswer(languoid: Languoid) -> Languoid {
         let correct = languoid == currentSentence?.languoid
-        print(correct)
-        return correct
+        if correct {
+            score += defaultPoints
+        } else {
+            livesLeft -= 1
+        }
+        
+        if livesLeft > 0 {
+            NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: "nextQuestion", userInfo: nil, repeats: false)
+        } else {
+            // TODO Finish Game
+        }
+        return currentSentence!.languoid!
     }
     
     private func updateAnswers() {
@@ -80,8 +107,18 @@ class QuizLogicViewController: UIViewController {
             return
         }
         answerLanguoids.appendContentsOf(wrongAnswerLanguoids)
+        for index in 0...answerLanguoids.count {
+            let remainingCount = answerLanguoids.count - index
+            let exchangeIndex = index + Int(arc4random_uniform(UInt32(remainingCount)))
+            if exchangeIndex != index {
+                swap(&answerLanguoids[index], &answerLanguoids[exchangeIndex])
+            }
+        }
+        
         self.delegate?.updateAnswers?(answerLanguoids)
     }
+    
+
     
     // MARK: - Actions
     

@@ -31,6 +31,7 @@
 		98712FDF1B51970C00B441B2 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98712FE11B51970C00B441B2 /* Storyboard.storyboard */; };
 		98712FE81B519B1700B441B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98712FE61B519B1700B441B2 /* Localizable.strings */; };
 		98A1C0D31B43273900E1AFE6 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */; };
+		98A2B1271C9F103800DBF6AA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B1261C9F103800DBF6AA /* UIColorExtension.swift */; };
 		98A3588E1C9ECBA90065C513 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A3588D1C9ECBA90065C513 /* Menu.storyboard */; };
 		98A358901C9ED03D0065C513 /* GeoQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3588F1C9ED03D0065C513 /* GeoQuizViewController.swift */; };
 		98A358991C9ED4F30065C513 /* HighScoreEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A358911C9ED4F30065C513 /* HighScoreEntry+CoreDataProperties.swift */; };
@@ -129,6 +130,7 @@
 		98712FEA1B519B2A00B441B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		98712FED1B51A44500B441B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
 		98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
+		98A2B1261C9F103800DBF6AA /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		98A3588D1C9ECBA90065C513 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		98A3588F1C9ED03D0065C513 /* GeoQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoQuizViewController.swift; sourceTree = "<group>"; };
 		98A358911C9ED4F30065C513 /* HighScoreEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HighScoreEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				6571F9881BE50FBA007AFBD5 /* Reachability.h */,
 				6571F9891BE50FBA007AFBD5 /* Reachability.m */,
 				6571F9871BE50FBA007AFBD5 /* main.m */,
+				98A2B1261C9F103800DBF6AA /* UIColorExtension.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				983CA3AB1C9EEBDF0061ED16 /* CoreDataHelper.swift in Sources */,
 				98A358901C9ED03D0065C513 /* GeoQuizViewController.swift in Sources */,
 				983CA3A71C9EE31D0061ED16 /* SentenceHelper.swift in Sources */,
+				98A2B1271C9F103800DBF6AA /* UIColorExtension.swift in Sources */,
 				983421961BE55CD00037EF43 /* QuizLogicViewController.swift in Sources */,
 				98A3589C1C9ED4F30065C513 /* Country.swift in Sources */,
 				6571F98A1BE50FBA007AFBD5 /* AppDelegate.m in Sources */,
@@ -742,6 +746,7 @@
 				983CA3B91C9EF0BF0061ED16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		98E78EDA1AEBECCA00C0909D /* Build configuration list for PBXProject "Languini" */ = {
 			isa = XCConfigurationList;

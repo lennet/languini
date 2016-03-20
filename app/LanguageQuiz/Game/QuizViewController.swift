@@ -15,6 +15,12 @@ class QuizViewController: QuizBaseViewController {
     @IBOutlet weak var thirdAnswerButton: QuizButton!
     @IBOutlet weak var fourthAnswerButton: QuizButton!
     
+    var buttonArray: [QuizButton] {
+        get {
+            return [firstAnswerButton, secondAnswerButton, thirdAnswerButton, fourthAnswerButton]
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -23,13 +29,31 @@ class QuizViewController: QuizBaseViewController {
         super.viewWillAppear(animated)
     }
     
+    func changeColors(correctLanguoid: Languoid) {
+        for button in buttonArray {
+            if button.languoid == correctLanguoid {
+                button.fillColor = UIColor.correctAnswerColor()
+            }  else {
+                button.fillColor = UIColor.wrongAnswerColor()
+            }
+        }
+    }
+    
+    func resetColors() {
+        for button in buttonArray {
+            button.fillColor = UIColor.whiteColor()
+        }
+    }
+    
     // MARK: - Actions
     
     @IBAction func handleAnswerButtonpressed(sender: QuizButton) {
         guard let languoid = sender.languoid else {
             return
         }
-        quizLogicViewController?.validateAnswer(languoid)
+        if let correctLangouid = quizLogicViewController?.validateAnswer(languoid) {
+            changeColors(correctLangouid)
+        }
     }
 
     // MARK: - QuizLogicDelegate
@@ -38,10 +62,11 @@ class QuizViewController: QuizBaseViewController {
         guard answerLanguoids.count == 4 else {
             return
         }
-        firstAnswerButton.setUpWithLanguoid(answerLanguoids[0])
-        secondAnswerButton.setUpWithLanguoid(answerLanguoids[1])
-        thirdAnswerButton.setUpWithLanguoid(answerLanguoids[2])
-        fourthAnswerButton.setUpWithLanguoid(answerLanguoids[3])
+
+        resetColors()
+        for (index, button) in buttonArray.enumerate() {
+            button.setUpWithLanguoid(answerLanguoids[index])
+        }
     }
     
     // MARK: - Orientation

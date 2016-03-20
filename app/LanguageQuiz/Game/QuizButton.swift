@@ -14,7 +14,13 @@ class QuizButton: UIButton {
     let secondRectangleSize : CGFloat = 48
     let rotation : CGFloat = 45
     let cornerRadius : CGFloat = 6
-    let fillColor = UIColor.whiteColor()
+    
+    var fillColor = UIColor.whiteColor() {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     let titleColor = UIColor.blackColor()
     
     let titleFont = UIFont.systemFontOfSize(20)
