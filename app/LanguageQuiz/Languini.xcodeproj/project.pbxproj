@@ -43,6 +43,8 @@
 		65D6F54D1C9EE064002C1CDB /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6F54C1C9EE064002C1CDB /* LanguageTableViewController.swift */; };
 		65D6F54F1C9EE090002C1CDB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6F54E1C9EE090002C1CDB /* MapViewController.swift */; };
 		65D6F5511C9EFB13002C1CDB /* SelectionMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6F5501C9EFB13002C1CDB /* SelectionMarker.swift */; };
+		65D6F5531C9F1197002C1CDB /* SelectionBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6F5521C9F1197002C1CDB /* SelectionBarButton.swift */; };
+		65D6F5551C9F186D002C1CDB /* SelectionSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6F5541C9F186D002C1CDB /* SelectionSlider.swift */; };
 		982AC8E71B46123900116B4F /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982AC8E61B46123900116B4F /* ShadowView.swift */; };
 		983421921BE545810037EF43 /* QuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983421911BE545810037EF43 /* QuizButton.swift */; };
 		983421941BE559470037EF43 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983421931BE559470037EF43 /* QuizViewController.swift */; };
@@ -121,6 +123,8 @@
 		65D6F54C1C9EE064002C1CDB /* LanguageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
 		65D6F54E1C9EE090002C1CDB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		65D6F5501C9EFB13002C1CDB /* SelectionMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionMarker.swift; sourceTree = "<group>"; };
+		65D6F5521C9F1197002C1CDB /* SelectionBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionBarButton.swift; sourceTree = "<group>"; };
+		65D6F5541C9F186D002C1CDB /* SelectionSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionSlider.swift; sourceTree = "<group>"; };
 		982AC8E61B46123900116B4F /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		983421911BE545810037EF43 /* QuizButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizButton.swift; sourceTree = "<group>"; };
 		983421931BE559470037EF43 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 				65D6F54C1C9EE064002C1CDB /* LanguageTableViewController.swift */,
 				65D6F54E1C9EE090002C1CDB /* MapViewController.swift */,
 				65D6F5501C9EFB13002C1CDB /* SelectionMarker.swift */,
+				65D6F5521C9F1197002C1CDB /* SelectionBarButton.swift */,
+				65D6F5541C9F186D002C1CDB /* SelectionSlider.swift */,
 			);
 			path = LanguagesOverview;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 			files = (
 				65739A841BE5134600DBD87B /* GlottoViewController.m in Sources */,
 				65739A8E1BE5134600DBD87B /* SectionHeaderCell.m in Sources */,
+				65D6F5531C9F1197002C1CDB /* SelectionBarButton.swift in Sources */,
 				65739A901BE5134600DBD87B /* Sentence.m in Sources */,
 				65739A8A1BE5134600DBD87B /* QuizControlViewController.m in Sources */,
 				657A08D61BE515B600196F8A /* Country.m in Sources */,
@@ -473,6 +480,7 @@
 				65D6F54D1C9EE064002C1CDB /* LanguageTableViewController.swift in Sources */,
 				65739A891BE5134600DBD87B /* QuizBaseViewController.m in Sources */,
 				65739A881BE5134600DBD87B /* Preferences.m in Sources */,
+				65D6F5551C9F186D002C1CDB /* SelectionSlider.swift in Sources */,
 				65739A821BE5134600DBD87B /* DictionaryTableViewCell.m in Sources */,
 				982AC8E71B46123900116B4F /* ShadowView.swift in Sources */,
 				983421921BE545810037EF43 /* QuizButton.swift in Sources */,

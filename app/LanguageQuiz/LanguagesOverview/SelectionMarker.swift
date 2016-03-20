@@ -16,7 +16,7 @@ import UIKit
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.blueColor()
+        self.backgroundColor = UIColor.clearColor()
 
     }
     
@@ -30,7 +30,7 @@ import UIKit
         CGContextBeginPath(contextRef)
         CGContextMoveToPoint(contextRef, CGRectGetMinX(rect), CGRectGetMaxY(rect))
         CGContextAddLineToPoint(contextRef, CGRectGetMaxX(rect), CGRectGetMaxY(rect))
-        CGContextAddLineToPoint(contextRef, (CGRectGetMaxX(rect)/2.0), CGRectGetMinY(rect))
+        CGContextAddLineToPoint(contextRef, (CGRectGetMaxX(rect)/2.0), CGRectGetMaxY(rect)/2.0)
         CGContextClosePath(contextRef)
         
         CGContextSetFillColorWithColor(contextRef, triangleColor.CGColor)

@@ -8,29 +8,28 @@
 
 import UIKit
 
+enum SelectionPosition: Int{
+    case List = 1
+    case Map = 2
+}
+
 class LanguageOverviewViewController: UIViewController {
 
     @IBOutlet var selectionView: UIView!
-    @IBOutlet var listButton: UIButton!
-    @IBOutlet var mapButton: UIButton!
+    
     
     var listViewController: UIViewController?
     var mapViewController: UIViewController?
     
-    var selectionIndicator: UIView?
+    @IBOutlet var selectionSlider: SelectionSlider!
     
     @IBOutlet var contentView: UIView!
     
-    @IBAction func switchViews(sender: AnyObject) {
-        switch sender.tag{
-        case 1:
-            activeViewController = listViewController
-        case 2:
-            activeViewController = mapViewController
-        default:
-            return
-        }
-    }
+    @IBOutlet var listButton: SelectionBarButton!
+    @IBOutlet var mapsButton: SelectionBarButton!
+    
+    
+    
     
     private var activeViewController: UIViewController? {
         didSet{
@@ -47,10 +46,12 @@ class LanguageOverviewViewController: UIViewController {
         listViewController = storyboard.instantiateViewControllerWithIdentifier("listVC")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool) {
         activeViewController = listViewController
         updateActiveVC()
-        print(activeViewController)
+        selectionSlider.positionSelection1 = CGPoint(x: listButton.center.x, y: 0)
+        selectionSlider.positionSelection2 = CGPoint(x: mapsButton.center.x, y: 0)
+        selectionSlider.selectionMarker.center.x = selectionSlider.positionSelection1!.x - selectionSlider.selectionMarkerOffset
     }
 
     // MARK: - Container Management
@@ -75,6 +76,25 @@ class LanguageOverviewViewController: UIViewController {
         contentView.addSubview(activeViewController!.view)
         currentVC.didMoveToParentViewController(self)
     }
+    
+    
+    @IBAction func switchViews(sender: AnyObject) {
+        switch sender.tag{
+        case 1:
+            activeViewController = listViewController
+            listButton.highlightLabel()
+            mapsButton.restoreLabelFont()
+            selectionSlider.switchToPosition(.List)
+        case 2:
+            activeViewController = mapViewController
+            mapsButton.highlightLabel()
+            listButton.restoreLabelFont()
+            selectionSlider.switchToPosition(.Map)
+        default:
+            return
+        }
+    }
+    
     
 
     /*
