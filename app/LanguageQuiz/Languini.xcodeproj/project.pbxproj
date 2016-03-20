@@ -15,7 +15,6 @@
 		6571F98A1BE50FBA007AFBD5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571F9851BE50FBA007AFBD5 /* AppDelegate.m */; };
 		6571F98C1BE50FBA007AFBD5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571F9871BE50FBA007AFBD5 /* main.m */; };
 		6571F98D1BE50FBA007AFBD5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571F9891BE50FBA007AFBD5 /* Reachability.m */; };
-		65739A4C1BE511BC00DBD87B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65739A4B1BE511BC00DBD87B /* Info.plist */; };
 		65739A881BE5134600DBD87B /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A671BE5134600DBD87B /* Preferences.m */; };
 		982AC8E71B46123900116B4F /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982AC8E61B46123900116B4F /* ShadowView.swift */; };
 		983421921BE545810037EF43 /* QuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983421911BE545810037EF43 /* QuizButton.swift */; };
@@ -37,6 +36,7 @@
 		98A3589E1C9ED4F30065C513 /* Languoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A358961C9ED4F30065C513 /* Languoid.swift */; };
 		98A3589F1C9ED4F30065C513 /* Sentence+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A358971C9ED4F30065C513 /* Sentence+CoreDataProperties.swift */; };
 		98A358A01C9ED4F30065C513 /* Sentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A358981C9ED4F30065C513 /* Sentence.swift */; };
+		98A358A51C9ED9A00065C513 /* QuizBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A358A41C9ED9A00065C513 /* QuizBaseViewController.swift */; };
 		98E78EEB1AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98E78EE91AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld */; };
 		98E78EF61AEBECCA00C0909D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98E78EF41AEBECCA00C0909D /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
@@ -116,6 +116,7 @@
 		98A358961C9ED4F30065C513 /* Languoid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Languoid.swift; path = Models/Languoid.swift; sourceTree = "<group>"; };
 		98A358971C9ED4F30065C513 /* Sentence+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Sentence+CoreDataProperties.swift"; path = "Models/Sentence+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		98A358981C9ED4F30065C513 /* Sentence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sentence.swift; path = Models/Sentence.swift; sourceTree = "<group>"; };
+		98A358A41C9ED9A00065C513 /* QuizBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizBaseViewController.swift; sourceTree = "<group>"; };
 		98E78EDF1AEBECCA00C0909D /* Languini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Languini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E78EEA1AEBECCA00C0909D /* LanguageQuiz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LanguageQuiz.xcdatamodel; sourceTree = "<group>"; };
 		98E78EF51AEBECCA00C0909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -149,6 +150,7 @@
 				983421951BE55CD00037EF43 /* QuizLogicViewController.swift */,
 				983421931BE559470037EF43 /* QuizViewController.swift */,
 				98A3588F1C9ED03D0065C513 /* GeoQuizViewController.swift */,
+				98A358A41C9ED9A00065C513 /* QuizBaseViewController.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -376,7 +378,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Coding Da Vinci";
 				TargetAttributes = {
 					98E78EDE1AEBECCA00C0909D = {
@@ -418,7 +420,6 @@
 				98712FDC1B516A0C00B441B2 /* Languini.sqlite in Resources */,
 				98712FDF1B51970C00B441B2 /* Storyboard.storyboard in Resources */,
 				6571F97D1BE50E99007AFBD5 /* Game.storyboard in Resources */,
-				65739A4C1BE511BC00DBD87B /* Info.plist in Resources */,
 				6571F9811BE50EB8007AFBD5 /* Overview.storyboard in Resources */,
 				6571F97F1BE50EA9007AFBD5 /* Intro.storyboard in Resources */,
 			);
@@ -445,6 +446,7 @@
 				6571F98A1BE50FBA007AFBD5 /* AppDelegate.m in Sources */,
 				6571F98D1BE50FBA007AFBD5 /* Reachability.m in Sources */,
 				98A3589A1C9ED4F30065C513 /* HighScoreEntry.swift in Sources */,
+				98A358A51C9ED9A00065C513 /* QuizBaseViewController.swift in Sources */,
 				983421941BE559470037EF43 /* QuizViewController.swift in Sources */,
 				98E78EEB1AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld in Sources */,
 				98A3589F1C9ED4F30065C513 /* Sentence+CoreDataProperties.swift in Sources */,

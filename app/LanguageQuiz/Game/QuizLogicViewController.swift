@@ -8,8 +8,31 @@
 
 import UIKit
 
-class QuizLogicViewController: UIViewController {
+protocol QuizLogicDelegate: class {
+    func didPressCancelButton()
+}
 
+enum QuizType {
+    case Standard
+    case Geo
+}
+
+
+class QuizLogicViewController: UIViewController {
+    
+    var quizType: QuizType
+    weak var delegate: QuizLogicDelegate?
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        self.quizType = .Standard
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.quizType = .Standard
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +44,10 @@ class QuizLogicViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Actions
+    
+    @IBAction func handleCancelButtonPressed(sender: AnyObject) {
+        delegate?.didPressCancelButton()
     }
-    */
 
 }

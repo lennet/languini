@@ -212,6 +212,9 @@
                                     <constraint firstAttribute="width" secondItem="2eT-s3-NTG" secondAttribute="height" multiplier="1:1" id="tUb-jd-IQJ"/>
                                 </constraints>
                                 <state key="normal" image="closeWhite"/>
+                                <connections>
+                                    <action selector="handleCancelButtonPressed:" destination="SHs-i3-8iV" eventType="touchUpInside" id="ti6-xD-R25"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrh-T4-MS5">
                                 <rect key="frame" x="30" y="42" width="480" height="128"/>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuizViewController: UIViewController {
+class QuizViewController: QuizBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +18,7 @@ class QuizViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-
-    
-    // MAR: - Orientation
+    // MARK: - Orientation
     
     
     override func shouldAutorotate() -> Bool {
@@ -29,14 +27,6 @@ class QuizViewController: UIViewController {
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return .Portrait
-    }
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
 
 }
