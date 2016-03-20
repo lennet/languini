@@ -14,6 +14,7 @@ protocol QuizLogicDelegate: class {
     func didPressCancelButton()
     
     optional func updateAnswers(answerLanguoids: [Languoid])
+    optional func showNextSentenceButton(gameOver: Bool)
 }
 
 enum QuizType {
@@ -64,15 +65,9 @@ class QuizLogicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         nextQuestion()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK - Public Methods
     
     func nextQuestion() {
@@ -147,9 +142,7 @@ class QuizLogicViewController: UIViewController {
             }
         }
         
-        if livesLeft > 0 {
-            NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: "nextQuestion", userInfo: nil, repeats: false)
-        }
+        self.delegate?.showNextSentenceButton?(livesLeft<=0)
     }
     
     private func updateAnswers() {

@@ -29,19 +29,17 @@ class QuizViewController: QuizBaseViewController {
         super.viewWillAppear(animated)
     }
     
-    func changeColors(correctLanguoid: Languoid) {
+    private func changeAlphaValue(correctLanguoid: Languoid) {
         for button in buttonArray {
-            if button.languoid == correctLanguoid {
-                button.fillColor = UIColor.correctAnswerColor()
-            }  else {
-                button.fillColor = UIColor.wrongAnswerColor()
+            if button.languoid != correctLanguoid {
+                button.alpha = 0.7
             }
         }
     }
     
-    func resetColors() {
+    private func resetAlphaValue() {
         for button in buttonArray {
-            button.fillColor = UIColor.whiteColor()
+            button.alpha = 1
         }
     }
     
@@ -52,7 +50,7 @@ class QuizViewController: QuizBaseViewController {
             return
         }
         if let correctLangouid = quizLogicViewController?.validateAnswer(languoid) {
-            changeColors(correctLangouid)
+            changeAlphaValue(correctLangouid)
         }
     }
 
@@ -63,7 +61,7 @@ class QuizViewController: QuizBaseViewController {
             return
         }
 
-        resetColors()
+        resetAlphaValue()
         for (index, button) in buttonArray.enumerate() {
             button.setUpWithLanguoid(answerLanguoids[index])
         }

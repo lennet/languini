@@ -11,25 +11,30 @@ import MapKit
 
 class GeoQuizViewController: QuizBaseViewController, MKMapViewDelegate {
 
+    @IBOutlet weak var nextSentenceButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    
     override internal var quizType: QuizType {
         get {
             return .Geo
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // MARK: - MKMapViewDelegate
+    
+    @IBAction func handleNextSentenceButtonTapped() {
+        quizLogicViewController?.nextQuestion()
+        nextSentenceButton.hidden = true
     }
     
-    // MARK: - MKMapViewDelegate
+    func showNextSentenceButton(gameOver: Bool) {
+        if gameOver {
+            nextSentenceButton.setTitle("Game Over!", forState: .Normal)
+        }
+        nextSentenceButton.hidden = false
+    }
+    
+    // MARK: - Actions
     
     @IBAction func handleTapOnMap(tapRecognizer: UITapGestureRecognizer) {
         let touchLocation = tapRecognizer.locationInView(mapView)
