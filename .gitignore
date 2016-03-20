@@ -31,10 +31,4 @@ DerivedData
 # Carthage/Checkouts
 
 Carthage/Build
-proNotes/.idea/.name
-proNotes/.idea/encodings.xml
-proNotes/.idea/misc.xml
-proNotes/.idea/modules.xml
-proNotes/.idea/Student.iml
-proNotes/.idea/workspace.xml
-proNotes/.idea/xcode.xml
+
