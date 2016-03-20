@@ -30,7 +30,7 @@ class QuizButton: UIButton {
     
     func setUpTitleLabel() {        
         let titleLabel = UILabel()
-        titleLabel.text = "Sprache"
+        titleLabel.text = "Title"
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = titleFont
         addSubview(titleLabel)
@@ -44,7 +44,7 @@ class QuizButton: UIButton {
         addConstraint(bottomConstraint)
         
         let subTitleLabel = UILabel()
-        subTitleLabel.text = "Land"
+        subTitleLabel.text = "Subtitle"
         subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subTitleLabel.font = subTitleFont
         addSubview(subTitleLabel)

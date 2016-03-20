@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="M0F-7D-Idn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="M0F-7D-Idn">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -21,7 +21,6 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYG-CG-7k1">
                                 <rect key="frame" x="20" y="20" width="560" height="180"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="NwG-pZ-vad"/>
                                 </constraints>
@@ -34,7 +33,6 @@
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNM-zN-koh" userLabel="Spacer View">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="750" constant="20" id="mZG-Hv-IpP"/>
@@ -42,45 +40,36 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROT-KP-ic9" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="30" width="560" height="55"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="FtL-r3-z8w"/>
                                         </constraints>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Cr-aN-0h4" userLabel="Spacer View">
                                         <rect key="frame" x="0.0" y="85" width="560" height="30"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-nc-dP4" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="115" width="560" height="55"/>
-                                        <animations/>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEH-g3-zgl" userLabel="Spacer View">
                                         <rect key="frame" x="0.0" y="170" width="560" height="30"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtL-UX-pQv" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="200" width="560" height="55"/>
-                                        <animations/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeT-Gq-feC" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="285" width="560" height="55"/>
-                                        <animations/>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2il-o5-Se3" userLabel="Spacer View">
                                         <rect key="frame" x="0.0" y="340" width="560" height="30"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8td-ta-obo" userLabel="Spacer View">
                                         <rect key="frame" x="0.0" y="255" width="560" height="30"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="mEH-g3-zgl" firstAttribute="top" secondItem="bTg-nc-dP4" secondAttribute="bottom" id="0Sr-9k-7NY"/>
@@ -121,7 +110,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="boc-iH-tl5" firstAttribute="top" secondItem="PYG-CG-7k1" secondAttribute="bottom" constant="10" id="1kG-yV-Flz"/>
@@ -138,6 +126,48 @@
             </objects>
             <point key="canvasLocation" x="183" y="402"/>
         </scene>
+        <!--Geo Quiz View Controller-->
+        <scene sceneID="RbK-Ix-lbn">
+            <objects>
+                <viewController storyboardIdentifier="GeoQuizStoryboardIdentifier" id="bYy-d3-dfv" customClass="GeoQuizViewController" customModule="Languini" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LGU-YZ-48A"/>
+                        <viewControllerLayoutGuide type="bottom" id="W0x-Z8-gnQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jov-CI-eC4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bca-aU-KML">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghZ-OY-xg3">
+                                <rect key="frame" x="30" y="30" width="540" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="SLk-3e-7qi"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="UyU-zt-XhJ"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="SHs-i3-8iV" kind="embed" id="n19-zK-Qwv"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ghZ-OY-xg3" secondAttribute="trailing" constant="10" id="33M-Fv-oeM"/>
+                            <constraint firstItem="ghZ-OY-xg3" firstAttribute="top" secondItem="LGU-YZ-48A" secondAttribute="bottom" constant="10" id="8Ej-EY-qMV"/>
+                            <constraint firstItem="ghZ-OY-xg3" firstAttribute="leading" secondItem="Jov-CI-eC4" secondAttribute="leadingMargin" constant="10" id="9CJ-bN-4Zm"/>
+                            <constraint firstItem="bca-aU-KML" firstAttribute="leading" secondItem="Jov-CI-eC4" secondAttribute="leading" id="NrN-bU-1my"/>
+                            <constraint firstItem="W0x-Z8-gnQ" firstAttribute="top" secondItem="bca-aU-KML" secondAttribute="bottom" id="RzT-iY-QsP"/>
+                            <constraint firstAttribute="trailing" secondItem="bca-aU-KML" secondAttribute="trailing" id="pr5-GF-Fef"/>
+                            <constraint firstItem="bca-aU-KML" firstAttribute="top" secondItem="LGU-YZ-48A" secondAttribute="bottom" constant="-20" id="zEd-va-wHd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Oc-bI-L2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="175" y="1093"/>
+        </scene>
         <!--Quiz Logic View Controller-->
         <scene sceneID="hTO-qf-pIq">
             <objects>
@@ -147,26 +177,23 @@
                         <viewControllerLayoutGuide type="bottom" id="lyS-oC-N2o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gRS-6a-wWK">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="180"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500 pkt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ft7-2o-Ret">
-                                <rect key="frame" x="250" y="5" width="60" height="20.5"/>
-                                <animations/>
+                                <rect key="frame" x="240" y="5" width="60" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxQ-E2-MBs">
                                 <rect key="frame" x="5" y="5" width="22" height="20.5"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eT-s3-NTG">
-                                <rect key="frame" x="511" y="-7" width="44" height="44.5"/>
-                                <animations/>
+                                <rect key="frame" x="491" y="-7" width="44" height="44.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Dbm-xX-pCN"/>
                                     <constraint firstAttribute="width" secondItem="2eT-s3-NTG" secondAttribute="height" multiplier="1:1" id="tUb-jd-IQJ"/>
@@ -174,14 +201,12 @@
                                 <state key="normal" image="closeWhite"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrh-T4-MS5">
-                                <rect key="frame" x="30" y="42" width="500" height="127.5"/>
-                                <animations/>
+                                <rect key="frame" x="30" y="42" width="480" height="128"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lyS-oC-N2o" firstAttribute="top" secondItem="qrh-T4-MS5" secondAttribute="bottom" constant="10" id="Aby-EY-Clf"/>
@@ -224,10 +249,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55g-yq-rB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992" y="241"/>
+            <point key="canvasLocation" x="986" y="603"/>
         </scene>
     </scenes>
     <resources>
         <image name="closeWhite" width="23" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="n19-zK-Qwv"/>
+    </inferredMetricsTieBreakers>
 </document>
