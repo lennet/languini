@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
-class GeoQuizViewController: UIViewController {
+class GeoQuizViewController: UIViewController, MKMapViewDelegate {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +24,13 @@ class GeoQuizViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - MKMapViewDelegate
+    
+    @IBAction func handleTapOnMap(tapRecognizer: UITapGestureRecognizer) {
+        let location = tapRecognizer.locationInView(mapView)
+        let coordinate = mapView.convertPoint(location,toCoordinateFromView: mapView)
+        print(coordinate)
+    }
 
     /*
     // MARK: - Navigation

@@ -140,6 +140,11 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bca-aU-KML">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="bYy-d3-dfv" id="eVw-3a-A2C"/>
+                                    <outletCollection property="gestureRecognizers" destination="3o0-Um-Hf2" appends="YES" id="jq5-El-aAV"/>
+                                </connections>
                             </mapView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghZ-OY-xg3">
                                 <rect key="frame" x="30" y="30" width="540" height="180"/>
@@ -163,8 +168,16 @@
                             <constraint firstItem="bca-aU-KML" firstAttribute="top" secondItem="LGU-YZ-48A" secondAttribute="bottom" constant="-20" id="zEd-va-wHd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="bca-aU-KML" id="Hjj-4O-3ed"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Oc-bI-L2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3o0-Um-Hf2">
+                    <connections>
+                        <action selector="handleTapOnMap:" destination="bYy-d3-dfv" id="fYK-oD-Yzz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="175" y="1093"/>
         </scene>
