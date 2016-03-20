@@ -35,7 +35,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" priority="750" constant="20" id="mZG-Hv-IpP"/>
+                                            <constraint firstAttribute="height" priority="750" constant="30" id="mZG-Hv-IpP"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROT-KP-ic9" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
@@ -43,6 +43,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="FtL-r3-z8w"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="handleAnswerButtonpressed:" destination="M0F-7D-Idn" eventType="touchUpInside" id="dRs-Sx-ENR"/>
+                                        </connections>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Cr-aN-0h4" userLabel="Spacer View">
                                         <rect key="frame" x="0.0" y="85" width="560" height="30"/>
@@ -50,6 +53,9 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-nc-dP4" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="115" width="560" height="55"/>
+                                        <connections>
+                                            <action selector="handleAnswerButtonpressed:" destination="M0F-7D-Idn" eventType="touchUpInside" id="ZCf-aF-0Q9"/>
+                                        </connections>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEH-g3-zgl" userLabel="Spacer View">
                                         <rect key="frame" x="0.0" y="170" width="560" height="30"/>
@@ -57,9 +63,15 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtL-UX-pQv" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="200" width="560" height="55"/>
+                                        <connections>
+                                            <action selector="handleAnswerButtonpressed:" destination="M0F-7D-Idn" eventType="touchUpInside" id="mGh-VV-cbu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeT-Gq-feC" customClass="QuizButton" customModule="Languini" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="285" width="560" height="55"/>
+                                        <connections>
+                                            <action selector="handleAnswerButtonpressed:" destination="M0F-7D-Idn" eventType="touchUpInside" id="eTB-HV-p1Z"/>
+                                        </connections>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2il-o5-Se3" userLabel="Spacer View">
                                         <rect key="frame" x="0.0" y="340" width="560" height="30"/>
@@ -121,6 +133,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="PYG-CG-7k1" secondAttribute="trailing" id="vOV-9X-IoW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstAnswerButton" destination="ROT-KP-ic9" id="ugD-RW-gUq"/>
+                        <outlet property="fourthAnswerButton" destination="LeT-Gq-feC" id="97r-Va-1cY"/>
+                        <outlet property="secondAnswerButton" destination="bTg-nc-dP4" id="pIb-d7-viP"/>
+                        <outlet property="thirdAnswerButton" destination="FtL-UX-pQv" id="d9x-zz-5qU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8sx-G0-mja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -190,11 +208,11 @@
                         <viewControllerLayoutGuide type="bottom" id="lyS-oC-N2o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gRS-6a-wWK">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="180"/>
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500 pkt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ft7-2o-Ret">
-                                <rect key="frame" x="240" y="10" width="60" height="20.5"/>
+                                <rect key="frame" x="250" y="10" width="60" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -206,7 +224,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eT-s3-NTG">
-                                <rect key="frame" x="486" y="-2" width="44" height="44.5"/>
+                                <rect key="frame" x="506" y="-2" width="44" height="44.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Dbm-xX-pCN"/>
                                     <constraint firstAttribute="width" secondItem="2eT-s3-NTG" secondAttribute="height" multiplier="1:1" id="tUb-jd-IQJ"/>
@@ -216,8 +234,8 @@
                                     <action selector="handleCancelButtonPressed:" destination="SHs-i3-8iV" eventType="touchUpInside" id="ti6-xD-R25"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrh-T4-MS5">
-                                <rect key="frame" x="30" y="47.5" width="480" height="122.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrh-T4-MS5">
+                                <rect key="frame" x="30" y="47" width="500" height="122.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -262,6 +280,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="livesLabel" destination="mxQ-E2-MBs" id="f0l-Ad-SZ6"/>
+                        <outlet property="scoreLabel" destination="Ft7-2o-Ret" id="RKf-nG-TW2"/>
+                        <outlet property="sentenceLabel" destination="qrh-T4-MS5" id="ebv-Ux-I1Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55g-yq-rB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -272,6 +295,6 @@
         <image name="closeWhite" width="23" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n19-zK-Qwv"/>
+        <segue reference="oR2-V7-e51"/>
     </inferredMetricsTieBreakers>
 </document>

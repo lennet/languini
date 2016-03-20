@@ -12,16 +12,16 @@ import XCTest
 class CoreDataTests: XCTestCase {
     
     func testCountEntity() {
-        XCTAssertEqual(CoreDataHelper().countObjects(Sentence.entityName, predicate: nil), 34074)
-        XCTAssertEqual(CoreDataHelper().countObjects(Languoid.entityName, predicate: nil), 8496)
-        XCTAssertEqual(CoreDataHelper().countObjects(Country.entityName, predicate: nil), 11963)
+        XCTAssertEqual(CoreDataHelper.countObjects(Sentence.entityName, predicate: nil), 34074)
+        XCTAssertEqual(CoreDataHelper.countObjects(Languoid.entityName, predicate: nil), 8496)
+        XCTAssertEqual(CoreDataHelper.countObjects(Country.entityName, predicate: nil), 11963)
     }
     
     func testRandomSentence() {
         var sentences = [Sentence]()
         var duplicates = 0
-        for i in 1...50 {
-            let sentence = SentenceHelper().getRandomSentence()
+        for _ in 1...50 {
+            let sentence = SentenceHelper.getRandomSentence()
             
             if sentences.contains(sentence!) {
                 duplicates += 1
@@ -30,4 +30,5 @@ class CoreDataTests: XCTestCase {
         }
         XCTAssertLessThan(duplicates, 3)
     }
+    
 }

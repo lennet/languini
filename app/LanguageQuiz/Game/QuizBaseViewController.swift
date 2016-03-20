@@ -15,6 +15,7 @@ class QuizBaseViewController: UIViewController, QuizLogicDelegate {
             return .Standard
         }
     }
+    weak var quizLogicViewController: QuizLogicViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,7 @@ class QuizBaseViewController: UIViewController, QuizLogicDelegate {
         if let quizLogicViewController = segue.destinationViewController as? QuizLogicViewController {
             quizLogicViewController.quizType = quizType
             quizLogicViewController.delegate = self
+            self.quizLogicViewController = quizLogicViewController
         }
     }
 

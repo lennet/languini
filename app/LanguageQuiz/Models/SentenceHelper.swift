@@ -14,7 +14,7 @@ class SentenceHelper: CoreDataHelper {
      
      - returns: Returns random Sentence if available
      */
-    func getRandomSentence() -> Sentence? {
+    static func getRandomSentence() -> Sentence? {
         let sentencesCountPredicate = NSPredicate(format: "sentence.@count != 0")
         let count = countObjects(Languoid.entityName, predicate: sentencesCountPredicate)
 

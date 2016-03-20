@@ -20,6 +20,10 @@ class QuizButton: UIButton {
     let titleFont = UIFont.systemFontOfSize(20)
     let subTitleFont = UIFont.systemFontOfSize(16)
     
+    weak var customTitleLabel: UILabel!
+    weak var subTitleLabel: UILabel!
+    var languoid: Languoid?
+    
     override func awakeFromNib() {
         setUpTitleLabel()
     }
@@ -28,12 +32,19 @@ class QuizButton: UIButton {
         setUpTitleLabel()
     }
     
-    func setUpTitleLabel() {        
+    func setUpWithLanguoid(languoid: Languoid) {
+        customTitleLabel.text = languoid.name
+        subTitleLabel.text = languoid.getCountryString()
+        self.languoid = languoid
+    }
+    
+    private func setUpTitleLabel() {
         let titleLabel = UILabel()
         titleLabel.text = "Title"
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = titleFont
         addSubview(titleLabel)
+        self.customTitleLabel = titleLabel
         
         addWidthConstraintForLabel(titleLabel)
         
@@ -48,7 +59,7 @@ class QuizButton: UIButton {
         subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subTitleLabel.font = subTitleFont
         addSubview(subTitleLabel)
-        
+        self.subTitleLabel = subTitleLabel
         addWidthConstraintForLabel(subTitleLabel)
         
         let subTopConstraint = NSLayoutConstraint(item: subTitleLabel, attribute:.Top, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0)
@@ -58,7 +69,7 @@ class QuizButton: UIButton {
         addConstraint(subBottomConstraint)
     }
     
-    func addWidthConstraintForLabel(label : UILabel){
+    private func addWidthConstraintForLabel(label : UILabel){
         let leftConstraint = NSLayoutConstraint(item: label, attribute:.Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: secondRectangleSize)
         addConstraint(leftConstraint)
         
