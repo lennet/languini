@@ -22,8 +22,8 @@ class CoreDataHelper {
             fetchRequest.predicate = predicate;
         }
 
-        let error = NSErrorPointer()
-        return context.countForFetchRequest(fetchRequest, error: error)
+        var error: NSError? = nil
+        return context.countForFetchRequest(fetchRequest, error: &error)
     }
     
 
