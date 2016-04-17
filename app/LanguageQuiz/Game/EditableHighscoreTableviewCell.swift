@@ -12,6 +12,5 @@ class EditableHighscoreTableviewCell: UITableViewCell {
 
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
-    
     @IBOutlet weak var scoreLabel: UILabel!
 }

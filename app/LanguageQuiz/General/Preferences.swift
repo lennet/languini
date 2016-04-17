@@ -40,8 +40,8 @@ import UIKit
         return NSUserDefaults.standardUserDefaults().boolForKey(isFirstRunKey)
     }
     
-    func getDefaultUserName() -> String? {
-        return NSUserDefaults.standardUserDefaults().stringForKey(defaultUserNameKey)
+    func getDefaultUserName() -> String {
+        return NSUserDefaults.standardUserDefaults().stringForKey(defaultUserNameKey) ?? NSLocalizedString("resultView.nameInput.placeholder", comment: "")
     }
     
     func setDefaultUserName(name: String) {

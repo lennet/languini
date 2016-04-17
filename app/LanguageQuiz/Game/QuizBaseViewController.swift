@@ -47,7 +47,7 @@ class QuizBaseViewController: UIViewController, QuizLogicDelegate, HighscoreDelg
     }
     
     func gameOver(score: Int) {
-        performSegueWithIdentifier("GameoverOverlaySegueIdentifier", sender: nil)
+        performSegueWithIdentifier("GameoverOverlaySegueIdentifier", sender: score)
     }
 
     // MARK: - Navigation
@@ -58,6 +58,7 @@ class QuizBaseViewController: UIViewController, QuizLogicDelegate, HighscoreDelg
             self.quizLogicViewController = quizLogicViewController
         } else if let highscoreViewController = segue.destinationViewController as?     HighscoreViewController {
             highscoreViewController.delegate = self
+            highscoreViewController.currentScore = sender as? Int ?? 0
         } else if segue.destinationViewController is TutorialViewController {
             Preferences.sharedInstance.setShouldShowTutorial(quizType, value: false)
         }
