@@ -19,27 +19,32 @@ class HighscoreViewController: UIViewController, UITableViewDataSource, UITextFi
     var quizType = QuizType.Standard
     var currentScore = 0
     var currentScoreIndex = -1
-    var name = ""
+    var name = Preferences.sharedInstance.getDefaultUserName()
     weak var delegate: HighscoreDelgate?
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         highscoreEntries = HighscoreHelper.getTopScoreEntries(quizType) ?? []
+        setIndexForCurrentScore()
+        tableView.reloadData()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        HighscoreHelper.addScore(currentScore, name: name, type: quizType)
+    }
+    
+    private func setIndexForCurrentScore() {
         for (index, entry) in highscoreEntries.enumerate() {
             if entry.score?.integerValue < currentScore {
                 currentScoreIndex = index
                 return
             }
         }
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        HighscoreHelper.addScore(currentScore, name: name, type: quizType)
+        if highscoreEntries.count != 5 {
+            currentScoreIndex = highscoreEntries.count
+        }
     }
     
     // MARK: - Actions
@@ -55,23 +60,32 @@ class HighscoreViewController: UIViewController, UITableViewDataSource, UITextFi
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return max(highscoreEntries.count+1, 5)
+        if currentScoreIndex != -1 {
+            return min(highscoreEntries.count+1, 5)
+        }
+        return highscoreEntries.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         if indexPath.row == currentScoreIndex {
             let cell = tableView.dequeueReusableCellWithIdentifier("EditableHighscoreTableViewCell", forIndexPath: indexPath) as! EditableHighscoreTableviewCell
             cell.scoreLabel.text =  "\(currentScore) pkt"
             cell.nameTextField.placeholder = Preferences.sharedInstance.getDefaultUserName()
             cell.nameTextField.delegate = self
-            return cell
-        } else {
-            let currentEntry = highscoreEntries[indexPath.row]
-            let cell = tableView.dequeueReusableCellWithIdentifier("StaticHighscoreTableViewCell", forIndexPath: indexPath) as! StaticHighscoreTableViewCell
-            cell.nameLabel.text = "\(indexPath.row). \(currentEntry.name ?? " ")"
-            cell.scoreLabel.text = "\(currentEntry.score) pkt"
+            cell.positionLabel.text = "\(indexPath.row+1)"
             return cell
         }
+        var index = indexPath.row
+        if currentScoreIndex != -1 && index > currentScoreIndex {
+            index -= 1
+        }
+        let currentEntry = highscoreEntries[index]
+        let cell = tableView.dequeueReusableCellWithIdentifier("StaticHighscoreTableViewCell",forIndexPath: indexPath) as! StaticHighscoreTableViewCell
+        cell.nameLabel.text = "\(indexPath.row+1). \(currentEntry.name ?? " ")"
+        cell.scoreLabel.text = "\(currentEntry.score) pkt"
+    
+        return cell
     }
     
     // MARK: - UITextFieldDelegate

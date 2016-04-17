@@ -722,6 +722,9 @@
                             <constraint firstItem="ml6-z8-n09" firstAttribute="centerX" secondItem="vBP-Bt-ZLP" secondAttribute="centerX" id="n8R-S0-dVA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Ccq-NR-Y0k" id="Nne-F8-bYh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vH8-Tz-DYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
