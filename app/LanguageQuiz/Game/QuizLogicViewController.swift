@@ -15,7 +15,7 @@ protocol QuizLogicDelegate: class {
     func gameOver(score: Int)
     
     optional func updateAnswers(answerLanguoids: [Languoid])
-    optional func showNextSentenceButton(gameOver: Bool)
+    optional func showNextSentenceButton(gameOver: Bool, closestCountry: Country?)
 }
 
 enum QuizType: Int {
@@ -77,7 +77,7 @@ class QuizLogicViewController: UIViewController {
         }
         
         if livesLeft > 0 {
-            NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: "nextQuestion", userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(QuizLogicViewController.nextQuestion), userInfo: nil, repeats: false)
         } else {
             // TODO Finish Game
         }
@@ -135,7 +135,7 @@ class QuizLogicViewController: UIViewController {
             }
         }
         
-        self.delegate?.showNextSentenceButton?(livesLeft<=0)
+        self.delegate?.showNextSentenceButton?(livesLeft<=0, closestCountry: closestCountry)
     }
     
     private func updateAnswers() {

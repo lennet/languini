@@ -7,11 +7,16 @@
 //
 
 import Foundation
-import CoreData
+import MapKit
 
 @objc(Country)
 class Country: NSManagedObject {
 
     static let entityName = "Country"
 
+    var location: CLLocation {
+        get {
+            return CLLocation(latitude: Double(latitude ?? 0), longitude: Double(longitude ?? 0))
+        }
+    }
 }

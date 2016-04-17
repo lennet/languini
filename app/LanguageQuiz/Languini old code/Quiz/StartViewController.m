@@ -229,7 +229,7 @@ NSArray *countriesOnLocation;
 }
 
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views{
-    //🔮 No Idea why wee need this workaroud but it doesn't work without 
+    //🔮 No Idea why we need this workaroud but it doesn't work without
     [self performSelector:@selector(selectAnnotationView)
                withObject:nil afterDelay:0.2];
 }
