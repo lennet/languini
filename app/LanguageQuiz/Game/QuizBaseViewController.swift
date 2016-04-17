@@ -25,7 +25,7 @@ class QuizBaseViewController: UIViewController, QuizLogicDelegate, HighscoreDelg
     }
     
     private func shouldShowTutorial() -> Bool {
-        return false
+        return Preferences.sharedInstance.shouldShowTutorial(quizType)
     }
     
     // MARK: - HighscoreDelegate
@@ -58,6 +58,8 @@ class QuizBaseViewController: UIViewController, QuizLogicDelegate, HighscoreDelg
             self.quizLogicViewController = quizLogicViewController
         } else if let highscoreViewController = segue.destinationViewController as?     HighscoreViewController {
             highscoreViewController.delegate = self
+        } else if segue.destinationViewController is TutorialViewController {
+            Preferences.sharedInstance.setShouldShowTutorial(quizType, value: false)
         }
     }
 

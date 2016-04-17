@@ -16,6 +16,7 @@
 		6571F98C1BE50FBA007AFBD5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571F9871BE50FBA007AFBD5 /* main.m */; };
 		6571F98D1BE50FBA007AFBD5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571F9891BE50FBA007AFBD5 /* Reachability.m */; };
 		65739A881BE5134600DBD87B /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A671BE5134600DBD87B /* Preferences.m */; };
+		9826626D1CC3CD8800E2163F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826626C1CC3CD8800E2163F /* Preferences.swift */; };
 		982AC8E71B46123900116B4F /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982AC8E61B46123900116B4F /* ShadowView.swift */; };
 		983421921BE545810037EF43 /* QuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983421911BE545810037EF43 /* QuizButton.swift */; };
 		983421941BE559470037EF43 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983421931BE559470037EF43 /* QuizViewController.swift */; };
@@ -31,6 +32,8 @@
 		984D67F61CC3A57200CE0E5A /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D67F51CC3A57200CE0E5A /* TutorialViewController.swift */; };
 		98712FDF1B51970C00B441B2 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98712FE11B51970C00B441B2 /* Storyboard.storyboard */; };
 		98712FE81B519B1700B441B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98712FE61B519B1700B441B2 /* Localizable.strings */; };
+		98807E9E1CC3C587004C7D1F /* LanguiniUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98807E9D1CC3C587004C7D1F /* LanguiniUITests.swift */; };
+		98807EA61CC3C5B9004C7D1F /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98807EA51CC3C5B9004C7D1F /* SnapshotHelper.swift */; };
 		98A1C0D31B43273900E1AFE6 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */; };
 		98A2B1271C9F103800DBF6AA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B1261C9F103800DBF6AA /* UIColorExtension.swift */; };
 		98A2B12B1C9F296200DBF6AA /* HighscoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B12A1C9F296200DBF6AA /* HighscoreViewController.swift */; };
@@ -55,6 +58,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		983CA3B51C9EF0BF0061ED16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98E78ED71AEBECCA00C0909D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98E78EDE1AEBECCA00C0909D;
+			remoteInfo = Languini;
+		};
+		98807EA01CC3C587004C7D1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 98E78ED71AEBECCA00C0909D /* Project object */;
 			proxyType = 1;
@@ -115,6 +125,7 @@
 		65739A791BE5134600DBD87B /* SentencesAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentencesAggregator.m; sourceTree = "<group>"; };
 		65739A7A1BE5134600DBD87B /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		65739A7B1BE5134600DBD87B /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		9826626C1CC3CD8800E2163F /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		982AC8E61B46123900116B4F /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		983421911BE545810037EF43 /* QuizButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizButton.swift; sourceTree = "<group>"; };
 		983421931BE559470037EF43 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +147,10 @@
 		98712FE91B519B2100B441B2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		98712FEA1B519B2A00B441B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		98712FED1B51A44500B441B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
+		98807E9B1CC3C587004C7D1F /* LanguiniUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanguiniUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		98807E9D1CC3C587004C7D1F /* LanguiniUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguiniUITests.swift; sourceTree = "<group>"; };
+		98807E9F1CC3C587004C7D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98807EA51CC3C5B9004C7D1F /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		98A2B1261C9F103800DBF6AA /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		98A2B12A1C9F296200DBF6AA /* HighscoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +176,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		983CA3AD1C9EF0BF0061ED16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98807E981CC3C587004C7D1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -223,6 +245,7 @@
 				6571F9891BE50FBA007AFBD5 /* Reachability.m */,
 				6571F9871BE50FBA007AFBD5 /* main.m */,
 				98A2B1261C9F103800DBF6AA /* UIColorExtension.swift */,
+				9826626C1CC3CD8800E2163F /* Preferences.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -336,6 +359,16 @@
 			path = LanguiniTests;
 			sourceTree = "<group>";
 		};
+		98807E9C1CC3C587004C7D1F /* LanguiniUITests */ = {
+			isa = PBXGroup;
+			children = (
+				98807EA51CC3C5B9004C7D1F /* SnapshotHelper.swift */,
+				98807E9D1CC3C587004C7D1F /* LanguiniUITests.swift */,
+				98807E9F1CC3C587004C7D1F /* Info.plist */,
+			);
+			path = LanguiniUITests;
+			sourceTree = "<group>";
+		};
 		989762741AFFBE9500ACE909 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +418,7 @@
 				98A3588C1C9ECB710065C513 /* Menu */,
 				98A358A11C9ED4FF0065C513 /* Models */,
 				983CA3B11C9EF0BF0061ED16 /* LanguiniTests */,
+				98807E9C1CC3C587004C7D1F /* LanguiniUITests */,
 				98E78EE01AEBECCA00C0909D /* Products */,
 				989762741AFFBE9500ACE909 /* Resources */,
 			);
@@ -395,6 +429,7 @@
 			children = (
 				98E78EDF1AEBECCA00C0909D /* Languini.app */,
 				983CA3B01C9EF0BF0061ED16 /* LanguiniTests.xctest */,
+				98807E9B1CC3C587004C7D1F /* LanguiniUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -439,6 +474,24 @@
 			productReference = 983CA3B01C9EF0BF0061ED16 /* LanguiniTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		98807E9A1CC3C587004C7D1F /* LanguiniUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98807EA41CC3C587004C7D1F /* Build configuration list for PBXNativeTarget "LanguiniUITests" */;
+			buildPhases = (
+				98807E971CC3C587004C7D1F /* Sources */,
+				98807E981CC3C587004C7D1F /* Frameworks */,
+				98807E991CC3C587004C7D1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				98807EA11CC3C587004C7D1F /* PBXTargetDependency */,
+			);
+			name = LanguiniUITests;
+			productName = LanguiniUITests;
+			productReference = 98807E9B1CC3C587004C7D1F /* LanguiniUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		98E78EDE1AEBECCA00C0909D /* Languini */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 98E78F051AEBECCA00C0909D /* Build configuration list for PBXNativeTarget "Languini" */;
@@ -462,12 +515,16 @@
 		98E78ED71AEBECCA00C0909D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Coding Da Vinci";
 				TargetAttributes = {
 					983CA3AF1C9EF0BF0061ED16 = {
 						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 98E78EDE1AEBECCA00C0909D;
+					};
+					98807E9A1CC3C587004C7D1F = {
+						CreatedOnToolsVersion = 7.3;
 						TestTargetID = 98E78EDE1AEBECCA00C0909D;
 					};
 					98E78EDE1AEBECCA00C0909D = {
@@ -492,12 +549,20 @@
 			targets = (
 				98E78EDE1AEBECCA00C0909D /* Languini */,
 				983CA3AF1C9EF0BF0061ED16 /* LanguiniTests */,
+				98807E9A1CC3C587004C7D1F /* LanguiniUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		983CA3AE1C9EF0BF0061ED16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98807E991CC3C587004C7D1F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -534,6 +599,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		98807E971CC3C587004C7D1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98807E9E1CC3C587004C7D1F /* LanguiniUITests.swift in Sources */,
+				98807EA61CC3C5B9004C7D1F /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98E78EDB1AEBECCA00C0909D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -541,6 +615,7 @@
 				6571F98C1BE50FBA007AFBD5 /* main.m in Sources */,
 				98A3589B1C9ED4F30065C513 /* Country+CoreDataProperties.swift in Sources */,
 				98A3589E1C9ED4F30065C513 /* Languoid.swift in Sources */,
+				9826626D1CC3CD8800E2163F /* Preferences.swift in Sources */,
 				65739A881BE5134600DBD87B /* Preferences.m in Sources */,
 				982AC8E71B46123900116B4F /* ShadowView.swift in Sources */,
 				983421921BE545810037EF43 /* QuizButton.swift in Sources */,
@@ -578,6 +653,11 @@
 			isa = PBXTargetDependency;
 			target = 98E78EDE1AEBECCA00C0909D /* Languini */;
 			targetProxy = 983CA3B51C9EF0BF0061ED16 /* PBXContainerItemProxy */;
+		};
+		98807EA11CC3C587004C7D1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 98E78EDE1AEBECCA00C0909D /* Languini */;
+			targetProxy = 98807EA01CC3C587004C7D1F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -646,6 +726,37 @@
 			};
 			name = Release;
 		};
+		98807EA21CC3C587004C7D1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = LanguiniUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CDV.LanguiniUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_TARGET_NAME = Languini;
+			};
+			name = Debug;
+		};
+		98807EA31CC3C587004C7D1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = LanguiniUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = CDV.LanguiniUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Languini;
+			};
+			name = Release;
+		};
 		98E78F031AEBECCA00C0909D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -665,6 +776,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -708,6 +821,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -732,6 +847,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = General/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -750,6 +867,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = General/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -768,6 +887,15 @@
 			buildConfigurations = (
 				983CA3B81C9EF0BF0061ED16 /* Debug */,
 				983CA3B91C9EF0BF0061ED16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98807EA41CC3C587004C7D1F /* Build configuration list for PBXNativeTarget "LanguiniUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98807EA21CC3C587004C7D1F /* Debug */,
+				98807EA31CC3C587004C7D1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

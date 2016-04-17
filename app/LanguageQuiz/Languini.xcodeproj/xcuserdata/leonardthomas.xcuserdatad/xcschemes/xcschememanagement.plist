@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>LanguiniUI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>983CA3AF1C9EF0BF0061ED16</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>98807E9A1CC3C587004C7D1F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

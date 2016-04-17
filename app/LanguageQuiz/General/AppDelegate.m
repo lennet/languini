@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Languini-Swift.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    if ([[NSProcessInfo processInfo].environment valueForKey:@"UITest"]) {
+        [[Preferences sharedInstance] setDefaults];
+    }
     return YES;
 }
 
