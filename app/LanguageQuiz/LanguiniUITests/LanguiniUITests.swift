@@ -29,10 +29,20 @@ class LanguiniUITests: XCTestCase {
     }
     
     func testTakeTutorialScreenshots() {
-        sleep(1)
-        XCUIApplication().buttons["Quiz"].tap()
-        sleep(1)
-        snapshot("tutorialQuiz")
+        
+        
+        let app = XCUIApplication()
+        app.buttons["Quiz"].tap()
+        snapshot("StandardQuiz")
+        let element = app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).elementBoundByIndex(1).childrenMatchingType(.Other).element
+        element.tap()
+        
+        let closewhiteButton = app.buttons["closeWhite"]
+        closewhiteButton.tap()
+        app.buttons["Geo Quiz"].tap()
+        snapshot("GeoQuiz")
+        element.tap()
+        closewhiteButton.tap()
     }
     
 }
