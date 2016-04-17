@@ -70,7 +70,7 @@ class HighscoreViewController: UIViewController, UITableViewDataSource, UITextFi
         
         if indexPath.row == currentScoreIndex {
             let cell = tableView.dequeueReusableCellWithIdentifier("EditableHighscoreTableViewCell", forIndexPath: indexPath) as! EditableHighscoreTableviewCell
-            cell.scoreLabel.text =  "\(currentScore) pkt"
+            cell.scoreLabel.text =  "\(currentScore)"
             cell.nameTextField.placeholder = Preferences.sharedInstance.getDefaultUserName()
             cell.nameTextField.delegate = self
             cell.positionLabel.text = "\(indexPath.row+1)"
@@ -83,8 +83,7 @@ class HighscoreViewController: UIViewController, UITableViewDataSource, UITextFi
         let currentEntry = highscoreEntries[index]
         let cell = tableView.dequeueReusableCellWithIdentifier("StaticHighscoreTableViewCell",forIndexPath: indexPath) as! StaticHighscoreTableViewCell
         cell.nameLabel.text = "\(indexPath.row+1). \(currentEntry.name ?? " ")"
-        cell.scoreLabel.text = "\(currentEntry.score) pkt"
-    
+        cell.scoreLabel.text = String(currentEntry.score ?? 0)
         return cell
     }
     

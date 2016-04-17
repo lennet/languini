@@ -32,6 +32,7 @@ class QuizLogicViewController: UIViewController {
     var currentSentence: Sentence? {
         didSet {
             sentenceLabel.text = currentSentence?.sentence
+            translationLabel.text = currentSentence?.translation
         }
         
     }
@@ -51,6 +52,7 @@ class QuizLogicViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var livesLabel: UILabel!
     @IBOutlet weak var sentenceLabel: UILabel!
+    @IBOutlet weak var translationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,7 +102,7 @@ class QuizLogicViewController: UIViewController {
         
         if !correct {
             let closestCountry = getClosesCountry(location, languoid: languoid)
-            let distance = location.distanceFromLocation(closestCountry.location)
+            let distance = Int(location.distanceFromLocation(closestCountry.location) / 1000)
             let newPoints = pointsForAnswer(distance)
             if newPoints > 0 {
                 score += newPoints
@@ -121,14 +123,16 @@ class QuizLogicViewController: UIViewController {
     
     // MARK: - Private Methods
     
-    private func updateView(correctAnswer: Bool, nearby: Bool, distance: Double?, closestCountry: Country?) {
+    private func updateView(correctAnswer: Bool, nearby: Bool, distance: Int?, closestCountry: Country?) {
+        translationLabel.text = ""
         if correctAnswer {
-            sentenceLabel.text = "Richtige Antwort!"
+            sentenceLabel.text = NSLocalizedString("quiz.answer.right", comment: "")
         } else {
             if nearby {
-                sentenceLabel.text = "Fast!\n\n Die nächste Richtige Antwort ist \(closestCountry?.nameDe ?? "") \(distance) km von deiner Eingabe entfernt"
+                sentenceLabel.text = String(format: NSLocalizedString("geoquiz.answer.almost", comment: ""), closestCountry?.localizedName ?? "", distance ?? 0)
             } else {
-                sentenceLabel.text = "Falsche Antwort!\n\n Eine richtige Antwort ist \(closestCountry?.nameDe ?? "") \(distance) km von deiner Eingabe entfernt"
+                sentenceLabel.text = String(format: NSLocalizedString("geoquiz.answer.wrong", comment: ""), closestCountry?.localizedName ?? "", distance ?? 0)
+                
             }
         }
         
@@ -172,9 +176,8 @@ class QuizLogicViewController: UIViewController {
         return (location, closestCountry)
     }
     
-    private func pointsForAnswer(distance: Double) -> Int {
-        let distanceInMeter = distance / 1000
-        return maxDistance - Int(distanceInMeter)
+    private func pointsForAnswer(distance: Int) -> Int {
+        return maxDistance - distance
     }
     
     // MARK: - Actions

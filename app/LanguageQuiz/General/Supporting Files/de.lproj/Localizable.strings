@@ -20,6 +20,7 @@
 "Alternate Names" = "Alternative Namen";
 "Name" = "Name";
 "quiz.answer.right" = "Richtige Antwort!";
-"geoquiz.answer.wrong" = "Die Distanz zum nächsten richtigen Land %@ beträgt %.02f km";
+"geoquiz.answer.almost" = "Fast! Die Distanz zum nächsten richtigen Land %@ beträgt %i km";
+"geoquiz.answer.wrong" = "Wrong Answer! Die Distanz zum nächsten richtigen Land %@ beträgt %i km";
 "alert.nointernet.title" = "Kein Internet";
 "alert.nointernet.message" = "Geo Quiz steht nur mit Netzverbindung zur verfügung";

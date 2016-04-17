@@ -769,7 +769,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrh-T4-MS5">
-                                <rect key="frame" x="30" y="47" width="500" height="122.5"/>
+                                <rect key="frame" x="30" y="80" width="500" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -777,13 +777,22 @@
                                     <rect key="frame" x="30" y="47" width="42" height="122"/>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnM-JS-6fq">
+                                <rect key="frame" x="261.5" y="108" width="37.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="qrh-T4-MS5" firstAttribute="centerY" secondItem="gRS-6a-wWK" secondAttribute="centerY" priority="750" id="6hq-Gs-Ac9"/>
                             <constraint firstItem="lyS-oC-N2o" firstAttribute="top" secondItem="qrh-T4-MS5" secondAttribute="bottom" constant="10" id="Aby-EY-Clf"/>
+                            <constraint firstItem="TnM-JS-6fq" firstAttribute="top" secondItem="qrh-T4-MS5" secondAttribute="bottom" constant="8" id="AnC-cn-oZw"/>
                             <constraint firstItem="Ft7-2o-Ret" firstAttribute="centerX" secondItem="gRS-6a-wWK" secondAttribute="centerX" id="Bgg-57-GOa"/>
                             <constraint firstAttribute="trailing" secondItem="qrh-T4-MS5" secondAttribute="trailing" constant="10" id="C4L-bm-oyd"/>
                             <constraint firstItem="mxQ-E2-MBs" firstAttribute="leading" secondItem="gRS-6a-wWK" secondAttribute="leading" constant="10" id="CZ2-ot-Tir"/>
+                            <constraint firstItem="qrh-T4-MS5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2eT-s3-NTG" secondAttribute="bottom" constant="8" id="DHC-MP-o8R"/>
                             <constraint firstItem="lyS-oC-N2o" firstAttribute="top" secondItem="qrh-T4-MS5" secondAttribute="bottom" constant="10" id="DMC-WS-P7W"/>
                             <constraint firstItem="qrh-T4-MS5" firstAttribute="top" secondItem="Ft7-2o-Ret" secondAttribute="bottom" constant="10" id="Fpd-tB-5Ly"/>
                             <constraint firstItem="qrh-T4-MS5" firstAttribute="top" secondItem="2eT-s3-NTG" secondAttribute="bottom" constant="5" id="PlA-Df-XYg"/>
@@ -792,6 +801,7 @@
                             <constraint firstAttribute="trailing" secondItem="2eT-s3-NTG" secondAttribute="trailing" constant="10" id="ark-IJ-Tw3"/>
                             <constraint firstItem="qrh-T4-MS5" firstAttribute="top" secondItem="2eT-s3-NTG" secondAttribute="bottom" constant="5" id="cFh-Qw-eYe"/>
                             <constraint firstItem="lyS-oC-N2o" firstAttribute="top" secondItem="qrh-T4-MS5" secondAttribute="bottom" constant="10" id="e8k-b1-qM8"/>
+                            <constraint firstItem="TnM-JS-6fq" firstAttribute="centerX" secondItem="gRS-6a-wWK" secondAttribute="centerX" id="f4o-ad-G8w"/>
                             <constraint firstItem="mxQ-E2-MBs" firstAttribute="top" secondItem="Ft7-2o-Ret" secondAttribute="top" id="g51-bG-m2f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qrh-T4-MS5" secondAttribute="trailing" constant="10" id="hRc-Wx-a5m"/>
                             <constraint firstItem="2eT-s3-NTG" firstAttribute="centerY" secondItem="Ft7-2o-Ret" secondAttribute="centerY" id="hd0-cQ-z1V"/>
@@ -810,9 +820,11 @@
                                 <exclude reference="Fpd-tB-5Ly"/>
                                 <exclude reference="PlA-Df-XYg"/>
                                 <exclude reference="X6y-Nq-Q0Q"/>
+                                <exclude reference="cFh-Qw-eYe"/>
                                 <exclude reference="kVp-Je-tv6"/>
                                 <exclude reference="xgs-VQ-fXf"/>
                                 <exclude reference="Aby-EY-Clf"/>
+                                <exclude reference="DMC-WS-P7W"/>
                                 <exclude reference="e8k-b1-qM8"/>
                             </mask>
                         </variation>
@@ -821,6 +833,7 @@
                         <outlet property="livesLabel" destination="mxQ-E2-MBs" id="f0l-Ad-SZ6"/>
                         <outlet property="scoreLabel" destination="Ft7-2o-Ret" id="RKf-nG-TW2"/>
                         <outlet property="sentenceLabel" destination="qrh-T4-MS5" id="ebv-Ux-I1Q"/>
+                        <outlet property="translationLabel" destination="TnM-JS-6fq" id="yEy-5b-bBr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55g-yq-rB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
