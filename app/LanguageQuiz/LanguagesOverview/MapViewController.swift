@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +31,6 @@ class MapViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }

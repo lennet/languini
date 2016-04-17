@@ -27,6 +27,9 @@
                                 <rect key="frame" x="40" y="500" width="520" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <state key="normal" title="Geo Quiz"/>
+                                <connections>
+                                    <segue destination="Eiq-Z3-ydR" kind="show" id="BnD-yA-pOk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJ0-bs-8kU">
                                 <rect key="frame" x="40" y="450" width="520" height="30"/>
@@ -42,7 +45,7 @@
                                 <state key="normal" title="Info"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.21568627655506134" green="0.44313725829124451" blue="0.78431373834609985" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.53333333333333333" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pJ0-bs-8kU" firstAttribute="top" secondItem="0pq-3h-Yr6" secondAttribute="bottom" constant="20" id="RD2-bE-Cqw"/>
                             <constraint firstItem="mT6-oZ-LPM" firstAttribute="leading" secondItem="jeu-mq-02Y" secondAttribute="leadingMargin" constant="20" id="SFO-6m-WQt"/>
@@ -70,6 +73,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hS-pL-xSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="634.5" y="420"/>
+        </scene>
+        <!--GeoQuizStoryboardIdentifier-->
+        <scene sceneID="9H3-7g-1Eg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Game" referencedIdentifier="GeoQuizStoryboardIdentifier" id="Eiq-Z3-ydR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iv3-IK-nvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655.5" y="484"/>
         </scene>
     </scenes>
 </document>

@@ -13,7 +13,8 @@ enum SelectionPosition: Int{
     case Map = 2
 }
 
-class LanguageOverviewViewController: UIViewController {
+
+class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet var selectionView: UIView!
     
@@ -29,8 +30,6 @@ class LanguageOverviewViewController: UIViewController {
     @IBOutlet var mapsButton: SelectionBarButton!
     
     
-    
-    
     private var activeViewController: UIViewController? {
         didSet{
             removeOldVC(oldValue)
@@ -38,12 +37,23 @@ class LanguageOverviewViewController: UIViewController {
         }
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let storyboard = UIStoryboard(name: "Overview", bundle: nil)
         mapViewController = storyboard.instantiateViewControllerWithIdentifier("mapsVC")
         listViewController = storyboard.instantiateViewControllerWithIdentifier("listVC")
+        
+        //setup gesture recognizers
+        let swipeRight = UISwipeGestureRecognizer(target: self, action:#selector(LanguageOverviewViewController.switchToList))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action:#selector(LanguageOverviewViewController.switchToMap))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        
+        swipeLeft.delegate = self
+        swipeRight.delegate = self
+        
+        self.view.addGestureRecognizer(swipeRight)
+        self.view.addGestureRecognizer(swipeLeft)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -81,15 +91,9 @@ class LanguageOverviewViewController: UIViewController {
     @IBAction func switchViews(sender: AnyObject) {
         switch sender.tag{
         case 1:
-            activeViewController = listViewController
-            listButton.highlightLabel()
-            mapsButton.restoreLabelFont()
-            selectionSlider.switchToPosition(.List)
+            switchToList()
         case 2:
-            activeViewController = mapViewController
-            mapsButton.highlightLabel()
-            listButton.restoreLabelFont()
-            selectionSlider.switchToPosition(.Map)
+            switchToMap()
         default:
             return
         }
@@ -106,5 +110,25 @@ class LanguageOverviewViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    // MARK: - Gesture
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func  switchToList() {
+        activeViewController = listViewController
+        listButton.highlightLabel()
+        mapsButton.restoreLabelFont()
+        selectionSlider.switchToPosition(.List)
+    }
+    
+    func switchToMap() {
+        activeViewController = mapViewController
+        mapsButton.highlightLabel()
+        listButton.restoreLabelFont()
+        selectionSlider.switchToPosition(.Map)
+    }
 
 }

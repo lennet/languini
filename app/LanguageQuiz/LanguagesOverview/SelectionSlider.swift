@@ -11,7 +11,7 @@ import UIKit
 
 class SelectionSlider: UIView {
     
-    var selectionMarker = SelectionMarker(frame: CGRectMake(0, 0, 19, 19))
+    var selectionMarker = SelectionMarker(frame: CGRectMake(0, 0, 20, 20))
     var selectionMarkerPoint: CGPoint?
     var selectionMarkerOffset:CGFloat = 10
     
