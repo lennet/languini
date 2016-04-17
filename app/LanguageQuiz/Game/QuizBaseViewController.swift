@@ -17,15 +17,15 @@ class QuizBaseViewController: UIViewController, QuizLogicDelegate, HighscoreDelg
     }
     weak var quizLogicViewController: QuizLogicViewController?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if shouldShowTutorial() {
+            performSegueWithIdentifier("tutorialSegueIdentifier", sender: nil)
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func shouldShowTutorial() -> Bool {
+        return false
     }
     
     // MARK: - HighscoreDelegate

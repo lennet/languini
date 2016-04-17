@@ -28,6 +28,7 @@
 		983CA3CC1C9EF2D20061ED16 /* Languini.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 983CA3C91C9EF2D20061ED16 /* Languini.sqlite-shm */; };
 		983CA3CD1C9EF2D20061ED16 /* Languini.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 983CA3CA1C9EF2D20061ED16 /* Languini.sqlite-wal */; };
 		983CA3CF1C9F04DC0061ED16 /* LanguoidHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983CA3CE1C9F04DC0061ED16 /* LanguoidHelper.swift */; };
+		984D67F61CC3A57200CE0E5A /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D67F51CC3A57200CE0E5A /* TutorialViewController.swift */; };
 		98712FDF1B51970C00B441B2 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98712FE11B51970C00B441B2 /* Storyboard.storyboard */; };
 		98712FE81B519B1700B441B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98712FE61B519B1700B441B2 /* Localizable.strings */; };
 		98A1C0D31B43273900E1AFE6 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A1C0D21B43273900E1AFE6 /* ShadowButton.swift */; };
@@ -129,6 +130,7 @@
 		983CA3C91C9EF2D20061ED16 /* Languini.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Languini.sqlite-shm"; sourceTree = "<group>"; };
 		983CA3CA1C9EF2D20061ED16 /* Languini.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Languini.sqlite-wal"; sourceTree = "<group>"; };
 		983CA3CE1C9F04DC0061ED16 /* LanguoidHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguoidHelper.swift; sourceTree = "<group>"; };
+		984D67F51CC3A57200CE0E5A /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		98712FE31B51971700B441B2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		98712FE71B519B1700B441B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		98712FE91B519B2100B441B2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				98A2B12A1C9F296200DBF6AA /* HighscoreViewController.swift */,
 				98A2B12E1C9F2F8600DBF6AA /* StaticHighscoreTableViewCell.swift */,
 				98A2B1301C9F30E800DBF6AA /* EditableHighscoreTableviewCell.swift */,
+				984D67F51CC3A57200CE0E5A /* TutorialViewController.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				6571F98D1BE50FBA007AFBD5 /* Reachability.m in Sources */,
 				98A3589A1C9ED4F30065C513 /* HighScoreEntry.swift in Sources */,
 				983CA3CF1C9F04DC0061ED16 /* LanguoidHelper.swift in Sources */,
+				984D67F61CC3A57200CE0E5A /* TutorialViewController.swift in Sources */,
 				98A358A51C9ED9A00065C513 /* QuizBaseViewController.swift in Sources */,
 				983421941BE559470037EF43 /* QuizViewController.swift in Sources */,
 				98E78EEB1AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld in Sources */,
