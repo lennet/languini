@@ -76,11 +76,8 @@ class QuizLogicViewController: UIViewController {
             livesLeft -= 1
         }
         
-        if livesLeft > 0 {
-            NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(QuizLogicViewController.nextQuestion), userInfo: nil, repeats: false)
-        } else {
-            // TODO Finish Game
-        }
+        NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: #selector(QuizLogicViewController.nextQuestion), userInfo: nil, repeats: false)
+        
         return currentSentence!.languoid!
     }
     
