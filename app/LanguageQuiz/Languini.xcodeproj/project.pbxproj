@@ -36,6 +36,7 @@
 		98A2B12D1C9F2AE000DBF6AA /* HighscoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B12C1C9F2AE000DBF6AA /* HighscoreHelper.swift */; };
 		98A2B12F1C9F2F8600DBF6AA /* StaticHighscoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B12E1C9F2F8600DBF6AA /* StaticHighscoreTableViewCell.swift */; };
 		98A2B1311C9F30E800DBF6AA /* EditableHighscoreTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2B1301C9F30E800DBF6AA /* EditableHighscoreTableviewCell.swift */; };
+		98A2DECB1CC3990000134F32 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A2DECA1CC3990000134F32 /* InfoViewController.swift */; };
 		98A3588E1C9ECBA90065C513 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A3588D1C9ECBA90065C513 /* Menu.storyboard */; };
 		98A358901C9ED03D0065C513 /* GeoQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3588F1C9ED03D0065C513 /* GeoQuizViewController.swift */; };
 		98A358991C9ED4F30065C513 /* HighScoreEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A358911C9ED4F30065C513 /* HighScoreEntry+CoreDataProperties.swift */; };
@@ -139,6 +140,7 @@
 		98A2B12C1C9F2AE000DBF6AA /* HighscoreHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreHelper.swift; sourceTree = "<group>"; };
 		98A2B12E1C9F2F8600DBF6AA /* StaticHighscoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticHighscoreTableViewCell.swift; sourceTree = "<group>"; };
 		98A2B1301C9F30E800DBF6AA /* EditableHighscoreTableviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableHighscoreTableviewCell.swift; sourceTree = "<group>"; };
+		98A2DECA1CC3990000134F32 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		98A3588D1C9ECBA90065C513 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		98A3588F1C9ED03D0065C513 /* GeoQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoQuizViewController.swift; sourceTree = "<group>"; };
 		98A358911C9ED4F30065C513 /* HighScoreEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HighScoreEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				98A3588D1C9ECBA90065C513 /* Menu.storyboard */,
+				98A2DECA1CC3990000134F32 /* InfoViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -560,6 +563,7 @@
 				98A3589F1C9ED4F30065C513 /* Sentence+CoreDataProperties.swift in Sources */,
 				98A3589D1C9ED4F30065C513 /* Languoid+CoreDataProperties.swift in Sources */,
 				98A358A01C9ED4F30065C513 /* Sentence.swift in Sources */,
+				98A2DECB1CC3990000134F32 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
