@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="M0F-7D-Idn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="M0F-7D-Idn">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -169,9 +169,22 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghZ-OY-xg3">
                                 <rect key="frame" x="30" y="30" width="540" height="180"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="3XR-GP-zLT">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="640"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="180" id="SLk-3e-7qi"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="UyU-zt-XhJ"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3XR-GP-zLT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="3XR-GP-zLT"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="SHs-i3-8iV" kind="embed" id="n19-zK-Qwv"/>
                                 </connections>
@@ -201,12 +214,25 @@
                             <constraint firstItem="Zke-sS-Fls" firstAttribute="centerX" secondItem="Jov-CI-eC4" secondAttribute="centerX" id="88Q-N2-6BG"/>
                             <constraint firstItem="ghZ-OY-xg3" firstAttribute="top" secondItem="LGU-YZ-48A" secondAttribute="bottom" constant="10" id="8Ej-EY-qMV"/>
                             <constraint firstItem="ghZ-OY-xg3" firstAttribute="leading" secondItem="Jov-CI-eC4" secondAttribute="leadingMargin" constant="10" id="9CJ-bN-4Zm"/>
+                            <constraint firstItem="ghZ-OY-xg3" firstAttribute="centerX" secondItem="Jov-CI-eC4" secondAttribute="centerX" id="Brr-Ga-IQA"/>
                             <constraint firstItem="bca-aU-KML" firstAttribute="leading" secondItem="Jov-CI-eC4" secondAttribute="leading" id="NrN-bU-1my"/>
                             <constraint firstItem="W0x-Z8-gnQ" firstAttribute="top" secondItem="bca-aU-KML" secondAttribute="bottom" id="RzT-iY-QsP"/>
                             <constraint firstItem="W0x-Z8-gnQ" firstAttribute="top" secondItem="Zke-sS-Fls" secondAttribute="bottom" constant="60" id="XvO-fx-IEC"/>
                             <constraint firstAttribute="trailing" secondItem="bca-aU-KML" secondAttribute="trailing" id="pr5-GF-Fef"/>
                             <constraint firstItem="bca-aU-KML" firstAttribute="top" secondItem="LGU-YZ-48A" secondAttribute="bottom" constant="-20" id="zEd-va-wHd"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Brr-Ga-IQA"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="33M-Fv-oeM"/>
+                                <exclude reference="9CJ-bN-4Zm"/>
+                                <include reference="Brr-Ga-IQA"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="bca-aU-KML" id="Hjj-4O-3ed"/>
@@ -428,11 +454,11 @@
                         <viewControllerLayoutGuide type="bottom" id="lyS-oC-N2o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gRS-6a-wWK">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="180"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 pkt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ft7-2o-Ret">
-                                <rect key="frame" x="260" y="10" width="39.5" height="20.5"/>
+                                <rect key="frame" x="250" y="10" width="39.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -444,7 +470,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eT-s3-NTG">
-                                <rect key="frame" x="506" y="-2" width="44" height="44.5"/>
+                                <rect key="frame" x="486" y="-2" width="44" height="44.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Dbm-xX-pCN"/>
                                     <constraint firstAttribute="width" secondItem="2eT-s3-NTG" secondAttribute="height" multiplier="1:1" id="tUb-jd-IQJ"/>
@@ -455,7 +481,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrh-T4-MS5">
-                                <rect key="frame" x="30" y="47" width="500" height="122.5"/>
+                                <rect key="frame" x="30" y="47" width="480" height="122.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -515,7 +541,7 @@
         <image name="closeWhite" width="23" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zhX-ra-uWc"/>
-        <segue reference="oR2-V7-e51"/>
+        <segue reference="UXt-Tg-UsV"/>
+        <segue reference="n19-zK-Qwv"/>
     </inferredMetricsTieBreakers>
 </document>
