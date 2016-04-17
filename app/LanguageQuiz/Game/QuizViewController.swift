@@ -62,10 +62,13 @@ class QuizViewController: QuizBaseViewController {
     // MARK: - Orientation
     
     override func shouldAutorotate() -> Bool {
-        return false
+        return UIDevice.currentDevice().userInterfaceIdiom == .Pad
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            return .All
+        }
         return .Portrait
     }
 

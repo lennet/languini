@@ -87,23 +87,26 @@ class QuizButton: UIButton {
     override func drawRect(rect: CGRect) {
     
         let context = UIGraphicsGetCurrentContext()
-        let distance  = CGPoint(x: 2, y: rect.height/2)
-    
+        var distance  = CGPoint(x: 2, y: rect.height/2)
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            distance = CGPoint.zero
+        }
         fillColor.setFill()
         
         let rectanglePath = UIBezierPath(roundedRect: CGRectMake(distance.y, 0, rect.width-distance.y, rect.height), cornerRadius: cornerRadius)
 
         rectanglePath.fill()
         
-        CGContextSaveGState(context)
-        CGContextTranslateCTM(context, distance.x,  distance.y)
-        CGContextRotateCTM(context, -rotation * CGFloat(M_PI) / 180)
+        if UIDevice.currentDevice().userInterfaceIdiom != .Pad {
+            CGContextSaveGState(context)
+            CGContextTranslateCTM(context, distance.x,  distance.y)
+            CGContextRotateCTM(context, -rotation * CGFloat(M_PI) / 180)
+            
+            let rectangle2Path = UIBezierPath(roundedRect: CGRectMake(0, 0, secondRectangleSize, secondRectangleSize), cornerRadius: cornerRadius)
+            rectangle2Path.fill()
+            CGContextRestoreGState(context)
+        }
         
-        let rectangle2Path = UIBezierPath(roundedRect: CGRectMake(0, 0, secondRectangleSize, secondRectangleSize), cornerRadius: cornerRadius)
-        rectangle2Path.fill()
-        
-        CGContextRestoreGState(context)
-
     }
 
 
