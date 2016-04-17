@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -26,6 +25,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="NwG-pZ-vad"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="NwG-pZ-vad"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <exclude reference="NwG-pZ-vad"/>
@@ -165,26 +169,26 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="Swi-B5-dxN"/>
-                                        <exclude reference="Ist-PA-ZPk"/>
-                                        <exclude reference="0Sr-9k-7NY"/>
-                                        <exclude reference="4mp-at-6YF"/>
-                                        <exclude reference="mEb-Ax-G9j"/>
                                         <include reference="h7q-Mt-LH4"/>
                                         <exclude reference="pIW-TC-LDA"/>
                                         <exclude reference="rP0-Js-tDb"/>
+                                        <exclude reference="Ist-PA-ZPk"/>
                                         <exclude reference="6Ya-sY-QVC"/>
                                         <include reference="Yyl-z0-vNd"/>
                                         <exclude reference="mI7-wB-VDK"/>
                                         <include reference="tve-tv-xoL"/>
                                         <include reference="ubG-vP-JyS"/>
+                                        <exclude reference="0Sr-9k-7NY"/>
                                         <include reference="49F-KF-Xie"/>
                                         <include reference="LSS-oe-sJA"/>
                                         <exclude reference="UqG-JU-efX"/>
                                         <exclude reference="t3l-uL-ikk"/>
+                                        <exclude reference="4mp-at-6YF"/>
                                         <include reference="EPL-60-4jD"/>
                                         <exclude reference="LPt-DW-3RN"/>
                                         <include reference="Vhu-ub-0TS"/>
                                         <exclude reference="uNb-Pp-0PX"/>
+                                        <exclude reference="mEb-Ax-G9j"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -203,12 +207,19 @@
                             <constraint firstItem="PYG-CG-7k1" firstAttribute="leading" secondItem="BoV-Va-cVO" secondAttribute="leadingMargin" id="OGE-jx-0LC"/>
                             <constraint firstItem="PYG-CG-7k1" firstAttribute="top" secondItem="qu5-v0-1lN" secondAttribute="bottom" id="aAn-ea-VfR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PYG-CG-7k1" secondAttribute="trailing" id="vOV-9X-IoW"/>
+                            <constraint firstItem="PYG-CG-7k1" firstAttribute="height" secondItem="BoV-Va-cVO" secondAttribute="height" multiplier="1:3" id="wrt-J6-T9s"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Abg-ko-3tz"/>
                                 <exclude reference="N5K-cB-ZJL"/>
+                                <exclude reference="wrt-J6-T9s"/>
                                 <exclude reference="O5B-Lh-FcC"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="wrt-J6-T9s"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -825,7 +836,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow3" translatesAutoresizingMaskIntoConstraints="NO" id="Cdl-oY-eOG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow3" translatesAutoresizingMaskIntoConstraints="NO" id="Cdl-oY-eOG">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="BdF-gs-mSw"/>
@@ -844,13 +855,13 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anzahl der Leben" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD4-6j-gFQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Anzahl der Leben" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lD4-6j-gFQ">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow2" translatesAutoresizingMaskIntoConstraints="NO" id="Iw8-qf-3vn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow2" translatesAutoresizingMaskIntoConstraints="NO" id="Iw8-qf-3vn">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="mZX-DQ-gYK">
@@ -873,19 +884,19 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beispielsatz mit Übersetzung" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fs7-nO-0O7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Beispielsatz mit Übersetzung" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fs7-nO-0O7">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tippe auf den richtigen Sprachnamen " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRt-6a-mpz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tippe auf den richtigen Sprachnamen " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRt-6a-mpz">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow1" translatesAutoresizingMaskIntoConstraints="NO" id="I0j-bf-EHJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow1" translatesAutoresizingMaskIntoConstraints="NO" id="I0j-bf-EHJ">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="4Zr-Bv-7Is">
@@ -972,18 +983,18 @@
                             <mask key="constraints">
                                 <include reference="ZAW-P8-Zac"/>
                                 <include reference="v71-F8-B1T"/>
-                                <include reference="Fni-Qm-Ftv"/>
-                                <include reference="Q7x-hu-JIj"/>
-                                <include reference="Gqz-le-UOO"/>
-                                <include reference="Kx9-NK-dCc"/>
-                                <include reference="Hig-wL-01h"/>
-                                <include reference="KNf-go-2oU"/>
                                 <include reference="Cpd-rC-6av"/>
                                 <include reference="YeC-7K-KJz"/>
                                 <include reference="ykr-gf-lWH"/>
                                 <include reference="Wip-aP-S8O"/>
                                 <include reference="kSr-ux-HJJ"/>
                                 <include reference="kYn-Sj-0Va"/>
+                                <include reference="Hig-wL-01h"/>
+                                <include reference="KNf-go-2oU"/>
+                                <include reference="Gqz-le-UOO"/>
+                                <include reference="Kx9-NK-dCc"/>
+                                <include reference="Fni-Qm-Ftv"/>
+                                <include reference="Q7x-hu-JIj"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
