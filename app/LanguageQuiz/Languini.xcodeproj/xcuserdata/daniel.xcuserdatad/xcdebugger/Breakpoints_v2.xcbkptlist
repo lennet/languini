@@ -272,31 +272,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Languini.SelectionSlider.switchToPosition (Languini.SelectionSlider)(Languini.SelectionPosition) -&gt; ()"
+                  symbolName = "Languini.SelectionSlider.switchToPosition (Languini.SelectionPosition) -&gt; ()"
                   moduleName = "Languini"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/daniel/languini/app/LanguageQuiz/LanguagesOverview/SelectionSlider.swift"
-                  timestampString = "480194477.035362"
+                  timestampString = "482580357.667091"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
                   offsetFromSymbolStart = "26">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Languini.SelectionSlider.(switchToPosition (Languini.SelectionSlider) -&gt; (Languini.SelectionPosition) -&gt; ()).(closure #1)"
+                  symbolName = "Languini.SelectionSlider.(switchToPosition (Languini.SelectionPosition) -&gt; ()).(closure #1)"
                   moduleName = "Languini"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/daniel/languini/app/LanguageQuiz/LanguagesOverview/SelectionSlider.swift"
-                  timestampString = "480194477.035576"
+                  timestampString = "482580357.667459"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "23">
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "60">
                </Location>
             </Locations>
          </BreakpointContent>
