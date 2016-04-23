@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		652FA8031B5172BC0060DAAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652FA8021B5172BC0060DAAC /* Images.xcassets */; };
-		654DDF941B526A6300CA32EB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 654DDF931B526A6300CA32EB /* SystemConfiguration.framework */; };
+		654545F31CCBDA4200C9D8F2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654545F21CCBDA4200C9D8F2 /* Reachability.swift */; };
+		654DDF941B526A6300CA32EB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 654DDF931B526A6300CA32EB /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6571F97D1BE50E99007AFBD5 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6571F97C1BE50E99007AFBD5 /* Game.storyboard */; };
 		6571F97F1BE50EA9007AFBD5 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6571F97E1BE50EA9007AFBD5 /* Intro.storyboard */; };
 		6571F9811BE50EB8007AFBD5 /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6571F9801BE50EB8007AFBD5 /* Overview.storyboard */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		652FA8021B5172BC0060DAAC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		654545F21CCBDA4200C9D8F2 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Utilities/Reachability.swift; sourceTree = "<group>"; };
 		654DDF931B526A6300CA32EB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6571F97C1BE50E99007AFBD5 /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		6571F97E1BE50EA9007AFBD5 /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		98E78EDF1AEBECCA00C0909D /* Languini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Languini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E78EEA1AEBECCA00C0909D /* LanguageQuiz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LanguageQuiz.xcdatamodel; sourceTree = "<group>"; };
 		98E78EF51AEBECCA00C0909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9CE22F5949AFEEE88DB038B9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +189,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		084DEE997BB1708DCE23E452 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CE22F5949AFEEE88DB038B9 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		654545F11CCBDA1400C9D8F2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				654545F21CCBDA4200C9D8F2 /* Reachability.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		6571F96C1BE50708007AFBD5 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +411,7 @@
 				6571F96D1BE50714007AFBD5 /* Game */,
 				6571F9751BE5082F007AFBD5 /* General */,
 				6571F96C1BE50708007AFBD5 /* Intro */,
+				654545F11CCBDA1400C9D8F2 /* Utilities */,
 				6571F96E1BE5071D007AFBD5 /* LanguagesOverview */,
 				65739A4D1BE5133100DBD87B /* Languini old code */,
 				98A3588C1C9ECB710065C513 /* Menu */,
@@ -399,6 +419,7 @@
 				983CA3B11C9EF0BF0061ED16 /* LanguiniTests */,
 				98E78EE01AEBECCA00C0909D /* Products */,
 				989762741AFFBE9500ACE909 /* Resources */,
+				084DEE997BB1708DCE23E452 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -578,6 +599,7 @@
 				98A3589A1C9ED4F30065C513 /* HighScoreEntry.swift in Sources */,
 				983CA3CF1C9F04DC0061ED16 /* LanguoidHelper.swift in Sources */,
 				98A358A51C9ED9A00065C513 /* QuizBaseViewController.swift in Sources */,
+				654545F31CCBDA4200C9D8F2 /* Reachability.swift in Sources */,
 				983421941BE559470037EF43 /* QuizViewController.swift in Sources */,
 				65D6F54F1C9EE090002C1CDB /* MapViewController.swift in Sources */,
 				98E78EEB1AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld in Sources */,

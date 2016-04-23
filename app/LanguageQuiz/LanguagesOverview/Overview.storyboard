@@ -155,9 +155,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7ab-FS-uc8" appends="YES" id="5dy-RC-yKs"/>
+                        </connections>
                     </mapView>
+                    <connections>
+                        <outlet property="mapView" destination="kh5-I5-nQe" id="Esc-lq-mhx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1g2-Rp-jyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7ab-FS-uc8">
+                    <connections>
+                        <action selector="tappedOnMap:" destination="Rr1-JT-6bc" id="baM-PI-7Ad"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1720" y="1108"/>
         </scene>
