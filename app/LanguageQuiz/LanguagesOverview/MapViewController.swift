@@ -22,6 +22,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -104,15 +105,4 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
         mapView.addAnnotation(languageAnnotation)
         
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    
 }

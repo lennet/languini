@@ -19,6 +19,15 @@ class LanguageTableViewController: UITableViewController {
         loadLanguages()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        // add navigationbar if presented from mapView selection
+        if isBeingPresented(){
+            navigationController?.toolbarHidden = false
+        } else {
+            navigationController?.toolbarHidden = true
+        }
+    }
+    
     private func loadLanguages(){
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         languoids = CoreDataHelper.getObjects(Languoid.entityName, sortDescripor: sortDescriptor, predicate: nil, fetchLimit: nil) as? [Languoid]
