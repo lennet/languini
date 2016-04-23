@@ -11,9 +11,11 @@ import UIKit
 class LanguageTableViewController: UITableViewController {
 
     var languoids: [Languoid]?
+    var detailVC: LanguageDetailViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self.navigationController)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         loadLanguages()
@@ -25,6 +27,10 @@ class LanguageTableViewController: UITableViewController {
             navigationController?.toolbarHidden = false
         } else {
             navigationController?.toolbarHidden = true
+        }
+    
+        if let indexPath = tableView.indexPathForSelectedRow{
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
     }
     
@@ -63,6 +69,15 @@ class LanguageTableViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if detailVC == nil{
+            detailVC = storyboard?.instantiateViewControllerWithIdentifier("detailVC") as! LanguageDetailViewController
+        }
+        navigationController?.pushViewController(detailVC!, animated: true)
+
     }
     
 

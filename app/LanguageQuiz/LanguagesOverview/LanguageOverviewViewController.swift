@@ -29,8 +29,7 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
     @IBOutlet var listButton: SelectionBarButton!
     @IBOutlet var mapsButton: SelectionBarButton!
     
-    
-    var currentSelectionAnchor: CGPoint?
+   var currentView = SelectionPosition.List
     
     private var activeViewController: UIViewController? {
         didSet{
@@ -38,13 +37,14 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
             updateActiveVC()
         }
     }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let storyboard = UIStoryboard(name: "Overview", bundle: nil)
         mapViewController = storyboard.instantiateViewControllerWithIdentifier("mapsVC")
         listViewController = storyboard.instantiateViewControllerWithIdentifier("listVC")
-        
         //setup gesture recognizers
         let swipeRight = UISwipeGestureRecognizer(target: self, action:#selector(LanguageOverviewViewController.switchToList))
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
@@ -53,20 +53,37 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         
         swipeLeft.delegate = self
         swipeRight.delegate = self
-        
-        
         self.view.addGestureRecognizer(swipeRight)
         self.view.addGestureRecognizer(swipeLeft)
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        navigationController?.navigationBar.backgroundColor = selectionSlider.backgroundColor
+        
+        // remove navigation bars bottom line
+        let emptyImage = UIImage()
+        self.navigationController?.navigationBar.shadowImage = emptyImage
+        self.navigationController?.navigationBar.setBackgroundImage(emptyImage, forBarMetrics: UIBarMetrics.Default)
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
-        activeViewController = listViewController
+        // restore old selection
+        if currentView == .List{
+            activeViewController = listViewController
+        } else {
+            activeViewController = mapViewController
+        }
         updateActiveVC()
-        let position1CenterX = listButton.center.x-listButton.frame.width-selectionSlider.selectionMarker.frame.width/4
-        let position2CenterX = mapsButton.center.x-mapsButton.frame.width-selectionSlider.selectionMarker.frame.width/4
-        selectionSlider.positionSelection1 = CGPoint(x: position1CenterX, y: -50)
-        selectionSlider.positionSelection2 = CGPoint(x: position2CenterX, y: -50)
-        selectionSlider.selectionMarker.center.x = selectionSlider.positionSelection1!.x - selectionSlider.selectionMarkerOffset
+        
+        if selectionSlider.positionSelection1 == nil {
+            let position1CenterX = listButton.center.x-listButton.frame.width-selectionSlider.selectionMarker.frame.width/4
+            let position2CenterX = mapsButton.center.x-mapsButton.frame.width-selectionSlider.selectionMarker.frame.width/4
+            selectionSlider.positionSelection1 = CGPoint(x: position1CenterX, y: -50)
+            selectionSlider.positionSelection2 = CGPoint(x: position2CenterX, y: -50)
+            selectionSlider.selectionMarker.center.x = selectionSlider.positionSelection1!.x - selectionSlider.selectionMarkerOffset
+        }
+        navigationController?.navigationBar.topItem?.title = "Sprachen"
     }
     
     override func viewWillLayoutSubviews() {
@@ -135,6 +152,7 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         listButton.highlightLabel()
         mapsButton.restoreLabelFont()
         selectionSlider.switchToPosition(.List)
+        currentView = .List
     }
     
     func switchToMap() {
@@ -142,6 +160,7 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         mapsButton.highlightLabel()
         listButton.restoreLabelFont()
         selectionSlider.switchToPosition(.Map)
+        currentView = .Map
     }
 
 }

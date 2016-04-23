@@ -17,6 +17,9 @@
 		6571F98C1BE50FBA007AFBD5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571F9871BE50FBA007AFBD5 /* main.m */; };
 		6571F98D1BE50FBA007AFBD5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571F9891BE50FBA007AFBD5 /* Reachability.m */; };
 		65739A881BE5134600DBD87B /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A671BE5134600DBD87B /* Preferences.m */; };
+		659950E41CCC041E009F9CFE /* LanguageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659950E31CCC041E009F9CFE /* LanguageDetailViewController.swift */; };
+		659950E71CCC0568009F9CFE /* SectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659950E61CCC0568009F9CFE /* SectionHeaderCell.swift */; };
+		659950E91CCC057C009F9CFE /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659950E81CCC057C009F9CFE /* DetailCell.swift */; };
 		65D6F54B1C9EDA4D002C1CDB /* LanguageOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6F54A1C9EDA4D002C1CDB /* LanguageOverviewViewController.swift */; };
 		65D6F54D1C9EE064002C1CDB /* LanguageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6F54C1C9EE064002C1CDB /* LanguageTableViewController.swift */; };
 		65D6F54F1C9EE090002C1CDB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D6F54E1C9EE090002C1CDB /* MapViewController.swift */; };
@@ -120,6 +123,9 @@
 		65739A791BE5134600DBD87B /* SentencesAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentencesAggregator.m; sourceTree = "<group>"; };
 		65739A7A1BE5134600DBD87B /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		65739A7B1BE5134600DBD87B /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		659950E31CCC041E009F9CFE /* LanguageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageDetailViewController.swift; sourceTree = "<group>"; };
+		659950E61CCC0568009F9CFE /* SectionHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderCell.swift; sourceTree = "<group>"; };
+		659950E81CCC057C009F9CFE /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		65D6F54A1C9EDA4D002C1CDB /* LanguageOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageOverviewViewController.swift; sourceTree = "<group>"; };
 		65D6F54C1C9EE064002C1CDB /* LanguageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageTableViewController.swift; sourceTree = "<group>"; };
 		65D6F54E1C9EE090002C1CDB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				6571F9801BE50EB8007AFBD5 /* Overview.storyboard */,
+				659950E51CCC0504009F9CFE /* LanguageDetail */,
 				65D6F54A1C9EDA4D002C1CDB /* LanguageOverviewViewController.swift */,
 				65D6F54C1C9EE064002C1CDB /* LanguageTableViewController.swift */,
 				65D6F54E1C9EE090002C1CDB /* MapViewController.swift */,
@@ -353,6 +360,16 @@
 				982AC8E61B46123900116B4F /* ShadowView.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		659950E51CCC0504009F9CFE /* LanguageDetail */ = {
+			isa = PBXGroup;
+			children = (
+				659950E31CCC041E009F9CFE /* LanguageDetailViewController.swift */,
+				659950E61CCC0568009F9CFE /* SectionHeaderCell.swift */,
+				659950E81CCC057C009F9CFE /* DetailCell.swift */,
+			);
+			name = LanguageDetail;
 			sourceTree = "<group>";
 		};
 		983CA3B11C9EF0BF0061ED16 /* LanguiniTests */ = {
@@ -580,6 +597,7 @@
 				98A2B12D1C9F2AE000DBF6AA /* HighscoreHelper.swift in Sources */,
 				98A358991C9ED4F30065C513 /* HighScoreEntry+CoreDataProperties.swift in Sources */,
 				98A2B1311C9F30E800DBF6AA /* EditableHighscoreTableviewCell.swift in Sources */,
+				659950E71CCC0568009F9CFE /* SectionHeaderCell.swift in Sources */,
 				98A1C0D31B43273900E1AFE6 /* ShadowButton.swift in Sources */,
 				65D6F54B1C9EDA4D002C1CDB /* LanguageOverviewViewController.swift in Sources */,
 				98A2B12B1C9F296200DBF6AA /* HighscoreViewController.swift in Sources */,
@@ -589,6 +607,7 @@
 				98A2B12F1C9F2F8600DBF6AA /* StaticHighscoreTableViewCell.swift in Sources */,
 				98A2B1271C9F103800DBF6AA /* UIColorExtension.swift in Sources */,
 				983421961BE55CD00037EF43 /* QuizLogicViewController.swift in Sources */,
+				659950E91CCC057C009F9CFE /* DetailCell.swift in Sources */,
 				98A3589C1C9ED4F30065C513 /* Country.swift in Sources */,
 				6571F98A1BE50FBA007AFBD5 /* AppDelegate.m in Sources */,
 				6571F98D1BE50FBA007AFBD5 /* Reachability.m in Sources */,
@@ -599,6 +618,7 @@
 				983421941BE559470037EF43 /* QuizViewController.swift in Sources */,
 				65D6F54F1C9EE090002C1CDB /* MapViewController.swift in Sources */,
 				98E78EEB1AEBECCA00C0909D /* LanguageQuiz.xcdatamodeld in Sources */,
+				659950E41CCC041E009F9CFE /* LanguageDetailViewController.swift in Sources */,
 				98A3589F1C9ED4F30065C513 /* Sentence+CoreDataProperties.swift in Sources */,
 				98A3589D1C9ED4F30065C513 /* Languoid+CoreDataProperties.swift in Sources */,
 				98A358A01C9ED4F30065C513 /* Sentence.swift in Sources */,
