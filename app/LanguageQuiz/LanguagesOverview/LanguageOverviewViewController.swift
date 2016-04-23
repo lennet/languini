@@ -29,7 +29,15 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
     @IBOutlet var listButton: SelectionBarButton!
     @IBOutlet var mapsButton: SelectionBarButton!
     
-   var currentView = SelectionPosition.List
+    var currentView = SelectionPosition.List{
+        didSet{
+            if currentView == .List{
+                activeViewController = listViewController
+            } else {
+                activeViewController = mapViewController
+            }
+        }
+    }
     
     private var activeViewController: UIViewController? {
         didSet{
@@ -69,13 +77,6 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
     
     override func viewWillAppear(animated: Bool) {
         // restore old selection
-        if currentView == .List{
-            activeViewController = listViewController
-        } else {
-            activeViewController = mapViewController
-        }
-        updateActiveVC()
-        
         if selectionSlider.positionSelection1 == nil {
             let position1CenterX = listButton.center.x-listButton.frame.width-selectionSlider.selectionMarker.frame.width/4
             let position2CenterX = mapsButton.center.x-mapsButton.frame.width-selectionSlider.selectionMarker.frame.width/4
@@ -126,20 +127,7 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         default:
             return
         }
-        
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     
     // MARK: - Gesture
