@@ -30,6 +30,8 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
     @IBOutlet var mapsButton: SelectionBarButton!
     
     
+    var currentSelectionAnchor: CGPoint?
+    
     private var activeViewController: UIViewController? {
         didSet{
             removeOldVC(oldValue)
@@ -52,17 +54,29 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         swipeLeft.delegate = self
         swipeRight.delegate = self
         
+        
         self.view.addGestureRecognizer(swipeRight)
         self.view.addGestureRecognizer(swipeLeft)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         activeViewController = listViewController
         updateActiveVC()
-        selectionSlider.positionSelection1 = CGPoint(x: listButton.center.x, y: 0)
-        selectionSlider.positionSelection2 = CGPoint(x: mapsButton.center.x, y: 0)
+        let position1CenterX = listButton.center.x-listButton.frame.width-selectionSlider.selectionMarker.frame.width/4
+        let position2CenterX = mapsButton.center.x-mapsButton.frame.width-selectionSlider.selectionMarker.frame.width/4
+        selectionSlider.positionSelection1 = CGPoint(x: position1CenterX, y: -50)
+        selectionSlider.positionSelection2 = CGPoint(x: position2CenterX, y: -50)
         selectionSlider.selectionMarker.center.x = selectionSlider.positionSelection1!.x - selectionSlider.selectionMarkerOffset
     }
+    
+    override func viewWillLayoutSubviews() {
+        let positionYValue = CGRectGetMinY(selectionSlider.frame)
+        let position1CenterX = listButton.center.x+selectionSlider.selectionMarker.frame.width/2
+        let position2CenterX = mapsButton.center.x+selectionSlider.selectionMarker.frame.width/2
+        selectionSlider.positionSelection1 = CGPoint(x: position1CenterX, y: -50)
+        selectionSlider.positionSelection2 = CGPoint(x: position2CenterX, y: -50)
+    }
+  
 
     // MARK: - Container Management
     
@@ -70,7 +84,6 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         guard let viewController = viewController else {
             return
         }
-        
         viewController.willMoveToParentViewController(nil)
         viewController.view.removeFromSuperview()
         viewController.removeFromParentViewController()
@@ -80,7 +93,6 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         guard let currentVC = activeViewController else {
             return
         }
-        
         addChildViewController(currentVC)
         activeViewController!.view.frame = self.contentView.bounds
         contentView.addSubview(activeViewController!.view)
@@ -97,6 +109,7 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         default:
             return
         }
+        
     }
     
     

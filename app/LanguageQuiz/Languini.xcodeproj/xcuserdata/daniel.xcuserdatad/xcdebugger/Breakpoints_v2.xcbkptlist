@@ -256,32 +256,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LanguagesOverview/LanguageOverviewViewController.swift"
-            timestampString = "482592638.537932"
+            filePath = "LanguagesOverview/SelectionSlider.swift"
+            timestampString = "483110924.319849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "switchToMap()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LanguagesOverview/LanguageOverviewViewController.swift"
-            timestampString = "482592638.537932"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "switchToList()"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "switchToPosition(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

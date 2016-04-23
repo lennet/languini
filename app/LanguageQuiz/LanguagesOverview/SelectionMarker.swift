@@ -10,14 +10,8 @@ import UIKit
 
 @IBDesignable class SelectionMarker: UIView {
     
-
-    var triangleColor: UIColor = UIColor.whiteColor()
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clearColor()
-
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,16 +19,6 @@ import UIKit
     }
     
     override func drawRect(rect: CGRect) {
-        let contextRef : CGContextRef = UIGraphicsGetCurrentContext()!
-        
-        CGContextBeginPath(contextRef)
-        CGContextMoveToPoint(contextRef, CGRectGetMinX(rect), CGRectGetMaxY(rect))
-        CGContextAddLineToPoint(contextRef, CGRectGetMaxX(rect), CGRectGetMaxY(rect))
-        CGContextAddLineToPoint(contextRef, (CGRectGetMaxX(rect)/2.0), CGRectGetMaxY(rect)/2.0)
-        CGContextClosePath(contextRef)
-        
-        CGContextSetFillColorWithColor(contextRef, triangleColor.CGColor)
-        CGContextFillPath(contextRef)
     }
     
 }
