@@ -15,6 +15,7 @@ class HighscoreHelper: CoreDataHelper {
         newEntry.score = score
         newEntry.name = name
         newEntry.quizType = type.rawValue
+        Preferences.sharedInstance.setDefaultUserName(name)
         saveContext()
     }
 
