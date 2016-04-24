@@ -74,10 +74,13 @@ class LanguageTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if detailVC == nil{
-            detailVC = storyboard?.instantiateViewControllerWithIdentifier("detailVC") as! LanguageDetailViewController
+            detailVC = storyboard?.instantiateViewControllerWithIdentifier("detailVC") as? LanguageDetailViewController
         }
-        navigationController?.pushViewController(detailVC!, animated: true)
-
+        
+        if let selectedLanguoid = languoids?[indexPath.row]{
+            detailVC?.selectedLanguoid = selectedLanguoid
+            navigationController?.pushViewController(detailVC!, animated: true)
+        }
     }
     
 

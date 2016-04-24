@@ -414,8 +414,10 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="countryLabel" destination="3u8-li-jSc" id="9VY-mh-Q1i"/>
+                        <outlet property="countryLabel" destination="fza-85-8mu" id="lKz-JB-f6G"/>
+                        <outlet property="leftButton" destination="sQo-du-4fk" id="GMI-3k-5Lm"/>
                         <outlet property="mapView" destination="kBG-T2-Xtg" id="pWw-N9-lCQ"/>
+                        <outlet property="rightButton" destination="DWT-0Z-vDU" id="lCA-lO-Ncc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZY-V9-8YQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

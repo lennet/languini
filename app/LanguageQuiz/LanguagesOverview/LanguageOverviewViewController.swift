@@ -45,8 +45,6 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
             updateActiveVC()
         }
     }
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,13 +89,12 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         let positionYValue = CGRectGetMinY(selectionSlider.frame)
         let position1CenterX = listButton.center.x+selectionSlider.selectionMarker.frame.width/2
         let position2CenterX = mapsButton.center.x+selectionSlider.selectionMarker.frame.width/2
-        selectionSlider.positionSelection1 = CGPoint(x: position1CenterX, y: -50)
-        selectionSlider.positionSelection2 = CGPoint(x: position2CenterX, y: -50)
+        selectionSlider.positionSelection1 = CGPoint(x: position1CenterX, y: positionYValue)
+        selectionSlider.positionSelection2 = CGPoint(x: position2CenterX, y: positionYValue)
     }
   
 
     // MARK: - Container Management
-    
     private func removeOldVC(viewController: UIViewController?){
         guard let viewController = viewController else {
             return
