@@ -117,7 +117,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == dictionarySegueIdentifier{
+        if segue.identifier == dictionarySegueIdentifier {
             
             guard let destinationVC = segue.destinationViewController as? LanguageTableViewController else { return }
             

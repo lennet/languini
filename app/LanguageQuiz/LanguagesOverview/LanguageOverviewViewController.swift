@@ -44,10 +44,11 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         mapViewController = storyboard.instantiateViewControllerWithIdentifier("mapsVC") as? MapViewController
         
         //setup gesture recognizers
-        let swipeRight = UISwipeGestureRecognizer(target: self, action:#selector(LanguageOverviewViewController.switchToList))
-        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action:#selector(LanguageOverviewViewController.switchToMap))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        
+        let swipeRight = UIScreenEdgePanGestureRecognizer(target: self, action:#selector(LanguageOverviewViewController.switchToList))
+        swipeRight.edges = .Left
+        let swipeLeft = UIScreenEdgePanGestureRecognizer(target: self, action:#selector(LanguageOverviewViewController.switchToMap))
+        swipeLeft.edges = .Right
         
         swipeLeft.delegate = self
         swipeRight.delegate = self
