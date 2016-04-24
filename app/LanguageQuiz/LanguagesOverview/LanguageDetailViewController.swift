@@ -18,7 +18,7 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet var rightButton: UIButton!
     
     let detailCellIdentifier = "detailCell"
-    let sectionHeaderIdentifier = "sectionHeaer"
+    let sectionHeaderIdentifier = "sectionHeader"
     
     weak var selectedLanguoid: Languoid?{
         didSet{
@@ -63,7 +63,9 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
             leftButton.enabled = false
             rightButton.enabled = false
         }
+        navigationItem.title = selectedLanguoid?.name
     }
+    
     
     // MARK: -  Map
     
@@ -119,7 +121,7 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
         if cell == nil{
             cell = DetailCell(style: .Default, reuseIdentifier: detailCellIdentifier)
         }
-        cell?.textLabel?.text = "Dummy"
+        cell?.detailLabel.text = "Dummy Label"
         return cell!
     }
     
@@ -128,14 +130,14 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
         if cell == nil{
             cell = SectionHeaderCell(style: .Default, reuseIdentifier: sectionHeaderIdentifier)
         }
-//        cell?.headerLabel.text = "Dummy Header"
+        cell?.headerLabel.text = "Dummy Header"
         return cell!
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return CGFloat(20.0)
+        return CGFloat(40.0)
     }
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat(20.0)
+        return CGFloat(25.0)
     }
 }
