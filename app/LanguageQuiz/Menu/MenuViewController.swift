@@ -13,8 +13,6 @@ class MenuViewController: UIViewController {
 
     @IBOutlet var sceneView: SCNView!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let scene = EarthScene()
@@ -38,19 +36,27 @@ class MenuViewController: UIViewController {
     
     
     func animateSpeechBubble(){
-        let speechBubble = SpeechBubble(withColor: CGRect(x: sceneView.frame.width/2 + 50, y: sceneView.frame.height/2 - 50, width: 100, height: 100), color: .whiteColor())
+        let speechBubble = SpeechBubble(withColor: CGRect(x: sceneView.frame.width/2 + 50, y: sceneView.frame.height/2 - 75, width: 100, height: 100), color: .whiteColor())
         speechBubble.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.001, 0.001)
         self.view.addSubview(speechBubble)
         
         UIView.animateWithDuration(0.3/1.5, animations: {
-            speechBubble.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1)
-        }) { (finished) -> Void in
+            speechBubble.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1)}) {
+                (finished) -> Void in
             UIView.animateWithDuration(0.3/2, animations: {
                 speechBubble.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9)
                 }, completion: { (finished) -> Void in
                     speechBubble.transform = CGAffineTransformIdentity
+                    
+                    UIView.animateWithDuration(2.0, delay: 5.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+                        speechBubble.alpha = 0.0
+                        }, completion: { (finished) -> Void in
+                            speechBubble.removeFromSuperview()
+                    })
             })
         }
     }
+    
+
 
 }

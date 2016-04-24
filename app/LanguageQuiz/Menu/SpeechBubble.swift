@@ -61,6 +61,5 @@ class SpeechBubble: UIView {
         label.textColor = UIColor.blackColor()
         self.addSubview(label)
     }
-    
 
 }
