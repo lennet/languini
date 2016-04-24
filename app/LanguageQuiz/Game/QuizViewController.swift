@@ -21,14 +21,6 @@ class QuizViewController: QuizBaseViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     private func changeAlphaValue(correctLanguoid: Languoid) {
         for button in buttonArray {
             if button.languoid != correctLanguoid {
@@ -69,12 +61,14 @@ class QuizViewController: QuizBaseViewController {
     
     // MARK: - Orientation
     
-    
     override func shouldAutorotate() -> Bool {
-        return false
+        return UIDevice.currentDevice().userInterfaceIdiom == .Pad
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            return .All
+        }
         return .Portrait
     }
 

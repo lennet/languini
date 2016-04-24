@@ -19,4 +19,10 @@ class Country: NSManagedObject {
             return CLLocation(latitude: Double(latitude ?? 0), longitude: Double(longitude ?? 0))
         }
     }
+    
+    var localizedName: String {
+        
+        // todo check locale
+        return name ?? nameDe ?? ""
+    }
 }

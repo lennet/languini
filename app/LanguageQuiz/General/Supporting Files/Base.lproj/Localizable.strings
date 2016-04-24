@@ -20,7 +20,8 @@
 "Alternate Names" = "Alternate Names";
 "Name" = "Name";
 "quiz.answer.right" = "Right Answer!";
-"geoquiz.answer.wrong" = "The distance to the next correct Country %@ is %.02f km";
+"geoquiz.answer.almost" = "Almost! The distance to the next correct Country %@ is %i km";
+"geoquiz.answer.wrong" = "Wrong Answer! The distance to the next correct Country %@ is %i km";
 "alert.nointernet.title" = "No Internet";
 "alert.nointernet.message" = "Geo Quiz can only be played with an internet connection";
 "GameOverMessage" = "Game Over!";
