@@ -27,4 +27,22 @@ class LanguoidHelper: CoreDataHelper {
         }
     }
     
+    static func getLangouids(forCountryCode code: String) -> [Languoid]?{
+        let predicate = NSPredicate(format: "code == %@", code)
+        let fetchRequest = NSFetchRequest(entityName: Country.entityName)
+        fetchRequest.predicate = predicate
+        
+        let countries: [Country]?
+        do{
+            countries = try context.executeFetchRequest(fetchRequest) as? [Country]
+        } catch{
+            print("🚫 Fetching Countries for code \(code) failed: \(error)")
+            return nil
+        }
+        
+        if let languoids = countries?.first!.languiod {
+            return languoids.allObjects as? [Languoid]
+        } else { return nil }
+    }
+    
 }

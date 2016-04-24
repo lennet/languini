@@ -38,6 +38,16 @@
                ReferencedContainer = "container:Languini.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "98807E9A1CC3C587004C7D1F"
+               BuildableName = "LanguiniUITests.xctest"
+               BlueprintName = "LanguiniUITests"
+               ReferencedContainer = "container:Languini.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
