@@ -85,9 +85,6 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.mapView.delegate = nil
-        self.mapView.removeFromSuperview()
-        self.mapView = nil
     }
     
     

@@ -21,6 +21,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
     let dictionarySegueIdentifier = "loadDictionaryViewController"
     
     var currentAnnotationView: MKPinAnnotationView?
+    var selectedCountry: CLPlacemark?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,8 +63,8 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
             (placeMarks: [CLPlacemark]?, error: NSError?) in
             
             guard let placemark = placeMarks?.first else { return }
-            
             if let countryCode = placemark.ISOcountryCode{
+                self.selectedCountry = placemark
                 self.languagesOnSelectedPoint = LanguoidHelper.getLangouids(forCountryCode: countryCode)
                 self.addAnnotationOnLocation(touchCoordinate)
             }
@@ -115,7 +116,18 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == dictionarySegueIdentifier{
+            
+            guard let destinationVC = segue.destinationViewController as? LanguageTableViewController else { return }
+            
+            guard selectedCountry?.ISOcountryCode != nil else { return }
+            guard selectedCountry?.country != nil else { return }
+        
+            let selectionTuple = (name: selectedCountry!.country!, code: selectedCountry!.ISOcountryCode!)
+            
+            (segue.destinationViewController as? LanguageTableViewController)?.selectedCountry = selectionTuple
+            
             
         }
     }

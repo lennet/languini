@@ -13,8 +13,17 @@ class LanguageTableViewController: UITableViewController, NSFetchedResultsContro
     var languoids: [Languoid]?
     var detailVC: LanguageDetailViewController?
     
+    var selectedCountry: (name: String, code: String)?
+    
+    
     lazy var fetchedResultsController: NSFetchedResultsController = {
         let fetchRequest = NSFetchRequest(entityName: Languoid.entityName)
+        
+        if self.selectedCountry != nil{
+            let predicate = NSPredicate(format: "ANY country.code == %@", self.selectedCountry!.code)
+            fetchRequest.predicate = predicate
+        }
+        
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataHelper.context, sectionNameKeyPath: nil, cacheName: nil)
@@ -46,6 +55,15 @@ class LanguageTableViewController: UITableViewController, NSFetchedResultsContro
         if let indexPath = tableView.indexPathForSelectedRow{
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
+        
+        if let title = selectedCountry?.name{
+            navigationItem.title = title
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        selectedCountry = nil
     }
     
 
