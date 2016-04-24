@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var countryLabel: UILabel!
     @IBOutlet var tableView: UITableView!
@@ -54,7 +54,7 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
             }
         }
     }
-
+    
     var values = [String:String]()
     
     // MARK: - View Handling

@@ -15,7 +15,7 @@ enum SelectionPosition: Int{
 
 
 class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDelegate {
-
+    
     @IBOutlet var selectionView: UIView!
     
     var listViewController: LanguageTableViewController?
@@ -36,7 +36,7 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
             updateActiveVC()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let storyboard = UIStoryboard(name: "Overview", bundle: nil)
@@ -88,8 +88,8 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
             switchToMap()
         }
     }
-  
-
+    
+    
     // MARK: - Container Management
     private func removeOldVC(viewController: UIViewController?){
         guard let viewController = viewController else {
@@ -143,5 +143,5 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         selectionSlider.switchToPosition(.Map)
         currentView = .Map
     }
-
+    
 }
