@@ -18,7 +18,6 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
 
     @IBOutlet var selectionView: UIView!
     
-    
     var listViewController: LanguageTableViewController?
     var mapViewController: MapViewController?
     
@@ -62,8 +61,6 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         let emptyImage = UIImage()
         self.navigationController?.navigationBar.shadowImage = emptyImage
         self.navigationController?.navigationBar.setBackgroundImage(emptyImage, forBarMetrics: UIBarMetrics.Default)
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -84,6 +81,12 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         let position2CenterX = mapsButton.center.x+selectionSlider.selectionMarker.frame.width/2
         selectionSlider.positionSelection1 = CGPoint(x: position1CenterX, y: positionYValue)
         selectionSlider.positionSelection2 = CGPoint(x: position2CenterX, y: positionYValue)
+        switch(currentView){
+        case .List:
+            switchToList()
+        case .Map:
+            switchToMap()
+        }
     }
   
 
