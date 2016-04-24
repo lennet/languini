@@ -8,17 +8,31 @@
 
 import UIKit
 
-class LanguageTableViewController: UITableViewController {
+class LanguageTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var languoids: [Languoid]?
     var detailVC: LanguageDetailViewController?
+    
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        let fetchRequest = NSFetchRequest(entityName: Languoid.entityName)
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataHelper.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
+        return fetchedResultsController
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(self.navigationController)
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        loadLanguages()
+        do {
+            try fetchedResultsController.performFetch()
+        }catch{
+            let error = error as NSError
+            print("Error fetching data \(error), \(error.userInfo)")
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -34,14 +48,9 @@ class LanguageTableViewController: UITableViewController {
         }
     }
     
-    private func loadLanguages(){
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-        languoids = CoreDataHelper.getObjects(Languoid.entityName, sortDescripor: sortDescriptor, predicate: nil, fetchLimit: nil) as? [Languoid]
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -51,24 +60,28 @@ class LanguageTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if languoids != nil {
-            return languoids!.count
-        } else {
-            return 0
+        if let sections = fetchedResultsController.sections {
+            let sectionInfo = sections[section]
+            return sectionInfo.numberOfObjects
         }
+        
+        return 0
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("languageCell", forIndexPath: indexPath)
-        let language = languoids![indexPath.row]
-        cell.textLabel?.text = language.name
-        print(language.alternateNames)
-        if let alternateNames = language.alternateNames as? [String] {
-            cell.detailTextLabel?.text = alternateNames.joinWithSeparator(", ")
-        }
-        
+        configCell(cell, indexPath: indexPath)
         return cell
+    }
+    
+    func configCell(cell: UITableViewCell, indexPath: NSIndexPath){
+        if let language = fetchedResultsController.objectAtIndexPath(indexPath) as? Languoid{
+            cell.textLabel?.text = language.name
+            if let alternateNames = language.alternateNames as? [String] {
+                cell.detailTextLabel?.text = alternateNames.joinWithSeparator(", ")
+            }
+        }
     }
     
     
@@ -77,56 +90,13 @@ class LanguageTableViewController: UITableViewController {
             detailVC = storyboard?.instantiateViewControllerWithIdentifier("detailVC") as? LanguageDetailViewController
         }
         
-        if let selectedLanguoid = languoids?[indexPath.row]{
+        if let selectedLanguoid = fetchedResultsController.objectAtIndexPath(indexPath) as? Languoid{
             detailVC?.selectedLanguoid = selectedLanguoid
             navigationController?.pushViewController(detailVC!, animated: true)
         }
     }
     
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
