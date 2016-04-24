@@ -24,3 +24,16 @@
 "geoquiz.answer.wrong" = "Wrong Answer! Die Distanz zum nächsten richtigen Land %@ beträgt %i km";
 "alert.nointernet.title" = "Kein Internet";
 "alert.nointernet.message" = "Geo Quiz steht nur mit Netzverbindung zur verfügung";
+
+
+
+// updated
+
+"attr_alternateNames" = "Alternative Namen";
+"attr_classification" = "Klassifizierung";
+"attr_dialects" = "Dialekte";
+"attr_iso6393" = "ISO 6393 Code";
+"attr_lanugageStatus" = "Sprachstatus";
+"attr_locationDescription" = "Region";
+"attr_name" = "Name";
+"attr_population" = "Population";

@@ -28,7 +28,9 @@ class CoreDataHelper {
     
     static func getObjects(entityName: String, sortDescripor: NSSortDescriptor?, predicate: NSPredicate?, fetchLimit: Int?) -> [AnyObject]? {
         let fetchRequest = NSFetchRequest(entityName: entityName)
-        fetchRequest.predicate = predicate
+        if predicate != nil {
+            fetchRequest.predicate = predicate
+        }
         if fetchLimit != nil {
             fetchRequest.fetchLimit = fetchLimit!
         }
