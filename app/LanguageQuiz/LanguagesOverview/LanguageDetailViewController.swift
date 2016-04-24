@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class LanguageDetailViewController: UIViewController {
+class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var countryLabel: UILabel!
@@ -17,9 +17,13 @@ class LanguageDetailViewController: UIViewController {
     @IBOutlet var leftButton: UIButton!
     @IBOutlet var rightButton: UIButton!
     
+    let detailCellIdentifier = "detailCell"
+    let sectionHeaderIdentifier = "sectionHeaer"
+    
     weak var selectedLanguoid: Languoid?{
         didSet{
             countries = selectedLanguoid?.country?.allObjects as? [Country]
+            sections = selectedLanguoid?.getAttributes()
         }
     }
     var countries: [Country]?
@@ -36,8 +40,15 @@ class LanguageDetailViewController: UIViewController {
         }
     }
     
+    var sections: [String]?
+    
+    
+    // MARK: - View Handling
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,6 +64,8 @@ class LanguageDetailViewController: UIViewController {
             rightButton.enabled = false
         }
     }
+    
+    // MARK: -  Map
     
     @IBAction func leftButtonPressed(sender: AnyObject) {
         guard (selectedCountry != nil) else { return }
@@ -85,5 +98,44 @@ class LanguageDetailViewController: UIViewController {
         let region = MKCoordinateRegion(center: location, span: span)
         countryLabel.text = selectedCountry?.name
         mapView.setRegion(region, animated: true)
+    }
+    
+    // MARK: - TableView
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if let sections =  sections?.count{
+            return sections
+        } else {
+            return 0
+        }
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier(detailCellIdentifier, forIndexPath: indexPath) as? DetailCell
+        if cell == nil{
+            cell = DetailCell(style: .Default, reuseIdentifier: detailCellIdentifier)
+        }
+        cell?.textLabel?.text = "Dummy"
+        return cell!
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var cell = tableView.dequeueReusableCellWithIdentifier(sectionHeaderIdentifier) as? SectionHeaderCell
+        if cell == nil{
+            cell = SectionHeaderCell(style: .Default, reuseIdentifier: sectionHeaderIdentifier)
+        }
+//        cell?.headerLabel.text = "Dummy Header"
+        return cell!
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return CGFloat(20.0)
+    }
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(20.0)
     }
 }

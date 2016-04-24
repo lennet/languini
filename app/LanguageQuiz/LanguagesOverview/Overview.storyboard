@@ -418,6 +418,7 @@
                         <outlet property="leftButton" destination="sQo-du-4fk" id="GMI-3k-5Lm"/>
                         <outlet property="mapView" destination="kBG-T2-Xtg" id="pWw-N9-lCQ"/>
                         <outlet property="rightButton" destination="DWT-0Z-vDU" id="lCA-lO-Ncc"/>
+                        <outlet property="tableView" destination="LsF-6Z-1Fw" id="52r-Bs-ajL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZY-V9-8YQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

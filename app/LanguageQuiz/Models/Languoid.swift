@@ -28,4 +28,16 @@ class Languoid: NSManagedObject {
         }
         return resultString
     }
+    
+    func getAttributes() -> [String] {
+        var results = [String]()
+        let entity = self.entity
+        let attributes = entity.attributesByName
+        for attribute in attributes{
+            if let _ = self.valueForKey(attribute.0) {
+                results.append(attribute.0)
+            }
+        }
+        return results
+    }
 }
