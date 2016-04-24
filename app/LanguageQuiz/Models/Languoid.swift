@@ -13,6 +13,8 @@ import CoreData
 class Languoid: NSManagedObject {
 
     static let entityName = "Languiod"
+    
+    let detailUnusedAttributes = ["key", "macroareaGl", "populationNumeric"]
 
     
     func getCountryString() -> String {
@@ -29,13 +31,19 @@ class Languoid: NSManagedObject {
         return resultString
     }
     
-    func getAttributes() -> [String] {
+    func getDetailAttributes() -> [String] {
         var results = [String]()
         let entity = self.entity
         let attributes = entity.attributesByName
         for attribute in attributes{
-            if let _ = self.valueForKey(attribute.0) {
-                results.append(attribute.0)
+            let attributeKey = attribute.0
+            if let _ = self.valueForKey(attributeKey) {
+                if !detailUnusedAttributes.contains(attributeKey){
+                    if let value = self.valueForKey(attributeKey) {
+                        print(value)
+                        results.append(attributeKey)
+                    }
+                }
             }
         }
         return results

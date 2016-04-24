@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Automatic">
     <entity name="Country" representedClassName="Country" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -36,7 +36,7 @@
     <elements>
         <element name="Country" positionX="-7794" positionY="-1242" width="128" height="133"/>
         <element name="HighScoreEntry" positionX="-7562" positionY="-1269" width="128" height="90"/>
-        <element name="Languiod" positionX="-7479" positionY="-1098" width="128" height="238"/>
+        <element name="Languiod" positionX="-7479" positionY="-1098" width="128" height="240"/>
         <element name="Sentence" positionX="-7866" positionY="-1026" width="128" height="88"/>
     </elements>
 </model>

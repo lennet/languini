@@ -11,7 +11,7 @@ import MapKit
 
 class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelegate  {
     
-    @IBOutlet var mapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView!
     
     var annotationSet: Bool = false
     var languagesOnSelectedPoint: [Languoid]?
@@ -19,6 +19,8 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
     let annotationIdentifier = "annotationView"
     let pinIdentifier = "annotationPin"
     let dictionarySegueIdentifier = "loadDictionaryViewController"
+    
+    var currentAnnotationView: MKPinAnnotationView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +44,12 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
     
     @IBAction func tappedOnMap(sender: AnyObject) {
         print("tapped")
@@ -69,20 +75,22 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
     // MARK: - MKMapViewDelegate
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(annotationIdentifier)
-        if annotationView == nil{
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
-            annotationView?.rightCalloutAccessoryView = UIButton(type: UIButtonType.DetailDisclosure)
-        }
-        annotationView?.enabled = true
-        annotationView?.opaque = false
-        annotationView?.canShowCallout = true
-        
         let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdentifier)
         pin.canShowCallout = true
+        pin.setSelected(true, animated: true)
         pin.rightCalloutAccessoryView = UIButton(type: UIButtonType.DetailDisclosure)
-        
         return pin
+    }
+    
+    func mapView(mapView: MKMapView, didAddAnnotationViews views: [MKAnnotationView]) {
+        if let last = views.last{
+            //🔮 workaroud because callout didSelect get called immediatly after select
+            performSelector(#selector(selectAnnotation), withObject: last.annotation, afterDelay: 0.3)
+        }
+    }
+    
+    func selectAnnotation(annotation: MKAnnotation){
+        mapView.selectAnnotation(annotation, animated: true)
     }
     
     
@@ -92,17 +100,23 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
         }
     }
     
-    
     func addAnnotationOnLocation(touchCoordinate: CLLocationCoordinate2D){
         if annotationSet{
             mapView.removeAnnotation(mapView.annotations.last!)
         }
         let languageAnnotation = MKPointAnnotation()
         languageAnnotation.coordinate = touchCoordinate
-        languageAnnotation.title = "\(languagesOnSelectedPoint?.count) Sprachen"
-        languageAnnotation.subtitle = ""
-        annotationSet = true
-        mapView.addAnnotation(languageAnnotation)
-        
+        if let numberOfLanguages = languagesOnSelectedPoint?.count{
+            languageAnnotation.title = "\(numberOfLanguages) Sprachen"
+            languageAnnotation.subtitle = ""
+            annotationSet = true
+            mapView.addAnnotation(languageAnnotation)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == dictionarySegueIdentifier{
+            
+        }
     }
 }

@@ -19,8 +19,8 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
     @IBOutlet var selectionView: UIView!
     
     
-    var listViewController: UIViewController?
-    var mapViewController: UIViewController?
+    var listViewController: LanguageTableViewController?
+    var mapViewController: MapViewController?
     
     @IBOutlet var selectionSlider: SelectionSlider!
     
@@ -29,15 +29,7 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
     @IBOutlet var listButton: SelectionBarButton!
     @IBOutlet var mapsButton: SelectionBarButton!
     
-    var currentView = SelectionPosition.List{
-        didSet{
-            if currentView == .List{
-                activeViewController = listViewController
-            } else {
-                activeViewController = mapViewController
-            }
-        }
-    }
+    var currentView = SelectionPosition.List
     
     private var activeViewController: UIViewController? {
         didSet{
@@ -49,8 +41,9 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         let storyboard = UIStoryboard(name: "Overview", bundle: nil)
-        mapViewController = storyboard.instantiateViewControllerWithIdentifier("mapsVC")
-        listViewController = storyboard.instantiateViewControllerWithIdentifier("listVC")
+        listViewController = storyboard.instantiateViewControllerWithIdentifier("listVC") as? LanguageTableViewController
+        mapViewController = storyboard.instantiateViewControllerWithIdentifier("mapsVC") as? MapViewController
+        
         //setup gesture recognizers
         let swipeRight = UISwipeGestureRecognizer(target: self, action:#selector(LanguageOverviewViewController.switchToList))
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right

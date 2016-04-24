@@ -23,11 +23,11 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
     weak var selectedLanguoid: Languoid?{
         didSet{
             countries = selectedLanguoid?.country?.allObjects as? [Country]
-            sections = selectedLanguoid?.getAttributes()
+            sections = selectedLanguoid?.getDetailAttributes()
         }
     }
     var countries: [Country]?
-    var selectedCountry: Country?{
+    weak var selectedCountry: Country?{
         didSet{
             if (selectedCountry  == countries?.first){
                 leftButton.enabled = false
@@ -40,8 +40,22 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
-    var sections: [String]?
-    
+    var sections: [String]?{
+        didSet{
+            values = [String: String]()
+            for section in sections!{
+                if let value = selectedLanguoid?.valueForKey(section) as? String{
+                    values[section] = value
+                }  else if let value = selectedLanguoid?.valueForKey(section) as? [String]{ // value is array
+                    print(value)
+                    let stringRepresentation = value.joinWithSeparator("\n")
+                    values[section] = stringRepresentation
+                }
+            }
+        }
+    }
+
+    var values = [String:String]()
     
     // MARK: - View Handling
     
@@ -49,6 +63,8 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 50.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,6 +80,14 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
             rightButton.enabled = false
         }
         navigationItem.title = selectedLanguoid?.name
+        tableView.reloadData()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.mapView.delegate = nil
+        self.mapView.removeFromSuperview()
+        self.mapView = nil
     }
     
     
@@ -121,7 +145,11 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
         if cell == nil{
             cell = DetailCell(style: .Default, reuseIdentifier: detailCellIdentifier)
         }
-        cell?.detailLabel.text = "Dummy Label"
+        
+        guard sections != nil else { return cell! }
+        
+        let section = sections![indexPath.section]
+        cell?.detailLabel.text = values[section]
         return cell!
     }
     
@@ -130,14 +158,13 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
         if cell == nil{
             cell = SectionHeaderCell(style: .Default, reuseIdentifier: sectionHeaderIdentifier)
         }
-        cell?.headerLabel.text = "Dummy Header"
+        if let sectionName = sections?[section]{
+            cell?.headerLabel.text = NSLocalizedString("attr_\(sectionName)", comment: "")
+        }
         return cell!
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return CGFloat(40.0)
-    }
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat(25.0)
+        return tableView.sectionHeaderHeight
     }
 }
