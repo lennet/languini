@@ -16,6 +16,9 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet var tableView: UITableView!
     @IBOutlet var leftButton: UIButton!
     @IBOutlet var rightButton: UIButton!
+    @IBOutlet var seperatorLine: UIView!
+    
+    @IBOutlet var seperatorWidthConstraint: NSLayoutConstraint!
     
     let detailCellIdentifier = "detailCell"
     let sectionHeaderIdentifier = "sectionHeader"
@@ -24,8 +27,21 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
         didSet{
             countries = selectedLanguoid?.country?.allObjects as? [Country]
             sections = selectedLanguoid?.getDetailAttributes()
+            if let country = countries?.first{
+                selectedCountry = country
+                countryLabel.text = country.name
+                updateMapView(country)
+            }
+            if countries?.count == 1{
+                leftButton.enabled = false
+                rightButton.enabled = false
+            }
+            navigationItem.title = selectedLanguoid?.name
+            tableView.reloadData()
+            
         }
     }
+    
     var countries: [Country]?
     weak var selectedCountry: Country?{
         didSet{
@@ -67,27 +83,6 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        print(navigationController?.navigationBarHidden)
-        if let country = countries?.first{
-            selectedCountry = country
-            countryLabel.text = country.name
-            updateMapView(country)
-        }
-        if countries?.count == 1{
-            leftButton.enabled = false
-            rightButton.enabled = false
-        }
-        navigationItem.title = selectedLanguoid?.name
-        tableView.reloadData()
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
-    
     // MARK: -  Map
     
     @IBAction func leftButtonPressed(sender: AnyObject) {
@@ -120,7 +115,18 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
         let span = MKCoordinateSpan(latitudeDelta: 10.0 , longitudeDelta: 10.0)
         let region = MKCoordinateRegion(center: location, span: span)
         countryLabel.text = selectedCountry?.name
+        updateSeperatorWidth()
         mapView.setRegion(region, animated: true)
+    }
+    
+    private func updateSeperatorWidth(){
+        countryLabel.sizeToFit()
+        view.layoutIfNeeded()
+        seperatorWidthConstraint.constant = countryLabel.bounds.width + 5
+        UIView.animateWithDuration(2.0, delay: 0.0, options: .CurveEaseOut , animations: {
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+        
     }
     
     // MARK: - TableView
@@ -163,5 +169,13 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return tableView.sectionHeaderHeight
+    }
+}
+
+
+extension LanguageDetailViewController : LangugageSelectionDelegate{
+    
+    func selectedLanguage(language: Languoid){
+        selectedLanguoid = language
     }
 }

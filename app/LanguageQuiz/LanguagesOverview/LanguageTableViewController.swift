@@ -8,13 +8,27 @@
 
 import UIKit
 
+
+
 class LanguageTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-    var languoids: [Languoid]?
     var detailVC: LanguageDetailViewController?
     
     var selectedCountry: (name: String, code: String)?
     
+    weak var delegate: DetailSelectionDelegate?
+    
+    var defaultSelection: Bool? {
+        didSet{
+            if defaultSelection == true {
+                let firstIndex = NSIndexPath(forRow: 0, inSection: 0)
+                if let firstObject = fetchedResultsController.objectAtIndexPath(firstIndex) as? Languoid{
+                    delegate?.loadDetail(withLanguage: firstObject)
+                    tableView.reloadData()
+                }
+            }
+        }
+    }
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
         let fetchRequest = NSFetchRequest(entityName: Languoid.entityName)
@@ -38,6 +52,7 @@ class LanguageTableViewController: UITableViewController, NSFetchedResultsContro
         self.tableView.dataSource = self
         do {
             try fetchedResultsController.performFetch()
+            defaultSelection = true
         }catch{
             let error = error as NSError
             print("Error fetching data \(error), \(error.userInfo)")
@@ -59,6 +74,7 @@ class LanguageTableViewController: UITableViewController, NSFetchedResultsContro
         if let title = selectedCountry?.name{
             navigationItem.title = title
         }
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -94,6 +110,7 @@ class LanguageTableViewController: UITableViewController, NSFetchedResultsContro
     }
     
     func configCell(cell: UITableViewCell, indexPath: NSIndexPath){
+        cell.detailTextLabel?.text = ""
         if let language = fetchedResultsController.objectAtIndexPath(indexPath) as? Languoid{
             cell.textLabel?.text = language.name
             if let alternateNames = language.alternateNames as? [String] {
@@ -104,17 +121,20 @@ class LanguageTableViewController: UITableViewController, NSFetchedResultsContro
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if detailVC == nil{
-            detailVC = storyboard?.instantiateViewControllerWithIdentifier("detailVC") as? LanguageDetailViewController
-        }
-        
-        if let selectedLanguoid = fetchedResultsController.objectAtIndexPath(indexPath) as? Languoid{
-            detailVC?.selectedLanguoid = selectedLanguoid
-            navigationController?.pushViewController(detailVC!, animated: true)
+        if let selectedLanguoid = fetchedResultsController.objectAtIndexPath(indexPath) as? Languoid {
+            defaultSelection = false
+            
+            if delegate == nil {
+                guard let navigationStack = self.navigationController?.viewControllers  else { return }
+                
+                for element in navigationStack {
+                    if let overviewVC = element as? LanguageOverviewViewController{
+                        delegate = overviewVC
+                    }
+                }
+            }
+            delegate?.loadDetail(withLanguage: selectedLanguoid)
         }
     }
-    
-
-    
 
 }
