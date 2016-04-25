@@ -13,6 +13,13 @@ enum SelectionPosition: Int{
     case Map = 2
 }
 
+protocol LangugageSelectionDelegate: class{
+    func selectedLanguage(language: Languoid)
+}
+
+protocol DetailSelectionDelegate: class {
+    func loadDetail(withLanguage language: Languoid)
+}
 
 class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDelegate {
     
@@ -20,6 +27,8 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
     
     var listViewController: LanguageTableViewController?
     var mapViewController: MapViewController?
+    
+    weak var delegate: LangugageSelectionDelegate?
     
     @IBOutlet var selectionSlider: SelectionSlider!
     
@@ -39,9 +48,24 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let storyboard = UIStoryboard(name: "Overview", bundle: nil)
         listViewController = storyboard.instantiateViewControllerWithIdentifier("listVC") as? LanguageTableViewController
         mapViewController = storyboard.instantiateViewControllerWithIdentifier("mapsVC") as? MapViewController
+        
+        if let splitViewController = self.splitViewController{
+        
+            let leftNavController = splitViewController.viewControllers.first as! UINavigationController
+            let detailViewController = splitViewController.viewControllers.last as? LanguageDetailViewController
+            
+            listViewController?.delegate = self
+            mapViewController?.delegate = self
+            
+            self.delegate = detailViewController
+            
+            detailViewController?.navigationItem.leftItemsSupplementBackButton = true
+            detailViewController?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
+        }
         
         //setup gesture recognizers
         
@@ -74,6 +98,7 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
             selectionSlider.selectionMarker.center.x = selectionSlider.positionSelection1!.x - selectionSlider.selectionMarkerOffset
         }
         navigationController?.navigationBar.topItem?.title = "Sprachen"
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -145,4 +170,15 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
         currentView = .Map
     }
     
+}
+
+extension LanguageOverviewViewController: DetailSelectionDelegate{
+    func loadDetail(withLanguage language: Languoid) {
+        
+        self.delegate?.selectedLanguage(language)
+        
+        if let detailViewController = self.delegate as? LanguageDetailViewController{
+            splitViewController?.showDetailViewController(detailViewController, sender: self)
+        }
+    }
 }

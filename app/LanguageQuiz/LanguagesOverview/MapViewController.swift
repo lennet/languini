@@ -16,6 +16,8 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
     var annotationSet: Bool = false
     var languagesOnSelectedPoint: [Languoid]?
     
+    weak var delegate: DetailSelectionDelegate?
+    
     let annotationIdentifier = "annotationView"
     let pinIdentifier = "annotationPin"
     let dictionarySegueIdentifier = "loadDictionaryViewController"
