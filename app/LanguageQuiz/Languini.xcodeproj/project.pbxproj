@@ -28,6 +28,7 @@
 		6571F98C1BE50FBA007AFBD5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571F9871BE50FBA007AFBD5 /* main.m */; };
 		6571F98D1BE50FBA007AFBD5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6571F9891BE50FBA007AFBD5 /* Reachability.m */; };
 		65739A881BE5134600DBD87B /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 65739A671BE5134600DBD87B /* Preferences.m */; };
+		981B10C61CCE51F90030C593 /* SelfSizingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B10C51CCE51F90030C593 /* SelfSizingTextView.swift */; };
 		9826626D1CC3CD8800E2163F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826626C1CC3CD8800E2163F /* Preferences.swift */; };
 		982AC8E71B46123900116B4F /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982AC8E61B46123900116B4F /* ShadowView.swift */; };
 		983421921BE545810037EF43 /* QuizButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983421911BE545810037EF43 /* QuizButton.swift */; };
@@ -151,6 +152,7 @@
 		65739A791BE5134600DBD87B /* SentencesAggregator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentencesAggregator.m; sourceTree = "<group>"; };
 		65739A7A1BE5134600DBD87B /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
 		65739A7B1BE5134600DBD87B /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		981B10C51CCE51F90030C593 /* SelfSizingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfSizingTextView.swift; sourceTree = "<group>"; };
 		9826626C1CC3CD8800E2163F /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		982AC8E61B46123900116B4F /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		983421911BE545810037EF43 /* QuizButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizButton.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				98A2B1261C9F103800DBF6AA /* UIColorExtension.swift */,
 				6566487F1CCD577A00EF64CB /* Reachability.swift */,
 				9826626C1CC3CD8800E2163F /* Preferences.swift */,
+				981B10C51CCE51F90030C593 /* SelfSizingTextView.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				98A3589B1C9ED4F30065C513 /* Country+CoreDataProperties.swift in Sources */,
 				656648841CCD5B6000EF64CB /* EarthScene.swift in Sources */,
 				656648861CCD64C000EF64CB /* SpeechBubble.swift in Sources */,
+				981B10C61CCE51F90030C593 /* SelfSizingTextView.swift in Sources */,
 				98A3589E1C9ED4F30065C513 /* Languoid.swift in Sources */,
 				9826626D1CC3CD8800E2163F /* Preferences.swift in Sources */,
 				98CA2E041CC3FBE10020705E /* IntroChildViewController.swift in Sources */,

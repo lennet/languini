@@ -186,16 +186,83 @@
                                                     <action selector="dismiss" destination="TVD-IA-n16" eventType="touchUpInside" id="gOc-Ms-SpL"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCR-ls-cpF">
+                                                <rect key="frame" x="245" y="27" width="29" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sie-Xr-Cyl" customClass="SelfSizingTextView" customModule="Languini" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="56" width="504" height="317"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="317" id="S2V-wp-16b"/>
+                                                </constraints>
+                                                <mutableString key="text">Languini wurde 2015 im Rahmen des Kulturhackthons “Coding Da Vinci” entwickelt und beruht zu 100% auf offenen Daten.
+
+Der Datensatz wurde von Language Science Press bereitgestellt.
+Language Science Press veröffentlich frei verfügbare linguistische Literatur. Bisher wurden 15 Bücherreihen von 165 Autoren aus 31 Ländern und 5 Kontinenten veröffentlich. 
+Das „CLLD“-Projekt entwickelt einen Datensatz, in dem unterschiedliche linguistische Daten miteinander verknüpft werden. Der Datensatz enthält momentan 10 Datensätze und eine große Anzahl lexikalischer Informationen, die man unter clld.org findet.</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cdv" translatesAutoresizingMaskIntoConstraints="NO" id="U4a-1a-WGm">
+                                                <rect key="frame" x="92" y="381" width="136" height="46"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="136" id="ZOL-fL-5dQ"/>
+                                                    <constraint firstAttribute="height" constant="46" id="xUM-oi-POQ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="languagesciencelogo" translatesAutoresizingMaskIntoConstraints="NO" id="xDU-Ah-XhB">
+                                                <rect key="frame" x="307" y="378" width="105" height="51"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="AJX-kI-Gat"/>
+                                                    <constraint firstAttribute="width" constant="105" id="REc-ze-V4l"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NaB-BV-PS8" customClass="SelfSizingTextView" customModule="Languini" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="437.5" width="504" height="94"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="94" id="4ij-gk-Sgv"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="NCR-ls-cpF" firstAttribute="centerY" secondItem="2Qe-ul-o6s" secondAttribute="centerY" id="1WD-e8-Dy2"/>
+                                            <constraint firstItem="U4a-1a-WGm" firstAttribute="centerX" secondItem="H6g-gA-i2E" secondAttribute="centerX" priority="750" constant="-100" id="1Yp-kl-lOJ"/>
+                                            <constraint firstItem="U4a-1a-WGm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H6g-gA-i2E" secondAttribute="leading" constant="2" id="7oj-XF-edB"/>
                                             <constraint firstAttribute="trailing" secondItem="2Qe-ul-o6s" secondAttribute="trailing" constant="16" id="BjZ-wv-ZZZ"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NaB-BV-PS8" secondAttribute="bottom" constant="8" id="Cka-gN-ocN"/>
+                                            <constraint firstItem="NaB-BV-PS8" firstAttribute="leading" secondItem="H6g-gA-i2E" secondAttribute="leading" constant="8" id="E6I-4x-7pT"/>
+                                            <constraint firstItem="U4a-1a-WGm" firstAttribute="top" secondItem="sie-Xr-Cyl" secondAttribute="bottom" constant="8" id="G0g-V6-wlC"/>
+                                            <constraint firstAttribute="trailing" secondItem="NaB-BV-PS8" secondAttribute="trailing" constant="8" id="I9J-Nx-uvV"/>
+                                            <constraint firstItem="xDU-Ah-XhB" firstAttribute="centerX" secondItem="H6g-gA-i2E" secondAttribute="centerX" priority="750" constant="100" id="JQE-sp-IUs"/>
+                                            <constraint firstItem="U4a-1a-WGm" firstAttribute="leading" secondItem="H6g-gA-i2E" secondAttribute="leading" constant="8" id="K0S-oA-dFd"/>
+                                            <constraint firstAttribute="height" constant="540" id="MZp-tG-Xq6"/>
+                                            <constraint firstItem="sie-Xr-Cyl" firstAttribute="top" secondItem="NCR-ls-cpF" secondAttribute="bottom" constant="8" id="Uih-fX-SFe"/>
+                                            <constraint firstAttribute="trailing" secondItem="xDU-Ah-XhB" secondAttribute="trailing" constant="8" id="Ut4-bf-O6X"/>
+                                            <constraint firstItem="sie-Xr-Cyl" firstAttribute="leading" secondItem="H6g-gA-i2E" secondAttribute="leading" constant="8" id="Ws0-RW-ScC"/>
+                                            <constraint firstItem="U4a-1a-WGm" firstAttribute="centerY" secondItem="xDU-Ah-XhB" secondAttribute="centerY" id="ZEj-RC-70z"/>
+                                            <constraint firstItem="NaB-BV-PS8" firstAttribute="top" secondItem="xDU-Ah-XhB" secondAttribute="bottom" constant="8" id="fCV-55-zsx"/>
+                                            <constraint firstAttribute="trailing" secondItem="sie-Xr-Cyl" secondAttribute="trailing" constant="8" id="kI4-Xc-aOc"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xDU-Ah-XhB" secondAttribute="trailing" constant="2" id="oJk-wS-mo7"/>
                                             <constraint firstItem="2Qe-ul-o6s" firstAttribute="leading" secondItem="H6g-gA-i2E" secondAttribute="leading" constant="20" symbolic="YES" id="q4Y-MH-Uam"/>
+                                            <constraint firstItem="NCR-ls-cpF" firstAttribute="centerX" secondItem="H6g-gA-i2E" secondAttribute="centerX" id="reg-Mg-yD7"/>
                                             <constraint firstItem="2Qe-ul-o6s" firstAttribute="top" secondItem="H6g-gA-i2E" secondAttribute="top" constant="16" id="vIK-4B-SDo"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="MZp-tG-Xq6"/>
+                                                <exclude reference="K0S-oA-dFd"/>
                                                 <exclude reference="q4Y-MH-Uam"/>
+                                                <exclude reference="Ut4-bf-O6X"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -206,7 +273,7 @@
                                     <constraint firstAttribute="trailing" secondItem="H6g-gA-i2E" secondAttribute="trailing" id="LKg-nT-nzR"/>
                                     <constraint firstAttribute="bottom" secondItem="H6g-gA-i2E" secondAttribute="bottom" id="aKv-r5-xwH"/>
                                     <constraint firstItem="H6g-gA-i2E" firstAttribute="width" secondItem="zcl-Hy-z2r" secondAttribute="width" id="nTT-ID-jif"/>
-                                    <constraint firstItem="H6g-gA-i2E" firstAttribute="height" secondItem="zcl-Hy-z2r" secondAttribute="height" id="y4W-Y6-ant"/>
+                                    <constraint firstItem="H6g-gA-i2E" firstAttribute="height" secondItem="zcl-Hy-z2r" secondAttribute="height" priority="750" id="y4W-Y6-ant"/>
                                     <constraint firstItem="H6g-gA-i2E" firstAttribute="top" secondItem="zcl-Hy-z2r" secondAttribute="top" id="zgY-tS-Po2"/>
                                 </constraints>
                             </scrollView>
@@ -250,6 +317,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cdv" width="136" height="46"/>
         <image name="close" width="44" height="44"/>
+        <image name="languagesciencelogo" width="105" height="51"/>
     </resources>
 </document>
