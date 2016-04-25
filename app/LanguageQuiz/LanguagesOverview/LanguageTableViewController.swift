@@ -12,12 +12,23 @@ import UIKit
 
 class LanguageTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-    var languoids: [Languoid]?
     var detailVC: LanguageDetailViewController?
     
     var selectedCountry: (name: String, code: String)?
     
     weak var delegate: DetailSelectionDelegate?
+    
+    var defaultSelection: Bool? {
+        didSet{
+            if defaultSelection == true {
+                let firstIndex = NSIndexPath(forRow: 0, inSection: 0)
+                if let firstObject = fetchedResultsController.objectAtIndexPath(firstIndex) as? Languoid{
+                    delegate?.loadDetail(withLanguage: firstObject)
+                    tableView.reloadData()
+                }
+            }
+        }
+    }
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
         let fetchRequest = NSFetchRequest(entityName: Languoid.entityName)
@@ -41,6 +52,7 @@ class LanguageTableViewController: UITableViewController, NSFetchedResultsContro
         self.tableView.dataSource = self
         do {
             try fetchedResultsController.performFetch()
+            defaultSelection = true
         }catch{
             let error = error as NSError
             print("Error fetching data \(error), \(error.userInfo)")
@@ -62,6 +74,7 @@ class LanguageTableViewController: UITableViewController, NSFetchedResultsContro
         if let title = selectedCountry?.name{
             navigationItem.title = title
         }
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -107,17 +120,10 @@ class LanguageTableViewController: UITableViewController, NSFetchedResultsContro
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if detailVC == nil{
-            detailVC = storyboard?.instantiateViewControllerWithIdentifier("detailVC") as? LanguageDetailViewController
-        }
-        
         if let selectedLanguoid = fetchedResultsController.objectAtIndexPath(indexPath) as? Languoid {
-    
+            defaultSelection = false
             delegate?.loadDetail(withLanguage: selectedLanguoid)
-            
-//            detailVC?.selectedLanguoid = selectedLanguoid
-//            navigationController?.pushViewController(detailVC!, animated: true)
-            }
+        }
     }
 
 }
