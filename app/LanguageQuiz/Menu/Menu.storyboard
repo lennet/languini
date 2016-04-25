@@ -194,15 +194,15 @@
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sie-Xr-Cyl" customClass="SelfSizingTextView" customModule="Languini" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="56" width="504" height="317"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="317" id="S2V-wp-16b"/>
                                                 </constraints>
-                                                <mutableString key="text">Languini wurde 2015 im Rahmen des Kulturhackthons “Coding Da Vinci” entwickelt und beruht zu 100% auf offenen Daten.
+                                                <string key="text">Languini wurde 2015 im Rahmen des Kulturhackthons “Coding Da Vinci” entwickelt und beruht zu 100% auf offenen Daten.
 
 Der Datensatz wurde von Language Science Press bereitgestellt.
 Language Science Press veröffentlich frei verfügbare linguistische Literatur. Bisher wurden 15 Bücherreihen von 165 Autoren aus 31 Ländern und 5 Kontinenten veröffentlich. 
-Das „CLLD“-Projekt entwickelt einen Datensatz, in dem unterschiedliche linguistische Daten miteinander verknüpft werden. Der Datensatz enthält momentan 10 Datensätze und eine große Anzahl lexikalischer Informationen, die man unter clld.org findet.</mutableString>
+Das „CLLD“-Projekt entwickelt einen Datensatz, in dem unterschiedliche linguistische Daten miteinander verknüpft werden. Der Datensatz enthält momentan 10 Datensätze und eine große Anzahl lexikalischer Informationen, die man unter clld.org findet.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -223,7 +223,7 @@ Das „CLLD“-Projekt entwickelt einen Datensatz, in dem unterschiedliche lingu
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NaB-BV-PS8" customClass="SelfSizingTextView" customModule="Languini" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="437.5" width="504" height="94"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="94" id="4ij-gk-Sgv"/>
                                                 </constraints>
@@ -233,7 +233,7 @@ Das „CLLD“-Projekt entwickelt einen Datensatz, in dem unterschiedliche lingu
                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="NCR-ls-cpF" firstAttribute="centerY" secondItem="2Qe-ul-o6s" secondAttribute="centerY" id="1WD-e8-Dy2"/>
                                             <constraint firstItem="U4a-1a-WGm" firstAttribute="centerX" secondItem="H6g-gA-i2E" secondAttribute="centerX" priority="750" constant="-100" id="1Yp-kl-lOJ"/>
@@ -267,7 +267,7 @@ Das „CLLD“-Projekt entwickelt einen Datensatz, in dem unterschiedliche lingu
                                         </variation>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="H6g-gA-i2E" firstAttribute="leading" secondItem="zcl-Hy-z2r" secondAttribute="leading" id="839-2r-bDy"/>
                                     <constraint firstAttribute="trailing" secondItem="H6g-gA-i2E" secondAttribute="trailing" id="LKg-nT-nzR"/>

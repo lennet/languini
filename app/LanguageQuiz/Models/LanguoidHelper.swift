@@ -40,7 +40,7 @@ class LanguoidHelper: CoreDataHelper {
             return nil
         }
         
-        if let languoids = countries?.first!.languiod {
+        if let languoids = countries?.first?.languiod {
             return languoids.allObjects as? [Languoid]
         } else { return nil }
     }
