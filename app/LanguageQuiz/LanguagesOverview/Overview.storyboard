@@ -34,7 +34,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gc9-fp-xfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="79" y="-789"/>
+            <point key="canvasLocation" x="79" y="-1131"/>
         </scene>
         <!--Sprachen-->
         <scene sceneID="MRR-YD-4HC">
@@ -183,7 +183,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2437" y="-1095"/>
+            <point key="canvasLocation" x="2425" y="-1131"/>
         </scene>
         <!--Language Table View Controller-->
         <scene sceneID="sGv-ZR-qmE">
@@ -229,7 +229,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ByD-nC-Xpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="-324"/>
+            <point key="canvasLocation" x="1756" y="-340"/>
         </scene>
         <!--Language Detail View Controller-->
         <scene sceneID="ee7-cE-cnk">
@@ -271,9 +271,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGc-Ge-hnW" userLabel="Seperator">
-                                                        <rect key="frame" x="0.0" y="48" width="250" height="2"/>
+                                                        <rect key="frame" x="120" y="48" width="10" height="2"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="width" constant="10" id="3f9-fe-Bst"/>
                                                             <constraint firstAttribute="height" constant="2" id="kLt-JR-Dcr"/>
                                                         </constraints>
                                                     </view>
@@ -288,6 +289,11 @@
                                                     <constraint firstAttribute="bottom" secondItem="bGc-Ge-hnW" secondAttribute="bottom" id="glh-RO-aVb"/>
                                                     <constraint firstItem="fza-85-8mu" firstAttribute="centerY" secondItem="3u8-li-jSc" secondAttribute="centerY" id="vWr-dA-2dU"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="GU2-fl-hbG"/>
+                                                    </mask>
+                                                </variation>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LsF-6Z-1Fw">
                                                 <rect key="frame" x="10" y="260" width="580" height="340"/>
@@ -453,6 +459,8 @@
                         <outlet property="leftButton" destination="sQo-du-4fk" id="GMI-3k-5Lm"/>
                         <outlet property="mapView" destination="kBG-T2-Xtg" id="pWw-N9-lCQ"/>
                         <outlet property="rightButton" destination="DWT-0Z-vDU" id="lCA-lO-Ncc"/>
+                        <outlet property="seperatorLine" destination="bGc-Ge-hnW" id="WHx-ku-3fQ"/>
+                        <outlet property="seperatorWidthConstraint" destination="3f9-fe-Bst" id="202-8d-zPZ"/>
                         <outlet property="tableView" destination="LsF-6Z-1Fw" id="52r-Bs-ajL"/>
                     </connections>
                 </viewController>

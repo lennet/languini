@@ -16,6 +16,9 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet var tableView: UITableView!
     @IBOutlet var leftButton: UIButton!
     @IBOutlet var rightButton: UIButton!
+    @IBOutlet var seperatorLine: UIView!
+    
+    @IBOutlet var seperatorWidthConstraint: NSLayoutConstraint!
     
     let detailCellIdentifier = "detailCell"
     let sectionHeaderIdentifier = "sectionHeader"
@@ -38,6 +41,7 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
             
         }
     }
+    
     var countries: [Country]?
     weak var selectedCountry: Country?{
         didSet{
@@ -111,7 +115,18 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
         let span = MKCoordinateSpan(latitudeDelta: 10.0 , longitudeDelta: 10.0)
         let region = MKCoordinateRegion(center: location, span: span)
         countryLabel.text = selectedCountry?.name
+        updateSeperatorWidth()
         mapView.setRegion(region, animated: true)
+    }
+    
+    private func updateSeperatorWidth(){
+        countryLabel.sizeToFit()
+        view.layoutIfNeeded()
+        seperatorWidthConstraint.constant = countryLabel.bounds.width + 5
+        UIView.animateWithDuration(2.0, delay: 0.0, options: .CurveEaseOut , animations: {
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+        
     }
     
     // MARK: - TableView
