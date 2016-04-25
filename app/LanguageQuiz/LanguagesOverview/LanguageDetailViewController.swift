@@ -24,6 +24,18 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
         didSet{
             countries = selectedLanguoid?.country?.allObjects as? [Country]
             sections = selectedLanguoid?.getDetailAttributes()
+            if let country = countries?.first{
+                selectedCountry = country
+                countryLabel.text = country.name
+                updateMapView(country)
+            }
+            if countries?.count == 1{
+                leftButton.enabled = false
+                rightButton.enabled = false
+            }
+            navigationItem.title = selectedLanguoid?.name
+            tableView.reloadData()
+            
         }
     }
     var countries: [Country]?
@@ -66,27 +78,6 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
         tableView.estimatedRowHeight = 50.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        print(navigationController?.navigationBarHidden)
-        if let country = countries?.first{
-            selectedCountry = country
-            countryLabel.text = country.name
-            updateMapView(country)
-        }
-        if countries?.count == 1{
-            leftButton.enabled = false
-            rightButton.enabled = false
-        }
-        navigationItem.title = selectedLanguoid?.name
-        tableView.reloadData()
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
     
     // MARK: -  Map
     
@@ -163,5 +154,13 @@ class LanguageDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return tableView.sectionHeaderHeight
+    }
+}
+
+
+extension LanguageDetailViewController : LangugageSelectionDelegate{
+    
+    func selectedLanguage(language: Languoid){
+        selectedLanguoid = language
     }
 }

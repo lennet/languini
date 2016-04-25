@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class LanguageTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var languoids: [Languoid]?
@@ -15,6 +17,7 @@ class LanguageTableViewController: UITableViewController, NSFetchedResultsContro
     
     var selectedCountry: (name: String, code: String)?
     
+    weak var delegate: DetailSelectionDelegate?
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
         let fetchRequest = NSFetchRequest(entityName: Languoid.entityName)
@@ -108,13 +111,13 @@ class LanguageTableViewController: UITableViewController, NSFetchedResultsContro
             detailVC = storyboard?.instantiateViewControllerWithIdentifier("detailVC") as? LanguageDetailViewController
         }
         
-        if let selectedLanguoid = fetchedResultsController.objectAtIndexPath(indexPath) as? Languoid{
-            detailVC?.selectedLanguoid = selectedLanguoid
-            navigationController?.pushViewController(detailVC!, animated: true)
-        }
+        if let selectedLanguoid = fetchedResultsController.objectAtIndexPath(indexPath) as? Languoid {
+    
+            delegate?.loadDetail(withLanguage: selectedLanguoid)
+            
+//            detailVC?.selectedLanguoid = selectedLanguoid
+//            navigationController?.pushViewController(detailVC!, animated: true)
+            }
     }
-    
-
-    
 
 }
