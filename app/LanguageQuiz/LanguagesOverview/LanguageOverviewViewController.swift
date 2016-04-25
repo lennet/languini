@@ -58,8 +58,8 @@ class LanguageOverviewViewController: UIViewController, UIGestureRecognizerDeleg
             let leftNavController = splitViewController.viewControllers.first as! UINavigationController
             let detailViewController = splitViewController.viewControllers.last as? LanguageDetailViewController
             
-            self.listViewController?.delegate = self
-            self.mapViewController?.delegate = self
+            listViewController?.delegate = self
+            mapViewController?.delegate = self
             
             self.delegate = detailViewController
             

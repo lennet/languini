@@ -13,6 +13,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BJo-Kg-2au">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.2039215714" green="0.59607845540000004" blue="0.85882353779999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
@@ -156,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZ0-4c-cyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="-1157"/>
+            <point key="canvasLocation" x="1730" y="-1131"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="4Ep-6g-IJ4">

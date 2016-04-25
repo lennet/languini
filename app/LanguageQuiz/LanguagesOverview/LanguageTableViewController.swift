@@ -110,6 +110,7 @@ class LanguageTableViewController: UITableViewController, NSFetchedResultsContro
     }
     
     func configCell(cell: UITableViewCell, indexPath: NSIndexPath){
+        cell.detailTextLabel?.text = ""
         if let language = fetchedResultsController.objectAtIndexPath(indexPath) as? Languoid{
             cell.textLabel?.text = language.name
             if let alternateNames = language.alternateNames as? [String] {
@@ -122,6 +123,16 @@ class LanguageTableViewController: UITableViewController, NSFetchedResultsContro
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let selectedLanguoid = fetchedResultsController.objectAtIndexPath(indexPath) as? Languoid {
             defaultSelection = false
+            
+            if delegate == nil {
+                guard let navigationStack = self.navigationController?.viewControllers  else { return }
+                
+                for element in navigationStack {
+                    if let overviewVC = element as? LanguageOverviewViewController{
+                        delegate = overviewVC
+                    }
+                }
+            }
             delegate?.loadDetail(withLanguage: selectedLanguoid)
         }
     }
